@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pauta da Reunião ANEEL - i4 Economic Regulation</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilos globais para garantir uma boa visualização */
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6; /* bg-gray-100 */
+      color: #374151; /* text-gray-800 */
+    }
+    /* Adaptação da largura da imagem da logo para dispositivos móveis */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Estilos para quebra de texto em links longos */
+    .break-words {
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div id="app-container"></div>
+
+  <script>
+    // Dados da pauta da ANEEL filtrados conforme a sua seleção e com os números originais
+    const aneelAgenda = [
+      {
+        originalItemNumber: 1, // Número original do item na pauta
+        process: "48500.007344/2025-00",
+        subject: "Aprovação do Edital do Leilão de Transmissão nº 4/2025-ANEEL, incluindo o objeto, as Receitas Anuais Permitidas – RAP e os Anexos Técnicos correspondentes a empreendimentos de transmissão de energia elétrica, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 18/2025.",
+        areaResponsible: "Secretaria de Leilões - SEL, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+        relator: "Fernando Luiz Mosna Ferreira da Silva",
+        decision: "A Diretoria, por unanimidade, decidiu: (i) aprovar a minuta do Edital do Leilão nº 4/2025-ANEEL, com os respectivos Apêndices e Anexos, consolidada com os aprimoramentos decorrentes da Consulta Pública nº 18/2025; (ii) encaminhar a minuta do Edital com os respectivos Apêndices e Anexos, ao Tribunal de Contas da União – TCU, em observância à Instrução Normativa Normativa TCU nº 81/2018; e (iii) determinar que as concessionárias titulares das instalações nas quais os empreendimentos de transmissão licitados serão conectados efetivamente agendem e autorizem, desde logo e até 13 de outubro de 2025, a visita dos interessados, no menor prazo possível.",
+        orderOfJudgment: "5",
+        administrativeAct: "Despacho nº 1.929/2025",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14597&idAreaNoticia=425",
+        briefDecision: "Aprovado",
+        technicalPresentationLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=55029&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp", // Link da apresentação técnica
+        consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=oIfkJrUM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3929&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" // Link da Consulta Pública
+      },
+      {
+        originalItemNumber: 2, // Número original do item na pauta
+        process: "48500.003183/2021-43", // Número do processo adicionado
+        subject: "Proposta de abertura de Consulta Pública com vistas a obter subsídios e informações adicionais para o relatório de Análise de Impacto Regulatório – AIR que trata do aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.",
+        areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
+        relator: "Ludimila Lima da Silva",
+        decision: "O processo foi retirado de pauta",
+        orderOfJudgment: "1",
+        administrativeAct: null,
+        actLink: null,
+        briefDecision: "Retirado de pauta",
+        technicalPresentationLink: null, // Sem apresentação para este item
+        consultaPublicaLink: null
+      },
+      {
+        originalItemNumber: 6, // Número original do item na pauta
+        process: "48500.003974/2025-05",
+        subject: "Reajuste Tarifário Anual da Companhia Campolarguense de Energia – Cocel, a vigorar a partir de 29 de junho de 2025.",
+        areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+        relator: "Fernando Luiz Mosna Ferreira da Silva",
+        decision: "A Diretoria, por unanimidade, decidiu: (i) homologar o índice de Reajuste Tarifário Anual das tarifas da Companhia Campolarguense de Energia – Cocel, com vigência a partir de 29 de junho de 2025, correspondendo a um efeito médio a ser percebido pelos consumidores de 22,47% sendo de 24,57% em média para os consumidores conectados em Alta Tensão e de 21,44% em média para aqueles conectados em Baixa Tensão; (ii) fixar das Tarifas de Energia – TE e das Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da Cocel; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) homologar o valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à Cocel para custeio dos subsídios retirados da estrutura tarifária.",
+        orderOfJudgment: "7",
+        administrativeAct: "Resolução Homologatória nº 3.476/2025",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003974-2025-05.pdf",
+        briefDecision: "Aprovado",
+        technicalPresentationLink: null, // Sem apresentação para este item
+        consultaPublicaLink: null
+      },
+      {
+        originalItemNumber: 14, // Número original do item na pauta
+        process: "48500.006490/2023-48",
+        subject: "Requerimento Administrativo protocolado pela Ampla Energia e Serviços S.A. (Enel Distribuição Rio – Enel RJ) com vistas à prorrogação do Contrato de Concessão de Distribuição nº 5/1996, nos termos da Lei nº 9.074/1995 e do Decreto nº 12.068/2024.",
+        areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
+        relator: "Ludimila Lima da Silva",
+        decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo. A Diretora-Relatora, Ludimila Lima da Silva, acompanhada pelo Diretor Daniel Cardoso Danna e pela Diretora Agnes Maria de Aragão da Costa, votou no sentido de recomendar ao Ministério de Minas e Energia – MME a prorrogação do Contrato de Concessão de Distribuição nº 5/1996-ANEEL, com a antecipação de seus efeitos, e encaminhar a minuta do 8º Termo Aditivo. Os votos proferidos antes da concessão da vista continuam válidos, sendo facultada a reforma até a proclamação do resultado final, nos termos do art. 24, § 2º, da Norma de Organização Norma de Organização nº 18 (Resolução Normativa nº 698/2015).",
+        orderOfJudgment: "15",
+        administrativeAct: "Minutas de voto e ato",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.018191-2025-18.pdf", // Link Corrigido
+        briefDecision: "Pedido de vista",
+        technicalPresentationLink: null, // Sem apresentação para este item
+        consultaPublicaLink: null
+      },
+      {
+        originalItemNumber: 15, // Número original do item na pauta
+        process: "48500.010804/2025-79",
+        subject: "Requerimento Administrativo protocolado pela Equatorial Pará Distribuidora de Energia S.A. com vistas à antecipação dos efeitos da prorrogação do Contrato de Concessão de Distribuição nº 182/1998, nos termos da Lei nº 9.074/1995 e do Decreto nº 12.068/2024.",
+        areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
+        relator: "Agnes Maria de Aragao da Costa",
+        decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo. A Diretora-Relatora, Agnes Maria de Aragão da Costa, acompanhada pelo Diretor Daniel Cardoso Danna e pela Diretora Ludimila Lima da Silva, votou no sentido de recomendar ao Ministério de Minas e Energia – MME a prorrogação do Contrato de Concessão de Distribuição nº 182/1998-ANEEL, com a antecipação de seus efeitos, e encaminhar a minuta do 7º Termo Aditivo. Os votos proferidos antes da concessão da vista continuam válidos, sendo facultada a reforma até a proclamação do resultado final, nos termos do art. 24, § 2º, da Norma de Organização Norma de Organização nº 18 (Resolução Normativa nº 698/2015).",
+        orderOfJudgment: "16",
+        administrativeAct: "Minutas de voto e ato",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010804-2025-79.pdf",
+        briefDecision: "Pedido de vista",
+        technicalPresentationLink: null, // Sem apresentação para este item
+        consultaPublicaLink: null
+      }
+    ];
+
+    const youtubeLink = "https://www.youtube.com/live/rE9cGTZyUq0?si=idBTaVNRrTLRBEbx";
+    const i4LogoUrl = "https://i4economicregulation.com.br/templates/yootheme/cache/a9/logo-a97de1b1.png";
+
+    // Função para criar elementos HTML
+    function createElement(tag, classes, textContent, attributes = {}) {
+      const element = document.createElement(tag);
+      if (classes) element.className = classes;
+      if (textContent) element.textContent = textContent;
+      for (const key in attributes) {
+        element.setAttribute(key, attributes[key]);
+      }
+      return element;
+    }
+
+    function renderDashboard() {
+      const appContainer = document.getElementById('app-container');
+      appContainer.innerHTML = ''; // Limpar o conteúdo anterior
+
+      // Cabeçalho
+      const header = createElement('header', 'bg-white shadow-md p-4 flex flex-col sm:flex-row items-center justify-between');
+      const logoDiv = createElement('div', 'flex items-center space-x-3 mb-4 sm:mb-0');
+      const logoImg = createElement('img', 'h-10 w-auto rounded-md', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation Logo' });
+      logoImg.onerror = () => { logoImg.src = "https://placehold.co/100x40/cccccc/333333?text=Logo"; }; // Fallback para a logo
+      const titleH1 = createElement('h1', 'text-xl sm:text-2xl font-bold text-blue-800', 'Pauta da Reunião ANEEL');
+      logoDiv.appendChild(logoImg);
+      logoDiv.appendChild(titleH1);
+      header.appendChild(logoDiv);
+      appContainer.appendChild(header);
+
+      // Área de conteúdo principal
+      const main = createElement('main', 'container mx-auto mt-4 sm:mt-8 p-3 sm:p-4 bg-white rounded-xl shadow-lg max-w-full overflow-hidden');
+      const contentDiv = createElement('div', 'p-4 sm:p-6');
+      
+      const pautaTitle = createElement('h2', 'text-xl sm:text-2xl font-bold mb-3 sm:mb-4', 'Pauta da 22ª Reunião Pública Ordinária da Diretoria de 2025');
+      const pautaDate = createElement('div', 'text-gray-700 text-sm sm:text-base mb-3 sm:mb-4', '24/06/2026');
+      contentDiv.appendChild(pautaTitle);
+      contentDiv.appendChild(pautaDate);
+
+      // Seção do link do YouTube
+      const youtubeSection = createElement('div', 'bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-3 sm:p-4 mb-4 sm:mb-6 rounded-md', null, { role: 'alert' });
+      const youtubeTitle = createElement('p', 'font-bold text-base sm:text-lg', 'Assista à Reunião Completa:');
+      const youtubeLinkAnchor = createElement('a', 'text-blue-700 hover:underline text-sm sm:text-base break-words', 'Link para a Reunião no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+      youtubeSection.appendChild(youtubeTitle);
+      youtubeSection.appendChild(youtubeLinkAnchor);
+      contentDiv.appendChild(youtubeSection);
+
+      // Seção do Sumário da Pauta
+      const summaryDiv = createElement('div', 'mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200');
+      const summaryTitle = createElement('h3', 'text-lg font-semibold text-gray-800 mb-3', 'Sumário da Pauta da Reunião da ANEEL');
+      const summaryList = createElement('ul', 'list-disc list-inside space-y-2');
+
+      aneelAgenda.forEach(item => {
+        const listItem = createElement('li', 'text-gray-700 text-sm sm:text-base');
+        const itemNumberSpan = createElement('span', 'font-bold', `Item ${item.originalItemNumber}: `);
+        const subjectSpan = createElement('span', null, `${item.subject.split('.')[0]} - `);
+        const briefDecisionSpan = createElement('span', 'font-semibold text-blue-700', item.briefDecision);
+        listItem.appendChild(itemNumberSpan);
+        listItem.appendChild(subjectSpan);
+        listItem.appendChild(briefDecisionSpan);
+        summaryList.appendChild(listItem);
+      });
+      summaryDiv.appendChild(summaryTitle);
+      summaryDiv.appendChild(summaryList);
+      contentDiv.appendChild(summaryDiv);
+
+      // Itens da Pauta
+      const agendaGrid = createElement('div', 'grid grid-cols-1 gap-4 sm:gap-6');
+      aneelAgenda.forEach(item => {
+        const itemDiv = createElement('div', 'bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-200');
+        itemDiv.appendChild(createElement('h3', 'text-lg sm:text-xl font-semibold text-blue-700 mb-2', `Item ${item.originalItemNumber}: Processo: ${item.process}`));
+        itemDiv.appendChild(createElement('p', 'text-gray-900 text-sm sm:text-base mb-2', `Assunto: ${item.subject}`));
+        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Área Responsável: ${item.areaResponsible}`));
+        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Relator(a): ${item.relator}`));
+        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Decisão: ${item.decision}`));
+        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Ordem de Julgamento: ${item.orderOfJudgment}`));
+
+        if (item.administrativeAct) {
+          const actP = createElement('p', 'text-gray-700 text-sm sm:text-base');
+          actP.innerHTML = `<strong>Ato(s) Administrativo(s):</strong> `;
+          if (item.actLink) {
+            const actAnchor = createElement('a', 'text-blue-500 hover:underline break-words', item.administrativeAct, { href: item.actLink, target: '_blank', rel: 'noopener noreferrer' });
+            actP.appendChild(actAnchor);
+          } else {
+            actP.textContent += item.administrativeAct;
+          }
+          itemDiv.appendChild(actP);
+        }
+
+        // Seção da Apresentação Técnica para o Item 1
+        if (item.originalItemNumber === 1 && item.technicalPresentationLink) {
+          const techPresDiv = createElement('div', 'mt-4 pt-4 border-t border-gray-200');
+          techPresDiv.appendChild(createElement('h4', 'text-md font-semibold text-gray-700 mb-3', 'Link da Apresentação Técnica:'));
+          techPresDiv.appendChild(createElement('a', 'text-blue-600 hover:underline text-sm sm:text-base break-words', 'Acessar Apresentação Completa', { href: item.technicalPresentationLink, target: '_blank', rel: 'noopener noreferrer' }));
+          techPresDiv.appendChild(createElement('p', 'text-xs text-gray-600 mt-2', '*Este link direciona para a página da ANEEL onde a apresentação pode ser visualizada ou baixada.'));
+          itemDiv.appendChild(techPresDiv);
+        }
+
+        // Seção da Consulta Pública para o Item 1
+        if (item.originalItemNumber === 1 && item.consultaPublicaLink) {
+          const consultaPublicaDiv = createElement('div', 'mt-4 pt-4 border-t border-gray-200');
+          consultaPublicaDiv.appendChild(createElement('h4', 'text-md font-semibold text-gray-700 mb-3', 'Link da Consulta Pública nº 18/2025:'));
+          consultaPublicaDiv.appendChild(createElement('a', 'text-blue-600 hover:underline text-sm sm:text-base break-words', 'Acessar Consulta Pública nº 18/2025', { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' }));
+          consultaPublicaDiv.appendChild(createElement('p', 'text-xs text-gray-600 mt-2', '*Este link direciona para a página da ANEEL da Consulta Pública nº 18/2025.'));
+          itemDiv.appendChild(consultaPublicaDiv);
+        }
+
+        agendaGrid.appendChild(itemDiv);
+      });
+      contentDiv.appendChild(agendaGrid);
+      main.appendChild(contentDiv);
+      appContainer.appendChild(main);
+
+      // Rodapé
+      const footer = createElement('footer', 'text-center mt-6 sm:mt-8 p-3 sm:p-4 text-gray-500 text-xs sm:text-sm');
+      footer.appendChild(createElement('p', null, '&copy; 2025 i4 Economic Regulation. Todos os direitos reservados.'));
+      appContainer.appendChild(footer);
+    }
+
+    // Renderizar o dashboard quando o DOM estiver pronto
+    renderDashboard(); // Chamada direta da função
+  </script>
+</body>
+</html>
