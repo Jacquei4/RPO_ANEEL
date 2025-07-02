@@ -24,115 +24,156 @@
     .break-words {
       word-break: break-word;
     }
+    /* Estilos para a tabela */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9em;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      overflow: hidden; /* Ensures rounded corners apply to table content */
+    }
+    .styled-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+    .styled-table th,
+    .styled-table td {
+      padding: 12px 15px;
+      border: 1px solid #dddddd;
+    }
+    .styled-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+    .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+    .styled-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+    }
+    /* Adiciona rolagem suave para os links âncora */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
   <div id="app-container"></div>
 
   <script>
-    // Dados da pauta da ANEEL para a 23ª Reunião Pública Ordinária, filtrados para os itens solicitados
+    // URL da imagem da tabela para o Item 1
+    const item1TableImageURL = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/perdas.png?raw=true"; 
+
+    // Dados da pauta da ANEEL para a 23ª Reunião Pública Ordinária, com os resultados atualizados
     const aneelAgenda = [
       {
         originalItemNumber: 1,
         process: "48500.003647/2025-45",
-        subject: "Resultado da Revisão Tarifária da Energisa Tocantins – Distribuidora de Energia S.A. – ETO, a vigorar a partir de 4 de julho de 2025", // Assunto completo
+        subject: "Resultado da Revisão Tarifária da Energisa Tocantins – Distribuidora de Energia S.A. – ETO, a vigorar a partir de 4 de julho de 2025",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Ludimila Lima da Silva",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
-        administrativeAct: null,
-        actLink: null,
-        briefDecision: "Aguardando deliberação",
+        decision: `A Diretoria, por unanimidade, decidiu (i) homologar o resultado da Revisão Tarifária Periódica da Energisa Tocantins – Distribuidora de Energia S.A. – ETO, a vigorar a partir de 4 de julho de 2025, que conduz ao efeito médio a ser percebido pelos consumidores de 12,68%, sendo de 13,25%, em média, para os consumidores conectados na Alta Tensão e de 12,55%, em média, para os consumidores conectados na Baixa Tensão; (ii) fixar as Tarifas de Uso dos Sistemas de Distribuição – TUSD e as Energia Elétrica – TE aplicáveis aos consumidores e aos usuários da concessionária; (iii) estabelecer o valor da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; (iv) aprovar o valor mensal de recursos da Conta de Desenvolvimento Energético – CDE a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à ETO, de modo a custear os descontos retirados da estrutura tarifária; (v) definir os postos tarifários ponta, intermediário e fora ponta; (vi) fixar os referencial regulatório para perdas de energia para os reajustes de 2025 a 2029, conforme tabela abaixo:`,
+        orderOfJudgment: "2",
+        administrativeAct: "Minutas de voto",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.003647-2025-45.pdf",
+        briefDecision: "RTP homologada (ETO)",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
-        votoSummary: null
+        votoSummary: "O voto da relatora Ludmila Lima da Silva propõe homologar o resultado da Revisão Tarifária Periódica da Energisa Tocantins, com efeito médio de 12,68% a partir de 4 de julho de 2025. A decisão inclui a fixação de TUSD e TE, valores de receita anual de DIT, recursos da CDE, postos tarifários, componentes T do Fator X em 1,049%, e referencial regulatório para perdas de energia até 2029. Houve apresentação técnica por parte do servidor Gustavo Godoy de Lima, da Superintendência de Gestão Tarifária e Regulação Econômica – STR. A procuradoria não teve posicionamento jurídico a priori. A diretoria aprovou por unanimidade. A tabela de perdas de energia é exibida separadamente abaixo da decisão.",
+        tableImageSrc: item1TableImageURL // Usando o URL direto
       },
       {
         originalItemNumber: 2,
         process: "48500.003977/2025-31",
-        subject: "Reajuste Tarifário Anual da Energisa Sul Sudeste - Distribuidora de Energia S.A. – ESS, a vigorar a partir de 12 de julho de 2025.", // Assunto completo
+        subject: "Reajuste Tarifário Anual da Energisa Sul Sudeste - Distribuidora de Energia S.A. – ESS, a vigorar a partir de 12 de julho de 2025.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Ludimila Lima da Silva",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
-        administrativeAct: null,
-        actLink: null,
-        briefDecision: "Aguardando deliberação",
+        decision: "A Diretoria, por unanimidade, decidiu: (i) homologar o índice de Reajuste Tarifário Anual da Energisa Sul Sudeste – Distribuidora de Energia S.A. – ESS, com vigência a partir de 12 de julho de 2025, correspondendo a um efeito médio a ser percebido pelos consumidores de 19,05%, sendo de 18,80% em média para os consumidores conectados em Alta Tensão e de 19,15% em média para aqueles conectados em Baixa Tensão; (ii) aprovar a fixação das Tarifas de Energia – TE e das Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da ESS; (iii) aprovar o estabelecimento dos valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) aprovar a homologação do valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à distribuidora para custeio dos subsídios retirados da estrutura tarifária.",
+        orderOfJudgment: "3",
+        administrativeAct: "Minutas de voto",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.003977-2025-31.pdf",
+        briefDecision: "RTA homologado (ESS)",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
-        votoSummary: null
+        votoSummary: "O voto da relatora Ludmila Lima da Silva propõe homologar o Reajuste Tarifário Anual da Energisa Sul Sudeste, com efeito médio de 19,05% a partir de 12 de julho de 2025. O reajuste é influenciado pela retirada de componentes financeiros negativos do ciclo anterior e pelo aumento de CDE (Uso e GD). A distribuidora argumentou sobre a gestão tarifária para evitar oscilações bruscas. Houve apresentação técnica do servidor Leonardo de Araújo Silva (STR) e sustentação oral do Sr. Fernando Cezar Maia (ESS). A diretoria aprovou por unanimidade."
       },
       {
         originalItemNumber: 3,
         process: "48500.003865/2024-07",
-        subject: "Resultado da Consulta Pública nº 8/2025, instituída com vistas a colher subsídios e informações adicionais para a regulamentação de financeiros de diferimento em processos tarifários de distribuição.", // Assunto completo
+        subject: "Resultado da Consulta Pública nº 8/2025, instituída com vistas a colher subsídios e informações adicionais para a regulamentação de financeiros de diferimento em processos tarifários de distribuição.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Ludimila Lima da Silva",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretoria, por unanimidade, decidiu aprovar a regulamentação de financeiros de diferimento em processos tarifários de distribuição.",
+        orderOfJudgment: "5",
         administrativeAct: null,
         actLink: null,
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "Aprovado",
         technicalPresentationLink: null,
-        consultaPublicaLink: null,
-        votoSummary: null
+        consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=baBgyv6U&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3917&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica",
+        votoSummary: "O voto da relatora Ludmila Lima da Silva propõe aprovar a regulamentação de financeiros de diferimento em processos tarifários de distribuição. A proposta visa atender a uma recomendação do TCU sobre a análise de impactos futuros de diferimentos tarifários, buscando reduzir a volatilidade das tarifas. A regulamentação define critérios de elegibilidade (faixa de excepcionalidade e amplitude) e quantificação do diferimento. Houve sustentação oral do Deputado Federal Thiago Flores e apresentação técnica do servidor Marcelo Hlebetz de Souza (STR). A diretoria aprovou por unanimidade."
       },
       {
         originalItemNumber: 4,
         process: "48500.001390/2024-14",
-        subject: "Resultado da Consulta Pública nº 28/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento regulatório específico para os empreendimentos abarcados pela Medida Provisória nº 1.212/2024, referente à postergação dos Contratos de Uso do Sistema de Transmissão – CUSTs por período superior a 12 (doze) meses.", // Assunto completo
+        subject: "Resultado da Consulta Pública nº 28/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento regulatório específico para os empreendimentos abarcados pela Medida Provisória nº 1.212/2024, referente à postergação dos Contratos de Uso do Sistema de Transmissão – CUSTs por período superior a 12 (doze) meses.",
         areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
         relator: "Fernando Luiz Mosna Ferreira da Silva",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretoria, por maioria, vencidos os Diretores Fernando Luiz Mosna Ferreira da Silva e Ricardo Lavorato Tili e acompanhando o voto-vista da Diretora Agnes Maria de Aragão da Costa, decidiu: (i) facultar aos titulares das centrais geradoras abarcadas pela Medida Provisória nº 1.212/2024 tratamento regulatório excepcional no que tange à prorrogação do Contrato de Uso do Sistema de Transmissão – CUST nos termos do voto-vista apresentado; e (ii) estabelecer o prazo de 60 (sessenta) dias para que o gerador formule o pedido de prorrogação dos CUST junto ao Operador Nacional do Sistema Elétrico – ONS, observando-se as condicionantes estabelecidas no voto da Diretora-Relatora do voto vista.",
+        orderOfJudgment: "6",
         administrativeAct: null,
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "Aprovado (com voto-vista)",
         technicalPresentationLink: null,
-        consultaPublicaLink: null,
-        votoSummary: null, // Removido o resumo do voto
-        votoVistaRelator: "Agnes Maria de Aragão da Costa" // Diretor(a)-Relator(a) do Voto-Vista adicionado
+        consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BqLpWJEZ&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3891&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica",
+        votoSummary: "O voto da relatora do voto-vista Agnes Maria de Aragão da Costa propõe facultar tratamento regulatório excepcional para a prorrogação de CUSTs de empreendimentos abarcados pela MP nº 1.212/2024. A proposta é que a prorrogação seja onerosa, com encargo de postergação progressivo e encargo de ajuste parcelado em até 12 meses, além de exigir aporte de GPC para quem não o fez. A procuradoria federal entende que a ANEEL tem competência para tal regulamentação. A decisão final da Diretoria foi por maioria, acompanhando o voto-vista da Diretora Agnes."
       },
       {
         originalItemNumber: 6,
         process: "48500.001747/2020-22",
-        subject: "Resultado da Consulta Pública nº 5/2021, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento a ser dado pelas distribuidoras de energia elétrica aos créditos tributários decorrentes de processos judiciais que versam sobre a exclusão do Imposto sobre Circulação de Mercadorias e Serviços – ICMS da base de cálculo dos Programas de Integração Social e de Formação do Patrimônio do Servidor Público – PIS/PASEP e da Contribuição para Financiamento da Seguridade Social – COFINS.", // Assunto completo
+        subject: "Resultado da Consulta Pública nº 5/2021, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento a ser dado pelas distribuidoras de energia elétrica aos créditos tributários decorrentes de processos judiciais que versam sobre a exclusão do Imposto sobre Circulação de Mercadorias e Serviços – ICMS da base de cálculo dos Programas de Integração Social e de Formação do Patrimônio do Servidor Público – PIS/PASEP e da Contribuição para Financiamento da Seguridade Social – COFINS.",
         areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
         relator: "Fernando Luiz Mosna Ferreira da Silva",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
-        administrativeAct: null,
-        actLink: null,
-        briefDecision: "Aguardando deliberação",
+        decision: "O processo não foi deliberado em decorrência do término da reunião e será inscrito na pauta da próxima reunião da Diretoria, conforme disposto no art. 25 da Norma de Organização nº 18 (Resolução Normativa nº 698/2015).",
+        orderOfJudgment: "15",
+        administrativeAct: "Minutas de voto e ato",
+        actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001747-2020-22.pdf",
+        briefDecision: "Não deliberado",
         technicalPresentationLink: null,
-        consultaPublicaLink: null,
-        votoSummary: null
+        consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BqLpWJEZ&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3507&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica",
+        votoSummary: "O processo não foi deliberado em decorrência do término da reunião e será inscrito na pauta da próxima reunião da Diretoria."
       },
       {
         originalItemNumber: 9,
         process: "48500.001526/2023-05",
-        subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A. em face do Despacho nº 3.309/2024, que negou provimento ao Pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.", // Assunto completo
+        subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A. em face do Despacho nº 3.309/2024, que negou provimento ao Pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.",
         areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
         relator: "Ricardo Lavorato Tili",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretora Agnes Maria de Aragão da Costa pediu vista deste processo. A Diretoria-Relatora do voto-vista, Ludimila Lima da Silva, votou no sentido de conhecer e, no mérito, negar provimento ao Pedido de Reconsideração interposto pela Light Serviços de Distribuição S.A. em face do Despacho nº 3.309/2024. O Diretor Daniel Cardoso Danna não participou da deliberação. O Diretor-Relator Ricardo Lavorato Tili havia votado anteriormente por conhecer e dar parcial provimento ao Pedido de Reconsideração.",
+        orderOfJudgment: "7",
         administrativeAct: null,
         actLink: null,
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "Pedido de vista",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
-        votoSummary: null
+        votoSummary: "O voto-vista da relatora Ludmila Lima da Silva propõe negar provimento ao Pedido de Reconsideração da Light, mantendo a decisão que indeferiu a RTE para alteração dos percentuais de perdas não técnicas da RTP de 2022. O voto argumenta que a matéria está preclusa e que a RTE não se presta a rediscutir parâmetros já definidos. A procuradoria federal também se manifestou pela inadmissibilidade. O processo teve pedido de vista da Diretora Agnes Maria de Aragão da Costa."
       },
       {
         originalItemNumber: 10,
         process: "48500.001671/2024-69",
-        subject: "Resultado da Revisão Tarifária Extraordinária da permissionária de distribuição Cooperativa de Distribuição de Energia Entre Rios Ltda. – Certhil.", // Assunto completo
+        subject: "Resultado da Revisão Tarifária Extraordinária da permissionária de distribuição Cooperativa de Distribuição de Energia Entre Rios Ltda. – Certhil.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Agnes Maria de Aragão da Costa",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretoria, por unanimidade, decidiu deferir o pedido de Revisão Tarifária Extraordinária da Cooperativa de Distribuição de Energia Entre Rios Ltda. – Certhil e redefinir a nova Parcela B de equilíbrio da permissionária em R$ 24.680.667,00 (vinte e quatro milhões, seiscentos e oitenta mil, seiscentos e sessenta e sete reais) referenciada em novembro de 2023 nos termos das Notas Técnicas nº 139/2025-STR/ANEEL e nº 140/2025-STR/ANEEL.",
+        orderOfJudgment: "16",
         administrativeAct: "Minutas de voto e ato",
         actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901671-2024-69.pdf",
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "RTE deferida (Certhil)",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
         votoSummary: "O voto da relatora Agnes Maria de Aragão da Costa propõe deferir o pedido de RTE da Certhil. O desequilíbrio econômico-financeiro foi evidenciado devido a investimentos da empresa não considerados na base de remuneração regulatória. O voto sugere redefinir a Parcela B de equilíbrio da permissionária em R$ 24.680.667 (novembro/2023), com aplicação retroativa e incorporação gradual de um fator de flexibilização de 20% ao longo do ciclo tarifário, iniciando com 5%."
@@ -140,14 +181,14 @@
       {
         originalItemNumber: 11,
         process: "48500.001672/2024-11",
-        subject: "Resultado da Revisão Tarifária Extraordinária da permissionária de distribuição Cooperativa de Distribuição de Energia Elétrica de Castro – Castro-DIS.", // Assunto completo
+        subject: "Resultado da Revisão Tarifária Extraordinária da permissionária de distribuição Cooperativa de Distribuição de Energia Elétrica de Castro – Castro-DIS.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Agnes Maria de Aragão da Costa",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretoria, por unanimidade, decidiu deferir o pedido de Revisão Tarifária Extraordinária – RTE da Cooperativa de Distribuição de Energia Elétrica de Castro – Castro-DIS e redefinir a nova Parcela B de equilíbrio da permissionária em R$ 5.532.620,00 (cinco milhões, quinhentos e trinta e dois mil, seiscentos e vinte reais) referenciada em janeiro de 2024, nos termos das Notas Técnicas nº 144/2025-STR/ANEEL e nº 145/2025-STR/ANEEL.",
+        orderOfJudgment: "17",
         administrativeAct: "Minutas de voto e ato",
         actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901672-2024-11.pdf",
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "RTE deferida (Castro-DIS)",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
         votoSummary: "O voto da relatora Agnes Maria de Aragão da Costa propõe deferir o pedido de RTE da Castro-DIS. O desequilíbrio foi causado pela transferência de ativos da Copel-DIS para a Castro-DIS, que não foi refletida na Parcela B regulatória. O voto sugere redefinir a Parcela B de equilíbrio em R$ 5.532.620 (janeiro/2024), com aplicação retroativa e incorporação gradual de um fator de flexibilização de 20% ao longo do ciclo tarifário, iniciando com 5%."
@@ -155,14 +196,14 @@
       {
         originalItemNumber: 12,
         process: "48500.003976/2025-96",
-        subject: "Reajuste Tarifário Anual da Enel Distribuição São Paulo – Enel SP, a vigorar a partir de 4 de julho de 2025.", // Assunto completo
+        subject: "Reajuste Tarifário Anual da Enel Distribuição São Paulo – Enel SP, a vigorar a partir de 4 de julho de 2025.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Agnes Maria de Aragão da Costa",
-        decision: "", // Decisão ainda não deliberada
-        orderOfJudgment: "", // Ordem de julgamento a ser preenchida após a reunião
+        decision: "A Diretoria, por unanimidade, decidiu: (i) homologar o índice de Reajuste Tarifário Anual da Enel Distribuição São Paulo – Enel SP, a vigorar a partir de 4 de julho de 2025, que conduz ao efeito médio a ser percebido pelos consumidores de 13,94%, sendo 15,77% para os consumidores em Alta Tensão e 13,47% em média para os consumidores em Baixa Tensão; (ii) fixar as Tarifas de Uso dos Sistemas de Distribuição – TUSD e as Tarifas de Energia Elétrica – TE aplicáveis aos consumidores e usuários da Enel SP; (iii) estabelecer os valores da receita anual referente às instalações de conexão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) homologar o valor mensal de recursos da Conta de Desenvolvimento Energético – CDE a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à Enel SP, de modo a custear os descontos retirados da estrutura tarifária.",
+        orderOfJudgment: "4",
         administrativeAct: "Minutas de voto e ato",
         actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003976-2025-966.pdf",
-        briefDecision: "Aguardando deliberação",
+        briefDecision: "RTA homologado (Enel SP)",
         technicalPresentationLink: null,
         consultaPublicaLink: null,
         votoSummary: "O voto da relatora Agnes Maria de Aragão da Costa propõe homologar o RTA de 2025 da Enel SP. O reajuste resulta em um efeito médio percebido pelos consumidores de 13,94%, a vigorar a partir de 4 de julho de 2025. O voto detalha que o ajuste considera o reajuste dos custos de Parcela A e B, a inclusão de componentes financeiros positivos e negativos, e a reversão de valores da Conta Escassez Hídrica devido à sua quitação antecipada."
@@ -170,7 +211,7 @@
     ];
 
     const youtubeLink = "https://www.youtube.com/live/zwmZqcBj-Tc?si=kIYmv7s255GYG5Yly"; // Link do YouTube da 23ª RPO
-    const i4LogoUrl = "https://i4economicregulation.com.br/templates/yootheme/cache/a9/logo-a97de1b1.png"; // URL da logo da i4
+    const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true"; // URL da logo da i4
 
     // Função para criar elementos HTML
     function createElement(tag, classes, textContent, attributes = {}) {
@@ -192,10 +233,6 @@
       const logoDiv = createElement('div', 'flex items-center space-x-3 mb-4 sm:mb-0');
       const logoImg = createElement('img', 'h-10 w-auto rounded-md', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation Logo' });
       logoImg.onerror = () => { logoImg.src = "https://placehold.co/100x40/cccccc/333333?text=Logo"; }; // Fallback para a logo
-      // Removendo o título H1 ao lado da logo
-      // const titleH1 = createElement('h1', 'text-xl sm:text-2xl font-bold text-blue-800', 'Pauta da Reunião ANEEL');
-      logoDiv.appendChild(logoImg);
-      // logoDiv.appendChild(titleH1); // Título removido aqui
       header.appendChild(logoDiv);
       appContainer.appendChild(header);
 
@@ -223,47 +260,51 @@
 
       aneelAgenda.forEach(item => {
         const listItem = createElement('li', 'text-gray-700 text-sm sm:text-base');
+        const itemLink = createElement('a', 'text-blue-700 hover:underline', null, { href: `#item-${item.originalItemNumber}` });
         const itemNumberSpan = createElement('span', 'font-bold', `Item ${item.originalItemNumber}: `);
         
         // Aplica as substituições APENAS para a string que será exibida no sumário
         let summarySubject = String(item.subject || ''); // Garante que é uma string
         
         // Substituições de nomes de empresas - mais específicas primeiro
-        summarySubject = summarySubject.replace(/Energisa Tocantins – Distribuidora de Energia S\.A\. – ETO/g, 'ETO');
-        summarySubject = summarySubject.replace(/Energisa Sul Sudeste - Distribuidora de Energia S\.A\. – ESS/g, 'ESS');
-        summarySubject = summarySubject.replace(/Enel Distribuição São Paulo – Enel SP/g, 'Enel SP');
-        summarySubject = summarySubject.replace(/Cooperativa de Distribuição de Energia Elétrica de Castro – Castro-DIS/g, 'Castro-DIS');
-        summarySubject = summarySubject.replace(/Cooperativa de Distribuição de Energia Entre Rios Ltda\. – Certhil/g, 'Certhil');
+        // Usar regex com word boundary \b para evitar substituições parciais
+        summarySubject = summarySubject.replace(/\bEnergisa Tocantins – Distribuidora de Energia S\.A\. – ETO\b/g, 'ETO');
+        summarySubject = summarySubject.replace(/\bEnergisa Sul Sudeste - Distribuidora de Energia S\.A\. – ESS\b/g, 'ESS');
+        summarySubject = summarySubject.replace(/\bEnel Distribuição São Paulo – Enel SP\b/g, 'Enel SP');
+        summarySubject = summarySubject.replace(/\bCooperativa de Distribuição de Energia Elétrica de Castro – Castro-DIS\b/g, 'Castro-DIS');
+        summarySubject = summarySubject.replace(/\bCooperativa de Distribuição de Energia Entre Rios Ltda\. – Certhil\b/g, 'Certhil');
 
         // Substituições de termos gerais
-        summarySubject = summarySubject.replace(/Reajuste Tarifário Anual/g, 'RTA');
-        summarySubject = summarySubject.replace(/Consulta Pública/g, 'CP');
-        summarySubject = summarySubject.replace(/Revisão Tarifária Extraordinária/g, 'RTE');
-        summarySubject = summarySubject.replace(/Medida Provisória/g, 'MP');
-        summarySubject = summarySubject.replace(/Contratos de Uso do Sistema de Transmissão –/g, ''); 
-        summarySubject = summarySubject.replace(/Revisão Tarifária Periódica/g, 'RTP');
+        summarySubject = summarySubject.replace(/\bReajuste Tarifário Anual\b/g, 'RTA');
+        summarySubject = summarySubject.replace(/\bConsulta Pública\b/g, 'CP');
+        summarySubject = summarySubject.replace(/\bRevisão Tarifária Extraordinária\b/g, 'RTE');
+        summarySubject = summarySubject.replace(/\bMedida Provisória\b/g, 'MP');
+        summarySubject = summarySubject.replace(/\bContratos de Uso do Sistema de Transmissão –\b/g, ''); 
+        summarySubject = summarySubject.replace(/\bRevisão Tarifária Periódica\b/g, 'RTP');
 
         // Substituições adicionadas para o item 6 e limpeza de repetições
-        summarySubject = summarySubject.replace(/Imposto sobre Circulação de Mercadorias e Serviços –/g, '');
-        summarySubject = summarySubject.replace(/Programas de Integração Social e de Formação do Patrimônio do Servidor Público –/g, '');
-        summarySubject = summarySubject.replace(/e Contribuição para Financiamento da Seguridade Social –/g, '');
+        summarySubject = summarySubject.replace(/\bImposto sobre Circulação de Mercadorias e Serviços –\b/g, '');
+        summarySubject = summarySubject.replace(/\bProgramas de Integração Social e de Formação do Patrimônio do Servidor Público –\b/g, '');
+        summarySubject = summarySubject.replace(/\be Contribuição para Financiamento da Seguridade Social –\b/g, '');
 
-        // Limpeza de possíveis duplicações remanescentes
-        summarySubject = summarySubject.replace(/ETO ETO/g, 'ETO');
-        summarySubject = summarySubject.replace(/ESS ESS/g, 'ESS');
-        summarySubject = summarySubject.replace(/Enel SP Enel SP/g, 'Enel SP');
-        summarySubject = summarySubject.replace(/Castro-DIS Castro-DIS/g, 'Castro-DIS');
-        summarySubject = summarySubject.replace(/Certhil Certhil/g, 'Certhil');
-        summarySubject = summarySubject.replace(/ICMS ICMS/g, 'ICMS'); 
-        summarySubject = summarySubject.replace(/PIS\/PASEP PIS\/PASEP/g, 'PIS/PASEP'); 
-        summarySubject = summarySubject.replace(/COFINS COFINS/g, 'COFINS'); 
+        // Limpeza de possíveis duplicações remanescentes (usando regex para múltiplas ocorrências e espaços)
+        summarySubject = summarySubject.replace(/(ETO\s*){2,}/g, 'ETO');
+        summarySubject = summarySubject.replace(/(ESS\s*){2,}/g, 'ESS');
+        summarySubject = summarySubject.replace(/(Enel SP\s*){2,}/g, 'Enel SP');
+        summarySubject = summarySubject.replace(/\bCastro-DIS\b\s*(\bCastro-DIS\b\s*)+/g, 'Castro-DIS'); // Regex para corrigir multiplas ocorrencias de Castro-DIS
+        summarySubject = summarySubject.replace(/(Certhil\s*){2,}/g, 'Certhil');
+        summarySubject = summarySubject.replace(/(ICMS\s*){2,}/g, 'ICMS'); 
+        summarySubject = summarySubject.replace(/(PIS\/PASEP\s*){2,}/g, 'PIS/PASEP'); 
+        summarySubject = summarySubject.replace(/(COFINS\s*){2,}/g, 'COFINS'); 
 
 
         const subjectSpan = createElement('span', null, `${summarySubject} - `); 
         const briefDecisionSpan = createElement('span', 'font-semibold text-blue-700', item.briefDecision);
-        listItem.appendChild(itemNumberSpan);
-        listItem.appendChild(subjectSpan);
-        listItem.appendChild(briefDecisionSpan);
+        
+        itemLink.appendChild(itemNumberSpan);
+        itemLink.appendChild(subjectSpan);
+        itemLink.appendChild(briefDecisionSpan);
+        listItem.appendChild(itemLink);
         summaryList.appendChild(listItem);
       });
       summaryDiv.appendChild(summaryTitle);
@@ -273,19 +314,57 @@
       // Itens da Pauta
       const agendaGrid = createElement('div', 'grid grid-cols-1 gap-4 sm:gap-6');
       aneelAgenda.forEach(item => {
-        const itemDiv = createElement('div', 'bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-200');
-        itemDiv.appendChild(createElement('h3', 'text-lg sm:text-xl font-semibold text-blue-700 mb-2', `Item ${item.originalItemNumber}: Processo: ${item.process}`));
-        itemDiv.appendChild(createElement('p', 'text-gray-900 text-sm sm:text-base mb-2', `Assunto: ${item.subject}`)); // Assunto completo aqui
-        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Área Responsável: ${item.areaResponsible}`));
-        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Relator(a): ${item.relator}`));
+        const itemDiv = createElement('div', 'bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-200', null, { id: `item-${item.originalItemNumber}` });
+        
+        // Assunto do Item
+        const h3Subject = createElement('h3', 'text-lg sm:text-xl font-semibold text-blue-700 mb-2');
+        h3Subject.innerHTML = `Item ${item.originalItemNumber}: Processo: ${item.process}`;
+        itemDiv.appendChild(h3Subject);
+
+        // Assunto Completo
+        const pAssunto = createElement('p', 'text-gray-900 text-sm sm:text-base mb-2');
+        pAssunto.innerHTML = `<strong>Assunto:</strong> ${item.subject}`;
+        itemDiv.appendChild(pAssunto);
+
+        // Área Responsável
+        const pAreaResponsavel = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
+        pAreaResponsavel.innerHTML = `<strong>Área Responsável:</strong> ${item.areaResponsible}`;
+        itemDiv.appendChild(pAreaResponsavel);
+
+        // Relator(a)
+        const pRelator = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
+        pRelator.innerHTML = `<strong>Relator(a):</strong> ${item.relator}`;
+        itemDiv.appendChild(pRelator);
         
         // Adiciona Diretor(a)-Relator(a) do Voto-Vista se existir
         if (item.originalItemNumber === 4 && item.votoVistaRelator) {
-          itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Diretor(a)-Relator(a) do Voto-Vista: ${item.votoVistaRelator}`));
+          const pVotoVistaRelator = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
+          pVotoVistaRelator.innerHTML = `<strong>Diretor(a)-Relator(a) do Voto-Vista:</strong> ${item.votoVistaRelator}`;
+          itemDiv.appendChild(pVotoVistaRelator);
         }
 
-        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Decisão: ${item.decision}`));
-        itemDiv.appendChild(createElement('p', 'text-gray-700 text-sm sm:text-base mb-2', `Ordem de Julgamento: ${item.orderOfJudgment}`));
+        // Decisão
+        const pDecisao = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
+        pDecisao.innerHTML = `<strong>Decisão:</strong> ${item.decision}`;
+        itemDiv.appendChild(pDecisao);
+
+        // Adicionar a tabela de perdas de energia para o Item 1, se aplicável
+        if (item.originalItemNumber === 1 && item.tableImageSrc) {
+          const tableImage = createElement('img', 'w-full h-auto rounded-md object-cover mt-3', null, { 
+            src: item.tableImageSrc, 
+            alt: "Tabela de Referencial Regulatório para Perdas de Energia" 
+          });
+          tableImage.onerror = () => { tableImage.src = "https://placehold.co/552x96/cccccc/333333?text=Tabela+de+Perdas+de+Energia"; }; // Fallback
+          const tableContainer = createElement('div', 'mt-4 pt-4 border-t border-gray-200');
+          tableContainer.innerHTML = `<h4>Tabela de Referencial Regulatório para Perdas de Energia:</h4>`;
+          tableContainer.appendChild(tableImage);
+          itemDiv.appendChild(tableContainer);
+        }
+
+        // Ordem de Julgamento
+        const pOrdemJulgamento = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
+        pOrdemJulgamento.innerHTML = `<strong>Ordem de Julgamento:</strong> ${item.orderOfJudgment}`;
+        itemDiv.appendChild(pOrdemJulgamento);
 
         if (item.votoSummary) { // Campo para o resumo do voto
           const votoSummaryP = createElement('p', 'text-gray-700 text-sm sm:text-base mb-2');
@@ -305,8 +384,15 @@
           itemDiv.appendChild(actP);
         }
 
-        // Não há seções de apresentação ou consulta pública específicas para esta nova pauta.
-        // Se precisar re-adicionar estas seções para itens específicos, por favor, forneça os links e condições.
+        // Adicionar o link da Consulta Pública se existir
+        if (item.consultaPublicaLink) {
+          const cpLinkP = createElement('p', 'text-gray-700 text-sm sm:text-base');
+          const cpLinkAnchor = createElement('a', 'text-blue-500 hover:underline break-words', null, { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' });
+          const strongText = createElement('strong', null, 'Link para a Consulta Pública');
+          cpLinkAnchor.appendChild(strongText);
+          cpLinkP.appendChild(cpLinkAnchor);
+          itemDiv.appendChild(cpLinkP);
+        }
 
         agendaGrid.appendChild(itemDiv);
       });
@@ -321,7 +407,7 @@
     }
 
     // Renderizar o dashboard quando o DOM estiver pronto
-    renderDashboard(); // Chamada direta da função
+    document.addEventListener('DOMContentLoaded', renderDashboard);
   </script>
 </body>
 </html>
