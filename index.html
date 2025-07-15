@@ -41,11 +41,10 @@
 
     // Mapeamento de status para a Pauta da Reunião
     const pautaStatusMap = {
-      scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800" },
-      approved_with_conditions: { text: "Aprovado com Voto-Vista", classes: "bg-teal-100 text-teal-800" },
+      withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800" },
-      postponed: { text: "Não Deliberado", classes: "bg-red-100 text-red-800" },
+      suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800" },
     };
 
     // Mapeamento de status para Consultas Públicas
@@ -61,9 +60,13 @@
             process: "48500.000973/2025-09",
             subject: "Aprovação do Edital do Leilão de Energia Nova “A-5” de 2025, destinado à compra de energia elétrica proveniente de novos empreendimentos de geração, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 12/2025.",
             areaResponsible: "Secretaria de Leilões - SEL.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "Minuta de voto não disponível publicamente antes da reunião."
+            relator: "Agnes Maria de Aragao da Costa",
+            status: "withdrawn",
+            decision: "O processo foi retirado de pauta durante o debate dos Diretores, devido à incerteza jurídica sobre o preço-teto do leilão após a edição da Medida Provisória nº 1.304/2025, que revogou o Artigo 21 da Lei nº 14.182/2021, base legal para o preço definido no edital. A Diretora-Relatora, Agnes Costa, decidiu pela retirada para que a Procuradoria da ANEEL possa se manifestar formalmente sobre a questão, garantindo a segurança jurídica do certame.",
+            details: "Houve apresentação técnica por parte do servidor Igor Barra Caminha (SEL) e sustentações orais por Roberta Negrão Costa Wachholz (CBAr) e Renata Menescal Carneiro (Abragel).",
+            orderOfJudgment: "3",
+            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=Eoc2TnbU&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3922&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica",
+            technicalPresentationLink: "https://github.com/Jacquei4/RPO_ANEEL/blob/main/Apresenta%C3%A7%C3%A3o%20T%C3%A9cnica_item_1_25_rpo.pdf"
         },
         {
             originalItemNumber: 3,
@@ -71,8 +74,12 @@
             subject: "Estabelecimento das Receitas Anuais Permitidas – RAP das concessionárias de transmissão de energia elétrica, das Tarifas de Uso do Sistema de Transmissão de Energia Elétrica – TUST, da Tarifa de Transporte da Energia Elétrica Proveniente de Itaipu Binacional, dos Encargos de Uso do Sistema de Transmissão – EUST e das Tarifas de Uso do Sistema de Distribuição de referência para Centrais Geradoras conectadas nos níveis de tensão de 88 kV E 138 kV – TUSDg, para o ciclo 2025-2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Minuta de voto não disponível publicamente antes da reunião."
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu estabelecer os valores das Tarifas de Uso do Sistema de Transmissão (TUST) e as Receitas Anuais Permitidas (RAP) para o ciclo 2025-2026, entre outras providências.",
+            details: "Houve apresentação técnica por parte do servidor Mateus de Oliveira Ferreira (STR) e sustentação oral por parte do Sr. Thiago Aragão Soares (Abrate).",
+            orderOfJudgment: "2",
+            oralArgumentLink: "https://github.com/Jacquei4/RPO_ANEEL/blob/main/Sustenta%C3%A7%C3%A3o%20Oral%20-%20ABRATE_25_rpo.pdf",
+            technicalPresentationLink: "https://github.com/Jacquei4/RPO_ANEEL/blob/main/Apresenta%C3%A7%C3%A3o%20T%C3%A9cnica_item_3_25_rpo.pdf"
         },
         {
             originalItemNumber: 4,
@@ -80,8 +87,12 @@
             subject: "Proposta de Orçamento Anual da Conta de Desenvolvimento Energético – CDE de 2025, após a análise das contribuições recebidas na Consulta Pública nº 38/2024.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Minuta de voto não disponível publicamente antes da reunião."
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu aprovar o orçamento anual da CDE de 2025 no valor total de R$ 49,227 bilhões, entre outras providências.",
+            details: "Houve apresentação técnica por parte do servidor André Valter Feil (STR).",
+            orderOfJudgment: "4",
+            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=EgQYDBcq&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3904&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica",
+            technicalPresentationLink: "https://github.com/Jacquei4/RPO_ANEEL/blob/main/Apresenta%C3%A7%C3%A3o%20T%C3%A9cnica_item_4_25_rpo.pdf"
         },
         {
             originalItemNumber: 7,
@@ -89,32 +100,39 @@
             subject: "Resultado da Consulta Pública nº 5/2021, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento a ser dado pelas distribuidoras de energia elétrica aos créditos tributários decorrentes de processos judiciais que versam sobre a exclusão do Imposto sobre Circulação de Mercadorias e Serviços – ICMS da base de cálculo dos Programas de Integração Social e de Formação do Patrimônio do Servidor Público – PIS/PASEP e da Contribuição para Financiamento da Seguridade Social – COFINS.",
             areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            votoVistaRelator: "Agnes Maria de Aragão da Costa",
+            votoVistaRelator: "Agnes Maria de Aragao da Costa",
+            status: "suspended",
+            decision: "Tendo em vista a ausência de 3 votos convergentes, a deliberação do processo fica suspensa, retornando à pauta na primeira reunião subsequente com quórum completo.",
+            orderOfJudgment: "8",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901747-2020-22_voto-original.pdf",
             actLinkVista: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901747-2020-22_voto-vista.pdf",
-            status: "scheduled",
-            votoSummary: "O voto original do Diretor Fernando Mosna propõe que a devolução dos créditos tributários (ICMS na base do PIS/COFINS) seja realizada via processo tarifário, com correção pela SELIC, e que os valores já devolvidos administrativamente sejam compensados. O voto-vista da Diretora Agnes Costa diverge, propondo que a devolução ocorra preferencialmente via CDE para evitar impactos diretos na tarifa, além de ajustar o tratamento dos honorários advocatícios, sugerindo que 80% sejam revertidos para a modicidade tarifária."
+            votoSummary: "O voto original do Diretor Fernando Mosna propõe que a devolução dos créditos tributários seja realizada via processo tarifário, com correção pela SELIC. O voto-vista da Diretora Agnes Costa diverge, propondo que a devolução ocorra preferencialmente via CDE para evitar impactos diretos na tarifa e ajusta o tratamento dos honorários advocatícios.",
+            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=EgQYDBcq&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3507&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
             originalItemNumber: 10,
             process: "48500.004373/2021-88",
-            subject: "Pedidos de Reconsideração interpostos por diversas associações em face da Resolução Normativa nº 1.103/2024 (Reserva de Capacidade).",
+            subject: "Pedidos de Reconsideração interpostos pela Associação Brasileira de Grandes Consumidores Industriais de Energia e Consumidores Livres – Abrace, Associação Brasileira dos Investidores em Autoprodução de Energia – Abiape, Associação Brasileira de Energia Eólica e Novas Tecnologias – ABEEólica, Associação Brasileira de Energia Solar Fotovoltaica – Absolar e Casa dos Ventos S.A. em face da Resolução Normativa nº 1.103/2024, que alterou as Resoluções Normativas nº 1.009/2022 e nº 957/2021; estabeleceu as disposições relativas à contratação de Reserva de Capacidade, na forma de potência; aprovou o modelo do Contrato de Uso de Potência para Reserva de Capacidade – COPCAP; e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Agnes Maria de Aragão da Costa",
+            relator: "Agnes Maria de Aragao da Costa",
+            status: "view_request",
+            decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo.",
+            orderOfJudgment: "11",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.904373-2021-88.pdf",
-            status: "scheduled",
-            votoSummary: "A minuta de voto da Diretora Agnes Costa propõe conhecer os Pedidos de Reconsideração e, no mérito, dar provimento parcial. A proposta principal é ajustar a Resolução Normativa nº 1.103/2024 para esclarecer que a contratação de reserva de capacidade se aplica a todos os consumidores do SIN, incluindo os livres e especiais, e não apenas aos consumidores cativos das distribuidoras. O voto também sugere ajustes nos procedimentos da CCEE para garantir a correta alocação dos custos e a neutralidade do encargo."
+            votoSummary: "A minuta de voto da Diretora Agnes Costa propõe conhecer os Pedidos de Reconsideração e, no mérito, dar provimento parcial para ajustar a REN nº 1.103/2024, esclarecendo que a contratação de reserva de capacidade se aplica a todos os consumidores do SIN, e não apenas aos cativos."
         },
         {
             originalItemNumber: 35,
             process: "48500.002691/2024-57",
-            subject: "Prorrogação do prazo de pedido de vista referente ao Aperfeiçoamento da regulamentação sobre o compartilhamento de postes entre distribuidoras e prestadoras de serviços de telecomunicações.",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Aperfeiçoamento da regulamentação sobre o compartilhamento de postes entre distribuidoras de energia elétrica e prestadoras de serviços de telecomunicações, considerando as disposições do Decreto nº 12.068/2024.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Ricardo Lavorato Tili",
-            votoVistaRelator: "Agnes Maria de Aragão da Costa",
+            votoVistaRelator: "Agnes Maria de Aragao da Costa",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu conceder prazo adicional de 60 dias para apresentação do voto-vista.",
+            orderOfJudgment: "35",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.002691-2024-57.pdf",
-            status: "scheduled",
-            votoSummary: "A minuta de voto propõe a prorrogação do prazo do pedido de vista, solicitado pela Diretora Agnes Costa, para aprofundar a análise sobre a regulamentação do compartilhamento de postes. A complexidade do tema, que envolve a revisão da Resolução Conjunta ANEEL/ANATEL nº 4/2014 e os impactos do novo Decreto nº 12.068/2024, justifica a necessidade de mais tempo para avaliação."
+            votoSummary: "A minuta de voto propõe a prorrogação do prazo do pedido de vista para aprofundar a análise sobre a regulamentação do compartilhamento de postes, dada a complexidade do tema e os impactos do novo Decreto nº 12.068/2024."
         }
     ];
     
@@ -124,8 +142,8 @@
             numero: "CP 027/2025",
             tema: "Aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.",
             status: "aberta",
-            inicio: "25/07/2025",
-            fim: "08/09/2025",
+            inicio: "03/07/2025",
+            fim: "18/08/2025",
             area: "STD",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -133,8 +151,8 @@
             numero: "CP 025/2025",
             tema: "Edital e Anexos dos Leilões de Energia Existente “A-1”, “A-2” e “A-3”, de 2025.",
             status: "aberta",
-            inicio: "22/07/2025",
-            fim: "05/09/2025",
+            inicio: "18/06/2025",
+            fim: "04/08/2025",
             area: "SEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3945&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -142,8 +160,8 @@
             numero: "CP 024/2025",
             tema: "Revisão Tarifária Periódica de 2025 da Energisa Paraíba – EPB.",
             status: "aberta",
-            inicio: "12/07/2025",
-            fim: "26/08/2025",
+            inicio: "04/06/2025",
+            fim: "18/07/2025",
             area: "STR",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3943&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -160,8 +178,8 @@
             numero: "TS 009/2025",
             tema: "Aprimoramento do Programa de Eficiência Energética - PEE.",
             status: "aberta",
-            inicio: "17/06/2025",
-            fim: "31/07/2025",
+            inicio: "01/07/2025",
+            fim: "30/07/2025",
             area: "SRD", 
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3947&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -169,7 +187,7 @@
             numero: "TS 007/2025",
             tema: "Guia Prático sobre Mudanças Climáticas e Transição Energética.",
             status: "aberta",
-            inicio: "20/06/2025",
+            inicio: "20/05/2025",
             fim: "04/08/2025",
             area: "SRD/SGM", 
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3939&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
@@ -225,14 +243,14 @@
     function renderPautaPage(container) {
         container.innerHTML = ''; // Limpa o container
         
-        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta da 25ª Reunião Pública Ordinária de 2025');
+        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados da 25ª Reunião Pública Ordinária de 2025');
         const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 15/07/2025');
         container.appendChild(pautaTitle);
         container.appendChild(pautaDate);
 
         // Link do YouTube
         const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-8');
-        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
         const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
         youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
         youtubeSection.appendChild(youtubeText);
@@ -241,17 +259,17 @@
 
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados');
         const summaryList = createElement('ul', 'space-y-3');
         
         const getSummarySubject = (subject) => {
             const replacements = [
                 { regex: /Leilão de Energia Nova “A-5” de 2025/i, acronym: "Edital Leilão A-5/2025" },
-                { regex: /Receitas Anuais Permitidas – RAP/i, acronym: "RAP Ciclo 2025-2026" },
-                { regex: /Conta de Desenvolvimento Energético – CDE de 2025/i, acronym: "Orçamento CDE 2025" },
-                { regex: /Consulta Pública nº 5\/2021/i, acronym: "CP 05/2021 - Créditos Tributários" },
-                { regex: /Resolução Normativa nº 1.103\/2024/i, acronym: "Recursos REN 1.103/2024 (Reserva de Capacidade)" },
-                { regex: /compartilhamento de postes/i, acronym: "Vista Compartilhamento de Postes" }
+                { regex: /Receitas Anuais Permitidas.*TUST/i, acronym: "RAP e TUST Ciclo 2025-2026" },
+                { regex: /Conta de Desenvolvimento Energético/i, acronym: "Orçamento CDE 2025" },
+                { regex: /créditos tributários.*ICMS/i, acronym: "CP 05/2021 - Créditos Tributários (ICMS na base PIS/COFINS)" },
+                { regex: /Reserva de Capacidade/i, acronym: "Recursos REN 1.103/2024 (Reserva de Capacidade)" },
+                { regex: /compartilhamento de postes/i, acronym: "Vista - Compartilhamento de Postes" }
             ];
             for (const r of replacements) {
                 if (r.regex.test(subject)) return r.acronym;
@@ -259,7 +277,7 @@
             return subject;
         };
 
-        aneelAgenda.forEach(item => {
+        aneelAgenda.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex items-center justify-between gap-4');
             const itemLink = createElement('a', 'text-gray-700 hover:text-blue-600 flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
             const itemNumberSpan = createElement('span', 'font-bold mr-2', `Item ${item.originalItemNumber}:`);
@@ -279,9 +297,9 @@
         aneelAgenda.forEach(item => {
             const itemDiv = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden', null, { id: `item-${item.originalItemNumber}` });
             
-            const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center');
+            const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-gray-800');
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} (Ordem: ${item.orderOfJudgment}) <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -306,6 +324,15 @@
             if (item.votoVistaRelator) {
                  infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
             }
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão', item.decision));
+            }
+             if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
+            if (item.oralArgumentSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Sustentações Orais', item.oralArgumentSummary));
+            }
             if (item.votoSummary) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
@@ -313,6 +340,11 @@
             cardBody.appendChild(infoContainer);
 
             const cardFooter = createElement('div', 'px-4 md:px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-wrap gap-4');
+            if (item.actNumber) {
+                const actText = createElement('span', 'inline-flex items-center text-sm font-medium text-red-600');
+                actText.innerHTML = `<strong>Ato Administrativo:</strong> ${item.actNumber}`;
+                cardFooter.appendChild(actText);
+            }
             if (item.actLink) {
                 const actAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Minuta de Voto', { href: item.actLink, target: '_blank', rel: 'noopener noreferrer' });
                 actAnchor.innerHTML = icons.link + actAnchor.innerHTML;
@@ -322,6 +354,21 @@
                 const actAnchorVista = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Minuta de Voto-Vista', { href: item.actLinkVista, target: '_blank', rel: 'noopener noreferrer' });
                 actAnchorVista.innerHTML = icons.link + actAnchorVista.innerHTML;
                 cardFooter.appendChild(actAnchorVista);
+            }
+             if (item.consultaPublicaLink) {
+                const cpAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Consulta Pública Relacionada', { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' });
+                cpAnchor.innerHTML = icons.link + cpAnchor.innerHTML;
+                cardFooter.appendChild(cpAnchor);
+            }
+            if (item.oralArgumentLink) {
+                const oralArgAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Sustentação Oral', { href: item.oralArgumentLink, target: '_blank', rel: 'noopener noreferrer' });
+                oralArgAnchor.innerHTML = icons.link + oralArgAnchor.innerHTML;
+                cardFooter.appendChild(oralArgAnchor);
+            }
+             if (item.technicalPresentationLink) {
+                const techPresAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Apresentação Técnica', { href: item.technicalPresentationLink, target: '_blank', rel: 'noopener noreferrer' });
+                techPresAnchor.innerHTML = icons.link + techPresAnchor.innerHTML;
+                cardFooter.appendChild(techPresAnchor);
             }
             if(cardFooter.hasChildNodes()){
                 const footerContainer = createElement('div', 'pt-4 mt-4 border-t border-gray-200');
@@ -419,7 +466,7 @@
       // Conteúdo Principal com Navegação
       const main = createElement('main', 'container mx-auto p-4 md:p-6');
       const navContainer = createElement('div', 'mb-6');
-      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md mr-2 bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Pauta da Reunião');
+      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md mr-2 bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Resultados da Reunião');
       const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Consultas e Subsídios');
       
       navContainer.appendChild(pautaButton);
