@@ -278,14 +278,18 @@
         };
 
         aneelAgenda.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex items-center justify-between gap-4');
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-gray-50');
             const itemLink = createElement('a', 'text-gray-700 hover:text-blue-600 flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
             const itemNumberSpan = createElement('span', 'font-bold mr-2', `Item ${item.originalItemNumber}:`);
-            const subjectSpan = createElement('span', 'truncate', getSummarySubject(item.subject));
+            const subjectSpan = createElement('span', '', getSummarySubject(item.subject));
             itemLink.appendChild(itemNumberSpan);
             itemLink.appendChild(subjectSpan);
+
+            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0');
+
             listItem.appendChild(itemLink);
-            listItem.appendChild(createStatusBadge(item.status, pautaStatusMap));
+            listItem.appendChild(statusBadge);
             summaryList.appendChild(listItem);
         });
         summaryDiv.appendChild(summaryTitle);
