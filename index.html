@@ -41,6 +41,7 @@
 
     // Mapeamento de status para a Pauta da Reunião
     const pautaStatusMap = {
+      scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800" },
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800" },
@@ -53,81 +54,36 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800" },
     };
 
-    // Dados da pauta da ANEEL para a 26ª Reunião Pública Ordinária
+    // Dados da pauta da ANEEL para a 27ª Reunião Pública Ordinária
     const aneelAgenda = [
         {
             originalItemNumber: 1,
-            process: "48500.000973/2025-09",
-            subject: "Aprovação do Edital do Leilão de Energia Nova 'A-5' de 2025, destinado à compra de energia elétrica proveniente de novos empreendimentos de geração, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 12/2025.",
-            areaResponsible: "Secretaria de Leilões - SEL.",
+            process: "48500.023472/2025-92",
+            subject: "Rebatimentos do Mecanismo Concorrencial previsto na Medida Provisória nº 1.300/2025, no direito aos descontos das Tarifas de Uso do Sistema de Transmissão e Contratos de Uso do Sistema de Distribuição – TUST/CUSD e no período do limite de extensão das respectivas outorgas.",
+            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por maioria, decidiu aprovar o Edital do Leilão de Energia Nova A-5 de 2025.",
-            details: "O Diretor Fernando Luiz Mosna Ferreira da Silva votou contra.",
-            orderOfJudgment: "3",
-            youtubeLink: "https://www.youtube.com/watch?v=JvjJzvj6zaY&t=324s",
-            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jKraO2Si&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3922&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+            status: "scheduled",
         },
         {
-            originalItemNumber: 5,
-            process: "48500.003864/2025-35",
-            subject: "Reajustes Tarifários Anuais das distribuidoras de energia elétrica Centrais Elétricas de Carazinho S.A. – Eletrocar, Departamento Municipal de Energia de Ijuí – Demei, Hidropan Distribuição de Energia S.A., Nova Palma Energia Ltda. e Muxfeldt, Marin & Cia. Ltda. – Mux Energia, a vigorarem a partir de 22 de julho de 2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar o índice de Reajuste Tarifário Anual – RTA das tarifas das concessionárias Centrais Elétricas de Carazinho S.A. – Eletrocar, Nova Palma Energia Ltda., Hidropan Distribuição de Energia S.A., Departamento Municipal de Energia de Ijuí – Demei e Muxfeldt, Marin & Cia. Ltda. – Mux Energia, a vigorar a partir de 22 de julho de 2025, que conduz ao efeito médio a ser percebido pelos consumidores; (ii) fixar as Tarifas de Uso dos Sistemas de Distribuição – TUSD e as Tarifas de Energia Elétrica – TE aplicáveis; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT; (iv) homologar o valor mensal de recursos da Conta de Desenvolvimento Energético – CDE a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE.<br><br><img src='https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/efeito_consumidores_item_5.png' alt='Efeito médio para os consumidores - Item 5' class='w-full max-w-lg mx-auto mt-4 rounded-lg shadow-md'>",
-            orderOfJudgment: "6",
-            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003864-2025-35.pdf"
+            originalItemNumber: 2,
+            process: "48500.007747/2022-06",
+            subject: "Requerimento Administrativo protocolado pela ISA Energia Brasil S.A. (Companhia de Transmissão de Energia Elétrica Paulista – ISA Cteep) em face do Despacho nº 1.228/2025, que deu parcial provimento aos Recursos Administrativos interpostos pela Requerente e outras em face da Resolução Homologatória nº 3.444/2024, aprovando as alterações no resultado da Revisão Periódica da Receita Anual Permitida – RAP dos Contratos de Concessão de Transmissão de Energia Elétrica prorrogados nos termos da Lei nº 12.783/2013, com data de revisão em julho de 2023.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Ricardo Lavorato Tili",
+            votoVistaRelator: "Sandoval de Araújo Feitosa Neto",
+            status: "scheduled",
         },
         {
-            originalItemNumber: 6,
-            process: "48500.003836/2025-18",
-            subject: "Reajuste Tarifário Anual das permissionárias com aniversário contratual em julho de 2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Daniel Cardoso Danna",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) aprovar os efeitos médios dos cálculos tarifários das permissionárias com data de aniversário em 30 de julho de 2025; (ii) fixar as Tarifas de Suprimento; (iii) fixar os valores das quotas anuais da CDE e Proinfa; (iv) homologar os valores mensais de recursos da CDE a serem repassados pela CCEE às permissionárias com data de aniversário em 30 de julho de 2025, de modo a custear os descontos retirados da estrutura tarifária; e (v) homologar os valores mensais de recursos da CDE a serem repassados pela CCEE às permissionárias com data de aniversário em 30 de julho de 2025, de modo a custear a baixa densidade de carga das permissionárias.<br><br><img src='https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/efeito_consumidores_item_6.png' alt='Efeito médio para os consumidores - Item 6' class='w-full max-w-lg mx-auto mt-4 rounded-lg shadow-md'>",
-            orderOfJudgment: "7",
-            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003836-2025-188.pdf"
-        },
-        {
-            originalItemNumber: 7,
-            process: "48500.016743/2025-53",
-            subject: "Estabelecimento da Receita Anual de Geração – RAG das Usinas Hidrelétricas em Regime de Cotas, nos termos da Lei nº 12.783/2013, para o Ciclo 2025-2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Ivo Sechi Nazareno",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar a Receita Anual de Geração– RAG, nos termos da Lei nº 12.783/2013, com vigência de 1º de julho de 2025 a 30 de junho de 2026.",
-            orderOfJudgment: "8",
-            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.016743-2025-53.pdf"
-        },
-        {
-            originalItemNumber: 8,
-            process: "48500.010804/2025-79",
-            subject: "Requerimento Administrativo protocolado pela Equatorial Pará Distribuidora de Energia S.A. com vistas à antecipação dos efeitos da prorrogação do Contrato de Concessão de Distribuição nº 182/1998, nos termos da Lei nº 9.074/1995 e do Decreto nº 12.068/2024.",
-            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
-            relator: "Agnes Maria de Aragão da Costa",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por maioria, acompanhando o voto da Diretora-Relatora, Agnes Maria de Aragão da Costa, e vencido o Diretor Fernando Luiz Mosna Ferreira da Silva, decidiu recomendar ao Ministério de Minas e Energia – MME a prorrogação do Contrato de Concessão de Distribuição nº 182/1998-ANEEL, com a antecipação de seus efeitos, e encaminhar a minuta do 7º Termo Aditivo.",
-            details: "O Diretor Fernando Luiz Mosna Ferreira da Silva votou no sentido de não recomendar a prorrogação, considerando que a distribuidora não atendeu as premissas da análise complementar sobre a prestação adequada do serviço. O Diretor Ivo Sechi Nazareno não participou da votação.",
-            orderOfJudgment: "9",
-            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010804-2025-79-votooriginal.pdf",
-            actLinkVista: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010804-2025-79-votovista.pdf"
-        },
-        {
-            originalItemNumber: 10,
-            process: "48500.001747/2020-22",
-            subject: "Resultado da Consulta Pública nº 5/2021, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento do tratamento a ser dado pelas distribuidoras de energia elétrica aos créditos tributários decorrentes de processos judiciais que versam sobre a exclusão do Imposto sobre Circulação de Mercadorias e Serviços – ICMS da base de cálculo dos Programas de Integração Social e de Formação do Patrimônio do Servidor Público – PIS/PASEP e da Contribuição para Financiamento da Seguridade Social – COFINS.",
-            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por maioria, acompanhando o voto-vista da Diretora Agnes Maria de Aragão da Costa, e vencido o Diretor-Relator, Fernando Luiz Mosna Ferreira da Silva, decidiu aprovar os regulamentos aplicáveis ao processo de devolução aos usuários dos créditos tributários decorrentes da exclusão do ICMS da base de cálculo do PIS/Pasep e da Cofins.",
-            details: "O Diretor-Relator, Fernando Luiz Mosna Ferreira da Silva, manteve seu voto proferido anteriormente, que propunha a instauração de uma segunda fase da consulta pública.",
-            orderOfJudgment: "11",
-            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901747-2020-22-votooriginal.pdf",
-            actLinkVista: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901747-2020-22-votovista.pdf",
-            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=9Hdlx7bm&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3507&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+            originalItemNumber: 38,
+            process: "48500.001367/2016-10",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Resultado da Consulta Pública nº 20/2023, instituída com vistas à revisão da Resolução Normativa nº 1.031/2022 e à revisão de módulos de Regras de Comercialização, em razão do art. 4º da Lei nº 14.120/2021, que versa sobre o término dos descontos na Tarifa de Uso dos Sistemas de Distribuição e Transmissão – TUSD/TUST para fontes incentivadas.",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
+            relator: "Hélvio Neves Guerra",
+            votoVistaRelator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001367-2016-10.pdf",
+            votoSummary: "A minuta de voto propõe a prorrogação do prazo do pedido de vista para aprofundar a análise sobre a regulamentação do término dos descontos na TUSD/TUST para fontes incentivadas, considerando a complexidade do tema e os resultados da Consulta Pública nº 20/2023.",
+            consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=Penkq9C4&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3792&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         }
     ];
     
@@ -190,7 +146,7 @@
     ];
 
     const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
-    const youtubeLink = "https://www.youtube.com/live/GM_IqxLh6hQ?si=hKopqIdLx_wvqp83";
+    const youtubeLink = "https://www.youtube.com/live/kHfjtGkpNtw?si=yR95fXmpzFwgGiOz";
 
     // --- ÍCONES SVG ---
     const icons = {
@@ -236,14 +192,14 @@
     function renderPautaPage(container) {
         container.innerHTML = ''; // Limpa o container
         
-        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados da 26ª Reunião Pública Ordinária de 2025');
-        const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 22/07/2025');
+        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta da 27ª Reunião Pública Ordinária de 2025');
+        const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 29/07/2025');
         container.appendChild(pautaTitle);
         container.appendChild(pautaDate);
 
         // Link do YouTube
         const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-8');
-        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
         const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
         youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
         youtubeSection.appendChild(youtubeText);
@@ -252,17 +208,14 @@
 
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta');
         const summaryList = createElement('ul', 'space-y-3');
         
         const getSummarySubject = (subject) => {
             const replacements = [
-                { regex: /Leilão de Energia Nova 'A-5' de 2025/i, acronym: "Edital Leilão A-5/2025" },
-                { regex: /Reajustes Tarifários Anuais.*Eletrocar/i, acronym: "Reajuste Tarifário - Permissionárias" },
-                { regex: /Reajuste Tarifário Anual das permissionárias/i, acronym: "Reajuste Tarifário - Permissionárias (Julho)" },
-                { regex: /Receita Anual de Geração.*Usinas Hidrelétricas em Regime de Cotas/i, acronym: "RAG UHEs em Regime de Cotas" },
-                { regex: /Requerimento Administrativo.*Equatorial Pará/i, acronym: "Requerimento Equatorial Pará" },
-                { regex: /créditos tributários.*ICMS/i, acronym: "CP 05/2021 - Créditos Tributários (ICMS na base PIS/COFINS)" },
+                { regex: /Mecanismo Concorrencial previsto na Medida Provisória nº 1.300\/2025/i, acronym: "MP 1.300/2025 - Mecanismo Concorrencial" },
+                { regex: /Requerimento Administrativo.*ISA Energia Brasil S\.A\./i, acronym: "Recurso ISA Cteep - Revisão RAP" },
+                { regex: /Prorrogação do prazo de pedido de vista.*Consulta Pública nº 20\/2023/i, acronym: "Prorrogação Voto Vista - Descontos TUSD/TUST" },
             ];
             for (const r of replacements) {
                 if (r.regex.test(subject)) return r.acronym;
@@ -296,7 +249,7 @@
             
             const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-gray-800');
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} (Ordem: ${item.orderOfJudgment}) <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -321,15 +274,6 @@
             if (item.votoVistaRelator) {
                  infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
             }
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão', item.decision));
-            }
-             if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
-            }
-            if (item.oralArgumentSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Sustentações Orais', item.oralArgumentSummary));
-            }
             if (item.votoSummary) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
@@ -337,12 +281,7 @@
             cardBody.appendChild(infoContainer);
 
             const cardFooter = createElement('div', 'px-4 md:px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-wrap gap-4');
-            if (item.actNumber) {
-                const actText = createElement('span', 'inline-flex items-center text-sm font-medium text-red-600');
-                actText.innerHTML = `<strong>Ato Administrativo:</strong> ${item.actNumber}`;
-                cardFooter.appendChild(actText);
-            }
-            if (item.actLink) {
+             if (item.actLink) {
                 const actAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Minuta de Voto', { href: item.actLink, target: '_blank', rel: 'noopener noreferrer' });
                 actAnchor.innerHTML = icons.link + actAnchor.innerHTML;
                 cardFooter.appendChild(actAnchor);
@@ -352,25 +291,13 @@
                 actAnchorVista.innerHTML = icons.link + actAnchorVista.innerHTML;
                 cardFooter.appendChild(actAnchorVista);
             }
-             if (item.consultaPublicaLink) {
+            if (item.consultaPublicaLink) {
                 const cpAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Consulta Pública Relacionada', { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' });
                 cpAnchor.innerHTML = icons.link + cpAnchor.innerHTML;
                 cardFooter.appendChild(cpAnchor);
             }
-            if (item.oralArgumentLink) {
-                const oralArgAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Sustentação Oral', { href: item.oralArgumentLink, target: '_blank', rel: 'noopener noreferrer' });
-                oralArgAnchor.innerHTML = icons.link + oralArgAnchor.innerHTML;
-                cardFooter.appendChild(oralArgAnchor);
-            }
-             if (item.technicalPresentationLink) {
-                const techPresAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', 'Apresentação Técnica', { href: item.technicalPresentationLink, target: '_blank', rel: 'noopener noreferrer' });
-                techPresAnchor.innerHTML = icons.link + techPresAnchor.innerHTML;
-                cardFooter.appendChild(techPresAnchor);
-            }
             if(cardFooter.hasChildNodes()){
-                const footerContainer = createElement('div', 'pt-4 mt-4 border-t border-gray-200');
-                footerContainer.appendChild(cardFooter);
-                cardBody.appendChild(footerContainer);
+                cardBody.appendChild(cardFooter);
             }
 
             itemDiv.appendChild(cardBody);
@@ -533,7 +460,7 @@
       // Conteúdo Principal com Navegação
       const main = createElement('main', 'container mx-auto p-4 md:p-6');
       const navContainer = createElement('div', 'mb-6 flex flex-wrap gap-2');
-      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Resultados da Reunião');
+      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Pauta da Reunião');
       const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Consultas e Subsídios');
       const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Imersão Presencial');
       
