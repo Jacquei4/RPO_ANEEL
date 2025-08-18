@@ -170,6 +170,50 @@
         }
     ];
 
+    // Dados para a página da Agenda Regulatória
+    const agendaRegulatoriaThemes = [
+        {
+            title: "1. Novos modelos de negócio e inovação tecnológica",
+            description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária."
+        },
+        {
+            title: "2. Mercado de energia elétrica",
+            description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização."
+        },
+        {
+            title: "3. Operação e preço de curto prazo",
+            description: "Este tema visa o aprimoramento contínuo dos modelos computacionais de otimização (NEWAVE, DECOMP) e de formação de preço (PLD), incorporando novas tecnologias como usinas híbridas e sistemas de armazenamento para refletir a complexidade crescente do sistema elétrico."
+        },
+        {
+            title: "4. Contabilidade do setor elétrico",
+            description: "Propõe-se a revisão e modernização dos manuais de contabilidade do setor elétrico para aumentar a transparência, a padronização e a comparabilidade das informações financeiras dos agentes, refletindo as novas dinâmicas do mercado."
+        },
+        {
+            title: "5. Regulação de operações econômico-financeiras",
+            description: "A ANEEL busca fortalecer o monitoramento da saúde financeira dos agentes, especialmente em um cenário de mercado mais aberto. O foco está na adequação de garantias financeiras e na gestão de riscos para garantir a liquidez e a segurança das operações."
+        },
+        {
+            title: "6. Modernização da regulação econômica e das tarifas",
+            description: "Este eixo trata da revisão das metodologias tarifárias de transmissão e distribuição, buscando maior eficiência, incentivos à qualidade e uma alocação de custos que considere novas tecnologias, como redes inteligentes e armazenamento de energia."
+        },
+        {
+            title: "7. Novos contratos de concessão de transmissão e distribuição",
+            description: "A agência se prepara para futuras licitações de concessão, desenvolvendo contratos que incentivem a modernização, a resiliência das redes e a melhoria contínua da qualidade dos serviços prestados à população."
+        },
+        {
+            title: "8. Acesso e atendimento de usuários e consumidores",
+            description: "O objetivo é simplificar as regras de acesso às redes, principalmente para a geração distribuída, e aprimorar os canais de atendimento e os mecanismos de proteção ao consumidor, garantindo um relacionamento mais justo e transparente."
+        },
+        {
+            title: "9. Modernização do serviço de transmissão e distribuição",
+            description: "A regulação buscará incorporar avanços como redes inteligentes (smart grids), digitalização, armazenamento e recursos energéticos distribuídos (REDs), visando aumentar a eficiência, a segurança e a flexibilidade da operação do sistema."
+        },
+        {
+            title: "10. Eficiência energética",
+            description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais."
+        }
+    ];
+
     const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
     const youtubeLink = "https://www.youtube.com/live/FYpqxywKYB0?si=KLxbo6HoU16ue48n";
 
@@ -433,6 +477,47 @@
         responsiveWrapper.appendChild(table);
         container.appendChild(tableContainer);
     }
+
+    function renderAgendaRegulatoriaPage(container) {
+        container.innerHTML = ''; // Limpa o container
+
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-2', 'Agenda Regulatória 2026-2027: Temas Prioritários');
+        const pageSubtitle = createElement('p', 'text-gray-600 text-base mb-6', 'Análise da Tomada de Subsídios nº 11/2025 para elaboração da Agenda Regulatória da ANEEL.');
+        container.appendChild(pageTitle);
+        container.appendChild(pageSubtitle);
+
+        const tsInfo = consultasPublicasData.find(cp => cp.numero === "TS 011/2025");
+        if (tsInfo) {
+            const statusDiv = createElement('div', 'mb-8 bg-green-50 p-6 rounded-xl border border-green-200');
+            const statusTitle = createElement('h2', 'text-xl font-bold text-green-800 mb-2', 'Tomada de Subsídios Aberta');
+            const statusText = createElement('p', 'text-green-700 mb-3');
+            statusText.innerHTML = `A consulta para a Agenda Regulatória está em andamento. Prazo final para contribuições: <strong>${tsInfo.fim}</strong>. (${calculateDays(tsInfo.fim)})`;
+            const statusLink = createElement('a', 'font-bold text-green-800 hover:text-green-900 underline', 'Clique aqui para participar', { href: tsInfo.link, target: '_blank' });
+            
+            statusDiv.appendChild(statusTitle);
+            statusDiv.appendChild(statusText);
+            statusDiv.appendChild(statusLink);
+            container.appendChild(statusDiv);
+        }
+
+        const introDiv = createElement('div', 'mb-8 bg-blue-50 p-6 rounded-xl border border-blue-200');
+        introDiv.innerHTML = `
+            <h2 class="text-xl font-bold text-blue-800 mb-2">Objetivo da Tomada de Subsídios</h2>
+            <p class="text-blue-700">A ANEEL abriu a Tomada de Subsídios nº 11/2025 para coletar contribuições da sociedade na elaboração de sua Agenda Regulatória para o biênio 2026-2027. O objetivo é identificar e priorizar os temas que guiarão a atuação normativa da agência, focando nos desafios e oportunidades do setor elétrico. Abaixo estão os 10 temas prioritários propostos pela ANEEL para debate.</p>
+        `;
+        container.appendChild(introDiv);
+        
+        const themesGrid = createElement('div', 'space-y-4');
+        agendaRegulatoriaThemes.forEach(theme => {
+            const card = createElement('div', 'bg-white p-6 rounded-xl shadow-sm border border-gray-200');
+            card.innerHTML = `
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">${theme.title}</h3>
+                <p class="text-gray-700">${theme.description}</p>
+            `;
+            themesGrid.appendChild(card);
+        });
+        container.appendChild(themesGrid);
+    }
     
     function renderImersaoPage(container) {
         container.innerHTML = ''; // Limpa o container
@@ -493,10 +578,12 @@
       const navContainer = createElement('div', 'mb-6 flex flex-wrap gap-2');
       const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Pauta da Reunião');
       const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Consultas e Subsídios');
+      const agendaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Imersão Presencial');
       
       navContainer.appendChild(pautaButton);
       navContainer.appendChild(consultasButton);
+      navContainer.appendChild(agendaButton);
       navContainer.appendChild(imersaoButton);
       main.appendChild(navContainer);
 
@@ -512,7 +599,7 @@
 
       // Lógica de Navegação
       function setActiveButton(activeButton) {
-          [pautaButton, consultasButton, imersaoButton].forEach(button => {
+          [pautaButton, consultasButton, agendaButton, imersaoButton].forEach(button => {
               button.classList.remove('nav-button-active');
               button.classList.add('bg-gray-200', 'text-gray-800');
           });
@@ -528,6 +615,11 @@
       consultasButton.addEventListener('click', () => {
           setActiveButton(consultasButton);
           renderConsultasPage(contentContainer);
+      });
+
+      agendaButton.addEventListener('click', () => {
+          setActiveButton(agendaButton);
+          renderAgendaRegulatoriaPage(contentContainer);
       });
 
       imersaoButton.addEventListener('click', () => {
