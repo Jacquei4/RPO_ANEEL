@@ -54,37 +54,46 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800" },
     };
 
-    // Dados da pauta da ANEEL para a 31ª Reunião Pública Ordinária
+    // Dados da pauta da ANEEL para a 31ª Reunião Pública Ordinária - ATUALIZADO COM RESULTADOS
     const aneelAgenda = [
         {
             originalItemNumber: 2,
             process: "48500.003674/2025-18",
-            subject: "Resultado da Revisão Tarifária Periódica da Energisa Paraíba – Distribuidora de Energia S.A. – EPB, a vigorar a partir de 28 de agosto de 2025, após análise das contribuições recebidas na Consulta Pública nº 24/2025.",
+            subject: "Resultado da Revisão Tarifária Periódica da Energisa Paraíba – Distribuidora de Energia S.A. – EPB, a vigorar a partir de 28 de agosto de 2025.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Este processo trata da definição das novas tarifas da Energisa Paraíba para os próximos anos. A Revisão Tarifária Periódica é um processo complexo que reavalia todos os custos eficientes da distribuidora (Parcela B) e atualiza os custos não gerenciáveis (Parcela A), como compra de energia e encargos. A minuta de voto deve apresentar o índice final de reajuste, detalhando a metodologia utilizada para calcular a remuneração do capital, os custos operacionais e as metas de qualidade (DEC e FEC) para o novo ciclo tarifário.",
+            status: "approved",
+            votoSummary: "Trata da definição das novas tarifas da Energisa Paraíba. O processo incluiu a Consulta Pública nº 24/2025 e a Audiência Pública nº 5 em João Pessoa para coletar subsídios.",
+            decision: "A diretoria aprovou por unanimidade a proposta final da revisão tarifária, que resultou em um efeito médio de 13,59% a ser percebido pelos consumidores. Para os consumidores de alta tensão, o efeito médio foi de 12,11% e para os de baixa tensão, 13,94%.",
+            details: `<strong>Composição do Reajuste:</strong><br>
+                      - <strong>Parcela A</strong> (custos de energia, transporte e encargos): +5,44%. Destaque para encargos setoriais (+4,42%), principalmente CDE.<br>
+                      - <strong>Parcela B</strong> (receita da distribuidora): +1,29%. A nova base de remuneração regulatória contribuiu com +3,8%.<br>
+                      - <strong>Componentes Financeiros:</strong> -4,04%, devido à retirada de componentes do ano anterior.<br>
+                      <strong>Fator X e Perdas:</strong> O Fator X foi fixado com componente T (produtividade) de -1,388% e PD (perdas) de 1,464%.<br>
+                      <strong>Destaques da Discussão:</strong> A diretora Agnes ressaltou a alta contribuição dos encargos no reajuste. O diretor Mosna comentou sobre a deflação no IPCA-15 de agosto, impulsionada pela queda no preço da energia devido ao bônus de Itaipu.`,
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=QXX63Y4e&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3943&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
             originalItemNumber: 3,
             process: "48500.004885/2020-63",
-            subject: "Resultado da Consulta Pública nº 39/2023, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação para o armazenamento de energia elétrica.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT, Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM, Superintendência de Inovação e Transição Energética - STE.",
+            subject: "Resultado da Consulta Pública nº 39/2023, para aprimoramento da regulação para o armazenamento de energia elétrica.",
+            areaResponsible: "STR, SCE, SFT, STD, SGM, STE.",
             relator: "Daniel Cardoso Danna",
             votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Este item é crucial para o futuro da inovação no setor. A diretoria analisará as contribuições recebidas na consulta pública para estabelecer a primeira regulamentação abrangente sobre sistemas de armazenamento de energia. A decisão definirá as regras para a conexão desses sistemas à rede, sua participação nos mercados de energia, os modelos de tarifação pelo uso do sistema e a classificação técnica dos diferentes tipos de armazenamento, buscando destravar o potencial dessa tecnologia para a segurança e eficiência do sistema elétrico.",
+            status: "withdrawn",
+            votoSummary: "Este item analisaria as contribuições da consulta pública para estabelecer a primeira regulamentação abrangente sobre sistemas de armazenamento de energia.",
+            details: "O item 3 foi retirado de pauta (removido da agenda) e não foi discutido na reunião.",
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=QXX63Y4e&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
             originalItemNumber: 5,
             process: "48500.003671/2025-84",
-            subject: "Resultado da Revisão Tarifária Periódica da Equatorial Maranhão Distribuidora de Energia S.A., a vigorar a partir de 28 de agosto de 2025, após análise das contribuições recebidas na Consulta Pública nº 23/2025.",
+            subject: "Resultado da Revisão Tarifária Periódica da Equatorial Maranhão Distribuidora de Energia S.A.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Ivo Sechi Nazareno",
-            status: "scheduled",
-            votoSummary: "A minuta de voto apresenta o resultado da Revisão Tarifária Periódica da Equatorial Maranhão. O documento detalha o cálculo da Base de Remuneração Regulatória (BRR), que define o retorno sobre os investimentos, e dos custos operacionais eficientes (PMSO). Além disso, o voto consolida as contribuições da consulta pública e estabelece o efeito tarifário médio que será percebido pelos consumidores, assim como as novas metas de qualidade do serviço para os próximos anos.",
+            status: "approved",
+            votoSummary: "Apresenta o resultado da Revisão Tarifária Periódica da Equatorial Maranhão, detalhando o cálculo da Base de Remuneração Regulatória (BRR) e dos custos operacionais eficientes (PMSO).",
+            decision: "Aprovado em bloco, por unanimidade. Para este item, os votos e atos foram disponibilizados previamente na página da ANEEL. O efeito médio para os consumidores será de 17,90%, com vigência a partir de 28 de agosto de 2025.",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003671-2025-84.pdf",
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=QXX63Y4e&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3941&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -94,39 +103,43 @@
             subject: "Reajuste Tarifário Anual das concessionárias menores que 700 GWh com aniversário em agosto.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "Este item trata do reajuste anual para um grupo de distribuidoras de menor porte. Diferente da revisão, o reajuste é um processo mais simples que visa atualizar anualmente as tarifas com base na inflação (IGP-M) e no repasse dos custos não gerenciáveis (Parcela A). A minuta de voto deve apresentar os índices de reajuste propostos para cada uma das concessionárias envolvidas.",
+            status: "approved",
+            votoSummary: "Este item trata do reajuste anual para um grupo de distribuidoras de menor porte, atualizando as tarifas com base na inflação e no repasse de custos.",
+            decision: "Aprovado em bloco, por unanimidade. Para este item, os votos e atos foram disponibilizados previamente na página da ANEEL.",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003893-2025-05.pdf"
         },
         {
             originalItemNumber: 16,
             process: "48500.003647/2025-45",
-            subject: "Pedido de Reconsideração interposto pela Energisa Tocantins – Distribuidora de Energia S.A. – ETO em face da Resolução Homologatória nº 3.479/2025, que homologou o resultado da Revisão Tarifária Periódica – RTP de 2025 da Recorrente e deu outras providências.",
+            subject: "Pedido de Reconsideração interposto pela Energisa Tocantins – Distribuidora de Energia S.A. – ETO em face da Resolução Homologatória nº 3.479/2025.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Ivo Sechi Nazareno",
-            status: "scheduled",
-            votoSummary: "A Energisa Tocantins contesta pontos específicos de sua Revisão Tarifária Periódica. A minuta de voto analisará os argumentos da distribuidora, que podem incluir discordâncias sobre custos não reconhecidos pela ANEEL, a valoração de ativos ou as metas de qualidade estabelecidas. A diretoria decidirá se acata ou nega o pedido de reconsideração, podendo alterar o resultado da revisão tarifária.",
+            status: "withdrawn",
+            votoSummary: "A Energisa Tocantins contesta pontos específicos de sua Revisão Tarifária Periódica, como custos não reconhecidos, valoração de ativos ou metas de qualidade.",
+            details: "O item 16 foi retirado de pauta (removido da agenda) e não foi discutido na reunião.",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003647-2025-45.pdf"
         },
         {
             originalItemNumber: 18,
             process: "48500.017784/2025-67",
-            subject: "Pedido de Medida Cautelar protocolado pelas empresas do Grupo Energisa com vistas à não realização de desconsideração de carga negativa na contabilização realizada pela Câmara de Comercialização de Energia Elétrica – CCEE.",
+            subject: "Pedido de Medida Cautelar do Grupo Energisa sobre desconsideração de carga negativa na contabilização da CCEE.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "O Grupo Energisa solicita uma medida de urgência para suspender os efeitos financeiros da contabilização de 'carga negativa', fenômeno associado à geração distribuída. A minuta de voto avaliará se os requisitos para uma medida cautelar (perigo da demora e plausibilidade do direito) estão presentes. A decisão pode ser por suspender temporariamente a cobrança até que a metodologia de contabilização seja aprofundada e regulamentada pela Agência.",
+            status: "approved",
+            votoSummary: "O Grupo Energisa solicita uma medida de urgência para suspender os efeitos financeiros da contabilização de 'carga negativa', associada à geração distribuída.",
+            decision: "Aprovado em bloco, por unanimidade. Para este item, os votos e atos foram disponibilizados previamente. Referências como a 'nota técnica número 186' foram mencionadas no contexto da discussão do Item 2.",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.017784-2025-67.pdf"
         },
         {
             originalItemNumber: 45,
             process: "48500.001526/2023-05",
-            subject: "Prorrogação do prazo de pedido de vista referente ao Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A., em face do Despacho nº 3.309/2024, que negou provimento ao Pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente, com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Pedido de Reconsideração interposto pela Light S.A.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Ricardo Lavorato Tili",
             votoVistaRelator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "Este processo trata da prorrogação do prazo para análise de um recurso da Light. A empresa solicitou uma Revisão Tarifária Extraordinária para ajustar suas metas de perdas não técnicas, o que foi negado. Após um pedido de vista da Diretora Agnes, a minuta de voto atual deve formalizar a extensão do prazo para que a análise aprofundada do caso seja concluída antes de uma decisão final do colegiado.",
+            status: "approved",
+            votoSummary: "Trata da prorrogação do prazo para análise de um recurso da Light, que solicitou uma Revisão Tarifária Extraordinária para ajustar suas metas de perdas não técnicas.",
+            decision: "Aprovado em bloco, por unanimidade. Para este item, os votos e atos foram disponibilizados previamente na página da ANEEL.",
             actLink: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05.pdf"
         }
     ];
@@ -136,7 +149,7 @@
         {
             numero: "TS 011/2025",
             tema: "Obter subsídios para a elaboração da Agenda Regulatória 2026/2027 da ANEEL.",
-            status: "aberta",
+            status: "encerrada",
             inicio: "21/07/2025",
             fim: "20/08/2025",
             area: "STR",
@@ -154,7 +167,7 @@
         {
             numero: "CP 025/2025",
             tema: "Edital e Anexos dos Leilões de Energia Existente “A-1”, “A-2” e “A-3”, de 2025.",
-            status: "aberta",
+            status: "encerrada",
             inicio: "18/06/2025",
             fim: "04/08/2025",
             area: "SEL",
@@ -163,7 +176,7 @@
         {
             numero: "TS 010/2025",
             tema: "Aprimoramento da base de dados (triênio 2021-23) para o Submódulo 2.2 do PRORET (Custos Operacionais).",
-            status: "aberta",
+            status: "encerrada",
             inicio: "01/07/2025",
             fim: "15/08/2025",
             area: "STR", 
@@ -172,7 +185,7 @@
         {
             numero: "TS 009/2025",
             tema: "Aprimoramento do Programa de Eficiência Energética - PEE.",
-            status: "aberta",
+            status: "encerrada",
             inicio: "01/07/2025",
             fim: "14/08/2025",
             area: "SRD", 
@@ -234,6 +247,7 @@
         user: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`,
         building: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`,
         clipboard: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>`,
+        gavel: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
     // --- FUNÇÕES HELPER ---
@@ -271,14 +285,14 @@
     function renderPautaPage(container) {
         container.innerHTML = ''; // Limpa o container
         
-        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta da 31ª Reunião Pública Ordinária de 2025');
+        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados da 31ª Reunião Pública Ordinária de 2025');
         const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 26/08/2025');
         container.appendChild(pautaTitle);
         container.appendChild(pautaDate);
 
         // Link do YouTube
         const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-8');
-        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
         const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
         youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
         youtubeSection.appendChild(youtubeText);
@@ -287,7 +301,7 @@
 
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados');
         const summaryList = createElement('ul', 'space-y-3');
         
         const getSummarySubject = (item) => {
@@ -371,10 +385,10 @@
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
             if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão', item.decision));
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
             }
             if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Destaques da Discussão', item.details));
             }
             
             cardBody.appendChild(infoContainer);
@@ -510,11 +524,11 @@
 
         const tsInfo = consultasPublicasData.find(cp => cp.numero === "TS 011/2025");
         if (tsInfo) {
-            const statusDiv = createElement('div', 'mb-8 bg-green-50 p-6 rounded-xl border border-green-200');
-            const statusTitle = createElement('h2', 'text-xl font-bold text-green-800 mb-2', 'Tomada de Subsídios Aberta');
-            const statusText = createElement('p', 'text-green-700 mb-3');
-            statusText.innerHTML = `A consulta para a Agenda Regulatória está em andamento. Prazo final para contribuições: <strong>${tsInfo.fim}</strong>. (${calculateDays(tsInfo.fim)})`;
-            const statusLink = createElement('a', 'font-bold text-green-800 hover:text-green-900 underline', 'Clique aqui para participar', { href: tsInfo.link, target: '_blank' });
+            const statusDiv = createElement('div', 'mb-8 bg-yellow-50 p-6 rounded-xl border border-yellow-200');
+            const statusTitle = createElement('h2', 'text-xl font-bold text-yellow-800 mb-2', 'Tomada de Subsídios Encerrada');
+            const statusText = createElement('p', 'text-yellow-700 mb-3');
+            statusText.innerHTML = `O período de contribuições para a Agenda Regulatória foi finalizado em <strong>${tsInfo.fim}</strong>. A ANEEL está analisando as propostas recebidas.`;
+            const statusLink = createElement('a', 'font-bold text-yellow-800 hover:text-yellow-900 underline', 'Acessar página da consulta', { href: tsInfo.link, target: '_blank' });
             
             statusDiv.appendChild(statusTitle);
             statusDiv.appendChild(statusText);
