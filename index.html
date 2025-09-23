@@ -150,12 +150,33 @@
     // Dados das Consultas Públicas e Tomadas de Subsídio
     const consultasPublicasData = [
         {
+            numero: "CP 196/2025",
+            tema: "Consulta Pública sobre a regulamentação da abertura do mercado de energia elétrica para os consumidores atendidos por tensão inferior a 2,3 kV e das regras de exercício do Supridor de Última Instância (SUI).",
+            status: "aberta",
+            inicio: "02/09/2025",
+            fim: "16/10/2025",
+            area: "Secretaria Executiva",
+            origem: "MME",
+            link: "https://www.gov.br/mme/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
+        },
+        {
+            numero: "CP 198/2025",
+            tema: "Proposta de diretrizes para a implantação de medidores inteligentes no curto prazo, seguida de Análise de Impacto Regulatório, e para a apresentação de análise de custo-benefício para implantação de medidores inteligentes no médio e longo prazo pelas distribuidoras de energia elétrica.",
+            status: "aberta",
+            inicio: "22/09/2025",
+            fim: "06/10/2025",
+            area: "DPSE/SNEE",
+            origem: "MME",
+            link: "https://www.gov.br/mme/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
+        },
+        {
             numero: "CP 30/2025",
             tema: "Obter subsídios e informações adicionais acerca do aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.",
             status: "aberta",
             inicio: "10/09/2025",
             fim: "24/10/2025",
             area: "STR",
+            origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=b70gaSvf&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -165,6 +186,7 @@
             inicio: "21/08/2025",
             fim: "24/09/2025",
             area: "SEL",
+            origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=rGI8tW6C&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -174,6 +196,7 @@
             inicio: "21/07/2025",
             fim: "20/08/2025",
             area: "STR",
+            origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=btRxrr0q&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3950&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -183,6 +206,7 @@
             inicio: "03/07/2025",
             fim: "12/09/2025",
             area: "STD",
+            origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -192,6 +216,7 @@
             inicio: "18/06/2025",
             fim: "04/08/2025",
             area: "SEL",
+            origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3945&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -200,7 +225,8 @@
             status: "encerrada",
             inicio: "01/07/2025",
             fim: "15/08/2025",
-            area: "STR", 
+            area: "STR",
+            origem: "ANEEL", 
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3948&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -209,7 +235,8 @@
             status: "encerrada",
             inicio: "01/07/2025",
             fim: "14/08/2025",
-            area: "SRD", 
+            area: "SRD",
+            origem: "ANEEL", 
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3947&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         }
     ];
@@ -496,7 +523,7 @@
             const card = createElement('div', 'p-4 border-b border-gray-200');
             card.innerHTML = `
                 <div class="flex justify-between items-center mb-2">
-                    <div class="font-bold text-gray-900">${cp.numero}</div>
+                    <div class="font-bold text-gray-900">${cp.numero} (${cp.origem})</div>
                     <div>${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</div>
                 </div>
                 <div class="text-gray-800 mb-2">${cp.tema}</div>
@@ -520,6 +547,7 @@
         thead.innerHTML = `
             <tr>
                 <th scope="col" class="px-6 py-3">Número</th>
+                <th scope="col" class="px-6 py-3">Origem</th>
                 <th scope="col" class="px-6 py-3">Tema</th>
                 <th scope="col" class="px-6 py-3">Status</th>
                 <th scope="col" class="px-6 py-3">Período de Contribuição</th>
@@ -537,6 +565,7 @@
             
             tr.innerHTML = `
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
+                <td class="px-6 py-4 font-medium text-gray-800">${cp.origem}</td>
                 <td class="px-6 py-4">${cp.tema}</td>
                 <td class="px-6 py-4"></td>
                 <td class="px-6 py-4 whitespace-nowrap">${contributionPeriod}</td>
@@ -544,9 +573,9 @@
                 <td class="px-6 py-4">${cp.area}</td>
                 <td class="px-6 py-4"></td>
             `;
-            tr.children[2].appendChild(createStatusBadge(cp.status, consultaStatusMap));
-            tr.children[4].innerHTML = calculateDays(cp.fim);
-            tr.children[6].appendChild(link);
+            tr.children[3].appendChild(createStatusBadge(cp.status, consultaStatusMap));
+            tr.children[5].innerHTML = calculateDays(cp.fim);
+            tr.children[7].appendChild(link);
             tbody.appendChild(tr);
         });
 
@@ -714,4 +743,3 @@
   </script>
 </body>
 </html>
-
