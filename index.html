@@ -11,24 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilos globais para garantir uma boa visualização */
     body {
       font-family: "Inter", sans-serif;
-      background-color: #f3f4f6; /* bg-gray-100 */
-      color: #1f2937; /* text-gray-800 */
+      background-color: #f3f4f6;
+      color: #1f2937;
     }
-    /* Adiciona rolagem suave para os links âncora */
     html {
       scroll-behavior: smooth;
     }
-    .truncate {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    /* Estilo para o botão de navegação ativo */
     .nav-button-active {
-        background-color: #1f2937; /* bg-gray-800 */
+        background-color: #1f2937;
         color: white;
     }
   </style>
@@ -39,86 +31,148 @@
   <script>
     // --- DADOS ---
 
-    // Mapeamento de status para a Pauta da Reunião
     const pautaStatusMap = {
+      scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800" },
-      withdrawn: { text: "Retirado de Pauta", classes: "bg-red-100 text-red-800" },
-      suspended_so: { text: "Suspenso (Sust. Oral)", classes: "bg-yellow-100 text-yellow-800" },
+      withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800" },
+      view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800" },
+      suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800" },
     };
 
-    // Mapeamento de status para Consultas Públicas
     const consultaStatusMap = {
       encerrada: { text: "Encerrada", classes: "bg-gray-200 text-gray-800" },
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800" },
     };
     
-    // Dados da pauta da ANEEL para o 1º Circuito Deliberativo de 2025 (ITENS SELECIONADOS)
     const aneelAgenda = [
         {
             originalItemNumber: 1,
-            process: "48500.008476/2022-06",
-            subject: "Avaliação inicial de propostas de projetos de Pesquisa, Desenvolvimento e Inovação – PDI para a Chamada de PDI Estratégico nº 23: \"Hidrogênio no Contexto do Setor Elétrico Brasileiro\".",
-            areaResponsible: "Superintendência de Inovação e Transição Energética - STE.",
+            process: "48500.015303/2025-89",
+            subject: "Aprovação dos Editais dos Leilões nº 5/2025-ANEEL, nº 6/2025- ANEEL e nº 7/2025-ANEEL (Leilões de Energia Existente A-1, A-2 e A-3, de 2025).",
+            areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "withdrawn",
-            decision: "O processo foi retirado da Pauta.",
-            votoSummary: "Os votos são unânimes em reconhecer o mérito e a alta qualidade técnica dos projetos de PDI sobre Hidrogênio. A <b>concordância</b> central é que o tema é estratégico. A <b>discordância</b> reside exclusivamente na ordem de classificação final das propostas. A <b>Relatora Agnes Costa</b> defendeu a classificação original da área técnica. O <b>Diretor Fernando Mosna</b>, em seu voto-vista, propôs uma nova ordem de ranqueamento. Por fim, o <b>Diretor-Geral Sandoval Feitosa</b> apresentou um terceiro voto-vista com outra classificação, refletindo diferentes critérios de priorização entre os diretores.",
+            status: "scheduled"
+        },
+        {
+            originalItemNumber: 2,
+            process: "48500.007320/2022-08",
+            subject: "Resultado da Consulta Pública nº 13/2024, sobre a regulamentação da redução de 50% nas tarifas de uso de rede (TUSD/TUST) para fontes incentivadas.",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            links: [{ title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=oDLDorpM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3859&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }]
+        },
+        {
+            originalItemNumber: 3,
+            process: "48500.008300/2022-46",
+            subject: "Pedido de Reconsideração da Neoenergia Distribuição Brasília – NDB em face do Despacho nº 1.513/2025, que negou o aperfeiçoamento do processo de análise da sustentabilidade econômico-financeira da concessionária para o ano de 2023.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled"
+        },
+        {
+            originalItemNumber: 4,
+            process: "48500.008787/2022-67",
+            subject: "Requerimento Administrativo da Energisa Mato Grosso do Sul – EMS para enquadramento como beneficiária da Conta de Consumo de Combustíveis – CCC.",
+            areaResponsible: "STD, SGM.",
+            relator: "Hélvio Neves Guerra",
+            votoVistaRelator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A Energisa MS pleiteia seu enquadramento como beneficiária da Conta de Consumo de Combustíveis (CCC).<br><b>Discussão:</b> O debate se concentra em saber se a distribuidora atende aos critérios regulatórios para receber recursos do encargo, destinado a subsidiar a geração em áreas remotas.<br><b>Posicionamentos:</b> O voto original do ex-diretor Hélvio Guerra nega o pedido, com base numa interpretação restritiva das regras. Já a Diretora Agnes, em seu voto-vista, defende o enquadramento, argumentando que a situação específica da área de concessão justifica o recebimento dos subsídios.",
             links: [
-                { title: "Minuta de Voto (Relatora)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2022-06_voto_draagnes.pdf" },
-                { title: "Minuta de Voto-Vista (Diretor Fernando)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2022-06_votovista.pdf" },
-                { title: "Minuta de Voto-Vista (Diretor-Geral)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2022-06_votovista_dgsandoval.pdf" }
+                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908787-2022-67_votooriginal.pdf" },
+                { title: "Minutas de voto-vista", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908787-2022-67_votovista.pdf" }
             ]
         },
         {
-            originalItemNumber: 5,
-            process: "48500.003321/2024-37",
-            subject: "Pedido de Reconsideração interposto pela Enel Distribuição Rio – Enel RJ em face da Resolução Homologatória nº 3.435/2025, que homologou o Reajuste Tarifário Anual de 2025.",
+            originalItemNumber: 14,
+            process: "48500.003840/2024-03",
+            subject: "Recurso Administrativo interposto pela Transmissora Aliança de Energia Elétrica S.A. – Taesa em face do Despacho nº 30/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu as solicitações de recontabilização dos valores das Parcelas Variáveis por Indisponibilidade – PVI.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A Taesa recorre da decisão que negou a recontabilização de Parcelas Variáveis por Indisponibilidade (PVI) após reajustes da RAP.<br><b>Discussão:</b> O ponto central é se os reajustes anuais da receita devem ser aplicados retroativamente sobre os descontos por indisponibilidade já apurados.<br><b>Posicionamento da Relatora:</b> A minuta de voto da Diretora Agnes Costa posiciona-se por negar o recurso, mantendo o entendimento da área técnica de que a metodologia de cálculo da PVI não prevê esse tipo de recontabilização retroativa.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903840-2024-03.pdf" }]
+        },
+        {
+            originalItemNumber: 18,
+            process: "48500.010193/2025-69",
+            subject: "Recurso Administrativo interposto pelas Centrais Elétricas Brasileiras S.A. – Eletrobras em face do Despacho nº 1.173/2025, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que autorizou a implantação de reforços na Subestação Jacarepaguá.",
+            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A Eletrobras contesta os valores de Receita Anual Permitida (RAP) definidos pela ANEEL para reforços na Subestação Jacarepaguá.<br><b>Discussão:</b> A análise se concentra em quais custos de investimento apresentados pela empresa podem ser considerados prudentes e, portanto, incluídos na base de remuneração.<br><b>Posicionamento do Relator:</b> O voto do Diretor Fernando Mosna defere parcialmente o pleito, reconhecendo parte dos custos questionados pela transmissora e determinando um ajuste no valor final da RAP.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010193-2025-69.pdf" }]
+        },
+        {
+            originalItemNumber: 20,
+            process: "48500.001280/2022-82",
+            subject: "Recursos Administrativos interpostos pela Associação Brasileira de Energia Eólica e Novas Tecnologias – Abeeolica, e pelas empresas Ventos de São Romualdo Energias Renováveis S.A. e outras em face ao Despacho nº 1.788/2024 (Procedimentos de Rede).",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> Associações e geradores eólicos recorrem contra a revisão de submódulos dos Procedimentos de Rede.<br><b>Discussão:</b> O debate foca em como as alterações nas regras de acesso e operação afetam o escoamento da energia de fontes intermitentes, com os agentes alegando prejuízos e barreiras.<br><b>Posicionamento da Relatora:</b> A minuta de voto da Diretora Agnes Costa propõe negar o recurso, mantendo a validade das novas regras por questões de segurança sistêmica, mas recomenda ao ONS e à área técnica que monitorem os impactos e avaliem futuros aprimoramentos.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901280-2022-82.pdf" }]
+        },
+        {
+            originalItemNumber: 22,
+            process: "48500.003804/2024-31",
+            subject: "Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil S.A. – Eletronorte em face da Resolução Homologatória nº 3.475/2025 (Revisões Tarifárias Periódicas da RAP de 2025).",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A Eletronorte recorre do resultado de sua Revisão Tarifária Periódica da RAP.<br><b>Discussão:</b> O mérito do recurso reside na contestação de itens da base de remuneração e de custos operacionais que não foram integralmente reconhecidos pela Agência no cálculo da receita.<br><b>Posicionamento da Relatora:</b> A minuta de voto da Diretora Agnes Costa nega provimento ao recurso, mantendo os valores homologados por entender que o cálculo seguiu estritamente a metodologia regulatória.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903804-2024-31.pdf" }]
+        },
+        {
+            originalItemNumber: 23,
+            process: "48500.003647/2025-45",
+            subject: "Pedido de Reconsideração interposto pela Energisa Tocantins – Distribuidora de Energia S.A. – ETO em face da Resolução Homologatória nº 3.479/2025 (Revisão Tarifária Periódica de 2025).",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu não conhecer do Pedido de Reconsideração.",
-            links: [{ title: "Minutas de Voto e Ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903321-2024-37.pdf" }],
-            votoSummary: "A minuta de voto analisa o recurso da Enel Rio contra seu Reajuste Tarifário Anual de 2025. Os <b>pontos discutidos</b> são os pleitos da distribuidora para o reconhecimento de custos não previstos na homologação original. A análise técnica avalia se esses pedidos se enquadram na metodologia do PRORET. O <b>posicionamento do relator</b> na minuta é por <b>negar provimento</b> ao recurso, mantendo a decisão original da Agência."
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A Energisa Tocantins pede a reconsideração de pontos de sua Revisão Tarifária Periódica de 2025.<br><b>Discussão:</b> O recurso aborda principalmente o reconhecimento de investimentos na base de remuneração e a adequação das metas de perdas não técnicas.<br><b>Posicionamento do Relator:</b> O voto do Diretor Willamy Frota acata parcialmente os pleitos da distribuidora, determinando ajustes pontuais no cálculo da tarifa final, mas mantendo a maior parte da decisão original.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003647-2025-45.pdf" }]
         },
         {
-            originalItemNumber: 6,
-            process: "48500.003976/2025-96",
-            subject: "Pedido de Reconsideração interposto pela Enel Distribuição São Paulo – Enel SP em face da Resolução Homologatória nº 3.477/2025 (Revisão Tarifária Periódica de 2025).",
+            originalItemNumber: 31,
+            process: "48500.002653/2024-02",
+            subject: "Pedido de Medida Cautelar protocolado pela Empresa de Transmissão de Energia do Pará S.A. – Etepa com vistas à manutenção dos efeitos do Despacho nº 654/2025 e à preservação integral da Receita Anual Permitida – RAP.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu não conhecer do Pedido de Reconsideração.",
-            links: [{ title: "Minutas de Voto e Ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003976-2025-96.pdf" }],
-            votoSummary: "A minuta de voto aborda o recurso da Enel SP contra sua Revisão Tarifária Periódica de 2025. Os <b>pontos discutidos</b> são a valoração de ativos na Base de Remuneração Regulatória (BRR), o cálculo dos custos operacionais (PMSO) e as metas de perdas. O <b>posicionamento do relator</b> na minuta é por <b>negar provimento</b> ao recurso, mantendo os valores originais da revisão."
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A ETEPA solicita, via medida cautelar, a manutenção dos efeitos de um despacho anterior para garantir a integridade de sua Receita Anual Permitida (RAP).<br><b>Discussão:</b> O ponto central é avaliar se os pressupostos que justificaram a decisão liminar anterior ainda estão presentes, ou seja, se há risco de dano grave e irreparável à concessionária.<br><b>Posicionamento do Relator:</b> A minuta de voto do Diretor Willamy Frota defere o pedido para prorrogar os efeitos da medida cautelar, entendendo que a questão de mérito ainda demanda análise aprofundada.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902653-2024-02.pdf" }]
         },
         {
-            originalItemNumber: 8,
-            process: "48500.001685/2015-91",
-            subject: "Pedido de Medida Cautelar da Companhia Energética Vale do São Simão Ltda. para suspensão dos efeitos de Despachos.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu dar provimento ao Pedido de Medida Cautelar, suspendendo os efeitos dos Despachos nº 1.066/2020 e nº 1.363/2020 e determinando à CCEE que suspenda o procedimento de desligamento do agente.",
-            links: [{ title: "Minutas de Voto e Ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901685-2015-91.pdf" }],
-            votoSummary: "A minuta de voto analisa o pedido de medida cautelar da C.E. Vale do São Simão para suspender a cobrança de um ressarcimento no âmbito do Contrato de Energia de Reserva (CER). Os <b>pontos discutidos</b> foram a presença dos requisitos legais para uma medida liminar: a probabilidade do direito (<i>fumus boni iuris</i>) e o perigo de dano irreparável (<i>periculum in mora</i>). O <b>posicionamento do relator</b> na minuta é por <b>deferir o pedido cautelar</b>, por entender que foram demonstrados os requisitos para suspender a decisão da Agência e o processo de desligamento do agente pela CCEE, até a análise definitiva do mérito."
+            originalItemNumber: 49,
+            process: "48500.008476/2022-06",
+            subject: "Prorrogação de pedido de vista referente à avaliação de projetos de PDI para a Chamada Estratégica nº 23: 'Hidrogênio no Contexto do Setor Elétrico Brasileiro'.",
+            areaResponsible: "Superintendência de Inovação e Transição Energética - STE.",
+            relator: "Agnes Maria de Aragão da Costa",
+            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> A diretoria analisa um novo pedido de prorrogação de vista para a chamada de PDI sobre hidrogênio.<br><b>Discussão:</b> O tema já foi objeto de intensos debates, com divergências claras entre os diretores sobre os critérios de classificação dos projetos.<br><b>Posicionamentos:</b> O voto da relatora, Diretora Agnes, e o voto-vista do Diretor Fernando Mosna apresentaram classificações distintas para as propostas. A necessidade de prorrogação sinaliza a busca por um consenso antes da deliberação final.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2022-06.pdf" }]
         },
         {
-            originalItemNumber: 25,
-            process: "48500.027095/2025-61",
-            subject: "Autorização e estabelecimento de parcela de Receita Anual Permitida – RAP referente a reforços em instalações de transmissão da Chesf.",
-            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu autorizar a Chesf a realizar os Reforços de Grande Porte e estabelecer as parcelas adicionais de RAP no total de R$ 10.039.355,78.",
-            links: [{ title: "Minutas de Voto e Ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027095-2025-61.pdf" }],
-            votoSummary: "A minuta de voto trata da autorização de reforços em instalações de transmissão da Chesf e o consequente estabelecimento de Receita Anual Permitida (RAP). Os <b>pontos discutidos</b> envolvem a análise técnica dos projetos, a verificação da prudência dos investimentos e o cálculo do valor da remuneração, conforme as regras do PRORET. O <b>posicionamento do relator</b> na minuta é por <b>deferir o pedido</b>."
+            originalItemNumber: 50,
+            process: "48500.004885/2020-63",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Resultado da Consulta Pública nº 39/2023 (regulação para o armazenamento de energia elétrica).",
+            areaResponsible: "STR, SCE, SFT, STD, SGM, STE.",
+            relator: "Daniel Cardoso Danna",
+            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "<b>Contextualização:</b> Análise de um novo pedido de prorrogação para a deliberação sobre a regulamentação do armazenamento de energia.<br><b>Discussão:</b> A matéria é complexa e transversal, impactando os segmentos de geração, transmissão e distribuição.<br><b>Posicionamentos:</b> Após o voto do relator, Diretor Daniel Danna, que consolidou as contribuições da consulta pública, o Diretor Fernando Mosna pediu vista para aprofundar a análise sobre pontos específicos como o modelo de remuneração e as regras de acesso, justificando a necessidade de mais tempo para o debate.",
+            links: [
+                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.904885-2020-63.pdf" },
+                { title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=oDLDorpM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }
+            ]
         }
     ];
     
-    // Dados das Consultas Públicas e Tomadas de Subsídio
     const consultasPublicasData = [
-        {
+         {
             numero: "TS 12/2025",
             tema: "Obter subsídios para formação da Base de Dados a ser utilizada na análise de resultado regulatório e revisão do Submódulo 2.5 e 2.5A do Proret, no que se refere a componente Pd (Produtividade) do Fator X.",
             status: "aberta",
@@ -140,7 +194,7 @@
         },
         {
             numero: "CP 196/2025",
-            tema: "Regulamentação da abertura do mercado de energia para consumidores de baixa tensão e regras do Supridor de Última Instância (SUI).",
+            tema: "Regulamentação da abertura do mercado de energia elétrica e regras do Supridor de Última Instância (SUI).",
             status: "aberta",
             inicio: "02/09/2025",
             fim: "16/10/2025",
@@ -150,7 +204,7 @@
         },
         {
             numero: "CP 30/2025",
-            tema: "Aprimoramento da proposta de Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.",
+            tema: "Aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.",
             status: "aberta",
             inicio: "10/09/2025",
             fim: "24/10/2025",
@@ -159,18 +213,27 @@
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=z6shVjGS&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
-            numero: "TS 011/2025",
-            tema: "Obter subsídios para a elaboração da Agenda Regulatória 2026/2027 da ANEEL.",
+            numero: "CP 028/2025",
+            tema: "Aperfeiçoar a minuta do Edital e Anexos do Leilão nº 1/2026-ANEEL (Leilão de Transmissão).",
             status: "encerrada",
-            inicio: "21/07/2025",
-            fim: "20/08/2025",
-            area: "STR",
+            inicio: "21/08/2025",
+            fim: "24/09/2025",
+            area: "SEL",
             origem: "ANEEL",
-            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=btRxrr0q&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3950&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=l55vomce&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        {
+            numero: "CP 027/2025",
+            tema: "Aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.",
+            status: "encerrada",
+            inicio: "03/07/2025",
+            fim: "12/09/2025",
+            area: "STD",
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         }
     ];
 
-    // Dados para a página da Agenda Regulatória
     const agendaRegulatoriaThemes = [
         {
             title: "1. Novos modelos de negócio e inovação tecnológica",
@@ -215,17 +278,17 @@
     ];
 
     const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
+    const youtubeLink = "https://www.youtube.com/live/Tn11c0tAUao?si=8Ab21c_Wnt_-42UD";
     
-    // --- ÍCONES SVG ---
     const icons = {
         link: `<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
         info: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         user: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`,
         building: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`,
         clipboard: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>`,
+        gavel: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
-    // --- FUNÇÕES HELPER ---
     function createElement(tag, classes, textContent, attributes = {}) {
         const element = document.createElement(tag);
         if (classes) element.className = classes;
@@ -255,41 +318,41 @@
         }
     }
     
-    // --- FUNÇÕES DE RENDERIZAÇÃO DE PÁGINA ---
-
     function renderPautaPage(container) {
-        container.innerHTML = ''; // Limpa o container
+        container.innerHTML = ''; 
         
-        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados do 1º Circuito Deliberativo Público Ordinário de 2025');
-        const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Deliberação: 30/09/2025');
+        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta da 36ª Reunião Pública Ordinária de 2025');
+        const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 07/10/2025');
         container.appendChild(pautaTitle);
         container.appendChild(pautaDate);
-        
-        const newsSection = createElement('div', 'bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg');
-        newsSection.innerHTML = `
-            <h2 class="text-xl font-bold text-blue-800 mb-2">Novo Formato: Circuito Deliberativo</h2>
-            <p class="text-blue-700 mb-3">Este evento inaugura o novo formato de Circuito Deliberativo da ANEEL, com deliberações assíncronas e registro de votos em sistema informatizado. A mudança visa maior agilidade e eficiência. Não há transmissão ao vivo para este formato.</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-4">
-                <a href="https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0204027_convocacao.pdf" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Convocação Oficial</a>
-                <a href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/revisao-das-normas-de-processo-decisorio-da-aneel-e-publicada" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Notícia sobre a Revisão das Normas</a>
-                <a href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/publicada-norma-que-preve-aprovacao-das-decisoes-da-diretoria-da-aneel-em-circuito-deliberativo" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Detalhes do Circuito Deliberativo</a>
-                <a href="https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/Eeuv_dwDnldBuvvVgTq041kBZQY_qZwqZa7X6FEvH6gnlg?e=geEL4q" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Apresentação Técnica da 35ª RPO</a>
-            </div>
-        `;
-        container.appendChild(newsSection);
+
+        const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-8');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
 
         const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta');
         const summaryList = createElement('ul', 'space-y-3');
         
         const getSummarySubject = (item) => {
-            const subject = item.subject;
+             const subject = item.subject;
              switch (item.originalItemNumber) {
-                case 1: return "Chamada PDI nº 23 - Hidrogênio";
-                case 5: return "Reconsideração RTA 2025 Enel RJ";
-                case 6: return "Reconsideração RTP 2025 Enel SP";
-                case 8: return "Cautelar C.E. Vale do São Simão";
-                case 25: return "RAP de reforços para Chesf";
+                case 1: return "Editais Leilões de Energia Existente A-1, A-2 e A-3";
+                case 2: return "Resultado CP 13/2024 - Descontos TUSD/TUST";
+                case 3: return "Reconsideração NDB - Sustentabilidade Econômico-Financeira";
+                case 4: return "Requerimento Energisa MS - Enquadramento CCC";
+                case 14: return "Recurso Taesa - Recontabilização PVI";
+                case 18: return "Recurso Eletrobras - RAP para reforços";
+                case 20: return "Recurso Abeeolica - Procedimentos de Rede";
+                case 22: return "Reconsideração Eletronorte - RTP da RAP";
+                case 23: return "Reconsideração Energisa TO - RTP 2025";
+                case 31: return "Cautelar ETEPA - Manutenção da RAP";
+                case 49: return "Prorrogação Vista PDI - Hidrogênio";
+                case 50: return "Prorrogação Vista CP 39/2023 - Armazenamento";
                 default:
                     const maxLength = 60;
                     if (subject.length > maxLength) {
@@ -324,7 +387,8 @@
             
             const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-gray-800');
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
+            const blockText = item.originalItemNumber >= 4 ? ' (Bloco)' : '';
+            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -349,11 +413,8 @@
             if (item.votoVistaRelator) {
                  infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
             }
-            if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
-            }
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
+            if (item.votoSummary && item.links && item.links.length > 0) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo das minutas de voto', item.votoSummary));
             }
             
             cardBody.appendChild(infoContainer);
@@ -379,28 +440,23 @@
     }
 
     function renderConsultasPage(container) {
-        container.innerHTML = ''; // Limpa o container
+        container.innerHTML = '';
 
         const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Acompanhamento das Consultas Públicas e Tomadas de Subsídios');
         container.appendChild(pageTitle);
 
-        const tableContainer = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden');
+        const tableContainer = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto');
         
-        const responsiveWrapper = createElement('div', 'w-full');
-        tableContainer.appendChild(responsiveWrapper);
-
         const openConsultas = consultasPublicasData.filter(cp => {
             const [day, month, year] = cp.fim.split('/');
             const endDate = new Date(`${year}-${month}-${day}T23:59:59`);
-            return new Date() < endDate;
+            return new Date() <= endDate;
         });
 
         openConsultas.sort((a, b) => {
-            const parseDate = (dateStr) => {
-                const [day, month, year] = dateStr.split('/');
-                return new Date(`${year}-${month}-${day}T23:59:59`);
-            };
-            return parseDate(a.fim) - parseDate(b.fim);
+            const now = new Date();
+            const parseDate = (dateStr) => new Date(dateStr.split('/').reverse().join('-') + 'T23:59:59');
+            return (parseDate(a.fim) - now) - (parseDate(b.fim) - now);
         });
 
         const mobileContainer = createElement('div', 'md:hidden');
@@ -421,80 +477,52 @@
             `;
             mobileContainer.appendChild(card);
         });
-        responsiveWrapper.appendChild(mobileContainer);
-
+        tableContainer.appendChild(mobileContainer);
 
         const table = createElement('table', 'w-full text-sm text-left text-gray-500 hidden md:table');
-        const thead = createElement('thead', 'text-xs text-gray-700 uppercase bg-gray-50');
-        const tbody = createElement('tbody', 'bg-white divide-y divide-gray-200');
-
-        thead.innerHTML = `
-            <tr>
-                <th scope="col" class="px-6 py-3">Número</th>
-                <th scope="col" class="px-6 py-3">Origem</th>
-                <th scope="col" class="px-6 py-3">Tema</th>
-                <th scope="col" class="px-6 py-3">Status</th>
-                <th scope="col" class="px-6 py-3">Período</th>
-                <th scope="col" class="px-6 py-3">Prazo</th>
-                <th scope="col" class="px-6 py-3">Área</th>
-                <th scope="col" class="px-6 py-3">Link</th>
-            </tr>
+        table.innerHTML = `
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Número</th>
+                    <th scope="col" class="px-6 py-3">Origem</th>
+                    <th scope="col" class="px-6 py-3">Tema</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Período</th>
+                    <th scope="col" class="px-6 py-3">Prazo</th>
+                    <th scope="col" class="px-6 py-3">Área</th>
+                    <th scope="col" class="px-6 py-3">Link</th>
+                </tr>
+            </thead>
         `;
-        table.appendChild(thead);
-
+        const tbody = createElement('tbody', 'bg-white divide-y divide-gray-200');
         openConsultas.forEach(cp => {
             const tr = createElement('tr', 'hover:bg-gray-50');
-            const link = createElement('a', 'font-medium text-blue-600 hover:underline', 'Acessar', { href: cp.link, target: '_blank' });
-            const contributionPeriod = `${cp.inicio} a ${cp.fim}`;
-            
             tr.innerHTML = `
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
                 <td class="px-6 py-4 font-medium text-gray-800">${cp.origem}</td>
                 <td class="px-6 py-4">${cp.tema}</td>
-                <td class="px-6 py-4"></td>
-                <td class="px-6 py-4 whitespace-nowrap">${contributionPeriod}</td>
-                <td class="px-6 py-4 whitespace-nowrap"></td>
+                <td class="px-6 py-4">${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</td>
+                <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
+                <td class="px-6 py-4 whitespace-nowrap">${calculateDays(cp.fim)}</td>
                 <td class="px-6 py-4">${cp.area}</td>
-                <td class="px-6 py-4"></td>
+                <td class="px-6 py-4"><a href="${cp.link}" target="_blank" class="font-medium text-blue-600 hover:underline">Acessar</a></td>
             `;
-            tr.children[3].appendChild(createStatusBadge(cp.status, consultaStatusMap));
-            tr.children[5].innerHTML = calculateDays(cp.fim);
-            tr.children[7].appendChild(link);
             tbody.appendChild(tr);
         });
-
         table.appendChild(tbody);
-        responsiveWrapper.appendChild(table);
+        tableContainer.appendChild(table);
         container.appendChild(tableContainer);
     }
-    
+
     function renderAgendaRegulatoriaPage(container) {
-        container.innerHTML = ''; // Limpa o container
-
-        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-2', 'Agenda Regulatória 2026-2027: Temas Prioritários');
-        const pageSubtitle = createElement('p', 'text-gray-600 text-base mb-6', 'Análise da Tomada de Subsídios nº 11/2025 para elaboração da Agenda Regulatória da ANEEL.');
-        container.appendChild(pageTitle);
-        container.appendChild(pageSubtitle);
-
-        const tsInfo = consultasPublicasData.find(cp => cp.numero === "TS 011/2025");
-        if (tsInfo) {
-            const statusDiv = createElement('div', 'mb-8 bg-yellow-50 p-6 rounded-xl border border-yellow-200');
-            const statusTitle = createElement('h2', 'text-xl font-bold text-yellow-800 mb-2', 'Tomada de Subsídios Encerrada');
-            const statusText = createElement('p', 'text-yellow-700 mb-3');
-            statusText.innerHTML = `O período de contribuições para a Agenda Regulatória foi finalizado em <strong>${tsInfo.fim}</strong>. A ANEEL está analisando as propostas recebidas.`;
-            const statusLink = createElement('a', 'font-bold text-yellow-800 hover:text-yellow-900 underline', 'Acessar página da consulta', { href: tsInfo.link, target: '_blank' });
-            
-            statusDiv.appendChild(statusTitle);
-            statusDiv.appendChild(statusText);
-            statusDiv.appendChild(statusLink);
-            container.appendChild(statusDiv);
-        }
-
+        container.innerHTML = '';
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Agenda Regulatória 2026-2027: Temas Prioritários');
         const introDiv = createElement('div', 'mb-8 bg-blue-50 p-6 rounded-xl border border-blue-200');
         introDiv.innerHTML = `
             <h2 class="text-xl font-bold text-blue-800 mb-2">Objetivo da Tomada de Subsídios</h2>
-            <p class="text-blue-700">A ANEEL abriu a Tomada de Subsídios nº 11/2025 para coletar contribuições da sociedade na elaboração de sua Agenda Regulatória para o biênio 2026-2027. O objetivo é identificar e priorizar os temas que guiarão a atuação normativa da agência, focando nos desafios e oportunidades do setor elétrico. Abaixo estão os 10 temas prioritários propostos pela ANEEL para debate.</p>
+            <p class="text-blue-700">A Tomada de Subsídios nº 11/2025, encerrada em 20/08, coletou contribuições para a Agenda Regulatória 2026-2027. O objetivo é priorizar temas que guiarão a atuação da agência. Abaixo, os 10 eixos temáticos propostos pela ANEEL.</p>
         `;
+        container.appendChild(pageTitle);
         container.appendChild(introDiv);
         
         const themesGrid = createElement('div', 'space-y-4');
@@ -510,13 +538,11 @@
     }
     
     function renderImersaoPage(container) {
-        container.innerHTML = ''; // Limpa o container
-
+        container.innerHTML = '';
         const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Imersão Presencial');
         container.appendChild(pageTitle);
 
         const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-2 gap-6');
-        
         const imersoes = [
             {
                 cidade: "São Paulo",
@@ -528,84 +554,59 @@
 
         imersoes.forEach(imersao => {
             const card = createElement('div', 'bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-            const cidade = createElement('h2', 'text-xl font-bold text-gray-800 mb-2', `Imersão em ${imersao.cidade}`);
-            const data = createElement('p', 'text-gray-600 mb-4', imersao.data);
-            const link = createElement('a', 'inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors', 'Preencher Informações de Passagem', { href: imersao.link, target: '_blank', rel: 'noopener noreferrer' });
-            const descricao = createElement('p', 'text-sm text-gray-500 mt-2', imersao.descricao);
-            
-            card.appendChild(cidade);
-            card.appendChild(data);
-            card.appendChild(link);
-            card.appendChild(descricao);
+            card.innerHTML = `
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Imersão em ${imersao.cidade}</h2>
+                <p class="text-gray-600 mb-4">${imersao.data}</p>
+                <a href="${imersao.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Preencher Informações de Passagem</a>
+                <p class="text-sm text-gray-500 mt-2">${imersao.descricao}</p>
+            `;
             grid.appendChild(card);
         });
-
         container.appendChild(grid);
     }
 
-    // --- FUNÇÃO DE RENDERIZAÇÃO PRINCIPAL DA APLICAÇÃO ---
     function renderApp() {
       const appContainer = document.getElementById('app-container');
       appContainer.innerHTML = '';
 
       const header = createElement('header', 'bg-white shadow-sm p-4');
       const headerContent = createElement('div', 'container mx-auto flex items-center justify-between');
-      const logoImg = createElement('img', 'h-10 w-auto', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation Logo' });
-      logoImg.onerror = () => { logoImg.src = "https://placehold.co/150x40/cccccc/333333?text=i4+Logo"; };
+      const logoImg = createElement('img', 'h-10 w-auto', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation Logo', onerror: "this.onerror=null;this.src='https://placehold.co/150x40/cccccc/333333?text=i4+Logo';" });
       headerContent.appendChild(logoImg);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
 
       const main = createElement('main', 'container mx-auto p-4 md:p-6');
       const navContainer = createElement('div', 'mb-6 flex flex-wrap gap-2');
-      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Circuito Deliberativo');
-      const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Consultas e Subsídios');
-      const agendaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Agenda Regulatória');
-      const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors', 'Imersão Presencial');
-
-      navContainer.appendChild(pautaButton);
-      navContainer.appendChild(consultasButton);
-      navContainer.appendChild(agendaButton);
-      navContainer.appendChild(imersaoButton);
+      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Pauta da Reunião');
+      const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Consultas e Subsídios');
+      const agendaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Agenda Regulatória');
+      const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Imersão Presencial');
+      
+      navContainer.append(pautaButton, consultasButton, agendaButton, imersaoButton);
       main.appendChild(navContainer);
 
       const contentContainer = createElement('div', 'content-area');
       main.appendChild(contentContainer);
-      
       appContainer.appendChild(main);
 
-      const footer = createElement('footer', 'text-center mt-8 p-6 text-gray-500 text-sm');
-      footer.innerHTML = '© 2025 i4 Economic Regulation. Todos os direitos reservados.';
+      const footer = createElement('footer', 'text-center mt-8 p-6 text-gray-500 text-sm', '© 2025 i4 Economic Regulation. Todos os direitos reservados.');
       appContainer.appendChild(footer);
 
+      const buttons = [pautaButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeButton) {
-          [pautaButton, consultasButton, agendaButton, imersaoButton].forEach(button => {
+          buttons.forEach(button => {
               button.classList.remove('nav-button-active');
-              button.classList.add('bg-gray-200', 'text-gray-800');
+              button.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
           });
           activeButton.classList.add('nav-button-active');
-          activeButton.classList.remove('bg-gray-200', 'text-gray-800');
+          activeButton.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
       }
 
-      pautaButton.addEventListener('click', () => {
-          setActiveButton(pautaButton);
-          renderPautaPage(contentContainer);
-      });
-
-      consultasButton.addEventListener('click', () => {
-          setActiveButton(consultasButton);
-          renderConsultasPage(contentContainer);
-      });
-
-      agendaButton.addEventListener('click', () => {
-          setActiveButton(agendaButton);
-          renderAgendaRegulatoriaPage(contentContainer);
-      });
-
-      imersaoButton.addEventListener('click', () => {
-          setActiveButton(imersaoButton);
-          renderImersaoPage(contentContainer);
-      });
+      pautaButton.addEventListener('click', () => { setActiveButton(pautaButton); renderPautaPage(contentContainer); });
+      consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderConsultasPage(contentContainer); });
+      agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderAgendaRegulatoriaPage(contentContainer); });
+      imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderImersaoPage(contentContainer); });
 
       setActiveButton(pautaButton);
       renderPautaPage(contentContainer);
