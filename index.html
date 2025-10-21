@@ -486,19 +486,25 @@
         const imersoes = [
             {
                 cidade: "São Paulo",
-                data: "2 a 4 de dezembro",
+                data: "2 a 5 de dezembro",
+                horario: "9h às 18h",
+                local: "Coworking Regus - Torre João Salem<br>(Av. Paulista 1079 - 7º e 8º andares)",
                 link: "https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit?gid=1363356232#gid=1363356232",
                 descricao: "Passagens de ida e volta para a imersão em São Paulo (saindo de BSB)."
             }
         ];
 
         imersoes.forEach(imersao => {
-            const card = createElement('div', 'bg-white p-6 rounded-xl shadow-sm border border-gray-200');
+            const card = createElement('div', 'bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col');
             card.innerHTML = `
                 <h2 class="text-xl font-bold text-gray-800 mb-2">Imersão em ${imersao.cidade}</h2>
-                <p class="text-gray-600 mb-4">${imersao.data}</p>
-                <a href="${imersao.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Preencher Informações de Passagem</a>
-                <p class="text-sm text-gray-500 mt-2">${imersao.descricao}</p>
+                <div class="text-gray-600 mb-4 space-y-1">
+                    <p><strong>Datas:</strong> ${imersao.data}</p>
+                    <p><strong>Horário:</strong> ${imersao.horario}</p>
+                    <p><strong>Local:</strong> ${imersao.local}</p>
+                </div>
+                <a href="${imersao.link}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center">Preencher Informações de Passagem</a>
+                <p class="text-sm text-gray-500 mt-2 text-center">${imersao.descricao}</p>
             `;
             grid.appendChild(card);
         });
