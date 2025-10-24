@@ -64,6 +64,8 @@
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800" },
       suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800" },
+      // Adicionando status 'em_deliberacao' (ou similar) se necessário para Circuito
+      in_deliberation: { text: "Em Deliberação", classes: "bg-purple-100 text-purple-800" },
     };
 
     const consultaStatusMap = {
@@ -168,6 +170,51 @@
         }
     ];
 
+    // Dados para o 3º Circuito Deliberativo - ATUALIZADO COM RESUMOS E DECISÃO PROPOSTA REVISADA
+    const circuitoData = [
+       {
+           originalItemNumber: 1,
+           process: "48500.023180/2025-50",
+           subject: "Proposta de abertura de Audiência Pública com vistas a submeter a minuta de Agenda Regulatória para o biênio 2026-2027 à discussão com a sociedade, após análise das contribuições da Tomada de Subsídios nº 11/2025.",
+           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Sandoval de Araújo Feitosa Neto",
+           status: "scheduled", // CORRIGIDO
+           votoSummary: "A minuta de voto propõe a abertura de Audiência Pública para apresentar e discutir com a sociedade a proposta da Agenda Regulatória 2026-2027, consolidada após as contribuições da Tomada de Subsídios. O objetivo é dar transparência e colher sugestões finais sobre os temas prioritários que nortearão a atuação normativa da ANEEL no próximo biênio. <strong>A decisão proposta pelo relator é pela abertura da Audiência Pública.</strong>",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023180-2025-50.pdf" }]
+       },
+       {
+           originalItemNumber: 7,
+           process: "48500.003480/2024-31",
+           subject: "Pedido de Reconsideração interposto pela Companhia Hidro Elétrica do São Francisco – Chesf em face da Resolução Autorizativa nº 15.815/2025, que autorizou a Recorrente a implantar reforços de grande e pequeno porte em instalações de transmissão sob sua responsabilidade e estabeleceu os valores das correspondentes parcelas adicionais da Receita Anual Permitida – RAP, Contrato de Concessão nº 61/2001.",
+           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Willamy Moreira Frota",
+           status: "scheduled", // CORRIGIDO
+           votoSummary: "A minuta analisa o recurso da Chesf contra a Resolução que autorizou reforços e definiu a RAP adicional. A Chesf contesta aspectos do cálculo da RAP ou do reconhecimento dos custos dos reforços. O voto analisa os argumentos técnicos e regulatórios apresentados pela transmissora. <strong>A decisão proposta pelo relator é por negar provimento ao Pedido de Reconsideração.</strong>",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903480-2024-31.pdf" }]
+       },
+       {
+           originalItemNumber: 11,
+           process: "48500.003250/2022-19 e outros",
+           subject: "Pedido de Reconsideração interposto pelas empresas Campos Energia SPE 1 a 10 e Talismã Energia SPE 1 a 10 em face do Despacho nº 2.551/2025, referente à postergação de prazo das UFVs Campos 1 a 20, desconto TUST/TUSD e recomposição de prazo de outorgas.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Fernando Luiz Mosna Ferreira da Silva",
+           status: "scheduled", // CORRIGIDO
+           votoSummary: "A minuta avalia o recurso das SPEs Campos e Talismã contra despacho que negou pedidos relacionados às UFVs Campos 1-20. As empresas buscam reconsiderar a negativa de postergação do prazo de implantação, a manutenção dos descontos TUST/TUSD por mais tempo e a recomposição do prazo original das outorgas. O voto analisa a fundamentação do pedido à luz das regras de outorga e dos impactos de eventuais atrasos. <strong>A decisão proposta pelo relator é por conhecer e negar provimento ao Pedido de Reconsideração.</strong>",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903250-2022-19_e_outros.pdf" }]
+       },
+       {
+           originalItemNumber: 15,
+           process: "48500.001864/2024-10",
+           subject: "Requerimento Administrativo protocolado pela Belém Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 20/2017.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled", // CORRIGIDO
+           votoSummary: "A minuta analisa o pedido da Belém Transmissora para reequilíbrio econômico-financeiro do seu contrato de concessão, alegando desequilíbrios causados por eventos não previstos ou alterações regulatórias. O voto avalia a procedência do pedido, quantifica eventuais desequilíbrios e define a forma de compensação, se aplicável. <strong>A decisão proposta pelo relator é por conhecer e negar provimento ao Requerimento Administrativo.</strong>", // Decisão confirmada como negar provimento
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901864-2024-10.pdf" }]
+       }
+   ];
+
+
     // Dados das Consultas Públicas - ATUALIZADOS para 23/10/2025
     const consultasPublicasData = [
          {
@@ -178,7 +225,7 @@
             fim: "05/11/2025",
             area: "STD",
             origem: "ANEEL",
-            link: "#" // Placeholder: Use link correto quando disponível
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=h84q8a8h&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3958&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" // Link atualizado
         },
         {
             numero: "CP 64/2022",
@@ -608,6 +655,132 @@
         container.appendChild(grid);
     }
 
+    // FUNÇÃO ATUALIZADA PARA RENDERIZAR A ABA DO CIRCUITO DELIBERATIVO
+    function renderCircuitoPage(container) {
+        container.innerHTML = ''; // Limpa o container
+
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta do 3º Circuito Deliberativo Público Ordinário de 2025');
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data: 28/10/2025 (8h às 18h)');
+        container.appendChild(pageTitle);
+        container.appendChild(pageDate);
+
+        // Card Azul com a Definição do Circuito Deliberativo
+        const infoDiv = createElement('div', 'mb-8 bg-blue-50 p-6 rounded-xl border border-blue-200 text-sm text-blue-700');
+        infoDiv.innerHTML = `
+            <h2 class="text-lg font-bold text-blue-800 mb-2">O que é o Circuito Deliberativo?</h2>
+            <p>O Circuito Deliberativo é uma modalidade de reunião não presencial onde os Diretores da ANEEL registram seus votos de forma eletrônica ao longo do dia para processos que dispensam discussão em sessão pública.</p>
+        `;
+        container.appendChild(infoDiv); // Adiciona o card azul com a explicação
+
+        // Sumário da Pauta (Adaptado)
+        const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta do Circuito');
+        const summaryList = createElement('ul', 'space-y-3');
+
+        const getCircuitoSummarySubject = (item) => {
+             switch (item.originalItemNumber) {
+                 case 1: return "AP Agenda Regulatória 2026-2027";
+                 case 7: return "Reconsideração Chesf - Reforços RAP";
+                 case 11: return "Reconsideração Campos/Talismã Energia - UFVs Campos";
+                 case 15: return "Reequilíbrio Belém Transmissora";
+                 default:
+                     const maxLength = 60;
+                     if (item.subject.length > maxLength) {
+                         return item.subject.substring(0, maxLength) + '...';
+                     }
+                     return item.subject;
+             }
+         };
+
+        circuitoData.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-gray-50');
+            const itemLink = createElement('a', 'text-gray-700 hover:text-blue-600 flex-grow min-w-0', null, { href: `#circuito-item-${item.originalItemNumber}` });
+            const itemNumberSpan = createElement('span', 'font-bold mr-2', `Item ${item.originalItemNumber}:`);
+            const subjectSpan = createElement('span', '', getCircuitoSummarySubject(item));
+            itemLink.appendChild(itemNumberSpan);
+            itemLink.appendChild(subjectSpan);
+
+            // Usa um status padrão ou adaptado para o circuito, se necessário
+            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0');
+
+            listItem.appendChild(itemLink);
+            listItem.appendChild(statusBadge);
+            summaryList.appendChild(listItem);
+        });
+        summaryDiv.appendChild(summaryTitle);
+        summaryDiv.appendChild(summaryList);
+        container.appendChild(summaryDiv); // Mantém o sumário após a explicação
+
+
+        // Grid de Itens do Circuito
+        const circuitoGrid = createElement('div', 'space-y-6');
+        circuitoData.forEach(item => {
+            const itemDiv = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden', null, { id: `circuito-item-${item.originalItemNumber}` });
+
+            const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2');
+            const h3Subject = createElement('h3', 'text-lg font-semibold text-gray-800');
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
+            cardHeader.appendChild(h3Subject);
+            cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap)); // Usa status padrão 'scheduled' se não houver
+            itemDiv.appendChild(cardHeader);
+
+            const cardBody = createElement('div', 'p-4 md:p-6');
+            const infoContainer = createElement('div', 'divide-y divide-gray-200');
+
+            const createInfoRow = (icon, label, value, tooltip = null) => {
+                 if (value == null || (typeof value === 'string' && value.trim() === '')) {
+                     return document.createDocumentFragment();
+                 }
+                 const row = createElement('div', 'flex flex-col md:flex-row items-start py-3');
+                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-medium text-gray-500 mb-1 md:mb-0');
+                 if (tooltip) {
+                     labelDiv.setAttribute('data-tooltip', tooltip);
+                 }
+                 labelDiv.innerHTML = icon + label;
+                 const valueDiv = createElement('div', 'text-sm text-gray-800 flex-1');
+                 valueDiv.innerHTML = value;
+                 row.appendChild(labelDiv);
+                 row.appendChild(valueDiv);
+                 return row;
+             };
+
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
+            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
+             // Adicionar Relator Voto-Vista se existir
+             if(item.votoVistaRelator) {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
+             }
+            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+            // Adiciona o resumo da minuta de voto
+            if(item.votoSummary){
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+            }
+            // Adicionar campo Decisão ou Detalhes se existirem nos dados futuros
+            // infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', item.decision));
+            // infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+
+            cardBody.appendChild(infoContainer);
+
+            const cardFooter = createElement('div', 'px-4 md:px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-wrap gap-4 items-center');
+            if (item.links && item.links.length > 0) {
+                 item.links.forEach(link => {
+                     const linkAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', link.title, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                     linkAnchor.innerHTML = icons.link + linkAnchor.innerHTML;
+                     cardFooter.appendChild(linkAnchor);
+                 });
+             }
+
+            if (cardFooter.hasChildNodes()){
+                 cardBody.appendChild(cardFooter);
+            }
+
+            itemDiv.appendChild(cardBody);
+            circuitoGrid.appendChild(itemDiv);
+        });
+        container.appendChild(circuitoGrid);
+    }
+
     function renderApp() {
       const appContainer = document.getElementById('app-container');
       appContainer.innerHTML = '';
@@ -622,11 +795,12 @@
       const main = createElement('main', 'container mx-auto p-4 md:p-6');
       const navContainer = createElement('div', 'mb-6 flex flex-wrap gap-2');
       const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Resultados da Reunião');
+      const circuitoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', '3º Circuito Deliberativo'); // Novo botão
       const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Imersão Presencial');
 
-      navContainer.append(pautaButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pautaButton, circuitoButton, consultasButton, agendaButton, imersaoButton); // Botão adicionado aqui
       main.appendChild(navContainer);
 
       const contentContainer = createElement('div', 'content-area');
@@ -636,7 +810,7 @@
       const footer = createElement('footer', 'text-center mt-8 p-6 text-gray-500 text-sm', '© 2025 i4 Economic Regulation. Todos os direitos reservados.');
       appContainer.appendChild(footer);
 
-      const buttons = [pautaButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pautaButton, circuitoButton, consultasButton, agendaButton, imersaoButton]; // Botão adicionado ao array
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
               button.classList.remove('nav-button-active');
@@ -647,6 +821,7 @@
       }
 
       pautaButton.addEventListener('click', () => { setActiveButton(pautaButton); renderPautaPage(contentContainer); });
+      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderCircuitoPage(contentContainer); }); // Event listener adicionado
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderConsultasPage(contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderAgendaRegulatoriaPage(contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderImersaoPage(contentContainer); });
