@@ -73,104 +73,7 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800" },
     };
 
-    // Dados da pauta da ANEEL para a 37ª Reunião Pública Ordinária - ATUALIZADO COM RESULTADOS OFICIAIS E DISCUSSÕES
-    const aneelAgenda = [
-        {
-            originalItemNumber: 1,
-            orderOfJudgment: 1, // Ordem oficial
-            process: "48500.003980/2025-54",
-            subject: "Resultado do Reajuste Tarifário Anual da Equatorial Goiás Distribuidora de Energia S.A., a vigorar a partir de 22 de outubro de 2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar as novas tarifas de aplicação da Equatorial Goiás Distribuidora de Energia S.A., com vigência a partir de 22 de outubro de 2025, correspondendo a um efeito médio a ser percebido pelos consumidores de 18,55%, sendo de 17,04% em média para os consumidores conectados em Alta Tensão e de 19,01% em média para aqueles conectados em Baixa Tensão; (ii) fixar as Tarifas de Energia – TE e das Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da Equatorial Goiás Distribuidora de Energia S.A.; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) homologar o valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à distribuidora para custeio dos subsídios retirados da estrutura tarifária.",
-            details: "<strong>Efeito Médio e Componentes:</strong> O efeito médio foi de 18,55% (AT: 17,04%, BT: 19,01%), decorrente da Parcela A (+7,36%), Parcela B (+1,63%) e Componentes Financeiros (+9,56%).<br><strong>Questão Jurídica (PIS/COFINS):</strong> A PG manifestou que a prescrição de 10 anos para reversão de indébitos (ADI 7324) conta a partir da restituição ou homologação da compensação.<br><strong>Encaminhamento:</strong> Voto do relator (lido pelo diretor Gentil Nogueira) pela aprovação. Aprovado por unanimidade. Apresentação técnica da STR (Charles Lenza).",
-            actNumber: "Resolução Homologatória nº 3.544/2025",
-            links: []
-        },
-        {
-            originalItemNumber: 2,
-            orderOfJudgment: 3, // Ordem oficial
-            process: "48500.017955/2025-58", // Corrigido número do processo conforme ata
-            subject: "Resultado da proposta de abertura de Consulta Pública para regulamentação da Lei nº 15.235/2025 (Tarifa Social, CDE e descontos irrigação/aquicultura).",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, com período de contribuições de 22 de outubro a 5 de novembro de 2025, com vistas a colher subsídios e informações adicionais para a regulamentação da Lei nº 15.235/2025.",
-            details: "<strong>Tarifa Social (TSEE - Luz do Povo):</strong> Beneficia 17,2M famílias. Proposta inclui desconto de 100% (0-80 kWh), custo de disponibilidade de 80 kWh (trifásico baixa renda), e compensação de GD.<br><strong>Desconto Social (Isenção CDE):</strong> Aplicação a partir de 01/01/2026 para ~4M UCs (CadÚnico, renda 0.5-1 SM per capita).<br><strong>Desconto Irrigação/Aquicultura:</strong> Lei eliminou exigência de período contínuo (8,5h), mas regulamentação depende de diretrizes do MME.<br><strong>Encaminhamento:</strong> Voto da relatora pela CP (22/10 a 05/11) devido à urgência. Aprovado por unanimidade. Apresentação técnica da STD (Daniel Bego).",
-            actNumber: "Aviso de Abertura de Consulta Pública nº 32/2025 e Resolução Normativa nº 1.136/2025",
-            links: []
-        },
-        {
-            originalItemNumber: 4,
-            orderOfJudgment: 6, // Ordem oficial
-            process: "48500.002288/2024-28, 48500.006650/2023-59",
-            subject: "Resultado da Consulta Pública nº 32/2024 (Resiliência do sistema a eventos climáticos extremos e canal de comunicação com Poderes Públicos).",
-            areaResponsible: "SFF, SMA, SFT, STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu aprovar novas versões dos Módulos 1, 4, 6, 8 e 11 dos Procedimentos de Distribuição – PRODIST, nos Módulo 4 e 6 das Regras de Transmissão e nas Resoluções Normativas nº 846/2019, nº 905/2020, nº 948/2021, nº 956/2021 e nº 1.000/2021, que criam mecanismos de melhoria à resposta de distribuidoras e transmissoras a eventos climáticos extremos, conforme minutas anexas ao voto da Diretora-Relatora.",
-            details: "Diretor Fernando Mosna ausente, consignou voto acompanhando a Relatora. Apresentações técnicas: STD (Renato Souza), SMA (André Ruelli), SFT (Thompson Rolim), SFF (Vanessa Cardoso). Sustentações orais: Ernst & Young (Gisele Monteiro), Abradee (Ricardo Brandão), Neoenergia (Cesar Munhoz), Energisa S.A (Rodrigo Santana), Equatorial S.A (Lázaro Serra - vídeo).",
-            actNumber: null,
-            links: [
-                { title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=DPZieEcT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3897&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
-            ]
-        },
-        {
-            originalItemNumber: 5,
-            orderOfJudgment: 7, // Ordem oficial
-            process: "48500.008476/2022-06",
-            subject: "Resultado da Avaliação inicial de propostas de projetos de PDI para a Chamada nº 23: \"Hidrogênio no Contexto do Setor Elétrico Brasileiro\".",
-            areaResponsible: "Superintendência de Inovação e Transição Energética - STE.",
-            relator: "Agnes Maria de Aragao da Costa",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por maioria, acompanhando o voto-vista do Diretor Fernando Luiz Mosna Ferreira da Silva e vencidos o Diretor Ricardo Lavorato Tili e a Diretora Ludimila Lima da Silva, decidiu aprovar o resultado da avaliação inicial das 24 propostas recebidas no âmbito da Chamada nº 23 nos termos da Nota Técnica nº 396/2024 – STE/ANEEL, com as alterações indicadas na Tabela 1 do voto do Diretor-Relator do voto-vista, e autorizar o início de execução dos projetos de código PD-00372-9982; PD-08025-0324; PD-00553-0084; e PD-10381-2403 (consolidado com o PD-10381-2402).",
-            details: "Votos divergentes históricos: Diretor Ricardo Tili (10/12/24) e Diretora Ludimila Silva (22/04/25). Diretores Willamy Frota e Gentil Sá Júnior não participaram. Voto-vista do Diretor Fernando Mosna lido pelo DG Sandoval. Sustentação oral: Itapebi Geração de Energia S.A. (Tatsumi Igarashi Junior).",
-            actNumber: null,
-            links: []
-        },
-        {
-            originalItemNumber: 6,
-            orderOfJudgment: 2, // Ordem oficial
-            process: "48500.006150/2018-50",
-            subject: "Resultado do Recurso Administrativo da Enel RJ em face do Despacho nº 1.860/2024 (negativa de anuência prévia para refinanciamento de mútuos).",
-            areaResponsible: "SFF, DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "denied",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) reputar manifestamente incabível o incidente de impedimento suscitado pela Enel RJ; (ii) conhecer e negar provimento ao Recurso Administrativo; (iii) determinar a instalação de procedimento fiscalizatório pela SFF; e (iv) encaminhar Ofício à CVM.",
-            details: "<strong>Incidente de Impedimento:</strong> Enel suscitou impedimento contra o relator (Mosna) alegando litígio. Relator e PG consideraram incabível (inexistência de litígio prévio e fato superveniente autoproduzido). Diretoria rejeitou por unanimidade.<br><strong>Mérito da Anuência:</strong> Recurso pedia refinanciamento de R$ 3,85 bi. Enel argumentou vantagem e não aumento da dívida. Voto negou provimento, baseando-se na incompatibilidade do endividamento com a geração de caixa projetada (Módulo 5 c/c Módulo 8 da RN 948).<br><strong>Indícios de Irregularidade:</strong> Voto apontou divulgação de informações incompletas/enganosas ao mercado (prazos de autorizações cautelares e mútuos não anuídos).<br><strong>Encaminhamentos:</strong> Determinou fiscalização da SFF e envio de ofício à CVM. Sustentação oral por vídeo da Enel RJ (Hugo Lamin).",
-            actNumber: null,
-            links: []
-        },
-        {
-            originalItemNumber: 9,
-            orderOfJudgment: 9, // Ordem oficial do bloco
-            process: "48500.023180/2025-50",
-            subject: "Proposta de abertura de Audiência Pública - minuta de Agenda Regulatória 2026-2027.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Sandoval de Araújo Feitosa Neto",
-            status: "withdrawn",
-            decision: "O processo foi retirado de pauta.",
-            details: "Este item foi retirado de pauta e não houve discussão de mérito.",
-            links: [{ title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023180-2025-50.pdf" }]
-        },
-        {
-            originalItemNumber: 10,
-            orderOfJudgment: 10, // Ordem oficial do bloco
-            process: "48500.003987/2025-76",
-            subject: "Resultado do Reajuste Tarifário Anual da CPFL Piratininga, a vigorar a partir de 23 de outubro de 2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar as novas tarifas de aplicação da Companhia Piratininga de Força e Luz – CPFL Piratininga, com vigência a partir de 23 de outubro de 2025, correspondendo a um efeito médio a ser percebido pelos consumidores de 7,63%, sendo de 12,15% em média para os consumidores conectados em Alta Tensão e de 5,64% em média para aqueles conectados em Baixa Tensão; (ii) fixar as Tarifas de Energia – TE e das Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da CPFL Piratininga; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) homologar o valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à distribuidora para custeio dos subsídios retirados da estrutura tarifária.",
-            details: "Este item foi deliberado em bloco e aprovado por unanimidade, conforme voto previamente disponibilizado pelo relator.",
-            actNumber: "Resolução Homologatória nº 3.543/2025",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003987-2025-76.pdf" }] // Link restaurado
-        }
-    ];
-
-    // Dados para o 3º Circuito Deliberativo - ATUALIZADO COM RESUMOS E DECISÃO PROPOSTA REVISADA
+    // Dados para o 3º Circuito Deliberativo - ATUALIZADO COM RESULTADOS
     const circuitoData = [
        {
            originalItemNumber: 1,
@@ -178,8 +81,10 @@
            subject: "Proposta de abertura de Audiência Pública com vistas a submeter a minuta de Agenda Regulatória para o biênio 2026-2027 à discussão com a sociedade, após análise das contribuições da Tomada de Subsídios nº 11/2025.",
            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Sandoval de Araújo Feitosa Neto",
-           status: "scheduled", // CORRIGIDO
-           votoSummary: "A minuta de voto propõe a abertura de Audiência Pública para apresentar e discutir com a sociedade a proposta da Agenda Regulatória 2026-2027, consolidada após as contribuições da Tomada de Subsídios. O objetivo é dar transparência e colher sugestões finais sobre os temas prioritários que nortearão a atuação normativa da ANEEL no próximo biênio. <strong>A decisão proposta pelo relator é pela abertura da Audiência Pública.</strong>",
+           status: "approved", // ATUALIZADO
+           votoSummary: "A minuta de voto propõe a abertura de Audiência Pública para apresentar e discutir com a sociedade a proposta da Agenda Regulatória 2026-2027, consolidada após as contribuições da Tomada de Subsídios. O objetivo é dar transparência e colher sugestões finais sobre os temas prioritários que nortearão a atuação normativa da ANEEL no próximo biênio.",
+           decision: "A Diretoria, por unanimidade, decidiu: (i) publicar o Relatório de Análise de Contribuições da Tomada de Subsídios 11/2025; e (ii) instaurar Audiência Pública, na modalidade virtual, a realizar-se em 06 de novembro de 2025, para submeter à sociedade: (ii.a) a minuta de Agenda Regulatória para o biênio 2026-2027; (ii.b) a lista das Demais Atividades Regulatórias a serem desenvolvidas pela ANEEL; e (iii.c) a relação das Avaliações de Resultado Regulatório – ARR a serem empreendidas pela Agência até o final de 2027.", // ATUALIZADO
+           details: "A Diretora Agnes Maria de Aragão da Costa e o Diretor Gentil Nogueira de Sá Júnior registraram, quando da votação do circuito, que consideram oportuno que sociedade se manifeste sobre o interesse na antecipação, para o ano de 2026, da atividade AR24-22, assim como o estabelecimento de prazo para 2026 da atividade AR25-08, ambas sobre Micro e Minigeração Distribuída – MMGD. Da mesma forma, entendem ser relevante avaliar a conveniência de consolidar o item ARR24-02, relativo à ARR da Resolução Normativa nº 1.030/2022, com item GER21-07, para que se tenha a oportunidade de buscar solução integrada e abrangente para o constrained-off, considerando as especificidade das fontes.", // ATUALIZADO
            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023180-2025-50.pdf" }]
        },
        {
@@ -188,8 +93,9 @@
            subject: "Pedido de Reconsideração interposto pela Companhia Hidro Elétrica do São Francisco – Chesf em face da Resolução Autorizativa nº 15.815/2025, que autorizou a Recorrente a implantar reforços de grande e pequeno porte em instalações de transmissão sob sua responsabilidade e estabeleceu os valores das correspondentes parcelas adicionais da Receita Anual Permitida – RAP, Contrato de Concessão nº 61/2001.",
            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Willamy Moreira Frota",
-           status: "scheduled", // CORRIGIDO
-           votoSummary: "A minuta analisa o recurso da Chesf contra a Resolução que autorizou reforços e definiu a RAP adicional. A Chesf contesta aspectos do cálculo da RAP ou do reconhecimento dos custos dos reforços. O voto analisa os argumentos técnicos e regulatórios apresentados pela transmissora. <strong>A decisão proposta pelo relator é por negar provimento ao Pedido de Reconsideração.</strong>",
+           status: "approved", // ATUALIZADO
+           votoSummary: "A minuta analisa o recurso da Chesf contra a Resolução que autorizou reforços e definiu a RAP adicional. A Chesf contesta aspectos do cálculo da RAP ou do reconhecimento dos custos dos reforços. O voto analisa os argumentos técnicos e regulatórios apresentados pela transmissora.", // RESUMO AJUSTADO
+           decision: "A Diretoria, por unanimidade, decidiu: (i) conhecer o Pedido de Reconsideração interposto pela Companhia Hidro Elétrica do São Francisco – Chesf, Contrato de Concessão do Serviço Público de Transmissão de Energia Elétrica nº 61/2001, face à Resolução Autorizativa nº 15.815/2025; e, (ii) no mérito, dar provimento integral ao pleito, por meio da substituição do Anexo III da Resolução Autorizativa nº 15.815/2025.", // ATUALIZADO
            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903480-2024-31.pdf" }]
        },
        {
@@ -198,8 +104,9 @@
            subject: "Pedido de Reconsideração interposto pelas empresas Campos Energia SPE 1 a 10 e Talismã Energia SPE 1 a 10 em face do Despacho nº 2.551/2025, referente à postergação de prazo das UFVs Campos 1 a 20, desconto TUST/TUSD e recomposição de prazo de outorgas.",
            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Fernando Luiz Mosna Ferreira da Silva",
-           status: "scheduled", // CORRIGIDO
-           votoSummary: "A minuta avalia o recurso das SPEs Campos e Talismã contra despacho que negou pedidos relacionados às UFVs Campos 1-20. As empresas buscam reconsiderar a negativa de postergação do prazo de implantação, a manutenção dos descontos TUST/TUSD por mais tempo e a recomposição do prazo original das outorgas. O voto analisa a fundamentação do pedido à luz das regras de outorga e dos impactos de eventuais atrasos. <strong>A decisão proposta pelo relator é por conhecer e negar provimento ao Pedido de Reconsideração.</strong>",
+           status: "withdrawn", // ATUALIZADO
+           votoSummary: "A minuta avalia o recurso das SPEs Campos e Talismã contra despacho que negou pedidos relacionados às UFVs Campos 1-20. As empresas buscam reconsiderar a negativa de postergação do prazo de implantação, a manutenção dos descontos TUST/TUSD por mais tempo e a recomposição do prazo original das outorgas. O voto analisa a fundamentação do pedido à luz das regras de outorga e dos impactos de eventuais atrasos.",
+           decision: "Os processos foram retirados de pauta.", // ATUALIZADO
            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903250-2022-19_e_outros.pdf" }]
        },
        {
@@ -208,8 +115,9 @@
            subject: "Requerimento Administrativo protocolado pela Belém Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 20/2017.",
            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
            relator: "Gentil Nogueira de Sá Júnior",
-           status: "scheduled", // CORRIGIDO
-           votoSummary: "A minuta analisa o pedido da Belém Transmissora para reequilíbrio econômico-financeiro do seu contrato de concessão, alegando desequilíbrios causados por eventos não previstos ou alterações regulatórias. O voto avalia a procedência do pedido, quantifica eventuais desequilíbrios e define a forma de compensação, se aplicável. <strong>A decisão proposta pelo relator é por conhecer e negar provimento ao Requerimento Administrativo.</strong>", // Decisão confirmada como negar provimento
+           status: "denied", // ATUALIZADO
+           votoSummary: "A minuta analisa o pedido da Belém Transmissora para reequilíbrio econômico-financeiro do seu contrato de concessão, alegando desequilíbrios causados por eventos não previstos ou alterações regulatórias. O voto avalia a procedência do pedido, quantifica eventuais desequilíbrios e define a forma de compensação, se aplicável.",
+           decision: "A Diretoria, por unanimidade, decidiu negar provimento ao Requerimento Administrativo protocolado pela Belém Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 20/2017-ANEEL decorrente do evento do dia 19 de julho de 2023 na Linha de Transmissão 230kV Marituba – Castanhal C-1 PA.", // ATUALIZADO
            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901864-2024-10.pdf" }]
        }
    ];
@@ -250,7 +158,7 @@
          {
             numero: "TS 12/2025",
             tema: "Subsídios para revisão do Submódulo 2.5 e 2.5A do Proret (componente Pd - Produtividade do Fator X).",
-            status: "aberta", // CORRIGIDO status
+            status: "encerrada", // CORRIGIDO status
             inicio: "15/09/2025",
             fim: "24/10/2025",
             area: "STR",
@@ -260,7 +168,7 @@
         {
             numero: "CP 30/2025",
             tema: "Aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.",
-            status: "aberta", // CORRIGIDO status
+            status: "encerrada", // CORRIGIDO status
             inicio: "10/09/2025",
             fim: "24/10/2025",
             area: "STR",
@@ -287,9 +195,87 @@
             area: "SEL",
             origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=l55vomce&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS ADICIONADA ---
+        {
+            numero: "TS 19/2025",
+            tema: "Proporcionar transparência e colher contribuições para a metodologia de apuração do saldo do UBP a ser repactuado, conforme os termos do art. 4º da Lei 15.235, de 9 de outubro de 2025.",
+            status: "aberta",
+            inicio: "29/10/2025", // Data de início ATUALIZADA
+            fim: "04/11/2025", // Data final ATUALIZADA
+            area: "STR", // Inferido pela natureza do tema (UBP)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3964&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 18/2025 ADICIONADA ---
+        {
+            numero: "TS 18/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada Energisa Paraíba – Distribuidora de Energia S.A. – EPB.",
+            status: "aberta",
+            inicio: "20/10/2025",
+            fim: "18/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3962&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 17/2025 ADICIONADA ---
+        {
+            numero: "TS 17/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada COMPANHIA ENERGÉTICA DE PERNAMBUCO – NEOENERGIA PERNAMBUCO.",
+            status: "aberta",
+            inicio: "20/10/2025",
+            fim: "18/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3961&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 16/2025 ADICIONADA ---
+        {
+            numero: "TS 16/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada EDP ESPÍRITO SANTO DISTRIBUIÇÃO DE ENERGIA S.A. – EDP ES.",
+            status: "aberta",
+            inicio: "17/10/2025",
+            fim: "17/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3960&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 15/2025 ADICIONADA ---
+        {
+            numero: "TS 15/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada Equatorial Maranhão Distribuidora de Energia S.A. – Equatorial MA.",
+            status: "aberta",
+            inicio: "17/10/2025",
+            fim: "17/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3959&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 14/2025 ADICIONADA ---
+        {
+            numero: "TS 14/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada DME Distribuição S.A. - DMED.",
+            status: "aberta",
+            inicio: "17/10/2025",
+            fim: "17/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3958&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // --- NOVA TS 13/2025 ADICIONADA ---
+        {
+            numero: "TS 13/2025",
+            tema: "Obter subsídios para o estabelecimento dos limites de continuidade DEC e FEC dos conjuntos da Concessionária de Serviço Público de Distribuição de Energia denominada Energisa Tocantins – Distribuidora de Energia S.A. – ETO.",
+            status: "aberta",
+            inicio: "17/10/2025",
+            fim: "17/11/2025",
+            area: "SFT", // Área inferida pelo tema (DEC/FEC)
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3957&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         }
     ];
 
+    // **MOVIDO PARA CIMA:** Dados para a página da Agenda Regulatória
     const agendaRegulatoriaThemes = [ // Mantido como estava
         { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária." },
         { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização." },
@@ -303,7 +289,12 @@
         { title: "10. Eficiência energética", description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais." }
     ];
 
-    const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
+    // const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
+    // Using a placeholder URL as an alternative
+    // const i4LogoUrl = "https://placehold.co/150x40/cccccc/333333?text=i4+Logo";
+    // Using the provided Base64 Data URL
+    const i4LogoUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXUAAACHCAMAAADeDjlcAAAAmVBMVEX///8Ue7IAd7AAda8NebEAc677/f73+/3z+fzU4+7o8vcJeLDs9PhrqcwSgbXE2+k/lMEviruKtdMhh7m31+etyd3h7POZw9wshLfL4O2w0ePb6vMafrRPlcB+rs4/kb9NnMWDtNJiosiTvtimzeKjwtqYwNlcmcOuzeFyr9C82ulfn8eqy+Bmp8uGstEvjr4AbKtZpMu60eNauAJ3AAAXd0lEQVR4nO2diZqiuhKAJYR9E3XYFRHbdr2e7vd/uJtKQEnApV1menqs794ztkbAnyKpVKoqvd5LXvKSl7zkJS95yUte8pKXvOQlL3nJS/52sYM0jtPAVv/0hfwbEozKj9yVZSQTQUiW9h9Fkj4Rvh6v1+tnnuCbi5bOd66syAhLWKoFY4QUJZuWsfYcMoaiKP/1g/pPs9j3+/v4Kaf6dqLaRtnHMpJOiCXLw5Vna48/s0HOiY7U1y7CqG8+/jzfT/R0O5VAx88JRnJeGvajzw3UrQN1u4CbsPwHOhw7Lv1LyJkg2V155mORGK7rZtOaejzETc3/saLHxVC+BnkFPnM+H/r8m/MwDNd6dTGg6vjtCR3Z9xKD6Pn1zCl3d1JDevzVEFW3+umTjv5dxNyOr+paBO7+wHjYJegekZRpt1bKRNUXz7qn30NUz8msLzOXwJwcbx/Vu6f9PN8XbJAOaK8e9/TRcrn8oeztRd6t5+SnW4hMkUBOPAmkm3lQP2C4FpZ3dKhQQ1D1Uu+t82g4/JnWY7qKupCSSak07H84q6IoVrOpnyGlG/37+iGXYbjknA5FbBNVx7nX6xXkaZJ+pCETjzuRux/lyDBt29aJkH/M1AsdH7XnT1jy54/oZRrUQdXRQOvpGyT9TOojXxI0GCOFWOO6poosVU0nE1elPW91yweYeEfqGqi6PyI6/279TOrLTGQuow/vnO6mq0wRexpc3D/kHanPFTJLneg/lro6F210PCwu/kp1nmP+AcGyc/eYd6Req3pF/aeNploo9hb+Zeb0i/M8E3ql1b0qeaCegAEzM1VNM9+hX09bXd1fLVrIaTrGkXO1Z9UsfaFjWt2pkwfqfXJRWX9FxIng0LvV/L4jfytRQ6F7GW+/MijGO17d5cl92l5TH9GRBtPFFHpgJDt3HfhbiR5y5vfXpzvmIud6d/m+TqamXmJxqMGre477rcQuuZ9mDcNOM4RYi0S6l4/U0ZQjJDv3YK+ppxnCB6HHzcM7DvutxC65/kHOk3YbM14v3xYDIuXbdhQHbfTGjsOO7rFkDv16OCgrGdCxo/R+ihVjDzjoaOyJLdJkMRn7LqZOGBllw3w2WBpixx9MZF7bbwd0oE6MFyYqs2F+CnMC3eU0fSrYLqo32PhkvnTUZGJCIxSNJ4mwcmcXcrMLRrd3Mg2PwOHgP2qWZBacvwvNeC+5up7kktXpEZOi2Zzv/+1CaWKXbsb+06mbBd+9CNCNScs108CKo82Ia060vdH6duxGhixlJ1CXLYR+BnX1jR8CN5zFqIW56JoRwUf8hKil7bd1xOnH9GNach2YXpC3Ph4ejfBnJHAalrrMQw8c6bSiH8jmnEu9pe23YVdBLr7194p5wI4xDz3Or4vMcMMmDLqif8SOdj+jU3i0mJWdjfGsqZfq5/Bk0Jeg7RLn29UL7kP5hb1T0hn0I1jioPeMNnTM/t/xAAya/a0tDNB3zVJ/rgB2ETqZsLo8XoSzyCcSZcSSFMmfw36fc+BnSXNmmc4wbg17enk05All/31SzkdE5uVk0zZtBs2vt7T9p4cQXSt62JyCBpsOW8M+YMfZuEgarhd7XW4iYag938m8sIPoJc6b2NMuA6/GjvqLWHS6pNtZdg4779t5Dakg4GWEeKpuCZJDswgWRYu4y05OQ5/Hzlkydsl9iGYv7My1i9vORSqB424PDSM03J5Y89e8KReaxwcH6CXngUS7f72TOXTYndjJjNSK6tVJveyvT08I01nTyShou4Adz/4O7HY5GBTh4z3KBHpNogM7gU56leEB+9mcLPND4bBPmt0/j52Ypn8F9tSFCL/HhSdXoh9XjnAbO4VOxL9uLd7msWd/P/bUJZe6fzR1fpijcZsNqaFL0vAW7Dhbne5krGh08jDfR55DXeXj6izOgDy6wiQc3aTt0kTA3rgjf0UoS5r9p/znP7yH6S35xaNGHqfpNHTTOlgyB9GDNDVFy93ecfMlLGj74f2oYw38O4pumqb+BJfydngCu744zm2wxC+gqnby4cqKgoY7IQPJdPg4x0lzulSPIjdAV2GpWhXf4Xzs9I3Gn/W//PfYgdRWq0Yz4Runz3iHbLkIuQZ2bXEwb6QNB11PchY2jbEsTz1O4U2H62Nw0bS7GHb0VeiqbSzLoihCz6zvsR0k5J1y7lWVDPTAC0mLMknZbVa99doLeprplatiHtSXqAcjaBaOqq+pI9LM7GnBiDYj76nsGywPSiNH+YzZOe10WZ3xIZbkSex6hV2EHhS4MSNCLr+6Fqyyc9gjMpB+EbrmbbACJQsUxWVHU41d/Q76SNlJFfaGNKPh3vZQUZRBGu6h1oHihgy7Ac1IK1nJHDrH1kgrVKSlD19WskQNtn16nGwB3whc8jmzHI0PRD+QFdR/SELUlpvNW34LOw/dXPHOdpwV12MnM2H/q92L58Nggel/2OQr7iP6pBGhWhKMZaYeROQhWGL2nvzh7zFqdmnGGB2aIWo5aHDQqF8NRjjbTmWmUBjBN0yafAbUU5pyy86Y3bxgy/UK21NDqh4S7NaGG8S1QlzLw1nIHS49i33BQ78ct0qGdXIQdzyG1DQE1q3tgE8fuXne7+fgXSiAJMKZBMioLlLqkLWGaCQJdsh72qRqhuE9GuxBqdNm7AV5iDGi3K2+2qCuziC5GJMzjvv96a26Hpdc57R0m+qLjna7HmYyD703klrCW5wXtJ3HbCwu9pIQD4P9MDa8CblKMKbWlP9u6cVEDL1nwt/Z9G37NoGHU4lr6sgdOxvmZooh0QpKEMx+kWZgMLtxRR1Dsym9ZGxl49kmom+aDepxBso1W67pKW8cUY2NEAKXcNitI3Yt5Fete2q/IwFV5vsYgp1b2uMtGe5CZvhSeLv6CSlgNMEpAFhlr7cg/+L98XsjYE07RnOC4Woq6gSTEaQhMIQUjy00G4K/M92RHyFvVUqd0EyMwGABWJtlTL4BI53iNaiX9M7dN52ON1iMpkrcJsxGhIUunGrN+7iq9uJMwlxx63r0Ae8QYwaxeOe7SS2UyS38hJfqkBxq0NP+B2jLY5MQ1hdn9OWWvLSmjDr26a9QYdiCwQRuFgt5V5cIbo7OqLMfG0B2D5sxk/khoT5qUN/BzSnOXucliTfg0+KX6VQeu8QHtjTE6QwWkMXSIabDx2SsurADdHIhu7PaTqM7XPrwGaRxtiDdOmKqWEsBus+YjHx4DCrqVccHPmhCXR3AzWLB114Gemcz6mOmMmMYWOk3NHhilORIXd3AZ3fN7Cj0VlCQyncyJ7HvO8NiUCvXzt4JgV9t7CweoRWQIB5oRZ6ubOMQodq47JkwtMmNZ3ACp2C670GbodpFnT4iCvNEeBA7Oaups2aUOv3VLeoapN5G3SsQ14lRR/SL2EfXYFdbEQGMehucfgl7uqkvBJ9bXLKPTw2GiBq7F8wIRnSauuRepB6Tvgp9MOroMnU9PzwHt4kxPfq0znYyogeSifZfF3TSlbbVVd9xnYyIPfjAxws5g92m0wOkUHFh2A4u6bp/gjpiLHuVrn98Uddvp572G6MhtoQhlfPJWH4HdpV3Kh7abjo6CXPYbEKwN4dN86NxT7B1upOh/XpWQhzIyKA3jg12DQY39uu7q6mrlPrt/XrgNLsIMZg/4WapqAs7l1VwbLpqGyJ2X5jDNh8t84OzhdzBydkSzX1Fn813Jkd8VDgbRjraMDx1asMglkAGNgyqbZjL1HszsGEaVtNXxZxwKGQRO8eyA/u0s16MHLaomX3RxsR4UmMXoZenJx7qJxCaNJ8FZq8fz8js9VRVVXtiHe11kfoSmrm62lMD+rTU9voV1Km9/n5H6LY5ORcCJ2AftrCHXfa6lLX6vDZ0ip2dLJgK0M9dMBSdIhOtOKACpdzW8EjKHx57R+uZAEwab72ETorBqOyiTt0w8jTxEuqOzqq56RWjaT03PZzx6xII2Fdfwm7zKbxVs9ZoGEy77PoKuylCPzvFpt42jJA7JOLCmewJ9cOgDN6AKyypg0Vm5VKsXOumrg3gbBZUE4Lfvav8MNfoeo/6YSyUwUW4Nw2rIvbzfbtoQJYdyu4mArd02h3tjiWC3dzwhzgPHWLnD7lQWKbT8phZv5iSgJn77JCfhhGr79BBvWdspGOzHDzCV1M3DvH72FJuM9yDC317s+tuabs5FrW40V/X0Den8joI9pif3uLBJWeS5jm+JLM8S5+dKp5AHSDQbX9KHbGDPKNVg7E/Syr/uqxUPus+eckMkLjIMwXRZg5djNEUWVaqm5OTZllFXVHk/xLqX5cr/3rjjLeW2DMnfO4zH3k44uz2lrbHOa+qWBIcZGymz92WZms+3V0qr/Cbmutfi8H/Bou3ZV0m2Vy/DYrB4G1ZWZOat3yDFtsR+yna9u3tbcmUISEvf7FLtKFZMVj8WrOP1Ldjs1/QjH5b9eBt8g29cRS7PuNnK87zWjEnnL7JvLk8GvLY+SAKdT3mUkmxkKpHH2SOq+CB5O7ZNdDpWSF/nntHt4U3NPuqhWX9umYdooln/KrYK266I2QM8dixkNWuGk5W3zQsu4UQEUagNyUrbbM4WZ6w/CGJdFcKj12Yk6trwQMpTMvs0S4jPaKsKMNVLCir2KdDULW+6p7S/mvQW9iFEDjvPHbVpmvyjUX7WkTojKvWjX3xr0GvXKintL235jsZvx0gp3YFh6Rj3ilZe4C7sKPBD60+elYI9qZxIWAfRTz2q0piBvz6XiOKvY0dF/+epoPo3HI/Rnwns+YDNoZXhIMGe840yorGw6AVwvTqAUUH/06xC46DzOdQjATsZ1IGmJyDXvnJGx/+q9Db2aAC9rz5oeVewH4WOo1qaX744wvXnxFTTMLlsCc89vPanubnNF2E/ts1XU+JXJWGpoNf8bnXdwk738kkpzXUEBYxOOg6by/9iT7dy2F7jmvOm0yJPDnUW8QudDJcTIDlngrV0j9zfpWU13ShHNXJqKQniudb0pnAUKjZx1RKHyiWpRQPCpk+JSJ20ZLhVBg5XseFq8aAC5XEGVeM2iz4ZcM/MpB6Pj5HPS4HAxY/oA/o8t6zy8+YBTedFGogedx0CbbMELlrxmIsCdCbTcwJf/w/Y6dfoF5ipEzpK6LrCD1d16udnxrazmPnZ6lkNpVPtkfni5YmxTjD56BzzxLR9D9TEfAC9QmEatBX6mi3283EdZoniM5V6JLwWW2Hwmr5rCjnRMLCGfsS7wQg0LkQjO8B/QJ13cE1dZqM1PIvPUN0friTROzt5aMsi4i4GW59dFbT5XugN/w+2pd95G3qamPsMTfoQF2Ubqe6/YB+8gJ2v732jA//OQfdFqCLa31XSLBydiH5ifNNPqZeibTcjPN8PN4dcs31dblyDjJXe/BXwX5CQV6uDI66ms6L2Rhkxg5hr1c0uIN8jVy9t3OcHXM7aaPVO5xrs2LrmNpyR48fr+Dd62rSnxNdqEcnYN93BmS0BWVCuTXujqBbarEbroSHhr0jjxVkqWoQhl6VSK6ywROu1D5yVDWrU2CqRegRR91ws6yusgx54+ksqw9gvdu9X+S3KvRnBJBLwIoxZzvQeLBv8DDeuewKpnenovLYJYvHbkyvwY4tPulIqHF3MUOgUyBXQy6mUpUb/MnKsAMKjGigX5g1K9hi5SL1uM5DgiuOvF5ax35ijIA6hM0AdbvPcqHoI40guIxalTTMlWnR/eaYPuD6C8GAhP75xLr/Eav0zt18sZ7jDd1Lj1GXEJRDBuoBlObAWX/qA/3hElz6EKuSgYBOOvOgB9S5gAuBelYJvTrnGEdC3ql0nVKfK+xN1hDCDBj14y0e3r+7rViPWlj6TwQDscUc+/xGPWLt0htnpEYVWgnD97wXH1L753AjSvIv6XHQdB3HMWymQnNpLlDXWAhXmsBn1rtuJyFsyIXzMAwT7UidRhdukjSdU8eIc9D1aLxyqIsKf5678utEqEgt1uk1y/wkd9zefEMcKW4tBs6oZ+9lkszTXgITRxZVCdHQgyrxhSnIFtQvvUj9IDGk341hTITFhNqGqalr0mE1Zw6RlWO9mrdO4b0U/E7oEbv9EW3nZpFizEVMJkSoAzy2pNwZ8Rcglia5qya1FFUWp7aFLCVmYBBQMqFeQqgua+qBVsTXU9ezmvqog3qgHIY3E0bwPGXUFWpJQb6UpDxkp9UL2g4Fvpw8k63DtkjkhSVL/mbgCacXoN9Zf/0QHw+FN3C2Ba+tB7OzqoepdH0pXUddTb1PkCX8xjEcOumgHisQTEy7RdUHtY856lvysfyY/W1bfXtruLC9t//NciifKcsyzqJ8M1mMWkhNPhf4IXsNgDCrqL8hAjGIsIju5WSC48SGYSSQtOUaF6nbb+8uprkfEJRKdT0ZSi3qa0qd3aecpfRx1OWHURf31UDjjlVqLY0/l29vi8XibfvppR2DZMpnPj5mXw0QRt2C3SUsS3ZhRqYVcAYyaxrDiiOCXJ3z1PVSQjC7Hu5zqaa+vEC930H9cbpO6yPxQb2nBowz1bg9PijmMXvIUGHUh3vf9/fTCdsgm8YoY5aTbmXgtjpP3YDUjqj49GKPjqZwkC7qntzQdem51MV6dFb01Ymvvs354NXH7JdERVvQLZQNkLTaDN5ckUGUbXGr+HSfibPU1SUcggbSa4fRFCa8IvVUOZxYo6Np/LQepkc3h+bNlM2XanQZk4j79r0FkTnqKvxW3l4LyPmsfEfEKZZVXZfsYPOxpMWKOt4D9VCBG0cn+Fmt60Ad8plAauo6nIrdu5hajkFL1x9jwzARsGMpun57MD3kVrhbgatfF343E8iew1wE+dbF1pTucavXdqFKLbGZFxjhOwxTQD2m+1GC4yY8FCZo6DrkC7rssDV1SIVnq2LqCjBsek/sYeCIpbhTqV9eNR6qZALLOw7ku+uU8tTp5ATnqzABWds0oRHvYxuc4qZdPQQ+dZ5EUKlcqqinG5hp+k6ow0Qf+3NyS6ZSbTmykCt/48wb1MEPi6OxsxvTtKSi98wepkexS4L44eUJ/aiPhRUOdH/dRp66vmAFeOhp6PNfSofZg5T5K3q+Y0gCqqlXvmxspbFcObToLkRM18G/Tg/rqEePQJrVDeFAUfpkXYcNYlv7J8uZc7Z2qV26iriZ0m1eRl7A5GiYngGU0atchJQ6TWKvHbdYlmCObLpgG0JpiD7Mb2gpjHhs0e+k+ocs0c9w3rcq6mSuxbBX1JmnN6HtWOMMvKn6QH5avw6iLrv2rd6XRkcBOFXT0/lUFrf/fVCwkeFHUda4e2ZJ5mggUeRT62ge1U8YTc1jFWD60CYah71RRNrRgTWekZdZlvaCj6z6cC1F2XuVRzOGxbFoQqiTI1fLBPAVdqoPOqrqA/JSqqhL5LMv7UF6jaw79mjHMho6cy81YYt2TaO7tAdxUvQluSMdw1884pp0z/PW3FOmxwks2o6YwRKPoRL/bkZkHOG6VIC2Dsu5AbZ77Hlx1TmmIzIWwMTKqz9ckw/ri0zJibwUcp7ICQ/5yGs41bqyCNQUPrOrT6DZwxe1DadrWyqMZOTup05RlmFZrD76Q8iP62o4/i2lMlNY8axKFFDvnXwpk/Kbi1n6HTQpUQuK7EGuIcLdix2WO3l8pdUugcoBcu0tWvu/I4DoyaKOxK0brhSM+t2b0T5eFuR0qH6qoFTA367rRIJF3g4PuCgomty/tHWlLKgvJYE+2VtC+p/8N1S7viBqXLhf445R5nz+vqA6moEPtR3zfA9uLbT/Ebt22N7KbRuFp/Vc2ix/5+82J7R+bb2bNRr+hli53yJ2XAzlzt1kO/R899mxj/UzxQxzBMmvNP/V3YmLWn+x6GnYxxcVHsl+Edu/XdW0wBhtqSRx+vtP/0xRicLv0UmNx2Ti6u5GrTL4v+vqKvkzZ3+qqLpRTqECt8UXwQDTHe1X65+lZt9LjPlqOoS6Q7QaOfmf23fCrgSOlzxc9DSO16M47lqqfslLXvKSl7zkJS95yUte8pKXvOQlL3nJS36D/B+nFNdt5Oc0rAAAAABJRU5ErkJggg==";
+
 
     const icons = {
         link: `<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -363,202 +354,60 @@
         }
     }
 
-
-    function renderPautaPage(container) {
+    // --- FUNÇÃO DE RENDERIZAR CONSULTAS ABERTAS (Modificada) ---
+    function renderConsultasAbertasPage(container) {
         container.innerHTML = '';
 
-        const pautaTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados da 37ª Reunião Pública Ordinária de 2025');
-        const pautaDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data da Reunião: 21/10/2025');
-        container.appendChild(pautaTitle);
-        container.appendChild(pautaDate);
-
-        const youtubeLink = "https://www.youtube.com/live/N_wVKeeerXQ?si=LxdIdmLVf_oEWxMy";
-        const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-8');
-        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
-        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
-        youtubeSection.appendChild(youtubeText);
-        youtubeSection.appendChild(youtubeLinkAnchor);
-        container.appendChild(youtubeSection);
-
-        const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados');
-        const summaryList = createElement('ul', 'space-y-3');
-
-        const getSummarySubject = (item) => {
-             switch (item.originalItemNumber) {
-                case 1: return "RTA Equatorial Goiás";
-                case 2: return "CP sobre Tarifa Social";
-                case 4: return "Resultado CP sobre Resiliência Climática";
-                case 5: return "PDI Estratégico sobre Hidrogênio";
-                case 6: return "Recurso Administrativo Enel RJ";
-                case 9: return "AP para Agenda Regulatória 2026-2027";
-                case 10: return "RTA CPFL Piratininga";
-                default:
-                    const maxLength = 60;
-                    if (item.subject.length > maxLength) {
-                        return item.subject.substring(0, maxLength) + '...';
-                    }
-                    return item.subject;
-            }
-        };
-
-        aneelAgenda.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-gray-50');
-            const itemLink = createElement('a', 'text-gray-700 hover:text-blue-600 flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
-            const itemNumberSpan = createElement('span', 'font-bold mr-2', `Item ${item.originalItemNumber}:`);
-            const subjectSpan = createElement('span', '', getSummarySubject(item));
-            itemLink.appendChild(itemNumberSpan);
-            itemLink.appendChild(subjectSpan);
-
-            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
-            statusBadge.classList.add('mt-2', 'sm:mt-0');
-
-            listItem.appendChild(itemLink);
-            listItem.appendChild(statusBadge);
-            summaryList.appendChild(listItem);
-        });
-        summaryDiv.appendChild(summaryTitle);
-        summaryDiv.appendChild(summaryList);
-        container.appendChild(summaryDiv);
-
-        const agendaGrid = createElement('div', 'space-y-6');
-        aneelAgenda.forEach(item => {
-            const itemDiv = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden', null, { id: `item-${item.originalItemNumber}` });
-
-            const cardHeader = createElement('div', 'p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center flex-wrap gap-2');
-            const h3Subject = createElement('h3', 'text-lg font-semibold text-gray-800');
-             const orderText = item.orderOfJudgment ? ` <span class="text-sm font-normal text-indigo-600">(Ordem: ${item.orderOfJudgment})</span>` : '';
-            h3Subject.innerHTML = `Item ${item.originalItemNumber}${orderText} <span class="font-normal text-gray-500">| Processo: ${item.process}</span>`;
-            cardHeader.appendChild(h3Subject);
-            cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
-            itemDiv.appendChild(cardHeader);
-
-            const cardBody = createElement('div', 'p-4 md:p-6');
-            const infoContainer = createElement('div', 'divide-y divide-gray-200');
-
-            // Use innerHTML in createElement to render bold tags etc.
-            const createInfoRow = (icon, label, value, tooltip = null) => {
-                if (value == null || (typeof value === 'string' && value.trim() === '')) {
-                     return document.createDocumentFragment();
-                }
-                const row = createElement('div', 'flex flex-col md:flex-row items-start py-3');
-                const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-medium text-gray-500 mb-1 md:mb-0');
-                if (tooltip) {
-                    labelDiv.setAttribute('data-tooltip', tooltip);
-                }
-                labelDiv.innerHTML = icon + label;
-                const valueDiv = createElement('div', 'text-sm text-gray-800 flex-1');
-                valueDiv.innerHTML = value; // Use innerHTML
-                row.appendChild(labelDiv);
-                row.appendChild(valueDiv);
-                return row;
-            };
-
-
-            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
-            infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision || ''}</span>`));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
-            infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes da Discussão', item.details)); // Updated label
-            infoContainer.appendChild(createInfoRow(icons.file, 'Ato Administrativo', item.actNumber ? `<span class="font-semibold text-red-600">${item.actNumber}</span>` : null));
-
-            cardBody.appendChild(infoContainer);
-
-            const cardFooter = createElement('div', 'px-4 md:px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-wrap gap-4 items-center');
-
-            // Adjusted logic to always show link for item 10, otherwise follow previous logic
-            if (item.links && item.links.length > 0) {
-                item.links.forEach(link => {
-                    let shouldShowLink = false;
-                    if (item.originalItemNumber === 10 && link.title.includes('Minutas de voto')) {
-                        shouldShowLink = true; // Always show for item 10
-                    } else if (link.title.includes('Consulta Pública')) {
-                        shouldShowLink = true; // Always show CP links
-                    } else if (link.title.includes('Minutas de voto') && !['approved', 'denied'].includes(item.status)) {
-                        shouldShowLink = true; // Show for non-decided items
-                    }
-
-                    if (shouldShowLink) {
-                        const actAnchor = createElement('a', 'inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors', link.title, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
-                        actAnchor.innerHTML = icons.link + actAnchor.innerHTML;
-                        cardFooter.appendChild(actAnchor);
-                    }
-                });
-            }
-
-
-            if (cardFooter.hasChildNodes()){
-                 cardBody.appendChild(cardFooter);
-            }
-
-            itemDiv.appendChild(cardBody);
-            agendaGrid.appendChild(itemDiv);
-        });
-        container.appendChild(agendaGrid);
-    }
-
-    function renderConsultasPage(container) {
-        container.innerHTML = '';
-
-        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Acompanhamento das Consultas Públicas e Tomadas de Subsídios');
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Acompanhamento das Consultas Públicas e Tomadas de Subsídios Abertas');
         container.appendChild(pageTitle);
 
         const tableContainer = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto');
 
-        const relevantConsultas = consultasPublicasData.filter(cp => {
-            const [day, month, year] = cp.fim.split('/');
-            const endDate = new Date(year, month - 1, day, 23, 59, 59, 999); // Month is 0-indexed
-            const now = new Date();
-            const daysSinceEnd = (now - endDate) / (1000 * 60 * 60 * 24);
+        // Filtra para manter apenas as consultas abertas
+        const openConsultas = consultasPublicasData.filter(cp => cp.status === 'aberta');
 
-            // Keep 'aberta' OR 'encerrada' within the last 14 days
-            return cp.status === 'aberta' || (cp.status === 'encerrada' && daysSinceEnd <= 14);
-        });
-
-         relevantConsultas.sort((a, b) => {
+        // Ordena os dados em ordem crescente dos dias restantes
+        openConsultas.sort((a, b) => {
             const now = new Date();
             const parseDate = (dateStr) => {
                 const [day, month, year] = dateStr.split('/');
-                return new Date(year, month - 1, day, 23, 59, 59, 999); // Month is 0-indexed
+                return new Date(year, month - 1, day, 23, 59, 59, 999);
             };
             const endA = parseDate(a.fim);
             const endB = parseDate(b.fim);
-
-             // Prioritize open consultations
-            if (a.status === 'aberta' && b.status === 'encerrada') return -1;
-            if (a.status === 'encerrada' && b.status === 'aberta') return 1;
-
-            // If both open, sort by nearest end date (ascending diff)
-            if (a.status === 'aberta') {
-                 return (endA - now) - (endB - now);
-            }
-             // If both closed, sort by most recently closed (descending end date)
-            return endB - endA;
+            // Calcula a diferença em milissegundos
+            const diffA = endA - now;
+            const diffB = endB - now;
+            // Ordena pelo menor tempo restante (mais próximo do fim primeiro)
+            return diffA - diffB;
         });
+
 
         const mobileContainer = createElement('div', 'md:hidden');
-        relevantConsultas.forEach(cp => {
-            const card = createElement('div', 'p-4 border-b border-gray-200');
-            const statusBadgeHTML = createStatusBadge(cp.status, consultaStatusMap).outerHTML;
-            const prazoHTML = cp.status === 'aberta' ? `<p><strong>Prazo:</strong> ${calculateDays(cp.fim)}</p>` : `<p class="text-gray-500">Encerrado em ${cp.fim}</p>`;
+        if (openConsultas.length === 0) {
+            mobileContainer.innerHTML = `<div class="p-4 text-center text-gray-500">Nenhuma consulta aberta no momento.</div>`;
+        } else {
+            openConsultas.forEach(cp => {
+                const card = createElement('div', 'p-4 border-b border-gray-200');
+                const statusBadgeHTML = createStatusBadge(cp.status, consultaStatusMap).outerHTML;
+                const prazoHTML = `<p><strong>Prazo:</strong> ${calculateDays(cp.fim)}</p>`;
 
-            card.innerHTML = `
-                <div class="flex justify-between items-start mb-2">
-                    <div class="font-bold text-gray-900 pr-2">${cp.numero} (${cp.origem})</div>
-                    <div class="flex-shrink-0">${statusBadgeHTML}</div>
-                </div>
-                <div class="text-gray-800 mb-2">${cp.tema}</div>
-                <div class="text-sm text-gray-500">
-                    <p><strong>Período:</strong> ${cp.inicio} a ${cp.fim}</p>
-                    ${prazoHTML}
-                    <p><strong>Área:</strong> ${cp.area}</p>
-                    <a href="${cp.link}" target="_blank" class="text-blue-600 hover:underline font-semibold mt-2 inline-block">Acessar</a>
-                </div>
-            `;
-            mobileContainer.appendChild(card);
-        });
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-bold text-gray-900 pr-2">${cp.numero} (${cp.origem || 'ANEEL'})</div>
+                        <div class="flex-shrink-0">${statusBadgeHTML}</div>
+                    </div>
+                    <div class="text-gray-800 mb-2">${cp.tema}</div>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Período:</strong> ${cp.inicio} a ${cp.fim}</p>
+                        ${prazoHTML}
+                        <p><strong>Área:</strong> ${cp.area}</p>
+                        <a href="${cp.link}" target="_blank" class="text-blue-600 hover:underline font-semibold mt-2 inline-block">Acessar</a>
+                    </div>
+                `;
+                mobileContainer.appendChild(card);
+            });
+        }
         tableContainer.appendChild(mobileContainer);
 
         const table = createElement('table', 'w-full text-sm text-left text-gray-500 hidden md:table');
@@ -577,25 +426,120 @@
             </thead>
         `;
         const tbody = createElement('tbody', 'bg-white divide-y divide-gray-200');
-        relevantConsultas.forEach(cp => {
-            const tr = createElement('tr', 'hover:bg-gray-50');
-             const prazoCellHTML = cp.status === 'aberta' ? calculateDays(cp.fim) : `<span class="text-gray-500">Encerrado</span>`;
-            tr.innerHTML = `
-                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
-                <td class="px-6 py-4 font-medium text-gray-800">${cp.origem}</td>
-                <td class="px-6 py-4">${cp.tema}</td>
-                <td class="px-6 py-4">${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</td>
-                <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
-                <td class="px-6 py-4 whitespace-nowrap">${prazoCellHTML}</td>
-                <td class="px-6 py-4">${cp.area}</td>
-                <td class="px-6 py-4"><a href="${cp.link}" target="_blank" class="font-medium text-blue-600 hover:underline">Acessar</a></td>
-            `;
-            tbody.appendChild(tr);
-        });
+         if (openConsultas.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="px-6 py-4 text-center text-gray-500">Nenhuma consulta aberta no momento.</td></tr>`;
+        } else {
+            openConsultas.forEach(cp => {
+                const tr = createElement('tr', 'hover:bg-gray-50');
+                const prazoCellHTML = calculateDays(cp.fim);
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">${cp.origem || 'ANEEL'}</td>
+                    <td class="px-6 py-4">${cp.tema}</td>
+                    <td class="px-6 py-4">${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">${prazoCellHTML}</td>
+                    <td class="px-6 py-4">${cp.area}</td>
+                    <td class="px-6 py-4"><a href="${cp.link}" target="_blank" class="font-medium text-blue-600 hover:underline">Acessar</a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
         table.appendChild(tbody);
         tableContainer.appendChild(table);
         container.appendChild(tableContainer);
     }
+
+    // --- NOVA FUNÇÃO PARA RENDERIZAR CONSULTAS ENCERRADAS ---
+    function renderConsultasEncerradasPage(container) {
+        container.innerHTML = '';
+
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-6', 'Histórico de Consultas Públicas e Tomadas de Subsídios Encerradas');
+        container.appendChild(pageTitle);
+
+        const tableContainer = createElement('div', 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto');
+
+        // Filtra para manter apenas as consultas encerradas
+        const closedConsultas = consultasPublicasData.filter(cp => cp.status === 'encerrada');
+
+        // Ordena os dados pela data de fim mais recente (descendente)
+        closedConsultas.sort((a, b) => {
+            const parseDate = (dateStr) => {
+                const [day, month, year] = dateStr.split('/');
+                return new Date(year, month - 1, day, 23, 59, 59, 999);
+            };
+            const endA = parseDate(a.fim);
+            const endB = parseDate(b.fim);
+            return endB - endA; // Sort by end date descending
+        });
+
+        const mobileContainer = createElement('div', 'md:hidden');
+        if (closedConsultas.length === 0) {
+            mobileContainer.innerHTML = `<div class="p-4 text-center text-gray-500">Nenhuma consulta encerrada encontrada.</div>`;
+        } else {
+            closedConsultas.forEach(cp => {
+                const card = createElement('div', 'p-4 border-b border-gray-200');
+                const statusBadgeHTML = createStatusBadge(cp.status, consultaStatusMap).outerHTML;
+                const prazoHTML = `<p class="text-gray-500">Encerrado em ${cp.fim}</p>`; // Mostrar data de encerramento
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-bold text-gray-900 pr-2">${cp.numero} (${cp.origem || 'ANEEL'})</div>
+                        <div class="flex-shrink-0">${statusBadgeHTML}</div>
+                    </div>
+                    <div class="text-gray-800 mb-2">${cp.tema}</div>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Período:</strong> ${cp.inicio} a ${cp.fim}</p>
+                        ${prazoHTML}
+                        <p><strong>Área:</strong> ${cp.area}</p>
+                        <a href="${cp.link}" target="_blank" class="text-blue-600 hover:underline font-semibold mt-2 inline-block">Acessar</a>
+                    </div>
+                `;
+                mobileContainer.appendChild(card);
+            });
+        }
+        tableContainer.appendChild(mobileContainer);
+
+        const table = createElement('table', 'w-full text-sm text-left text-gray-500 hidden md:table');
+        table.innerHTML = `
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Número</th>
+                    <th scope="col" class="px-6 py-3">Origem</th>
+                    <th scope="col" class="px-6 py-3">Tema</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Período</th>
+                    <th scope="col" class="px-6 py-3">Encerrado em</th>
+                    <th scope="col" class="px-6 py-3">Área</th>
+                    <th scope="col" class="px-6 py-3">Link</th>
+                </tr>
+            </thead>
+        `;
+        const tbody = createElement('tbody', 'bg-white divide-y divide-gray-200');
+         if (closedConsultas.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="px-6 py-4 text-center text-gray-500">Nenhuma consulta encerrada encontrada.</td></tr>`;
+        } else {
+            closedConsultas.forEach(cp => {
+                const tr = createElement('tr', 'hover:bg-gray-50');
+                const prazoCellHTML = `<span class="text-gray-500">${cp.fim}</span>`; // Mostrar data de encerramento
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">${cp.origem || 'ANEEL'}</td>
+                    <td class="px-6 py-4">${cp.tema}</td>
+                    <td class="px-6 py-4">${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">${prazoCellHTML}</td>
+                    <td class="px-6 py-4">${cp.area}</td>
+                    <td class="px-6 py-4"><a href="${cp.link}" target="_blank" class="font-medium text-blue-600 hover:underline">Acessar</a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+        table.appendChild(tbody);
+        tableContainer.appendChild(table);
+        container.appendChild(tableContainer);
+    }
+
 
 
     function renderAgendaRegulatoriaPage(container) {
@@ -604,8 +548,8 @@
         const introDiv = createElement('div', 'mb-8 bg-blue-50 p-6 rounded-xl border border-blue-200');
         introDiv.innerHTML = `
             <h2 class="text-xl font-bold text-blue-800 mb-2">Proposta da Agenda Regulatória</h2>
-            <p class="text-blue-700 mb-3">A ANEEL propôs a abertura da Audiência Pública nº 15/2025 para discutir a Agenda Regulatória 2026-2027, porém o item foi retirado de pauta na 37ª RPO. Espera-se que a AP seja instaurada em breve. Abaixo, os 10 eixos temáticos originalmente propostos.</p>
-        `;
+            <p class="text-blue-700 mb-3">A ANEEL aprovou no 3º Circuito Deliberativo (Item 1) a abertura da Audiência Pública virtual em 06/11/2025 para discutir a Agenda Regulatória 2026-2027. Abaixo, os 10 eixos temáticos propostos, baseados nas contribuições da Tomada de Subsídios nº 11/2025.</p>
+        `; // Texto atualizado para refletir a aprovação da AP
         container.appendChild(pageTitle);
         container.appendChild(introDiv);
 
@@ -659,7 +603,7 @@
     function renderCircuitoPage(container) {
         container.innerHTML = ''; // Limpa o container
 
-        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Pauta do 3º Circuito Deliberativo Público Ordinário de 2025');
+        const pageTitle = createElement('h1', 'text-2xl sm:text-3xl font-bold text-gray-900 mb-1', 'Resultados do 3º Circuito Deliberativo Público Ordinário de 2025');
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', 'Data: 28/10/2025 (8h às 18h)');
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -674,7 +618,7 @@
 
         // Sumário da Pauta (Adaptado)
         const summaryDiv = createElement('div', 'mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário da Pauta do Circuito');
+        const summaryTitle = createElement('h2', 'text-xl font-bold text-gray-800 mb-4', 'Sumário dos Resultados do Circuito');
         const summaryList = createElement('ul', 'space-y-3');
 
         const getCircuitoSummarySubject = (item) => {
@@ -752,13 +696,19 @@
                 infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
              }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+            
             // Adiciona o resumo da minuta de voto
             if(item.votoSummary){
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
-            // Adicionar campo Decisão ou Detalhes se existirem nos dados futuros
-            // infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', item.decision));
-            // infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            
+            // Adicionar campo Decisão ou Detalhes
+            if(item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
+            }
+            if(item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
 
             cardBody.appendChild(infoContainer);
 
@@ -794,13 +744,14 @@
 
       const main = createElement('main', 'container mx-auto p-4 md:p-6');
       const navContainer = createElement('div', 'mb-6 flex flex-wrap gap-2');
-      const pautaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Resultados da Reunião');
-      const circuitoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', '3º Circuito Deliberativo'); // Novo botão
-      const consultasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Consultas e Subsídios');
+      // Botão da 37ª RPO (pautaButton) foi REMOVIDO
+      const circuitoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', '3º Circuito Deliberativo'); // Botão existente
+      const consultasAbertasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'CPs/TSs Abertas'); // Renomeado
+      const consultasEncerradasButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'CPs/TSs Encerradas'); // Novo botão
       const agendaButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'px-4 py-2 text-sm font-semibold rounded-md transition-colors', 'Imersão Presencial');
 
-      navContainer.append(pautaButton, circuitoButton, consultasButton, agendaButton, imersaoButton); // Botão adicionado aqui
+      navContainer.append(circuitoButton, consultasAbertasButton, consultasEncerradasButton, agendaButton, imersaoButton); // Botões atualizados
       main.appendChild(navContainer);
 
       const contentContainer = createElement('div', 'content-area');
@@ -810,7 +761,7 @@
       const footer = createElement('footer', 'text-center mt-8 p-6 text-gray-500 text-sm', '© 2025 i4 Economic Regulation. Todos os direitos reservados.');
       appContainer.appendChild(footer);
 
-      const buttons = [pautaButton, circuitoButton, consultasButton, agendaButton, imersaoButton]; // Botão adicionado ao array
+      const buttons = [circuitoButton, consultasAbertasButton, consultasEncerradasButton, agendaButton, imersaoButton]; // Array atualizado
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
               button.classList.remove('nav-button-active');
@@ -820,17 +771,22 @@
           activeButton.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
       }
 
-      pautaButton.addEventListener('click', () => { setActiveButton(pautaButton); renderPautaPage(contentContainer); });
-      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderCircuitoPage(contentContainer); }); // Event listener adicionado
-      consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderConsultasPage(contentContainer); });
+      // Event listener do pautaButton REMOVIDO
+      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderCircuitoPage(contentContainer); }); // Event listener existente
+      consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderConsultasAbertasPage(contentContainer); }); // Atualizado
+      consultasEncerradasButton.addEventListener('click', () => { setActiveButton(consultasEncerradasButton); renderConsultasEncerradasPage(contentContainer); }); // Novo listener
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderAgendaRegulatoriaPage(contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderImersaoPage(contentContainer); });
 
-      setActiveButton(pautaButton);
-      renderPautaPage(contentContainer);
+      // Renderização inicial alterada para o circuitoButton
+      setActiveButton(circuitoButton);
+      renderCircuitoPage(contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
   </script>
 </body>
 </html>
+
+
+
