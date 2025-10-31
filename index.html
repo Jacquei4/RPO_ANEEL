@@ -63,6 +63,7 @@
         border-radius: 0.5rem; /* rounded-lg */
         transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
         cursor: pointer;
+        white-space: nowrap; /* Impede que o texto do botão quebre linha */
     }
     /* Estilo para o botão de navegação ativo */
     .nav-button-active {
@@ -205,53 +206,147 @@
       encerrada: { text: "Encerrada", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
+    
+    // Link da transmissão da 38ª Reunião
+    const youtubeLink = "https://www.youtube.com/live/KVMy-toGwA8?si=Dm5286nv6zPbKqCg";
 
-    // Dados para o 3º Circuito Deliberativo - ATUALIZADO COM RESULTADOS
+    // Dados da pauta da ANEEL para a 38ª Reunião Pública Ordinária (FILTRADO)
     const circuitoData = [
        {
            originalItemNumber: 1,
-           process: "48500.023180/2025-50",
-           subject: "Proposta de abertura de Audiência Pública com vistas a submeter a minuta de Agenda Regulatória para o biênio 2026-2027 à discussão com a sociedade, após análise das contribuições da Tomada de Subsídios nº 11/2025.",
-           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Sandoval de Araújo Feitosa Neto",
-           status: "approved", // ATUALIZADO
-           votoSummary: "A minuta de voto propõe a abertura de Audiência Pública para apresentar e discutir com a sociedade a proposta da Agenda Regulatória 2026-2027, consolidada após as contribuições da Tomada de Subsídios. O objetivo é dar transparência e colher sugestões finais sobre os temas prioritários que nortearão a atuação normativa da ANEEL no próximo biênio.",
-           decision: "A Diretoria, por unanimidade, decidiu: (i) publicar o Relatório de Análise de Contribuições da Tomada de Subsídios 11/2025; e (ii) instaurar Audiência Pública, na modalidade virtual, a realizar-se em 06 de novembro de 2025, para submeter à sociedade: (ii.a) a minuta de Agenda Regulatória para o biênio 2026-2027; (ii.b) a lista das Demais Atividades Regulatórias a serem desenvolvidas pela ANEEL; e (iii.c) a relação das Avaliações de Resultado Regulatório – ARR a serem empreendidas pela Agência até o final de 2027.", // ATUALIZADO
-           details: "A Diretora Agnes Maria de Aragão da Costa e o Diretor Gentil Nogueira de Sá Júnior registraram, quando da votação do circuito, que consideram oportuno que sociedade se manifeste sobre o interesse na antecipação, para o ano de 2026, da atividade AR24-22, assim como o estabelecimento de prazo para 2026 da atividade AR25-08, ambas sobre Micro e Minigeração Distribuída – MMGD. Da mesma forma, entendem ser relevante avaliar a conveniência de consolidar o item ARR24-02, relativo à ARR da Resolução Normativa nº 1.030/2022, com item GER21-07, para que se tenha a oportunidade de buscar solução integrada e abrangente para o constrained-off, considerando as especificidade das fontes.", // ATUALIZADO
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023180-2025-50.pdf" }]
+           process: "48500.004742/2021-32",
+           subject: "Proposta de abertura de Consulta Pública, com vistas a colher subsídios e informações adicionais para o aprimoramento dos procedimentos de monitoramento de mercado após período sombra.",
+           areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled",
+           votoSummary: null, // Sem minuta
+           decision: null,
+           details: null,
+           links: []
        },
        {
-           originalItemNumber: 7,
-           process: "48500.003480/2024-31",
-           subject: "Pedido de Reconsideração interposto pela Companhia Hidro Elétrica do São Francisco – Chesf em face da Resolução Autorizativa nº 15.815/2025, que autorizou a Recorrente a implantar reforços de grande e pequeno porte em instalações de transmissão sob sua responsabilidade e estabeleceu os valores das correspondentes parcelas adicionais da Receita Anual Permitida – RAP, Contrato de Concessão nº 61/2001.",
+           originalItemNumber: 2,
+           process: "48500.008300/2022-46",
+           subject: "Pedido de Reconsideração interposto pela Neoenergia Distribuição Brasília – NDB em face do Despacho nº 1.513/2025, que negou provimento ao Requerimento Administrativo protocolado pela Recorrente com vistas ao aperfeiçoamento de processo de análise da sustentabilidade econômico-financeira da concessionária para o ano de 2023 e deu outras providências.",
            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled",
+           votoSummary: null, // Sem minuta
+           decision: null,
+           details: null,
+           links: []
+       },
+       {
+           originalItemNumber: 3,
+           process: "48500.003331/2024-72",
+           subject: "Termo de Intimação nº 49/2024, lavrado pela Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica – SFT, que trata do Relatório de Falhas e Transgressões à legislação e ao Contrato de Concessão da Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.).",
+           areaResponsible: "Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
+           relator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: null, // Sem minuta
+           decision: null,
+           details: null,
+           links: []
+       },
+       {
+           originalItemNumber: 4,
+           process: "48500.006333/2023-32",
+           subject: "Prorrogação do Contrato de Concessão de Distribuição nº 1/1996-DNAEE, celebrado com a Light Serviços de Eletricidade S.A., nos termos do Decreto nº 12.068/2024 e da Lei nº 9.074/1995.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled",
+           votoSummary: null, // Sem minuta
+           decision: null,
+           details: null,
+           links: []
+       },
+       {
+           originalItemNumber: 5,
+           process: "48100.001556/1997-73",
+           subject: "Prorrogação antecipada do prazo da Concessão para exploração da Usina Hidrelétrica – UHE Santa Clara, outorgada à Companhia Energética Santa Clara – Cesc, localizada nos municípios de Nanuque e Serra dos Aimorés, estado de Minas Gerais, e Mucuri, estado da Bahia.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled",
+           votoSummary: null, // Sem minuta
+           decision: null,
+           details: null,
+           links: []
+       },
+       { // Início do Bloco
+           originalItemNumber: 10,
+           process: "48500.027412/2025-49",
+           subject: "Recurso Administrativo interposto pela Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.) em face do Despacho nº 2.496/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que deferiu o pedido de isenção da Parcela de Ineficiência por Ultrapassagem – PIU e indeferiu o afastamento do pagamento dos Encargos de Uso do Sistema de Transmissão – EUSTs, referentes aos Montantes de Uso do Sistema de Transmissão – MUSTs que excederam o contratado como Adicional de Encargos de Uso do Sistema de Transmissão – ADCEUST, ambos decorrentes das ultrapassagens de MUSTs ocorridas em 31 de agosto de 2024.",
+           areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Willamy Moreira Frota",
-           status: "approved", // ATUALIZADO
-           votoSummary: "A minuta analisa o recurso da Chesf contra a Resolução que autorizou reforços e definiu a RAP adicional. A Chesf contesta aspectos do cálculo da RAP ou do reconhecimento dos custos dos reforços. O voto analisa os argumentos técnicos e regulatórios apresentados pela transmissora.", // RESUMO AJUSTADO
-           decision: "A Diretoria, por unanimidade, decidiu: (i) conhecer o Pedido de Reconsideração interposto pela Companhia Hidro Elétrica do São Francisco – Chesf, Contrato de Concessão do Serviço Público de Transmissão de Energia Elétrica nº 61/2001, face à Resolução Autorizativa nº 15.815/2025; e, (ii) no mérito, dar provimento integral ao pleito, por meio da substituição do Anexo III da Resolução Autorizativa nº 15.815/2025.", // ATUALIZADO
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903480-2024-31.pdf" }]
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> A Enel SP recorre de despacho que, apesar de isentá-la da Parcela de Ineficiência (PIU), manteve a cobrança dos Encargos de Uso (EUSTs) pela ultrapassagem do MUST em 31/08/2024. A distribuidora busca o afastamento completo dos encargos.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Recurso Administrativo e, no mérito, negar-lhe provimento, mantendo a decisão do Despacho nº 2.496/2025 que manteve a cobrança dos EUSTs.",
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027412-2025-49.pdf" }]
        },
        {
            originalItemNumber: 11,
-           process: "48500.003250/2022-19 e outros",
-           subject: "Pedido de Reconsideração interposto pelas empresas Campos Energia SPE 1 a 10 e Talismã Energia SPE 1 a 10 em face do Despacho nº 2.551/2025, referente à postergação de prazo das UFVs Campos 1 a 20, desconto TUST/TUSD e recomposição de prazo de outorgas.",
-           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Fernando Luiz Mosna Ferreira da Silva",
-           status: "withdrawn", // ATUALIZADO
-           votoSummary: "A minuta avalia o recurso das SPEs Campos e Talismã contra despacho que negou pedidos relacionados às UFVs Campos 1-20. As empresas buscam reconsiderar a negativa de postergação do prazo de implantação, a manutenção dos descontos TUST/TUSD por mais tempo e a recomposição do prazo original das outorgas. O voto analisa a fundamentação do pedido à luz das regras de outorga e dos impactos de eventuais atrasos.",
-           decision: "Os processos foram retirados de pauta.", // ATUALIZADO
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903250-2022-19_e_outros.pdf" }]
+           process: "48500.003324/2024-71",
+           subject: "Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil – Eletronorte em face da Resolução Homologatória nº 3.434/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Roraima Energia S.A. e deu outras providências.",
+           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Gentil Nogueira de Sá Júnior",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> A Eletronorte recorre da Resolução Homologatória nº 3.434/2025, que definiu o Reajuste Tarifário da Roraima Energia. O recurso contesta especificamente a decisão da ANEEL de não permitir a celebração de Contrato de Energia de Reserva (CER) entre a Eletronorte e a Roraima Energia, o que impacta a cobertura de custos da UTE Floresta.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, dar-lhe provimento, alterando a Resolução para permitir o Contrato de Energia de Reserva.",
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903324-2024-71.pdf" }]
        },
        {
-           originalItemNumber: 15,
-           process: "48500.001864/2024-10",
-           subject: "Requerimento Administrativo protocolado pela Belém Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 20/2017.",
+           originalItemNumber: 12,
+           process: "48500.003395/2007-72",
+           subject: "Pedido de Reconsideração interposto pela Petróleo Brasileiro S.A. – Petrobras em face do Despacho nº 2.495/2024, que determinou a rescisão dos Contratos de Comercialização de Energia Elétrica no Ambiente Regulado – CCEARs da Usina Termelétrica – UTE Termoceará e deu outras providências.",
+           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> A Petrobras recorre do despacho que rescindiu os CCEARs da UTE Termoceará, alegando que a usina não estaria disponível para operação. A empresa contesta a decisão, buscando reverter a rescisão contratual.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, negar-lhe provimento, mantendo a rescisão dos CCEARs da UTE Termoceará.",
+           details: "Processo incluído na pauta para ratificação da decisão, em razão de sustentação oral em Circuito Deliberativo.",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903395-2007-72.pdf" }]
+       },
+       {
+           originalItemNumber: 13,
+           process: "48500.001526/2023-05",
+           subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A., em face do Despacho nº 3.309/2024, que negou provimento ao pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente, com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.",
+           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Ricardo Lavorato Tili",
+           votoVistaRelator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Recurso da Light contra a negativa de sua Revisão Tarifária Extraordinária (RTE), onde a empresa pedia a alteração das metas de perdas não técnicas (furto/fraude) definidas na sua revisão de 2022.<br><b>Decisão do Relator (Minuta):</b> O voto original do Diretor Ricardo Tili propõe negar provimento ao recurso da Light.<br><b>Decisão do Voto-Vista (Minuta):</b> O voto-vista da Diretora Agnes Costa propõe conhecer o recurso e, no mérito, dar-lhe provimento parcial, reconhecendo parte dos pleitos da Light para flexibilizar as metas de perdas.",
+           decision: null,
+           details: null,
+           links: [
+               { title: "Minuta de voto (Relator R. Tili)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_ricardotili.pdf" },
+               { title: "Minuta de voto (Diretora L. Lima)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_ludimilalima.pdf" },
+               { title: "Minuta de voto-vista (A. Costa)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_votovistaagnes.pdf" }
+           ]
+       },
+       {
+           originalItemNumber: 16,
+           process: "48500.003250/2022-19 e outros",
+           subject: "Pedido de Reconsideração interposto pelas empresas Campos Energia SPE 1 a 10 e Talismã Energia SPE 1 a 10 em face do Despacho nº 2.551/2025, que indeferiu pedidos de postergação de prazo, desconto TUST/TUSD e recomposição de prazo de outorgas das UFVs Campos 1 a 20.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+           relator: "Fernando Luiz Mosna Ferreira da Silva",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> As empresas SPEs (Campos e Talismã) recorrem da decisão (Despacho nº 2.551/2025) que negou seus pedidos para adiar o prazo de implantação das UFVs Campos 1-20, estender o prazo do desconto TUST/TUSD e recompor o prazo total das outorgas.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, negar-lhe provimento, mantendo integralmente a decisão do despacho anterior que indeferiu os pleitos das empresas.",
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903250-2022-19.pdf" }]
+       },
+       {
+           originalItemNumber: 27,
+           process: "48500.027647/2025-31, 48500.027658/2025-11",
+           subject: "Autorização e estabelecimento da Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão, sob concessão da Copel Geração e Transmissão S.A. – Copel-GT, em decorrência da 2ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2024.",
            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-           relator: "Gentil Nogueira de Sá Júnior",
-           status: "denied", // ATUALIZADO
-           votoSummary: "A minuta analisa o pedido da Belém Transmissora para reequilíbrio econômico-financeiro do seu contrato de concessão, alegando desequilíbrios causados por eventos não previstos ou alterações regulatórias. O voto avalia a procedência do pedido, quantifica eventuais desequilíbrios e define a forma de compensação, se aplicável.",
-           decision: "A Diretoria, por unanimidade, decidiu negar provimento ao Requerimento Administrativo protocolado pela Belém Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 20/2017-ANEEL decorrente do evento do dia 19 de julho de 2023 na Linha de Transmissão 230kV Marituba – Castanhal C-1 PA.", // ATUALIZADO
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901864-2024-10.pdf" }]
+           relator: "Fernando Luiz Mosna Ferreira da Silva",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Trata da autorização para a Copel-GT implementar reforços em suas instalações de transmissão, conforme definido no Plano de Outorgas (POTEE 2024), e estabelece o valor da Receita Anual Permitida (RAP) adicional que a empresa receberá por esses investimentos.<br><b>Decisão do Relator (Minuta):</b> O voto propõe autorizar os reforços e fixar as parcelas de RAP correspondentes, conforme detalhado nos anexos da minuta.",
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027647-2025-31_e_outro.pdf" }]
        }
    ];
 
@@ -436,10 +531,18 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
         order: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-6 4h6m-6 4h4m5.586-11.414a2 2 0 00-2.828 0L7 10.172V17h6.828l4.586-4.586a2 2 0 000-2.828z"></path></svg>`,
-        arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`
+        arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
+        youtube: `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>`
     };
 
     // --- FUNÇÕES HELPER ---
+
+    // **MOVIDA PARA CIMA**
+    function createStatusBadge(statusKey, statusMap) {
+        const statusInfo = statusMap[statusKey] || { text: "Indefinido", classes: "bg-gray-100 text-gray-800 border border-gray-200" };
+        return createElement('span', `inline-block font-semibold rounded-full whitespace-nowrap px-3 py-1 text-xs ${statusInfo.classes}`, statusInfo.text);
+    }
+
     function createElement(tag, classes, textContent, attributes = {}) {
         const element = document.createElement(tag);
         if (classes) element.className = classes;
@@ -451,126 +554,111 @@
         return element;
     }
 
-    function createStatusBadge(statusKey, statusMap) {
-        const statusInfo = statusMap[statusKey] || { text: "Indefinido", classes: "bg-gray-100 text-gray-800 border border-gray-200" };
-        return createElement('span', `inline-block font-semibold rounded-full whitespace-nowrap px-3 py-1 text-xs ${statusInfo.classes}`, statusInfo.text);
-    }
-
     // Calcula dias restantes, considerando hoje como último dia ou encerrado
     function calculateDays(endDateStr) {
-        // CORREÇÃO: As datas nos dados estão como DD/MM/AAAA.
-        const parts = endDateStr.split('/');
-        if (parts.length !== 3) return `<span class="text-gray-500">Data inválida</span>`;
-        
-        const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1; // Mês é 0-indexado no JS
-        const year = parseInt(parts[2], 10);
-        
-        const endDate = new Date(year, month, day, 23, 59, 59, 999);
-        const now = new Date(); // Data e hora atuais
+        const [day, month, year] = endDateStr.split('/');
+        const endDate = new Date(year, month - 1, day, 23, 59, 59, 999); // Month is 0-indexed
+        const now = new Date(); // Use current system date
 
-        // Define 'hoje' para o início do dia para comparação correta
+        // Set 'now' to the beginning of the day for accurate day difference
         const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-        const diffTime = endDate - startOfToday; // Diferença em milissegundos
-        
-        // Arredonda para cima para obter o número de dias
+        const diffTime = endDate - startOfToday;
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         if (diffDays > 1) {
             return `<span class="font-bold text-green-600">${diffDays} dias restantes</span>`;
         } else if (diffDays === 1) {
-            // Se a diferença é 1, significa que termina 'hoje' ou 'amanhã' (dependendo da hora)
-            // Vamos considerar que se diffDays é 1, é o último dia.
             return `<span class="font-bold text-orange-500">Último dia</span>`;
-        } else if (diffDays === 0) {
-             // Se diffDays é 0, significa que o prazo terminou hoje.
-             return `<span class="font-bold text-orange-500">Último dia</span>`;
         } else {
              return `<span class="text-gray-500">Encerrado</span>`;
         }
     }
 
 
+    // --- FUNÇÕES DE RENDERIZAÇÃO ---
+    // Adiciona lógica de animação
     function renderPageWithAnimation(renderFunction, container) {
-      // Remove a classe para reiniciar a animação se ela já estiver presente
       container.classList.remove('content-area');
-      // Força o navegador a refazer o layout, garantindo que a remoção da classe seja processada
-      void container.offsetWidth;
-      // Adiciona a classe novamente para disparar a animação
+      void container.offsetWidth; // Force reflow/repaint
       container.classList.add('content-area');
-      // Executa a função de renderização da página específica
       renderFunction(container);
     }
 
-    // --- FUNÇÕES DE RENDERIZAÇÃO ---
-     // RENDER CIRCUITO
+    // RENDER CIRCUITO (AGORA 38ª REUNIÃO)
     function renderCircuitoPage(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', 'Resultados do 3º Circuito Deliberativo Público Ordinário de 2025');
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-8', 'Deliberação: 28/10/2025 (8h às 18h)');
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', 'Pauta da 38ª Reunião Pública Ordinária de 2025');
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-8', 'Data da Reunião: 04/11/2025');
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
-        // Card explicativo - Título removido
-        const infoDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200 text-blue-800');
-        infoDiv.innerHTML = `
-            <p class="leading-relaxed">O Circuito Deliberativo é uma modalidade de reunião não presencial onde os Diretores da ANEEL registram seus votos eletronicamente ao longo do dia. Essa modalidade é utilizada para processos que, pela sua natureza ou simplicidade, dispensam discussão detalhada em sessão pública presencial, agilizando o processo decisório da Agência.</p>
-        `;
-        container.appendChild(infoDiv);
+        // Link do YouTube
+        const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
 
-        // --- SUMÁRIO DO CIRCUITO ---
-        const summaryDiv = createElement('div', 'mb-10 info-card'); // Use info-card for consistent styling
+
+        // Sumário
+        const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        const summaryTitle = createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados');
-        summaryHeader.appendChild(summaryTitle);
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
         summaryDiv.appendChild(summaryHeader);
 
-        const summaryList = createElement('ul', 'divide-y divide-i4-border-gray'); // Add divider lines
-
-        // Helper function to create summary subjects specifically for circuitoData
-        const getCircuitoSummarySubject = (item) => {
+        const summaryList = createElement('ul', 'space-y-1 p-3');
+        
+        // Função para resumir assuntos do sumário
+        const getSummarySubject = (item) => {
             switch (item.originalItemNumber) {
-                case 1: return "AP Agenda Regulatória 2026-2027";
-                case 7: return "Reconsideração Chesf - RAP Reforços";
-                case 11: return "Reconsideração Campos/Talismã - UFVs";
-                case 15: return "Reequilíbrio Belém Transmissora";
-                default:
-                    const maxLength = 70;
-                    if (item.subject.length > maxLength) {
-                        return item.subject.substring(0, maxLength) + '...';
-                    }
-                    return item.subject;
+                case 1: return "CP Monitoramento de Mercado";
+                case 2: return "Recurso NDB - Sustentabilidade Financeira";
+                case 3: return "Termo de Intimação - Enel SP";
+                case 4: return "Prorrogação Contrato Light";
+                case 5: return "Prorrogação UHE Santa Clara";
+                case 10: return "Recurso Enel SP - Encargos MUST";
+                case 11: return "Recurso Eletronorte - RTA Roraima Energia";
+                case 12: return "Recurso Petrobras - UTE Termoceará";
+                case 13: return "Recurso Light - RTE Perdas Não Técnicas";
+                case 16: return "Recurso SPEs Campos/Talismã - UFVs Campos 1-20";
+                case 27: return "Autorização Reforços Copel-GT";
+                default: return item.subject.substring(0, 60) + "...";
             }
         };
 
-        circuitoData.sort((a, b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 hover:bg-i4-light-gray'); // Adjusted padding
-            const itemLink = createElement('a', 'text-i4-dark-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` }); // Use i4 colors
-            const itemNumberSpan = createElement('span', 'font-semibold mr-2', `Item ${item.originalItemNumber}:`); // Use font-semibold
-            const subjectSpan = createElement('span', '', getCircuitoSummarySubject(item));
+        circuitoData.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
+            const itemNumberSpan = createElement('span', 'font-bold mr-2 text-i4-dark-gray', `Item ${item.originalItemNumber}:`);
+            const subjectSpan = createElement('span', '', getSummarySubject(item));
             itemLink.appendChild(itemNumberSpan);
             itemLink.appendChild(subjectSpan);
 
-            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap); // Handle potential undefined status
-            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0'); // Add flex-shrink-0
+            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
 
             listItem.appendChild(itemLink);
             listItem.appendChild(statusBadge);
             summaryList.appendChild(listItem);
         });
         summaryDiv.appendChild(summaryList);
-        container.appendChild(summaryDiv); // Adiciona o sumário ao container
+        container.appendChild(summaryDiv);
 
-        // Grid de Itens do Circuito
+
+        // Grid de Itens da Pauta
         const circuitoGrid = createElement('div', 'space-y-8'); // Aumentado espaço
-        circuitoData.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` }); // Added ID here
+        circuitoData.forEach(item => {
+            // Adiciona o ID ao card para o link do sumário funcionar
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
 
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            // Adiciona "(Bloco)" se o item for 10 ou maior
+            const blockText = item.originalItemNumber >= 10 ? ' <span class="text-sm font-medium text-i4-blue">(Bloco)</span>' : '';
+            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -602,6 +690,7 @@
              }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
 
+            // MODIFICADO: Só mostra o resumo se ele existir (itens 10+)
             if(item.votoSummary){
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
@@ -644,51 +733,16 @@
 
         const openConsultas = consultasPublicasData.filter(cp => cp.status === 'aberta');
 
-         // Ordena as consultas abertas: primeiro as com prazo menor, depois por número
+        // Ordenar por dias restantes (ordem crescente)
         openConsultas.sort((a, b) => {
-            const now = new Date();
             const parseDate = (dateStr) => {
-                if (!dateStr) return new Date(8640000000000000); // Max date if 'fim' is missing
-                const parts = dateStr.split('/');
-                if (parts.length !== 3) return new Date(8640000000000000);
-                // Ensure year is 4 digits, month and day are 2 digits
-                const day = parts[0].padStart(2, '0');
-                const month = parts[1].padStart(2, '0');
-                const year = parts[2].length === 2 ? '20' + parts[2] : parts[2]; // Handle YY or YYYY
-                 // Validate parts
-                if (isNaN(parseInt(day)) || isNaN(parseInt(month)) || isNaN(parseInt(year))) {
-                    return new Date(8640000000000000); // Invalid date format
-                }
-                return new Date(year, month - 1, day, 23, 59, 59, 999); // Month is 0-indexed
+                const [day, month, year] = dateStr.split('/');
+                return new Date(year, month - 1, day, 23, 59, 59, 999);
             };
-
             const dateA = parseDate(a.fim);
             const dateB = parseDate(b.fim);
-
-            // Tratar datas inválidas como "mais distantes"
-            if (dateA.getTime() === 8640000000000000) return 1;
-            if (dateB.getTime() === 8640000000000000) return -1;
-
-
-            const diffA = dateA - now;
-            const diffB = dateB - now;
-
-             // Sort primarily by remaining days (ascending)
-            if (diffA !== diffB) {
-                return diffA - diffB;
-            }
-
-             // Secondary sort: numerically by 'numero' (e.g., CP 32 before CP 196)
-            const numA = parseInt(a.numero.match(/\d+/)?.[0] || 0);
-            const numB = parseInt(b.numero.match(/\d+/)?.[0] || 0);
-             if (numA !== numB) {
-                 return numA - numB;
-             }
-
-             // Tertiary sort: alphabetically by 'numero' if numbers are the same (handles TS vs CP)
-            return a.numero.localeCompare(b.numero);
+            return dateA - dateB;
         });
-
 
         // Mobile View
         const mobileContainer = createElement('div', 'md:hidden divide-y divide-i4-border-gray');
@@ -772,29 +826,16 @@
 
         const closedConsultas = consultasPublicasData.filter(cp => cp.status === 'encerrada');
 
-         // Sort closed consultations by end date (most recent first)
+        // Ordenar por data de fim (mais recente primeiro)
         closedConsultas.sort((a, b) => {
             const parseDate = (dateStr) => {
-                if (!dateStr) return new Date(0); // Min date if 'fim' is missing
-                const parts = dateStr.split('/');
-                if (parts.length !== 3) return new Date(0);
-                const day = parts[0].padStart(2, '0');
-                const month = parts[1].padStart(2, '0');
-                const year = parts[2].length === 2 ? '20' + parts[2] : parts[2];
-                if (isNaN(parseInt(day)) || isNaN(parseInt(month)) || isNaN(parseInt(year))) {
-                    return new Date(0);
-                }
+                const [day, month, year] = dateStr.split('/');
                 return new Date(year, month - 1, day, 23, 59, 59, 999);
             };
             const dateA = parseDate(a.fim);
             const dateB = parseDate(b.fim);
-            
-            if (dateA.getTime() === 0) return 1;
-            if (dateB.getTime() === 0) return -1;
-
-            return dateB - dateA; // Sort descending by end date
+            return dateB - dateA; // Invertido para decrescente
         });
-
 
         // Mobile View
         const mobileContainer = createElement('div', 'md:hidden divide-y divide-i4-border-gray');
@@ -945,35 +986,32 @@
       appContainer.innerHTML = '';
 
       // Cabeçalho
-      const header = createElement('header', 'bg-white shadow-md p-4 sticky top-0 z-20');
-      const headerContent = createElement('div', 'container mx-auto flex items-center justify-between');
+      const header = createElement('header', 'bg-white shadow-md p-5 sticky top-0 z-20'); // Aumentado padding
+      // Container do cabeçalho com flex-wrap para responsividade
+      const headerContent = createElement('div', 'container mx-auto flex flex-col md:flex-row items-center justify-between gap-4');
       
-      // **CORREÇÃO: URL da logo hardcoded diretamente aqui**
-      const logoImg = createElement('img', 'h-12 w-auto', null, {
-        src: "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true", // URL Hardcoded
-        alt: 'i4 Economic Regulation Logo',
-        onerror: "this.onerror=null; this.src='https://placehold.co/150x48/cccccc/ffffff?text=i4+Logo';" // Fallback
-      });
+      const logoImg = createElement('img', 'h-12 w-auto', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation Logo', onerror: "this.onerror=null;this.src='https://placehold.co/150x40/cccccc/333333?text=i4+Logo';" }); // Logo size increased
       headerContent.appendChild(logoImg);
-      header.appendChild(headerContent);
-      appContainer.appendChild(header);
 
       // Conteúdo Principal
       const main = createElement('main', 'container mx-auto p-6 md:p-10');
-      // Navegação
-      const navContainer = createElement('div', 'mb-10 flex flex-wrap gap-3');
+      // Navegação (agora dentro do cabeçalho)
+      const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-end'); // Centralizado em mobile
       // Buttons
-      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '3º Circuito Deliberativo');
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '38ª Reunião');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const consultasEncerradasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Encerradas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersão Presencial');
 
       navContainer.append(circuitoButton, consultasAbertasButton, consultasEncerradasButton, agendaButton, imersaoButton);
-      main.appendChild(navContainer);
-
-      // Área de Conteúdo
-      const contentContainer = createElement('div', ''); // Classe 'content-area' será adicionada dinamicamente
+      headerContent.appendChild(navContainer); // Adiciona nav ao header
+      
+      header.appendChild(headerContent);
+      appContainer.appendChild(header);
+      
+      // Área de Conteúdo (permanece em 'main')
+      const contentContainer = createElement('div', 'mt-10'); // Adiciona margem superior para compensar header fixo
       main.appendChild(contentContainer);
 
       appContainer.appendChild(main);
@@ -1012,4 +1050,3 @@
   </script>
 </body>
 </html>
-
