@@ -8,12 +8,12 @@
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
-  <meta property="og:description" content="Acompanhe os resultados das reuniões, circuitos deliberativos e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
+  <meta property="og:description" content="Acompanhe a pauta do 4º Circuito Deliberativo e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png"> <!-- URL da imagem para preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="[URL_DO_SEU_DASHBOARD_AQUI]"> <!-- Substitua pela URL real quando publicar -->
 
-  <title>Dashboard ANEEL - i4 Economic Regulation</title>
+  <title>Dashboard ANEEL - Pauta do 4º Circuito Deliberativo</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4_favicon.png?raw=true" type="image/png"> <!-- Usei um link direto para o favicon também -->
@@ -208,146 +208,106 @@
     };
     
     // Link da transmissão da 38ª Reunião
-    const youtubeLink = "https://www.youtube.com/live/KVMy-toGwA8?si=Dm5286nv6zPbKqCg";
+    const youtubeLink = ""; // Circuito Deliberativo não tem transmissão ao vivo
 
     // Dados da pauta da ANEEL para a 38ª Reunião Pública Ordinária (ATUALIZADOS COM RESULTADOS)
     const circuitoData = [
        {
            originalItemNumber: 1,
-           process: "48500.004742/2021-32",
-           subject: "Proposta de abertura de Consulta Pública, com vistas a colher subsídios e informações adicionais para o aprimoramento dos procedimentos de monitoramento de mercado após período sombra.",
-           areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
-           relator: "Gentil Nogueira de Sá Júnior",
-           status: "approved",
-           votoSummary: null, // Voto não estava disponível na pauta
-           decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, na modalidade intercâmbio documental, com duração de 47 (quarenta e sete) dias, entre 6 de novembro a 22 de dezembro de 2025, para colher subsídios e informações adicionais acerca da minuta de Resolução Normativa, o anexo do Manual Algébrico do Monitoramento Prudencial, e os Procedimentos de Comercialização – PdCs, bem como o Relatório de AIR/ARR nº 1/2025-SGM-SFF/ANEEL.",
-           details: "Ausente o Diretor-Geral, a deliberação foi presidida pela Diretora-Geral Substituta, Agnes Maria de Aragão da Costa. Houve apresentação técnica pela SFF e sustentação oral pela CCEE.",
-           links: [{ title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.004742-2021-32.pdf" }]
+           process: "48500.023612/2025-22",
+           subject: "Aprovação do Edital do Leilão nº 1/2026-ANEEL, destinado a outorgar concessões do serviço público de transmissão de energia elétrica, consolidado após análise das contribuições apresentadas na Consulta Pública nº 28/2025.",
+           areaResponsible: "Secretaria de Leilões - SEL.",
+           relator: "Fernando Luiz Mosna Ferreira da Silva",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise das contribuições recebidas durante a Consulta Pública nº 28/2025 para consolidar a versão final do Edital do Leilão de Transmissão nº 1/2026. A análise foca em ajustar os requisitos técnicos, financeiros e as minutas contratuais para garantir a atratividade e a segurança jurídica do certame.<br><b>Decisão do Relator (Minuta):</b> Propõe aprovar a minuta do Edital e seus anexos, autorizando a Secretaria de Leilões (SEL) a publicar os documentos finais e a realizar o certame.", 
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023612-2025-22.pdf" }]
        },
        {
            originalItemNumber: 2,
+           process: "48500.000973/2025-09",
+           subject: "Homologação parcial do resultado e adjudicação do objeto do Leilão nº 3/2025-ANEEL, denominado Leilão de Energia Nova “A-5”, de 2025, destinado a contratar energia elétrica proveniente de novos empreendimentos de geração.",
+           areaResponsible: "Secretaria de Leilões - SEL.",
+           relator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise do Relatório Final da Secretaria de Leilões (SEL) sobre o Leilão A-5. A discussão verifica se os lances vencedores estão em conformidade com o edital, se os empreendimentos qualificados apresentaram toda a documentação necessária e se não há impedimentos para a homologação e adjudicação.<br><b>Decisão do Relator (Minuta):</b> Propõe homologar parcialmente o resultado do leilão e adjudicar o objeto da contratação às empresas vencedoras, conforme detalhado nos anexos da minuta.", 
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.000973-2025-09.pdf" }]
+       },
+       {
+           originalItemNumber: 3,
+           process: "48500.003990/2025-90",
+           subject: "Reajuste Tarifário Anual da Companhia Hidroelétrica São Patrício – Chesp, a vigorar a partir de 22 de novembro de 2025.",
+           areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+           relator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise dos componentes do reajuste tarifário da Chesp. A área técnica (STR) analisou a variação dos custos não gerenciáveis (Parcela A), como compra de energia e encargos setoriais, e aplicou o índice de reajuste (IGP-M) sobre os custos gerenciáveis (Parcela B), conforme previsto no contrato de concessão.<br><b>Decisão do Relator (Minuta):</b> Propõe homologar o índice de Reajuste Tarifário Anual da concessionária, fixando as novas tarifas a vigorarem a partir de 22 de novembro de 2025.",
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003990-2025-90.pdf" }]
+       },
+       {
+           originalItemNumber: 13,
            process: "48500.008300/2022-46",
            subject: "Pedido de Reconsideração interposto pela Neoenergia Distribuição Brasília – NDB em face do Despacho nº 1.513/2025, que negou provimento ao Requerimento Administrativo protocolado pela Recorrente com vistas ao aperfeiçoamento de processo de análise da sustentabilidade econômico-financeira da concessionária para o ano de 2023 e deu outras providências.",
            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Gentil Nogueira de Sá Júnior",
-           status: "withdrawn",
-           votoSummary: null, // Sem minuta
-           decision: '<span style="color:#ff0000;"><strong>O processo foi retirado de pauta</strong></span>',
-           details: null,
-           links: []
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise do Pedido de Reconsideração da NDB. A empresa contesta a metodologia usada pela ANEEL na análise de sua sustentabilidade econômico-financeira de 2023, solicitando um aperfeiçoamento dos critérios. A análise da área técnica reavaliou os argumentos da distribuidora frente às normas vigentes.<br><b>Decisão do Relator (Minuta):</b> Propõe conhecer o Pedido de Reconsideração e, no mérito, negar-lhe provimento, mantendo integralmente a decisão do despacho original.", 
+           decision: null,
+           details: "Processos anteriores a 31/12/2024. Para acessar no SEI, utilize o NUP 48500.908300/2022-46.",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908300-2022-46.pdf" }]
        },
        {
-           originalItemNumber: 3,
-           process: "48500.003331/2024-72",
-           subject: "Termo de Intimação nº 49/2024, lavrado pela Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica – SFT, que trata do Relatório de Falhas e Transgressões à legislação e ao Contrato de Concessão da Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.).",
-           areaResponsible: "Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
-           relator: "Agnes Maria de Aragão da Costa",
-           status: "view_request",
-           votoSummary: null, // Sem minuta
-           decision: '<span style="color:#ff0000;"><strong>O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.</strong></span>',
-           details: 'Preliminarmente, a Diretoria indeferiu o pedido de impedimento do Diretor Fernando Mosna. O Diretor-Geral deferiu questão de ordem baseada na ADI nº 5371/DF, determinando a divulgação do processo. No mérito, a Diretora-Relatora Agnes Costa votou por estender o prazo do Plano de Recuperação da Enel SP até 31/03/2026, sendo acompanhada antecipadamente pelos Diretores Sandoval Feitosa e Willamy Frota. Houve apresentação técnica da SFT e sustentação oral da Enel SP.',
-           links: []
-       },
-       {
-           originalItemNumber: 4,
-           process: "48500.006333/2023-32",
-           subject: "Prorrogação do Contrato de Concessão de Distribuição nº 1/1996-DNAEE, celebrado com a Light Serviços de Eletricidade S.A., nos termos do Decreto nº 12.068/2024 e da Lei nº 9.074/1995.",
-           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-           relator: "Gentil Nogueira de Sá Júnior",
-           status: "approved",
-           votoSummary: null, // Sem minuta
-           decision: "A Diretoria, por unanimidade, decidiu recomendar ao Ministério de Minas e Energia – MME a prorrogação do Contrato de Concessão de Distribuição nº 1/1996-DNAEE, celebrado com a Light Serviços de Eletricidade S.A., e encaminhar a minuta do 8º Termo Aditivo.",
-           details: "O Diretor Fernando Luiz Mosna Ferreira da Silva apresentou voto divergente, com fundamentação diversa do Diretor-Relator, acompanhando, no entanto, a decisão de recomendar ao Ministério de Minas e Energia – MME a prorrogação do Contrato de Concessão de Distribuição nº 1/1996-DNAEE, celebrado com a Light Serviços de Eletricidade S.A., e encaminhar a minuta do 8º Termo Aditivo.",
-           links: [{ title: "Minuta de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.906333-2023-32.pdf" }]
-       },
-       {
-           originalItemNumber: 5,
-           process: "48100.001556/1997-73",
-           subject: "Prorrogação antecipada do prazo da Concessão para exploração da Usina Hidrelétrica – UHE Santa Clara, outorgada à Companhia Energética Santa Clara – Cesc, localizada nos municípios de Nanuque e Serra dos Aimorés, estado de Minas Gerais, e Mucuri, estado da Bahia.",
-           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-           relator: "Gentil Nogueira de Sá Júnior",
-           status: "withdrawn",
-           votoSummary: null, // Sem minuta
-           decision: '<span style="color:#ff0000;"><strong>O processo foi retirado de pauta</strong></span>',
-           details: null,
-           links: []
-       },
-       { // Início do Bloco
-           originalItemNumber: 10,
-           process: "48500.027412/2025-49",
-           subject: "Recurso Administrativo interposto pela Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.) em face do Despacho nº 2.496/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que deferiu o pedido de isenção da Parcela de Ineficiência por Ultrapassagem – PIU e indeferiu o afastamento do pagamento dos Encargos de Uso do Sistema de Transmissão – EUSTs",
-           areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Willamy Moreira Frota",
-           status: "view_request",
-           votoSummary: "<b>Discussão:</b> A Enel SP recorre de despacho que, apesar de isentá-la da Parcela de Ineficiência (PIU), manteve a cobrança dos Encargos de Uso (EUSTs) pela ultrapassagem do MUST em 31/08/2024. A distribuidora busca o afastamento completo dos encargos.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Recurso Administrativo e, no mérito, negar-lhe provimento, mantendo a decisão do Despacho nº 2.496/2025 que manteve a cobrança dos EUSTs.",
-           decision: '<span style="color:#ff0000;"><strong>O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.</strong></span>',
-           details: "O Diretor-Relator, Willamy Moreira Frota, votou por negar provimento ao recurso. O processo foi destacado do bloco para sustentação oral do representante da Enel SP. Os votos proferidos antes da vista continuam válidos.",
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027412-2025-49.pdf" }]
-       },
-       {
-           originalItemNumber: 11,
-           process: "48500.003324/2024-71",
-           subject: "Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil – Eletronorte em face da Resolução Homologatória nº 3.434/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Roraima Energia S.A. e deu outras providências.",
+           originalItemNumber: 14,
+           process: "48500.005298/2022-53",
+           subject: "Pedidos de Reconsideração interpostos pelas empresas Centrais Elétricas Brasileiras S.A. – Eletrobras e Hydria Participações e Investimentos S.A. em face do Despacho nº 2.879/2025, que deu provimento aos Pedidos de Impugnação apresentados pelas Recorrentes, determinando à Câmara de Comercialização de Energia Elétrica – CCEE que proceda à recontabilização de todo o período em que as Pequenas Centrais Hidrelétricas – PCHs Parecis, Cidezal, Sapezal, Telegráfica e Rondon participaram indevidamente do rateio das perdas da rede básica; e que o valor dos emolumentos decorrentes da recontabilização seja rateado em partes iguais entre as Centrais Elétricas Brasileiras S.A. – Eletrobras e Hydria Participações e Investimentos S.A., cada qual arcando com 50% (cinquenta por cento) dos emolumentos.",
            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Gentil Nogueira de Sá Júnior",
-           status: "approved",
-           votoSummary: "<b>Discussão:</b> A Eletronorte recorre da Resolução Homologatória nº 3.434/2025, que definiu o Reajuste Tarifário da Roraima Energia. O recurso contesta especificamente a decisão da ANEEL de não permitir a celebração de Contrato de Energia de Reserva (CER) entre a Eletronorte e a Roraima Energia, o que impacta a cobertura de custos da UTE Floresta.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, dar-lhe provimento, alterando a Resolução para permitir o Contrato de Energia de Reserva.",
-           decision: 'A Diretoria, por unanimidade, decidiu: (i) conhecer e, no mérito, dar provimento parcial ao Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil – Eletronorte em face da Resolução Homologatória nº 3.434/2025, no sentido de determinar: (i.a) a correção da identificação do Contrato de Concessão constante na Tabela 7 da Resolução Homologatória nº 3.434/2025; e (i.b) o ajuste no encargo da transmissora no valor de R$ 260.049,21 (duzentos e sessenta mil, quarenta e nove reais e vinte e um centavos), a preços de junho de 2025, a ser considerado no próximo processo tarifário da Roraima Energia; e (ii) indeferir o pedido de reavaliação dos custos de conexão repassáveis à cobertura da Roraima Energia.',
-           details: null,
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903324-2024-71.pdf" }]
-       },
-       {
-           originalItemNumber: 12,
-           process: "48500.003395/2007-72",
-           subject: "Pedido de Reconsideração interposto pela Petróleo Brasileiro S.A. – Petrobras em face do Despacho nº 2.495/2024, que determinou a rescisão dos Contratos de Comercialização de Energia Elétrica no Ambiente Regulado – CCEARs da Usina Termelétrica – UTE Termoceará e deu outras providências.",
-           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Agnes Maria de Aragão da Costa",
-           status: "approved",
-           votoSummary: "<b>Discussão:</b> A Petrobras recorre do despacho que rescindiu os CCEARs da UTE Termoceará, alegando que a usina não estaria disponível para operação. A empresa contesta a decisão, buscando reverter a rescisão contratual.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, negar-lhe provimento, mantendo a rescisão dos CCEARs da UTE Termoceará.",
-           decision: 'A Diretoria, por unanimidade, decidiu ratificar a decisão proferida no 3ª Circuito Deliberativo Público Ordinário (item 8), realizado em 28 de outubro de 2025, no sentido de conhecer e, no mérito, negar provimento ao Pedido de Reconsideração, com pedido de efeito suspensivo, interposto pela Petrobras em face do Despacho nº 2.495/2024, que determinou a rescisão dos Contratos de Comercialização de Energia Elétrica no Ambiente Regulado – CCEARs da Usina Termelétrica – UTE Termoceará e deu outras providências.',
-           details: "O processo foi destacado do bloco para sustentação oral do representante da Petrobras.",
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903395-2007-72.pdf" }]
-       },
-       {
-           originalItemNumber: 13,
-           process: "48500.001526/2023-05",
-           subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A., em face do Despacho nº 3.309/2024, que negou provimento ao pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente, com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.",
-           areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-           relator: "Ricardo Lavorato Tili",
-           votoVistaRelator: "Agnes Maria de Aragão da Costa",
-           status: "view_request",
-           votoSummary: "<b>Discussão:</b> Recurso da Light contra a negativa de sua Revisão Tarifária Extraordinária (RTE), onde a empresa pedia a alteração das metas de perdas não técnicas (furto/fraude) definidas na sua revisão de 2022.<br><b>Decisão do Relator (Minuta):</b> O voto original do Diretor Ricardo Tili propõe negar provimento ao recurso da Light.<br><b>Decisão do Voto-Vista (Minuta):</b> O voto-vista da Diretora Agnes Costa propõe conhecer o recurso e, no mérito, dar-lhe provimento parcial, reconhecendo parte dos pleitos da Light para flexibilizar as metas de perdas.",
-           decision: '<span style="color:#ff0000;"><strong>O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo, a qual será considerada coletiva, nos termos no art. 53, § 9º, da Norma de Organização nº 1 (Resolução Normativo nº 1.133/2025).</strong></span>',
-           details: 'A Diretora-Relatora do voto-vista, Agnes Costa, acompanhando a Diretora Ludimila Lima, votou por negar provimento ao recurso. O Diretor-Relator, Ricardo Tili, votou por dar provimento parcial. Os Diretores Willamy Frota e Gentil Nogueira não participaram. Os votos proferidos antes da vista coletiva continuam válidos.',
-           links: [
-               { title: "Minuta de voto (Relator R. Tili)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_ricardotili.pdf" },
-               { title: "Minuta de voto (Diretora L. Lima)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_ludimilalima.pdf" },
-               { title: "Minuta de voto-vista (A. Costa)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901526-2023-05_votovistaagnes.pdf" }
-           ]
-       },
-       {
-           originalItemNumber: 16,
-           process: "48500.003250/2022-19 e outros",
-           subject: "Pedido de Reconsideração interposto pelas empresas Campos Energia SPE 1 a 10 e Talismã Energia SPE 1 a 10 em face do Despacho nº 2.551/2025, que indeferiu pedidos de postergação de prazo, desconto TUST/TUSD e recomposição de prazo de outorgas das UFVs Campos 1 a 20.",
-           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
            relator: "Fernando Luiz Mosna Ferreira da Silva",
-           status: "approved",
-           votoSummary: "<b>Discussão:</b> As empresas SPEs (Campos e Talismã) recorrem da decisão (Despacho nº 2.551/2025) que negou seus pedidos para adiar o prazo de implantação das UFVs Campos 1-20, estender o prazo do desconto TUST/TUSD e recompor o prazo total das outorgas.<br><b>Decisão do Relator (Minuta):</b> O voto propõe conhecer o Pedido de Reconsideração e, no mérito, negar-lhe provimento, mantendo integralmente a decisão do despacho anterior que indeferiu os pleitos das empresas.",
-           decision: "A Diretoria, por unanimidade, decidiu conhecer e no mérito, negar provimento ao Pedido de Reconsideração interposto pelas Campos Energia SPE 1 Ltda., Campos Energia SPE 2 Ltda., e outras, em face do Despacho nº 2.551/2025.",
-           details: 'O processo foi destacado do bloco para sustentação oral do representante da Campos Energia. <strong>Ato(s) Administrativo(s): <span style="color:#ff0000;">Despacho nº 3.283/2025</span></strong>',
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903250-2022-19.pdf" }]
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise dos recursos da Eletrobras e Hydria. As empresas questionam a decisão que determinou a recontabilização das perdas da rede básica (excluindo PCHs que participaram indevidamente do rateio) e, principalmente, a divisão do custo dos emolumentos dessa recontabilização (50% para cada). A análise foca na responsabilidade pelo erro cadastral que levou à cobrança indevida.<br><b>Decisão do Relator (Minuta):</b> Propõe conhecer os Pedidos de Reconsideração e, no mérito, negar-lhes provimento, mantendo a decisão do despacho recorrido.", 
+           decision: null,
+           details: "Processos anteriores a 31/12/2024. Para acessar no SEI, utilize o NUP 48500.905298/2022-53.",
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.905298-2022-53.pdf" }]
        },
        {
-           originalItemNumber: 27,
-           process: "48500.027647/2025-31, 48500.027658/2025-11",
-           subject: "Autorização e estabelecimento da Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão, sob concessão da Copel Geração e Transmissão S.A. – Copel-GT, em decorrência da 2ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2024.",
+           originalItemNumber: 17,
+           process: "48500.031515/2025-11",
+           subject: "Requerimento Administrativo protocolado pela Parintins Amazonas Transmissora de Energia S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 16/2019.",
+           areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+           relator: "Agnes Maria de Aragão da Costa",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise do pleito de reequilíbrio econômico-financeiro da transmissora Parintins Amazonas (Contrato nº 16/2019). A empresa alega custos extras e atrasos (excludentes de responsabilidade) que teriam impactado a implantação do empreendimento. A análise técnica avalia a comprovação desses custos e se eles se enquadram como eventos passíveis de reequilíbrio contratual.<br><b>Decisão do Relator (Minuta):</b> Propõe conhecer o requerimento e analisar o mérito dos pleitos de reequilíbrio econômico-financeiro apresentados pela transmissora.", 
+           decision: null,
+           details: null,
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.031515-2025-11.pdf" }]
+       },
+       {
+           originalItemNumber: 18,
+           process: "48500.003592/2025-73",
+           subject: "Requerimento Administrativo protocolado pela Energisa Sergipe – Distribuidora de Energia S.A. – ESE com vistas à prorrogação do Contrato de Concessão de Distribuição nº 7/1997, nos termos da Lei nº 9.074/1995 e do Decreto nº 12.068/2024.",
            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
            relator: "Fernando Luiz Mosna Ferreira da Silva",
-           status: "approved",
-           votoSummary: "<b>Discussão:</b> Trata da autorização para a Copel-GT implementar reforços em suas instalações de transmissão, conforme definido no Plano de Outorgas (POTEE 2024), e estabelece o valor da Receita Anual Permitida (RAP) adicional que a empresa receberá por esses investimentos.<br><b>Decisão do Relator (Minuta):</b> O voto propõe autorizar os reforços e fixar as parcelas de RAP correspondentes, conforme detalhado nos anexos da minuta.",
-           decision: "A Diretoria, por unanimidade, decidiu autorizar a Copel Geração e Transmissão S.A – Copel-GT a realizar os Reforços de Grande Porte sob sua responsabilidade e estabelecer os valores das parcelas adicionais de Receita Anual Permitida – RAP, no total de R$ 11.612.779,90 (onze milhões, seiscentos e doze mil, setecentos e setenta e nove reais e noventa centavos).",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Análise do cumprimento dos requisitos para prorrogação do contrato de concessão da Energisa Sergipe. A análise técnica verifica o atendimento às metas de qualidade do serviço (DEC/FEC), eficiência na gestão econômica e financeira (limites regulatórios) e o cumprimento das obrigações contratuais, conforme estabelecido pelo Decreto nº 12.068/2024.<br><b>Decisão do Relator (Minuta):</b> Propõe atestar o cumprimento das exigências e recomendar ao Ministério de Minas e Energia (MME) a prorrogação do contrato de concessão da distribuidora.", 
+           decision: null,
            details: null,
-           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027647-2025-31_e_outro.pdf" }]
+           links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003592-2025-73.pdf" }]
+       },
+       {
+           originalItemNumber: 29,
+           process: "48500.004885/2020-63",
+           subject: "Prorrogação do prazo de pedido de vista referente ao Resultado da Consulta Pública nº 39/2023, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação para o armazenamento de energia elétrica.",
+           areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT, Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM, Superintendência de Inovação e Transição Energética - STE.",
+           relator: "Daniel Cardoso Danna",
+           votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
+           status: "scheduled",
+           votoSummary: "<b>Discussão:</b> Deliberação sobre a solicitação de mais prazo para análise do voto-vista (Diretor Fernando Mosna) referente à regulamentação de armazenamento de energia (CP nº 39/2023). A complexidade do tema, que envolve modelos de negócio, inserção na operação e remuneração, motiva o pedido de extensão do prazo para uma análise mais detalhada.<br><b>Decisão do Relator (Minuta):</b> Propõe a concessão da prorrogação do prazo para aprofundamento da análise e apresentação do voto-vista.", 
+           decision: null,
+           details: "Processos anteriores a 31/12/2024. Para acessar no SEI, utilize o NUP 48500.904885/2020-63.",
+           links: [{ title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.904885-2020-63.pdf" }]
        }
    ];
 
@@ -599,25 +559,33 @@
         container.innerHTML = '';
 
         // TÍTULO ATUALIZADO
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', 'Resultados da 38ª Reunião Pública Ordinária de 2025');
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-8', 'Data da Reunião: 04/11/2025');
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', 'Pauta do 4º Circuito Deliberativo Público Ordinário de 2025');
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-2', 'Data: 11 de novembro de 2025');
+        const pageTime = createElement('p', 'text-gray-600 text-base mb-8', 'Período: 8h às 18h');
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
+        container.appendChild(pageTime);
 
         // Link do YouTube ATUALIZADO
-        const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a gravação da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
-        youtubeSection.appendChild(youtubeText);
-        youtubeSection.appendChild(youtubeLinkAnchor);
-        container.appendChild(youtubeSection);
+        if (youtubeLink) {
+            const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+            const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a gravação da reunião');
+            const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+            youtubeSection.appendChild(youtubeText);
+            youtubeSection.appendChild(youtubeLinkAnchor);
+            container.appendChild(youtubeSection);
+        } else {
+            const infoSection = createElement('div', 'mb-10 bg-blue-50 text-blue-800 p-5 rounded-xl border border-blue-200');
+            infoSection.innerHTML = '<p class="text-lg font-semibold text-center">Circuitos Deliberativos não possuem transmissão ao vivo.</p>';
+            container.appendChild(infoSection);
+        }
 
 
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
         // TÍTULO ATUALIZADO
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
@@ -625,18 +593,15 @@
         // Função para resumir assuntos do sumário
         const getSummarySubject = (item) => {
             switch (item.originalItemNumber) {
-                case 1: return "CP Monitoramento de Mercado";
-                case 2: return "Recurso NDB - Sustentabilidade Financeira";
-                case 3: return "Termo de Intimação - Enel SP";
-                case 4: return "Prorrogação Contrato Light";
-                case 5: return "Prorrogação UHE Santa Clara";
-                case 10: return "Recurso Enel SP - Encargos MUST";
-                case 11: return "Recurso Eletronorte - RTA Roraima Energia";
-                case 12: return "Recurso Petrobras - UTE Termoceará";
-                case 13: return "Recurso Light - RTE Perdas Não Técnicas";
-                case 16: return "Recurso SPEs Campos/Talismã - UFVs Campos 1-20";
-                case 27: return "Autorização Reforços Copel-GT";
-                default: return item.subject; // MODIFICADO: removido o substring(0, 60) + "..."
+                case 1: return "Edital Leilão de Transmissão nº 1/2026";
+                case 2: return "Homologação Leilão Energia Nova “A-5”";
+                case 3: return "Reajuste Tarifário Anual - Chesp";
+                case 13: return "Recurso NDB - Sustentabilidade Financeira";
+                case 14: return "Recurso Eletrobras/Hydria - Rateio Perdas";
+                case 17: return "Reequilíbrio Contrato Parintins Amazonas";
+                case 18: return "Prorrogação Contrato Energisa Sergipe";
+                case 29: return "Prorrogação Vista CP 39/2023 (Armazenamento)";
+                default: return item.subject; 
             }
         };
 
@@ -1013,7 +978,7 @@
       // Navegação (agora dentro do cabeçalho)
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-end'); // Centralizado em mobile
       // Buttons
-      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '38ª Reunião');
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '4º Circuito');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const consultasEncerradasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Encerradas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
