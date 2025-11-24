@@ -207,9 +207,10 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    // Link da transmissão da 39ª RPO (18/11/2025)
+    // Link da gravação da 39ª RPO (18/11/2025)
     const youtubeLink39 = "https://youtu.be/4Ar66Gm_x1c?si=t-h2dC64MZdCDtti";
     const i4LogoUrl = "https://github.com/Jacquei4/RPO_ANEEL/blob/main/i4.png?raw=true";
+    const mmeConsultaLink = "https://consultas-publicas.mme.gov.br/home"; // Link padrão para CPs do MME
 
     // Ícones SVG
     const icons = {
@@ -420,11 +421,43 @@
     ];
 
 
-    // DADOS DAS CONSULTAS PÚBLICAS (mantidas e filtradas)
+    // DADOS DAS CONSULTAS PÚBLICAS (incluindo a nova CP do MME e filtrando as encerradas)
     const consultasPublicasData = [
+         // CP do MME - Adicionada agora
          {
+            numero: "CP 201/2025",
+            tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente nas concessões e permissões de distribuição de energia elétrica.",
+            status: "aberta",
+            inicio: "05/11/2025",
+            fim: "05/12/2025",
+            area: "DPSE/SNEE",
+            origem: "MME",
+            link: mmeConsultaLink
+        },
+        {
+            numero: "CP 202/2025",
+            tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).",
+            status: "aberta",
+            inicio: "10/11/2025",
+            fim: "01/12/2025",
+            area: "DPOG/SNTEP",
+            origem: "MME",
+            link: mmeConsultaLink 
+        },
+         {
+            numero: "CP 33/2025",
+            tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).",
+            status: "aberta",
+            inicio: "06/11/2025",
+            fim: "22/12/2025",
+            area: "SGM/SFF",
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+        // CPs abertas na 39ª RPO
+        {
             numero: "CP 35/2025",
-            tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Gás Natural, Carvão Mineral e UHEs).",
+            tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).",
             status: "aberta",
             inicio: "19/11/2025",
             fim: "18/12/2025",
@@ -432,15 +465,15 @@
             origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
-         {
-            numero: "CP 34/2025",
+        {
+            numero: "CP 36/2025",
             tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).",
             status: "aberta",
             inicio: "19/11/2025",
-            fim: "16/12/2025",
+            fim: "18/12/2025",
             area: "SEL",
             origem: "ANEEL",
-            link: aneelAgenda39.find(item => item.originalItemNumber === 2)?.links[0]?.url || ""
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
             numero: "CP 37/2025",
@@ -450,7 +483,7 @@
             fim: "05/01/2026",
             area: "SGM",
             origem: "ANEEL",
-            link: aneelAgenda39.find(item => item.originalItemNumber === 4)?.links[0]?.url || ""
+            link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" // Link Minuta RPO 39 Item 4
         },
          {
             numero: "CP 38/2025",
@@ -460,21 +493,11 @@
             fim: "18/12/2025",
             area: "SGM",
             origem: "ANEEL",
-            link: aneelAgenda39.find(item => item.originalItemNumber === 10)?.links[0]?.url || ""
+            link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" // Link Minuta RPO 39 Item 10
         },
          {
-            numero: "CP 33/2025",
-            tema: "Obter subsídios e informações adicionais acerca da minuta de Resolução Normativa, o anexo do Manual Algébrico do Monitoramento Prudencial, e os Procedimentos de Comercialização – PdCs, bem como o Relatório de AIR/ARR nº 1/2025-SGM-SFF/ANEEL.",
-            status: "aberta",
-            inicio: "06/11/2025",
-            fim: "22/12/2025",
-            area: "SGM/SFF",
-            origem: "ANEEL",
-            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
-        },
-        {
             numero: "CP 31/2025",
-            tema: "Regras de Comercialização de Energia Elétrica, versão 2026. (Minuta de Resolução Normativa, Descritivo de Alterações e módulos da CCEE).",
+            tema: "Regras de Comercialização de Energia Elétrica, versão 2026.",
             status: "encerrada", 
             inicio: "16/10/2025",
             fim: "17/11/2025",
@@ -553,24 +576,14 @@
             link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3957&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
-            numero: "TS 12/2025",
-            tema: "Subsídios para revisão do Submódulo 2.5 e 2.5A do Proret (componente Pd - Produtividade do Fator X).",
+            numero: "TS 19/2025",
+            tema: "Metodologia de apuração do saldo do UBP a ser repactuado (Lei 15.235/2025).",
             status: "encerrada",
-            inicio: "15/09/2025",
-            fim: "24/10/2025",
+            inicio: "29/10/2025",
+            fim: "04/11/2025",
             area: "STR",
             origem: "ANEEL",
-            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=zZC42Y0S&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3955&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
-        },
-        {
-            numero: "CP 30/2025",
-            tema: "Aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.",
-            status: "encerrada",
-            inicio: "10/09/2025",
-            fim: "24/10/2025",
-            area: "STR",
-            origem: "ANEEL",
-            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=z6shVjGS&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=p0bgET1E&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3964&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
     ];
 
@@ -906,11 +919,33 @@
 
         const tableContainer = createElement('div', 'info-card overflow-x-auto');
 
-        const existingConsultas = [
-            // Listas existentes de CPs/TSs ativas
+        // Apenas CPs ativas
+        const activeConsultas = [
+             // CP do MME - Adicionada agora (Verificador Independente)
+            {
+                numero: "CP 201/2025",
+                tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.",
+                status: "aberta",
+                inicio: "05/11/2025",
+                fim: "05/12/2025",
+                area: "DPSE/SNEE",
+                origem: "MME",
+                link: mmeConsultaLink 
+            },
+            // CP do MME - Armazenamento
+            {
+                numero: "CP 202/2025",
+                tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).",
+                status: "aberta",
+                inicio: "10/11/2025",
+                fim: "01/12/2025",
+                area: "DPOG/SNTEP",
+                origem: "MME",
+                link: mmeConsultaLink 
+            },
              {
                 numero: "CP 33/2025",
-                tema: "Obter subsídios e informações adicionais acerca da minuta de Resolução Normativa, o anexo do Manual Algébrico do Monitoramento Prudencial, e os Procedimentos de Comercialização – PdCs, bem como o Relatório de AIR/ARR nº 1/2025-SGM-SFF/ANEEL.",
+                tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).",
                 status: "aberta",
                 inicio: "06/11/2025",
                 fim: "22/12/2025",
@@ -918,15 +953,10 @@
                 origem: "ANEEL",
                 link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
             },
-            // As demais CPs/TSs anteriores a 19/11 já estão encerradas, e o filtro 'isConsultaAberta' abaixo garante isso.
-        ].filter(cp => isConsultaAberta(cp.fim));
-
-
-        const newConsultas = [
-            // CPs abertas na 39ª RPO (Itens 1, 2, 4, 10)
+            // CPs abertas na 39ª RPO
             {
                 numero: "CP 35/2025",
-                tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Gás Natural, Carvão Mineral e UHEs).",
+                tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).",
                 status: "aberta",
                 inicio: "19/11/2025",
                 fim: "18/12/2025",
@@ -935,14 +965,14 @@
                 link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
             },
             {
-                numero: "CP 34/2025",
+                numero: "CP 36/2025",
                 tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).",
                 status: "aberta",
                 inicio: "19/11/2025",
-                fim: "16/12/2025",
+                fim: "18/12/2025",
                 area: "SEL",
                 origem: "ANEEL",
-                link: aneelAgenda39.find(item => item.originalItemNumber === 2)?.links[0]?.url || ""
+                link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
             },
             {
                 numero: "CP 37/2025",
@@ -952,7 +982,7 @@
                 fim: "05/01/2026",
                 area: "SGM",
                 origem: "ANEEL",
-                link: aneelAgenda39.find(item => item.originalItemNumber === 4)?.links[0]?.url || ""
+                link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" // Link Minuta RPO 39 Item 4
             },
             {
                 numero: "CP 38/2025",
@@ -962,24 +992,12 @@
                 fim: "18/12/2025",
                 area: "SGM",
                 origem: "ANEEL",
-                link: aneelAgenda39.find(item => item.originalItemNumber === 10)?.links[0]?.url || ""
+                link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" // Link Minuta RPO 39 Item 10
             },
         ];
 
-        // Combina e garante que não há duplicação baseada no número
-        let openConsultasMap = new Map();
-        
-        // Adiciona as CPs da 39ª RPO (prioridade)
-        newConsultas.filter(cp => isConsultaAberta(cp.fim)).forEach(cp => openConsultasMap.set(cp.numero, cp));
+        let openConsultas = activeConsultas.filter(cp => isConsultaAberta(cp.fim));
 
-        // Adiciona as CPs existentes (se não forem duplicadas)
-        existingConsultas.forEach(cp => {
-             if (!openConsultasMap.has(cp.numero)) {
-                openConsultasMap.set(cp.numero, cp);
-             }
-        });
-
-        let openConsultas = Array.from(openConsultasMap.values());
 
         // Ordenar por dias restantes (ordem crescente)
         openConsultas.sort((a, b) => {
