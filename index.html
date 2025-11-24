@@ -646,9 +646,15 @@
 
     // --- FUNÇÕES DE RENDERIZAÇÃO ---
     function renderPageWithAnimation(renderFunction, container) {
+      // 1. Move a página para o topo antes de renderizar
+      window.scrollTo(0, 0); 
+      
+      // 2. Aplica a animação (fade-in)
       container.classList.remove('content-area');
       void container.offsetWidth;
       container.classList.add('content-area');
+      
+      // 3. Renderiza o novo conteúdo
       renderFunction(container);
     }
 
@@ -925,7 +931,7 @@
              // CP do MME - Adicionada agora (Verificador Independente)
             {
                 numero: "CP 201/2025",
-                tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente nas concessões e permissões de distribuição de energia elétrica.",
+                tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.",
                 status: "aberta",
                 inicio: "05/11/2025",
                 fim: "05/12/2025",
