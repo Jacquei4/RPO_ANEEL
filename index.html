@@ -225,6 +225,7 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         youtube: `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>`,
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
+        calendar: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 12h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>`,
     };
     
     // O array de dados do 5º Circuito Deliberativo foi removido.
@@ -412,21 +413,64 @@
         },
     ];
 
-    // Dados para a página da Agenda Regulatória
-    const agendaRegulatoriaThemes = [ 
-        { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária." },
-        { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização." },
-        { title: "3. Operação e preço de curto prazo", description: "Este tema visa o aprimoramento contínuo dos modelos computacionais de otimização (NEWAVE, DECOMP) e de formação de preço (PLD), incorporando novas tecnologias como usinas híbridas e sistemas de armazenamento para refletir a complexidade crescente do sistema elétrico." },
-        { title: "4. Contabilidade do setor elétrico", description: "Propõe-se a revisão e modernização dos manuais de contabilidade do setor elétrico para aumentar a transparência, a padronização e a comparabilidade das informações financeiras dos agentes, refletindo as novas dinâmicas do mercado." },
-        { title: "5. Regulação de operações econômico-financeiras", description: "A ANEEL busca fortalecer o monitoramento da saúde financeira dos agentes, especialmente em um cenário de mercado mais aberto. O foco está na adequação de garantias financeiras e na gestão de riscos para garantir a liquidez e a segurança das operações." },
-        { title: "6. Modernização da regulação econômica e das tarifas", description: "Este eixo trata da revisão das metodologias tarifárias de transmissão e distribuição, buscando maior eficiência, incentivos à qualidade e uma alocação de custos que considere novas tecnologias, como redes inteligentes e armazenamento de energia." },
-        { title: "7. Novos contratos de concessão de transmissão e distribuição", description: "A agência se prepara para futuras licitações de concessão, desenvolvendo contratos que incentivem a modernização, a resiliência das redes e a melhoria contínua da qualidade dos serviços prestados à população." },
-        { title: "8. Acesso e atendimento de usuários e consumidores", description: "O objetivo é simplificar as regras de acesso às redes, principalmente para a geração distribuída, e aprimorar os canais de atendimento e os mecanismos de proteção ao consumidor, garantindo um relacionamento mais justo e transparente." },
-        { title: "9. Modernização do serviço de transmissão e distribuição", description: "A regulação buscará incorporar avanços como redes inteligentes (smart grids), digitalização, armazenamento e recursos energéticos distribuídos (REDs), visando aumentar a eficiência, a segurança e a flexibilidade da operação do sistema." },
-        { title: "10. Eficiência energética", description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais." }
-    ];
+    // --- NOVO DADO: Atividades Detalhadas da Agenda Regulatória 2026-2027 (Extraído do PDF) ---
+    const agendaRegulatoriaActivities = [
+        // Eixo Transmissão e Distribuição (T&D)
+        { code: "AR26-02", activity: "Aprimoramento das regras de acesso ao sistema de transmissão.", axis: "Transmissão e Distribuição (T&D)", year: "2027" },
+        { code: "TRA21-25", activity: "Aprimoramento dos Requisitos de instalações de transmissão.", axis: "Transmissão e Distribuição (T&D)", year: "2027" },
+        // O código AR25-15, mencionado no PDF, parece incompleto no contexto (RED/benefícios). Vou usar a inferência do contexto de Transmissão e Distribuição.
+        { code: "AR24-02", activity: "Avaliação de aprimoramentos regulatórios sobre Requisitos de Geração Distribuída (RED) e dos benefícios para transição segmento de Distribuição.", axis: "Transmissão e Distribuição (T&D)", year: "2026" },
+        { code: "AR26-04", activity: "Avaliação de aprimoramentos regulatórios sobre Padrões de Rede relacionados à resiliência do sistema de distribuição a eventos climáticos extremos (2º fase do tema Resiliência).", axis: "Transmissão e Distribuição (T&D)", year: "2026" },
+        { code: "AR26-04 (ISE)", activity: "Avaliação de aprimoramentos regulatórios sobre Interrupção em Situação de Emergência (ISE) relacionados à resiliência do sistema de distribuição a eventos climáticos extremos (3º fase do tema Resiliência).", axis: "Transmissão e Distribuição (T&D)", year: "2027" },
+        { code: "AR25-02", activity: "Aprimoramento das Regras e dos Procedimentos relacionados a Prestação do Serviço Público de Distribuição.", axis: "Transmissão e Distribuição (T&D)", year: "2027" },
+        { code: "TRA21-40", activity: "Aprimoramento da regulamentação de qualidade associada às Funções Transmissão - FT em Corrente Alternada CA.", axis: "Transmissão e Distribuição (T&D)", year: "2027" },
+        
+        // Eixo Geração e Mercado (G&M) - Incluindo Inovação, Preço Curto Prazo e Eletromobilidade relacionados
+        { code: "AR26-05", activity: "Regulamentação do armazenamento de energia elétrica em sistemas de transmissão e distribuição.", axis: "Geração e Mercado (G&M) / Inovação", year: "2027" },
+        { code: "AR26-06", activity: "Estabelecimento de Indicadores de Atendimento de Mercado (MINUTA).", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "AR26-07", activity: "Aprimoramento regulatório para propiciar o avanço da eletromobilidade e sua distribuição.", axis: "Geração e Mercado (G&M) / Eletromobilidade", year: "2026" },
+        { code: "AR24-18", activity: "Avaliação das metodologias de cálculo do PLD mínimo e de definição da Tarifa de Energia de Otimização - TEO.", axis: "Geração e Mercado (G&M) / Preço Curto Prazo", year: "2026" },
+        { code: "AR24-05", activity: "Atualização da metodologia de cálculo dos limites máximos do Preço de Liquidação das Diferenças - PLD.", axis: "Geração e Mercado (G&M) / Preço Curto Prazo", year: "2026" },
+        { code: "AR24-06", activity: "Aprimoramento do processo de monitoramento do mercado de energia elétrica (regra definitiva pós-período sombra).", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "AR25-07", activity: "Aprimoramento das Regras de Comercialização 2027.", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "C&M21-14", activity: "Aprimoramento da regulamentação das Garantias Financeiras do Mercado de Curto Prazo.", axis: "Geração e Mercado (G&M)", year: "2027" },
+        { code: "AR26-12", activity: "Aprimoramento das Regras de Comercialização 2028.", axis: "Geração e Mercado (G&M)", year: "2027" },
+        { code: "AR26-13", activity: "Avaliação quanto a inversão de Fluxo da MMGD no âmbito das contabilização e liquidação da CCEE.", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "GER21-18", activity: "Promoção das adequações regulatórias para inserção de sistemas de armazenamento, incluindo usinas reversíveis, no SIN (1º Ciclo).", axis: "Geração e Mercado (G&M) / Armazenamento", year: "2026" },
+        { code: "GER21-02", activity: "Estabelecimento de critérios operativos para redução ou limitação de geração (Constrained off).", axis: "Geração e Mercado (G&M) / Operação", year: "2026" },
+        { code: "AR26-14", activity: "Aprimoramento dos Procedimentos de Rede e Regras de Comercialização decorrentes da Resolução Normativa que estabelecerá critérios operativos para redução ou limitação de geração.", axis: "Geração e Mercado (G&M) / Operação", year: "2027" },
+        { code: "AR26-15", activity: "Regulamentação do rateio do custo da energia de Angra 1 e Angra 2 entre os usuários finais de energia elétrica (Lei 15.235/2025).", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "AR26-16", activity: "Aprovação de Regras de Comercialização relativa à constituição de garantias financeiras de CCEAR (A-1, de 2025).", axis: "Geração e Mercado (G&M)", year: "2026" },
+        { code: "AR26-17", activity: "Aprimoramento das Regras de Comercialização em decorrência da Portaria MME º 49/2022 (exportação de energia elétrica).", axis: "Geração e Mercado (G&M) / Intercâmbio", year: "2027" },
+        { code: "AR26-18", activity: "Aprimoramento das Regras de Comercialização em decorrência da Portaria MME º 60/2022 (importação Argentina e Paraguai).", axis: "Geração e Mercado (G&M) / Intercâmbio", year: "2027" },
+        { code: "AR26-19", activity: "Aprimoramento das Regras de Comercialização em decorrência da Portaria MMEº 86/2022 (exportação Argentina e Uruguai).", axis: "Geração e Mercado (G&M) / Intercâmbio", year: "2027" },
+        { code: "AR26-20", activity: "Aprimoramento das Regras de Comercialização em decorrência da Portaria MME º 87/2024 (importação Paraguai).", axis: "Geração e Mercado (G&M) / Intercâmbio", year: "2027" },
+        { code: "AR26-21", activity: "Revisão da REN 1.031/2022 (descontos TUST/TUSD para fontes incentivadas - Lei 15.269/25).", axis: "Geração e Mercado (G&M) / Descontos", year: "2026" },
+        { code: "AR26-22", activity: "Regulamentação dos requisitos de controle, capacidade, flexibilidade e armazenamento para novos geradores (pagamento do ERCAP).", axis: "Geração e Mercado (G&M)", year: "2027" },
+        { code: "AR26-23", activity: "Revisão da REN 1.030/2022 (serviços ancilares - Lei 15.269/25).", axis: "Geração e Mercado (G&M) / Serviços Ancilares", year: "2027" },
+        { code: "AR26-24", activity: "Aprimoramento da regulamentação para que a liquidação no MCP utilize o mecanismo de dupla contabilização (PLD ex-ante e ex-post).", axis: "Geração e Mercado (G&M)", year: "2027" },
+        { code: "AR26-25", activity: "Aprimoramento da regulamentação com vistas ao fim do direito ao desconto na TUST/TUSD de consumidores livres (Lei 15.269/25).", axis: "Geração e Mercado (G&M) / Descontos", year: "2026" },
+        { code: "AR26-26", activity: "Aprimoramento da regulamentação com vistas à abertura de mercado instituída pela Lei nº 15.269/25.", axis: "Geração e Mercado (G&M) / Abertura de Mercado", year: "2027" },
+        { code: "AR26-27", activity: "Aprimoramento da regulamentação para atendimento aos critérios para autoprodução, inclusive por equiparação (Lei 15.269/25).", axis: "Geração e Mercado (G&M)", year: "2027" },
+        { code: "AR26-28", activity: "Aprimoramento do Rateio dos custos de Reserva de Capacidade.", axis: "Geração e Mercado (G&M) / Reserva de Capacidade", year: "2027" },
+        { code: "AR26-29", activity: "Aprimoramento da regulamentação com vistas à vedação da repactuação do risco hidrológico (GSF) dos geradores hidráulicos participantes do MRE (Lei 15.269/25).", axis: "Geração e Mercado (G&M) / Risco Hidrológico", year: "2027" },
 
-    // --- FUNÇÕES HELPER ---
+        // Eixo Regulação Tarifária e Financeira (RT&RF)
+        { code: "R&C21-14", activity: "Revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", axis: "Regulação Tarifária e Financeira (RT&RF) / Contabilidade", year: "2026" },
+        { code: "AR24-08", activity: "Revisão dos Anexos VIII e VIII-A da REN nº 948/2021 (Critério de Eficiência Econômico-Financeira).", axis: "Regulação Tarifária e Financeira (RT&RF) / Financeiro", year: "2026" },
+        { code: "AR26-01", activity: "Revisão do Anexo VII da REN 948/2021 (Avaliação da qualidade dos sistemas de governança das concessionárias de distribuição).", axis: "Regulação Tarifária e Financeira (RT&RF) / Governança", year: "2027" },
+        { code: "TAR23-01[A]", activity: "Modernização das tarifas de distribuição - Ciclo 1.", axis: "Regulação Tarifária e Financeira (RT&RF) / Distribuição", year: "2026" },
+        { code: "AR25-14", activity: "Revisão do cálculo do limite da Parcela B das permissionárias e atualização da norma de retirada do desconto de suprimento.", axis: "Regulação Tarifária e Financeira (RT&RF) / Distribuição", year: "2027" },
+        { code: "TRV23-02", activity: "Estabelecimento das diretrizes para programas de ambiente regulatório experimental (sandbox regulatório) no setor elétrico.", axis: "Regulação Tarifária e Financeira (RT&RF) / Inovação", year: "2027" },
+        { code: "AR24-19", activity: "Revisão dos Submódulos 2.6 e 2.6 A do Proret (Perdas não técnicas e Receitas irrecuperáveis).", axis: "Regulação Tarifária e Financeira (RT&RF) / Distribuição", year: "2026" },
+        { code: "AR24-09", activity: "Revisão do Submódulo 2.3 do Proret (Base de Remuneração Regulatória).", axis: "Regulação Tarifária e Financeira (RT&RF) / Distribuição", year: "2027" },
+        { code: "AR26-30", activity: "Alteração do Submódulo 5.5 do PRORET para incluir as comercializadoras quanto ao pagamento da TFSEE (Lei 9.427/1996 - Lei 15.269/25).", axis: "Regulação Tarifária e Financeira (RT&RF) / Encargos", year: "2026" },
+        { code: "AR26-31", activity: "Alteração do Submódulo 5.2 do PRORET para incluir o teto da CDE, o Encargo de Complemento de Recursos e sua operacionalização (Lei 15.269/25).", axis: "Regulação Tarifária e Financeira (RT&RF) / Encargos", year: "2026" },
+    ];
+    
+    // O array agendaRegulatoriaThemes original foi removido pois a nova lista de atividades é mais precisa.
+
+    // --- FUNÇÕES HELPER (mantidas) ---
 
     function createStatusBadge(statusKey, statusMap) {
         const statusInfo = statusMap[statusKey] || { text: "Indefinido", classes: "bg-gray-100 text-gray-800 border border-gray-200" };
@@ -485,7 +529,7 @@
       renderFunction(container);
     }
 
-    // RENDER 40ª RPO (pauta) - AGORA É A SEGUNDA ABA PRINCIPAL
+    // RENDER 40ª RPO (pauta) - (Mantido)
     function renderRpo40Page(container) {
         container.innerHTML = '';
 
@@ -721,13 +765,24 @@
         container.appendChild(tableContainer);
     }
 
-    // RENDER AGENDA REGULATÓRIA (Atualizado para refletir o status de aprovação do Item 4)
+    // RENDER AGENDA REGULATÓRIA (ATUALIZADO com dados do PDF e nova estrutura)
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
-         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Pauta para Aprovação');
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Atividades Prioritárias');
+         
+         // Agrupa as atividades por Eixo Temático
+         const groupedActivities = agendaRegulatoriaActivities.reduce((acc, activity) => {
+             const key = activity.axis;
+             if (!acc[key]) {
+                 acc[key] = [];
+             }
+             acc[key].push(activity);
+             return acc;
+         }, {});
+
+
          const introDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200');
          
-         // Informações extraídas do Item 4
          const item4 = aneelAgenda40.find(item => item.originalItemNumber === 4);
          const item4Status = item4 ? `(Processo: ${item4.process} / Relator: ${item4.relator})` : '(Informações da pauta não encontradas)';
          const item4Resumo = item4 && item4.details ? item4.details.replace('Posição: Pela aprovação final da Agenda Regulatória.', '') : 'A Agenda Regulatória consolida as prioridades da agência para o biênio, refletindo os desafios de modernização e transição energética.';
@@ -738,20 +793,62 @@
             <p class="text-blue-800 mb-2 leading-relaxed">O Item 4 da pauta da 40ª Reunião Pública Ordinária (${rpo40Date}) trata da aprovação final da Agenda Regulatória para o biênio 2026-2027. ${item4Status}</p>
             <p class="text-blue-800 leading-relaxed font-semibold">Resumo do Voto do Relator (Sandoval de Araújo Feitosa Neto):</p>
             <p class="text-blue-800 leading-relaxed">${item4Resumo} A posição é pela aprovação final do documento.</p>
+            <p class="text-blue-800 leading-relaxed mt-4">A lista abaixo detalha as <strong>${agendaRegulatoriaActivities.length} atividades regulatórias</strong> propostas pela ANEEL para o biênio.</p>
          `;
          container.appendChild(pageTitle);
          container.appendChild(introDiv);
 
-         const themesGrid = createElement('div', 'space-y-6');
-         agendaRegulatoriaThemes.forEach((theme) => {
-             const card = createElement('div', 'info-card p-6');
-             card.innerHTML = `
-                <h3 class="text-lg font-semibold text-i4-dark-gray mb-3">${theme.title}</h3>
-                <p class="text-i4-text-gray leading-relaxed">${theme.description}</p>
-             `;
-             themesGrid.appendChild(card);
+         const axesContainer = createElement('div', 'space-y-12');
+         
+         Object.keys(groupedActivities).forEach(axis => {
+            const axisSection = createElement('div', 'axis-section', null, { id: `axis-${axis.replace(/[^a-zA-Z0-9]/g, '-')}` });
+
+            const axisTitle = createElement('h2', 'text-2xl font-bold text-i4-dark-gray mb-6 p-3 bg-i4-border-gray rounded-lg border-l-4 border-i4-blue', axis);
+            axisSection.appendChild(axisTitle);
+            
+            const tableContainer = createElement('div', 'info-card overflow-x-auto');
+            const table = createElement('table', 'styled-table w-full text-sm text-left text-i4-text-gray');
+            
+            table.innerHTML = `
+                <thead class="text-xs text-i4-text-gray uppercase bg-i4-light-gray">
+                    <tr>
+                        <th scope="col" class="px-6 py-4">Código</th>
+                        <th scope="col" class="px-6 py-4">Atividade Regulatória</th>
+                        <th scope="col" class="px-6 py-4">Ano Previsto (RPO) ${icons.calendar}</th>
+                    </tr>
+                </thead>
+            `;
+            const tbody = createElement('tbody', 'bg-white divide-y divide-i4-border-gray');
+
+            groupedActivities[axis].sort((a, b) => {
+                // Ordena primeiro por ano (2026 antes de 2027) e depois por código
+                if (a.year !== b.year) {
+                    return a.year.localeCompare(b.year);
+                }
+                return a.code.localeCompare(b.code);
+            }).forEach(item => {
+                const tr = createElement('tr', 'hover:bg-i4-light-gray');
+                
+                // Badge para o ano
+                const yearBadgeClass = item.year === '2026' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800';
+                const yearBadge = createElement('span', `inline-block font-semibold rounded-full whitespace-nowrap px-3 py-1 text-xs ${yearBadgeClass}`, item.year);
+
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-bold text-i4-blue whitespace-nowrap">${item.code}</td>
+                    <td class="px-6 py-4 text-i4-dark-gray leading-relaxed">${item.activity}</td>
+                    <td class="px-6 py-4 whitespace-nowrap"></td>
+                `;
+                tr.children[2].appendChild(yearBadge);
+                tbody.appendChild(tr);
+            });
+            
+            table.appendChild(tbody);
+            tableContainer.appendChild(table);
+            axisSection.appendChild(tableContainer);
+            axesContainer.appendChild(axisSection);
          });
-            container.appendChild(themesGrid);
+         
+         container.appendChild(axesContainer);
     }
 
     // RENDER IMERSÃO (mantendo a função do arquivo anterior)
@@ -859,9 +956,9 @@
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Renderização Inicial (Mudando para 40ª RPO)
-      setActiveButton(rpo40Button);
-      renderPageWithAnimation(renderRpo40Page, contentContainer);
+      // Renderização Inicial (Mudando para Agenda Regulatória, já que o usuário perguntou sobre ela)
+      setActiveButton(agendaButton);
+      renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer);
     }
 
     // Renderizar o dashboard quando o DOM estiver pronto
