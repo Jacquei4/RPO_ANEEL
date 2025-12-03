@@ -936,6 +936,8 @@
          
          const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
          const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
+         // Link da Portaria de Aprovação (Novo link fornecido)
+         const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
 
          // Bloco de Acompanhamento (mantido)
          const linkSection = createElement('div', 'mb-8 bg-i4-light-gray p-5 rounded-xl border border-i4-border-gray');
@@ -948,11 +950,11 @@
          linkSection.appendChild(linkAnchor);
          container.appendChild(linkSection);
          
-         // NOVO BLOCO CONSOLIDADO: Decisão da RPO + Classificação + Link da NT
+         // NOVO BLOCO CONSOLIDADO: Decisão da RPO + Classificação + Link da NT + Link da Portaria
          const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          const item4 = aneelAgenda40.find(item => item.originalItemNumber === 4);
          const item4Status = item4 ? `(Processo: ${item4.process} / Relator: ${item4.relator})` : '(Informações da pauta não encontradas)';
-         const item4Decisao = item4 ? item4.decision : 'A Diretoria, por unanimidade, decidiu aprovar a Agenda Regulatória da ANEEL para o biênio 2026/2027.';
+         // const item4Decisao = item4 ? item4.decision : 'A Diretoria, por unanimidade, decidiu aprovar a Agenda Regulatória da ANEEL para o biênio 2026/2027.';
 
          // Conteúdo da Decisão
          consolidatedDiv.innerHTML = `
@@ -973,11 +975,16 @@
          `;
          consolidatedDiv.appendChild(classificationContent);
          
-         // Conteúdo do Link da NT (Referência)
-         const ntLinkContent = createElement('div', 'mt-4 border-t border-green-300 pt-4');
-         const ntAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Nota Técnica Original (TS 11/2025) ${icons.arrowRight}`, { href: ntLink, target: '_blank', rel: 'noopener noreferrer' });
-         ntLinkContent.appendChild(ntAnchor);
-         consolidatedDiv.appendChild(ntLinkContent);
+         // Conteúdo dos Links (NT e Portaria)
+         const linksContent = createElement('div', 'mt-4 border-t border-green-300 pt-4 flex flex-wrap gap-x-6 gap-y-2');
+         
+         const ntAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Nota Técnica (TS 11/2025) ${icons.arrowRight}`, { href: ntLink, target: '_blank', rel: 'noopener noreferrer' });
+         const portariaAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Portaria de Aprovação ${icons.arrowRight}`, { href: portariaLink, target: '_blank', rel: 'noopener noreferrer' });
+
+         linksContent.appendChild(ntAnchor);
+         linksContent.appendChild(portariaAnchor);
+         
+         consolidatedDiv.appendChild(linksContent);
          
          container.appendChild(consolidatedDiv);
 
