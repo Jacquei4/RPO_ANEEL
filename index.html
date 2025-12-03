@@ -156,6 +156,7 @@
     }
     .styled-table td, .styled-table th {
         padding: 1rem 1.5rem;
+        vertical-align: top;
     }
     .styled-table tbody tr {
         border-bottom: 1px solid #e2e8f0; /* i4-border-gray */
@@ -432,17 +433,18 @@
     ];
 
     // Dados para a página da Agenda Regulatória
+    // Adicionando o campo 'year' para a tabela
     const agendaRegulatoriaThemes = [ 
-        { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária." },
-        { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização." },
-        { title: "3. Operação e preço de curto prazo", description: "Este tema visa o aprimoramento contínuo dos modelos computacionais de otimização (NEWAVE, DECOMP) e de formação de preço (PLD), incorporando novas tecnologias como usinas híbridas e sistemas de armazenamento para refletir a complexidade crescente do sistema elétrico." },
-        { title: "4. Contabilidade do setor elétrico", description: "Propõe-se a revisão e modernização dos manuais de contabilidade do setor elétrico para aumentar a transparência, a padronização e a comparabilidade das informações financeiras dos agentes, refletindo as novas dinâmicas do mercado." },
-        { title: "5. Regulação de operações econômico-financeiras", description: "A ANEEL busca fortalecer o monitoramento da saúde financeira dos agentes, especialmente em um cenário de mercado mais aberto. O foco está na adequação de garantias financeiras e na gestão de riscos para garantir a liquidez e a segurança das operações." },
-        { title: "6. Modernização da regulação econômica e das tarifas", description: "Este eixo trata da revisão das metodologias tarifárias de transmissão e distribuição, buscando maior eficiência, incentivos à qualidade e uma alocação de custos que considere novas tecnologias, como redes inteligentes e armazenamento de energia." },
-        { title: "7. Novos contratos de concessão de transmissão e distribuição", description: "A agência se prepara para futuras licitações de concessão, desenvolvendo contratos que incentivem a modernização, a resiliência das redes e a melhoria contínua da qualidade dos serviços prestados à população." },
-        { title: "8. Acesso e atendimento de usuários e consumidores", description: "O objetivo é simplificar as regras de acesso às redes, principalmente para a geração distribuída, e aprimorar os canais de atendimento e os mecanismos de proteção ao consumidor, garantindo um relacionamento mais justo e transparente." },
-        { title: "9. Modernização do serviço de transmissão e distribuição", description: "A regulação buscará incorporar avanços como redes inteligentes (smart grids), digitalização, armazenamento e recursos energéticos distribuídos (REDs), visando aumentar a eficiência, a segurança e a flexibilidade da operação do sistema." },
-        { title: "10. Eficiência energética", description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais." }
+        { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária.", year: "2026/2027" },
+        { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização.", year: "2026/2027" },
+        { title: "3. Operação e preço de curto prazo", description: "Este tema visa o aprimoramento contínuo dos modelos computacionais de otimização (NEWAVE, DECOMP) e de formação de preço (PLD), incorporando novas tecnologias como usinas híbridas e sistemas de armazenamento para refletir a complexidade crescente do sistema elétrico.", year: "2026/2027" },
+        { title: "4. Contabilidade do setor elétrico", description: "Propõe-se a revisão e modernização dos manuais de contabilidade do setor elétrico para aumentar a transparência, a padronização e a comparabilidade das informações financeiras dos agentes, refletindo as novas dinâmicas do mercado.", year: "2026/2027" },
+        { title: "5. Regulação de operações econômico-financeiras", description: "A ANEEL busca fortalecer o monitoramento da saúde financeira dos agentes, especialmente em um cenário de mercado mais aberto. O foco está na adequação de garantias financeiras e na gestão de riscos para garantir a liquidez e a segurança das operações.", year: "2026/2027" },
+        { title: "6. Modernização da regulação econômica e das tarifas", description: "Este eixo trata da revisão das metodologias tarifárias de transmissão e distribuição, buscando maior eficiência, incentivos à qualidade e uma alocação de custos que considere novas tecnologias, como redes inteligentes e armazenamento de energia.", year: "2026/2027" },
+        { title: "7. Novos contratos de concessão de transmissão e distribuição", description: "A agência se prepara para futuras licitações de concessão, desenvolvendo contratos que incentivem a modernização, a resiliência das redes e a melhoria contínua da qualidade dos serviços prestados à população.", year: "2026/2027" },
+        { title: "8. Acesso e atendimento de usuários e consumidores", description: "O objetivo é simplificar as regras de acesso às redes, principalmente para a geração distribuída, e aprimorar os canais de atendimento e os mecanismos de proteção ao consumidor, garantindo um relacionamento mais justo e transparente.", year: "2026/2027" },
+        { title: "9. Modernização do serviço de transmissão e distribuição", description: "A regulação buscará incorporar avanços como redes inteligentes (smart grids), digitalização, armazenamento e recursos energéticos distribuídos (REDs), visando aumentar a eficiência, a segurança e a flexibilidade da operação do sistema.", year: "2026/2027" },
+        { title: "10. Eficiência energética", description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais.", year: "2026/2027" }
     ];
 
     // --- FUNÇÕES HELPER ---
@@ -790,37 +792,78 @@
         container.appendChild(tableContainer);
     }
 
-    // RENDER AGENDA REGULATÓRIA (Atualizado para refletir o status de aprovação do Item 4)
+    // RENDER AGENDA REGULATÓRIA (Atualizado para manter a tabela)
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Aprovada na 40ª RPO');
-         const introDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          
-         // Informações extraídas do Item 4
+         const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
+
+         // Bloco de Acompanhamento (mantido)
+         const linkSection = createElement('div', 'mb-8 bg-i4-light-gray p-5 rounded-xl border border-i4-border-gray');
+         const linkTitle = createElement('h2', 'text-xl font-bold text-i4-dark-gray mb-3', 'Acompanhamento da Execução');
+         const linkText = createElement('p', 'text-i4-text-gray mb-3 leading-relaxed', 'O Cronograma Referencial de Atividades Regulatórias foi aprovado e publicado. Você pode acompanhar a execução dos temas no portal da ANEEL.');
+         const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-i4-blue text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors', `${icons.link} Cronograma de Atividades ANEEL ${icons.arrowRight}`, { href: followUpLink, target: '_blank', rel: 'noopener noreferrer' });
+         
+         linkSection.appendChild(linkTitle);
+         linkSection.appendChild(linkText);
+         linkSection.appendChild(linkAnchor);
+         container.appendChild(linkSection);
+         
+         // Bloco de Decisão (mantido)
+         const introDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          const item4 = aneelAgenda40.find(item => item.originalItemNumber === 4);
          const item4Status = item4 ? `(Processo: ${item4.process} / Relator: ${item4.relator})` : '(Informações da pauta não encontradas)';
          const item4Decisao = item4 ? item4.decision : 'A Diretoria, por unanimidade, decidiu aprovar a Agenda Regulatória da ANEEL para o biênio 2026/2027.';
 
 
          introDiv.innerHTML = `
-            <h2 class="card-title text-xl font-bold mb-3 text-green-800">Agenda Regulatória Aprovada</h2>
+            <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO</h2>
             <p class="text-green-800 mb-4 leading-relaxed">A Agenda Regulatória 2026-2027 foi aprovada por unanimidade no Item 4 da 40ª RPO em ${rpo40DateText}. ${item4Status}</p>
             <p class="text-green-800 leading-relaxed font-semibold">Decisão Principal:</p>
             <p class="text-green-800 leading-relaxed">${item4Decisao}</p>
          `;
-         container.appendChild(pageTitle);
          container.appendChild(introDiv);
+        
+         // Tabela de Temas (Reintroduzindo a tabela)
+         const tableTitle = createElement('h2', 'text-2xl font-bold text-i4-dark-gray mb-4 mt-8', 'Temas Prioritários (Biênio 2026-2027)');
+         container.appendChild(tableTitle);
 
-         const themesGrid = createElement('div', 'space-y-6');
-         agendaRegulatoriaThemes.forEach((theme) => {
-             const card = createElement('div', 'info-card p-6');
-             card.innerHTML = `
-                <h3 class="text-lg font-semibold text-i4-dark-gray mb-3">${theme.title}</h3>
-                <p class="text-i4-text-gray leading-relaxed">${theme.description}</p>
+         const tableContainer = createElement('div', 'info-card overflow-x-auto');
+         const table = createElement('table', 'styled-table w-full text-sm text-left text-i4-text-gray');
+         const thead = createElement('thead', 'text-xs text-i4-text-gray uppercase bg-i4-light-gray');
+         const tbody = createElement('tbody', 'bg-white divide-y divide-i4-border-gray');
+
+         thead.innerHTML = `
+            <tr>
+                <th scope="col" class="w-16 px-6 py-4">Item</th>
+                <th scope="col" class="w-40 px-6 py-4">Ano Previsto</th>
+                <th scope="col" class="px-6 py-4">Tema e Descrição</th>
+            </tr>
+         `;
+         table.appendChild(thead);
+
+         agendaRegulatoriaThemes.forEach((theme, index) => {
+             const tr = createElement('tr', 'hover:bg-i4-light-gray');
+             const itemNumber = index + 1;
+             
+             // Extrai o título sem o número para a célula do tema
+             const themeTitle = theme.title.substring(theme.title.indexOf('.') + 2);
+
+             tr.innerHTML = `
+                <td class="px-6 py-4 font-semibold text-i4-dark-gray">${itemNumber}</td>
+                <td class="px-6 py-4 whitespace-nowrap font-medium text-i4-dark-gray">${theme.year}</td>
+                <td class="px-6 py-4">
+                    <strong class="text-i4-dark-gray">${themeTitle}</strong>
+                    <p class="text-i4-text-gray mt-1">${theme.description}</p>
+                </td>
              `;
-             themesGrid.appendChild(card);
+             tbody.appendChild(tr);
          });
-            container.appendChild(themesGrid);
+
+         table.appendChild(tbody);
+         tableContainer.appendChild(table);
+         container.appendChild(tableContainer);
     }
 
     // RENDER IMERSÃO (mantendo a função do arquivo anterior)
