@@ -825,19 +825,43 @@
         const getSummarySubjectRPO41 = (item) => {
              switch (item.originalItemNumber) {
                 case 2: return "CDE 2026 - Orçamento Anual";
-                case 3: return "Regulamentação Contábil Fundo Descomissionamento Angra 1 e 2";
+                case 3: return "Fundo Descomissionamento Angra 1 e 2";
+                case 4: return "RTE Energisa Rondônia (Resultado)";
+                case 5: return "RTA Energisa Acre";
+                case 6: return "RTA Energisa Rondônia";
+                case 7: return "RTA CEA (Amapá)";
+                case 8: return "Resultado CP 008/2024 (Satisfação do Consumidor)";
+                case 9: return "Resultado CP 010/2024 (Descentralização)";
+                case 12: return "Resultado CP 032/2025 (Lei 15.235/2025 - TSEE/CDE)";
+                case 13: return "CP RTP CPFL Santa Cruz (2026)";
+                case 14: return "CP Modernização Tarifas (Tarifas Horárias BT)";
+                case 15: return "CP Sistemas de Medição (Transição Energética)";
+                case 16: return "CP Eletromobilidade (Regulação Acesso/Conexão)";
+                case 17: return "CP AIR Decreto 11.314 (Licitação Transmissão)";
                 case 22: return "Prorrogação Concessão - Neoenergia Cosern";
                 case 23: return "Prorrogação Concessão - Coelba";
                 case 24: return "Prorrogação Concessão - Energisa Mato Grosso";
                 case 25: return "Prorrogação Concessão - Coelce";
+                case 26: return "Saldo UBP a Repactuar (Lei 15.235/2025)";
+                case 28: return "Resultado CP 064/2022 (Governança Regulatória)";
                 case 30: return "Tarifa de Repasse de Itaipu 2026";
                 case 31: return "Proinfa 2026";
+                case 32: return "Homologação Tarifária Permissionárias";
+                case 33: return "Resultado CP 020/2023 (Descontos TUSD/TUST)";
+                case 52: return "TI Serra Negra Transmissora (Relatório de Falhas)";
+                case 55: return "RAP Reforços Transmissão - Eletronorte";
                 default:
+                    let text = item.subject;
+                    text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
+                    text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
+                    text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
+                    text = text.replace(/Consulta Pública/g, "CP");
+                    
                     const maxLength = 90;
-                    if (item.subject.length > maxLength) {
-                        return item.subject.substring(0, maxLength) + '...';
+                    if (text.length > maxLength) {
+                        return text.substring(0, maxLength) + '...';
                     }
-                    return item.subject;
+                    return text;
             }
         };
 
