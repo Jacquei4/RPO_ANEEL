@@ -609,23 +609,83 @@
 
     // Dados para a página da Agenda Regulatória
     const agendaRegulatoriaDetalhada = [
+        // ANEXO I - Atividades da Agenda Regulatória 2026-2027
         { eixo: "Geração & Mercado", codigo: "GER21-07[B]", atividade: "Regulamentação do \"Constrained off\" de centrais geradoras hidrelétricas", ano: "2026" },
         { eixo: "Geração & Mercado", codigo: "C&M21-14", atividade: "Aprimoramento da regulamentação das Garantias Financeiras do Mercado de Curto Prazo", ano: "2027" },
+        { eixo: "Geração & Mercado", codigo: "GER23-03[B]", atividade: "Definição de ambientes regulatórios controlados (sandbox) para prestação de serviços ancilares - controle secundário de frequência.", ano: "2026" },
+        { eixo: "Geração & Mercado", codigo: "GER23-03[C]", atividade: "Definição de ambientes regulatórios controlados (sandbox) para prestação de serviços ancilares - autorrestabelecimento integral", ano: "2027" },
         { eixo: "Geração & Mercado", codigo: "AR24-05", atividade: "Atualização da metodologia de cálculo dos limites máximos do Preço de Liquidação das Diferenças - PLD", ano: "2026" },
+        { eixo: "Geração & Mercado", codigo: "AR24-06", atividade: "Aprimoramento do processo de monitoramento do mercado de energia elétrica (regra definitiva pós-período sombra)", ano: "2026" },
+        { eixo: "Geração & Mercado", codigo: "AR25-07", atividade: "Aprimoramento das Regras de Comercialização 2027.", ano: "2026" },
+        { eixo: "Geração & Mercado", codigo: "AR24-18", atividade: "Avaliação das metodologias de cálculo do PLD mínimo e de definição da Tarifa de Energia de Otimização-TEO", ano: "2026" },
+        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Promoção das adequações regulatórias para inserção de sistemas de armazenamento, incluindo usinas reversíveis, no Sistema Interligado Nacional 2º ciclo", ano: "2027" },
+        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento das Regras de Comercialização 2028.", ano: "2027" },
+        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação quanto a inversão de Fluxo da MMGD no âmbito das contabilizações e liquidações da CCEE", ano: "2027" },
+        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação referente ao Processo Sancionador do Monitoramento no âmbito da CCEE", ano: "2027" },
+        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento das regras relativas aos Registro de Contratos no âmbito da CCEE", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "TRA21-25", atividade: "Aprimoramento dos critérios de confiabilidade das instalações de transmissão", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "TRA21-40", atividade: "Aprimoramento da regulamentação de qualidade associada às Funções Transmissão - FT em Corrente Alternada - CA", ano: "2027" },
         { eixo: "Transmissão & Distribuição", codigo: "TRV23-07", atividade: "Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.", ano: "2026" },
         { eixo: "Transmissão & Distribuição", codigo: "AR24-01", atividade: "Aprimoramentos regulatórios relacionados à abertura de mercado na regulação dos serviços de distribuição", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "AR24-02", atividade: "Regulamentação do Decreto nº 11.314/2022 que trata do fim das concessões de transmissão", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "AR24-22", atividade: "Regulamentação do art. 17 da Lei nº 14.300/2022-metodologia da valoração dos custos e dos benefícios da microgeração e minigeração distribuída.", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "AR25-02", atividade: "Aprimoramento das Regras e dos Procedimentos relacionados a Prestação do Serviço Público de Distribuição", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "AR25-09", atividade: "Aprimoramento Regulatório relacionado a operação do sistema de distribuição (DSO).", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "AR25-15", atividade: "Requisitos de observabilidade, operabilidade e controlabilidade de Recursos Energéticos Distribuídos (RED)", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento das regras de acesso ao sistema de transmissão,", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de aprimoramentos regulatórios sobre Padrões de Rede relacionados a resiliência do sistema de distribuição a eventos climáticos extremos (2º fase do tema Resiliência)", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de aprimoramentos regulatórios sobre Interrupção em Situação de Emergência (ISE) relacionados à resiliência do sistema de distribuição a eventos climáticos extremos (3º fase do tema Resiliência)", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Regulamentação do armazenamento de energia elétrica em sistemas de transmissão e distribuição", ano: "2027" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Estabelecimento de Indicadores de Atendimento de Mercado", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento regulatório para propiciar o avanço da eletromobilidade e sua conexão aos sistemas de distribuição.", ano: "2026" },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Ações regulatórias para propiciar a operação eficiente e coordenada da transmissão e distribuição, visando aumento da segurança na operação do SIN", ano: "2026" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "R&C21-14", atividade: "Revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE", ano: "2026" },
         { eixo: "Regulação Tarifária e Financeira", codigo: "TAR23-01[A]", atividade: "Modernização das tarifas de distribuição - Ciclo 1", ano: "2027" },
         { eixo: "Regulação Tarifária e Financeira", codigo: "TAR23-01[B]", atividade: "Modernização das tarifas de distribuição - Ciclo 2", ano: "2027" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-19", atividade: "Revisão dos Submódulos 2.6 e 2.6 A do Proret - Perdas não técnicas e Receitas irrecuperáveis.", ano: "2026" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-07", atividade: "Estabelecimento da Regulação do monitoramento do mercado", ano: "2026" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-08", atividade: "Instrução da Regulamentação de Monitoramento do Mercado", ano: "2026" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-09", atividade: "Revisão do Submódulo 2.3 do Proret - Base de Remuneração Regulatória.", ano: "2027" },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "AR25-14", atividade: "Revisão do cálculo do limite da Parcela B das permissionárias e atualização da norma de retirada do desconto de suprimento.", ano: "2027" },
+        { eixo: "Eficiência Energética & Consumidor", codigo: "Nova atividade", atividade: "Revisão do Anexo VII da REN 948/2021", ano: "2027" },
+        { eixo: "Eficiência Energética & Consumidor", codigo: "AR25-03", atividade: "Destinação de bens e de receitas oriundas do Programa de PDI ANEEL.", ano: "2027" },
+        { eixo: "Eficiência Energética & Consumidor", codigo: "P&E22-02", atividade: "Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética", ano: "2027" },
     ];
     
     const demaisAtividadesRegulatorias = [
          { eixo: "Geração & Mercado", codigo: "AR25-04", atividade: "Aprimoramento da REN 1.071/2023 e da REN 875/2020 com vistas a incorporação de práticas de ESG pelas empresas." },
+         { eixo: "Geração & Mercado", codigo: "AR25-05", atividade: "Aprimoramento da REN 1.027/2022, com vistas a revisar a metodologia de cálculo dos coeficientes de rateio dos recursos da Compensação Financeira pelo Uso dos Recursos Hídricos (CFURH), de forma a torná-los mais simples, transparentes e replicáveis. Além disso, a forma de cálculo referente ao rateio da CFURH deve ser atualizada, de forma a atender às futuras renovações de outorga de autorização de empreendimentos hidrelétricos autorizados a partir da Lei 9.427, de 1996." },
+         { eixo: "Geração & Mercado", codigo: "AR25-06", atividade: "Aprimoramento da REN 875/2020 com vistas a regulamentar os procedimentos para o desenvolvimento de inventários participativos." },
+         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação da autonomia da CCEE com vistas ao aprimoramento de suas atividades." },
+         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento do Calendário de Contabilização e Liquidação Financeira da CCEE." },
+         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Revisão da regulamentação referente ao Excedente Financeiro." },
+         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Revisão da normatização do processo de desligamento de agentes na CCEE." },
          { eixo: "Transmissão & Distribuição", codigo: "DIS21-01", atividade: "Avaliar aprimoramento na regulamentação de estabelecimento de limites de continuidade do fornecimento de energia elétrica" },
+         { eixo: "Transmissão & Distribuição", codigo: "DIS22-03", atividade: "Aprimoramento da regulamentação da apuração das perdas técnicas regulatórias" },
+         { eixo: "Transmissão & Distribuição", codigo: "AR24-14", atividade: "Aprimoramento da Regulamentação da Capacidade Operativa" },
+         { eixo: "Transmissão & Distribuição", codigo: "AR25-08", atividade: "Aprimoramentos regulatórios para promover a aplicação do disposto no caput do art. 28 da lei nº 14.300/2022." },
+         { eixo: "Transmissão & Distribuição", codigo: "AR25-10", atividade: "Aprimoramento das Regras e Procedimentos de Prestação do Serviço Público de Distribuição em função do Decreto nº 12.068/2024." },
+         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento da regra de incorporação das Demais Instalações de Transmissão - DIT pelas distribuidoras" },
+         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação da possibilidade de alteração da análise de solicitações de acesso ao sistema de transmissão por lotes ou janelas" },
+         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento das Regras do Serviço de Transmissão para tratamento de desativação de instalações de transmissão." },
+         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramentos regulatórios nos contratos de concessão de transmissão." },
+         { eixo: "Transmissão & Distribuição", codigo: "TRV23-02", atividade: "Estabelecimento das diretrizes para programas de ambiente regulatório experimental (sandbox regulatório) no setor elétrico." },
+         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de distribuição - Ciclo 3" },
+         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de distribuição - Ciclo 4" },
+         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Regime econômico dos novos contratos de Concessão de Distribuição - Decreto nº 12.068/2024" },
+         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Avaliar aprimoramento nos Submódulos 9.1 e 9.2 do Proret, que tratam de revisão periódica da Receita Anual Permitida (RAP)" },
+         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Avaliar aprimoramento no Submódulos 12.1, que trata da revisão periódica da Receita Anual de Geração (RAG)" },
          { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de transmissão" },
     ];
     
     const arrAtividades = [
         { eixo: "Geração & Mercado", codigo: "ARR24-02", atividade: "Avaliação do Resultado Regulatório -ARR da Resolução Normativa nº 1.030, de 2022, no que se refere ao Programa de Resposta da Demanda." },
+        { eixo: "Geração & Mercado", codigo: "ARR25-01", atividade: "Avaliação do Resultado Regulatório ARR da Resolução Normativa nº 1.014, de 2022, no que se refere a requisitos e procedimentos complementares atinentes à obtenção e à manutenção de autorização para comercializar energia elétrica no Sistema Interligado Nacional - SIN." },
+        { eixo: "Geração & Mercado", codigo: "ARR25-02", atividade: "Avaliação do Resultado Regulatório ARR da Resolução Normativa nº 1.103, de 2024, que dispõe sobre a contratação de Reserva de Capacidade, na forma de potência, aprova o modelo do Contrato de Uso de Potência para Reserva de Capacidade - COPCAP." },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR25-03", atividade: "Avaliação do Resultado Regulatório - ARR da Resolução Normativa nº 899, de 2022-Sazonalização de Garantia Física." },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR24-03", atividade: "Avaliação de Resultado Regulatório do Submódulo 2.5 do Proret - Fator X - Componente Pd." },
+        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR25-04", atividade: "Avaliação regulatória do tratamento conferido aos investimentos em Reforços e Melhorias de Pequeno Porte." },
+        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de Resultado Regulatório (ARR) da Teleassistência das Instalações de Transmissão" },
     ];
 
 
@@ -973,26 +1033,73 @@
         container.appendChild(tableContainer);
     }
 
-    // RENDER AGENDA REGULATÓRIA
+    // RENDER AGENDA REGULATÓRIA (Atualizado para manter a tabela do 40_rpo)
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
-         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027');
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Aprovada na 40ª RPO');
          
          const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
+         const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
+         // Link da Portaria de Aprovação
+         const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
 
+         // Bloco de Acompanhamento
          const linkSection = createElement('div', 'mb-8 bg-i4-light-gray p-5 rounded-xl border border-i4-border-gray');
          const linkTitle = createElement('h2', 'text-xl font-bold text-i4-dark-gray mb-3', 'Acompanhamento da Execução');
-         const linkText = createElement('p', 'text-i4-text-gray mb-3 leading-relaxed', 'O Cronograma Referencial de Atividades Regulatórias foi aprovado. Você pode acompanhar a execução dos temas no portal da ANEEL.');
+         const linkText = createElement('p', 'text-i4-text-gray mb-3 leading-relaxed', 'O Cronograma Referencial de Atividades Regulatórias foi aprovado e publicado. Você pode acompanhar a execução dos temas no portal da ANEEL.');
          const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-i4-blue text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors', `${icons.link} Cronograma de Atividades ANEEL ${icons.arrowRight}`, { href: followUpLink, target: '_blank', rel: 'noopener noreferrer' });
          
          linkSection.appendChild(linkTitle);
          linkSection.appendChild(linkText);
          linkSection.appendChild(linkAnchor);
          container.appendChild(linkSection);
+         
+         // NOVO BLOCO CONSOLIDADO: Decisão da 40ª RPO
+         const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
+         const item4Status = "(Processo: 48500.023180/2025-50 / Relator: Sandoval de Araújo Feitosa Neto)";
+         const rpo40DateTextForAgenda = '02 de dezembro de 2025';
 
-        renderRegulatoryTable(container, agendaRegulatoriaDetalhada, 'ANEXO I: Agenda Regulatória 2026-2027 (Principais Atividades)', true);
-        renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias');
-        renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR)');
+         // Conteúdo da Decisão
+         consolidatedDiv.innerHTML = `
+            <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO: Aprovação da Agenda</h2>
+            <p class="text-green-800 mb-6 leading-relaxed">A Agenda Regulatória 2026-2027 foi aprovada por unanimidade no Item 4 da 40ª RPO em ${rpo40DateTextForAgenda}. ${item4Status}</p>
+         `;
+
+         // Conteúdo da Classificação
+         const classificationContent = createElement('div', 'mb-6 p-4 rounded-lg bg-green-100 border border-green-200');
+         classificationContent.innerHTML = `
+             <h3 class="text-lg font-bold text-green-900 mb-3">Entenda a Classificação das Atividades:</h3>
+             <p class="text-green-900 mb-4 leading-relaxed">O Cronograma Referencial agrupa os projetos em três categorias, conforme a Nota Técnica nº 28/2025-GDG/ANEEL, para conferir transparência:</p>
+             <ul class="text-green-900 space-y-3 pl-5 list-disc list-outside">
+                 <li><strong class="font-bold">Agenda Regulatória (Anexo I):</strong> Atividades que possuem previsão de edição de norma na vigência do ciclo (2026-2027).</li>
+                 <li><strong class="font-bold">Demais Atividades Regulatórias (Anexo II):</strong> Atividades que passarão por um processo mais longo de amadurecimento e estudo.</li>
+                 <li><strong class="font-bold">Avaliação de Resultado Regulatório – ARR (Anexo III):</strong> Atividades de avaliação do impacto e eficácia de normas existentes (periodicidade quadrienal).</li>
+             </ul>
+         `;
+         consolidatedDiv.appendChild(classificationContent);
+         
+         // Conteúdo dos Links
+         const linksContent = createElement('div', 'mt-4 border-t border-green-300 pt-4 flex flex-wrap gap-x-6 gap-y-2');
+         
+         const ntAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Nota Técnica (TS 11/2025) ${icons.arrowRight}`, { href: ntLink, target: '_blank', rel: 'noopener noreferrer' });
+         const portariaAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Portaria de Aprovação ${icons.arrowRight}`, { href: portariaLink, target: '_blank', rel: 'noopener noreferrer' });
+
+         linksContent.appendChild(ntAnchor);
+         linksContent.appendChild(portariaAnchor);
+         
+         consolidatedDiv.appendChild(linksContent);
+         
+         container.appendChild(consolidatedDiv);
+
+
+        // 1. Tabela: ANEXO I - Agenda Regulatória 2026-2027
+        renderRegulatoryTable(container, agendaRegulatoriaDetalhada, 'ANEXO I: Agenda Regulatória 2026-2027 (Atividades com previsão de norma)', true);
+        
+        // 2. Tabela: ANEXO II - Demais Atividades Regulatórias
+        renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias para o Biênio 2026-2027');
+
+        // 3. Tabela: ANEXO III - Avaliações de Resultado Regulatório (ARR)
+        renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
     }
 
     // RENDER IMERSÃO
