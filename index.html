@@ -931,6 +931,14 @@
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
+        // Link Transmissão
+        const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir Transmissão ao Vivo`, { href: "https://www.youtube.com/live/8ji67WrAHKQ?si=_nGaQwRi23R5mUl4", target: '_blank', rel: 'noopener noreferrer' });
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
+
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
@@ -946,6 +954,8 @@
                 case 2: return "Receita Fixa Angra 1 e 2 2026";
                 case 3: return "RTA CEA (Amapá)";
                 case 4: return "Transferência Controle EMAE (Sabesp)";
+                case 8: return "Cautelar Roraima Energia (CCEARs e Conexão)";
+                case 12: return "RAP Reforços Cemig-GT (POTEE 2025)";
                 default:
                     let text = item.subject;
                     text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
