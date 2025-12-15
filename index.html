@@ -8,11 +8,11 @@
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
-  <meta property="og:description" content="Acompanhe a pauta e resultados da 41ª RPO e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
+  <meta property="og:description" content="Acompanhe a pauta e resultados da 2ª RPE, 41ª RPO e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Dashboard ANEEL - 41ª RPO</title>
+  <title>Dashboard ANEEL - Pautas e Consultas</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -206,11 +206,11 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    // ATUALIZAÇÃO: Datas da 41ª RPO
-    const rpo41Date = '09/12/2025'; 
+    // DATAS
     const rpo41DateText = '09 de dezembro de 2025';
+    const rpe2DateText = '18 de dezembro de 2025';
     
-    // Links gerais - ATUALIZADO: Link RAW para a imagem
+    // Links gerais
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     const mmeConsultaLink = "https://consultas-publicas.mme.gov.br/home"; 
     
@@ -225,6 +225,71 @@
         youtube: `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>`,
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
     };
+
+    // --- DADOS DA 2ª RPE (PAUTA) - NOVO ---
+    const aneelAgenda2RPE = [
+        {
+            originalItemNumber: 1,
+            process: "48500.037166/2025-33",
+            subject: "Rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam os §§ 8º e 9º do Art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            details: null,
+            links: []
+        },
+        {
+            originalItemNumber: 2,
+            process: "48500.027334/2025-82",
+            subject: "Estabelecimento da Receita Fixa das Centrais de Geração Nucleoelétricas – UTNs Angra 1 e 2, a vigorar a partir de 1º de janeiro de 2026.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            details: null,
+            links: []
+        },
+        {
+            originalItemNumber: 3,
+            process: "48500.003997/2025-10",
+            subject: "Reajuste Tarifário Anual da Companhia de Eletricidade do Amapá – CEA, a vigorar a partir de 13 de dezembro de 2025.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            details: "Item retirado de pauta na 41ª RPO.",
+            links: []
+        },
+        {
+            originalItemNumber: 4,
+            process: "48500.030861/2025-74",
+            subject: "Requerimento Administrativo protocolado pela Companhia de Saneamento Básico do Estado de São Paulo – Sabesp e pela Vórtx Distribuidora de Títulos e Valores Mobiliários Ltda. com vistas à anuência prévia para a transferência, para a Sabesp, do Controle Societário Direto da Empresa Metropolitana de Água e Energia S.A. – Emae e do Controle Societário Indireto da Pirapora Energia S.A., atualmente detidos pela Phoenix Água e Energia S.A.",
+            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            details: null,
+            links: []
+        },
+        // BLOCO DA PAUTA (Itens removidos: 5, 6, 7, 9, 10, 11, 13, 14, 15)
+        {
+            originalItemNumber: 8,
+            process: "48500.035645/2025-15",
+            subject: "Pedido de Medida Cautelar protocolado pela Roraima Energia S.A. com vistas a revogar os efeitos dos Despachos nº 2.300/20219 e nº 3.519/2019, referentes aos Contratos de Comercialização de Energia no Ambiente Regulado – CCEARs e à conexão da requerente ao Sistema Interligado Nacional – SIN.",
+            areaResponsible: "SFF, STR, SCE, SFT, STD, SGM.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            details: "Item em Bloco.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.035645-2025-15.pdf" }]
+        },
+        {
+            originalItemNumber: 12,
+            process: "48500.034598/2025-92",
+            subject: "Autorização e estabelecimento da Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão, sob concessão da Cemig Geração e Transmissão S.A., em decorrência da 1ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2025.",
+            areaResponsible: "SCE",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            details: "Item em Bloco.",
+            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034598-2025-92.pdf" }]
+        }
+    ];
 
     // DADOS DA 41ª RPO (Pauta - 09/12/2025)
     // Itens filtrados conforme solicitação. Itens removidos: 1, 10, 11, 18-21, 27, 29, 34-51, 52, 53, 54, 55.
@@ -855,6 +920,146 @@
         tableContainer.appendChild(table);
         container.appendChild(tableContainer);
     }
+
+    // --- NOVO: RENDER 2ª RPE (Pauta) ---
+    function renderRpe2Page(container) {
+        container.innerHTML = '';
+
+        // TÍTULO ATUALIZADO
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 2ª Reunião Pública Extraordinária de 2025`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpe2DateText} | Início: 9h`);
+        container.appendChild(pageTitle);
+        container.appendChild(pageDate);
+
+        // Sumário da Pauta
+        const summaryDiv = createElement('div', 'info-card mb-10');
+        const summaryHeader = createElement('div', 'card-header p-5');
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Itens Selecionados)'));
+        summaryDiv.appendChild(summaryHeader);
+
+        const summaryList = createElement('ul', 'space-y-1 p-3');
+        
+        // Função para resumir assuntos da Pauta 2ª RPE
+        const getSummarySubjectRPE2 = (item) => {
+             switch (item.originalItemNumber) {
+                case 1: return "CDE 2026 - Repactuação UBP (Lei 15.235/2025)";
+                case 2: return "Receita Fixa Angra 1 e 2 2026";
+                case 3: return "RTA CEA (Amapá)";
+                case 4: return "Transferência Controle EMAE (Sabesp)";
+                default:
+                    let text = item.subject;
+                    text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
+                    text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
+                    text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
+                    text = text.replace(/Consulta Pública/g, "CP");
+                    text = text.replace(/Recurso Administrativo/g, "Recurso");
+                    text = text.replace(/Declaração de Utilidade Pública/g, "DUP");
+                    
+                    const maxLength = 90;
+                    if (text.length > maxLength) {
+                        return text.substring(0, maxLength) + '...';
+                    }
+                    return text;
+            }
+        };
+
+        // Ordena por número do item
+        aneelAgenda2RPE.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
+            
+            const itemNumber = `Item ${item.originalItemNumber}:`;
+            
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
+            const itemNumberSpan = createElement('span', 'font-bold mr-2 text-i4-dark-gray', itemNumber);
+            const subjectSpan = createElement('span', '', getSummarySubjectRPE2(item));
+            itemLink.appendChild(itemNumberSpan);
+            itemLink.appendChild(subjectSpan);
+
+            // Status Badge
+            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
+
+            listItem.appendChild(itemLink);
+            listItem.appendChild(statusBadge);
+            summaryList.appendChild(listItem);
+        });
+        summaryDiv.appendChild(summaryList);
+        container.appendChild(summaryDiv);
+
+
+        // Grid de Itens da Pauta
+        const agendaGrid = createElement('div', 'space-y-8');
+        aneelAgenda2RPE.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
+
+            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
+            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
+            
+            // Verifica se faz parte de um bloco típico (ex: Consultas, Tarifárias em lote)
+            const isBloco = item.originalItemNumber >= 5 && item.originalItemNumber <= 15;
+            const blockText = isBloco ? ' <span class="text-sm font-medium text-i4-blue">(Bloco)</span>' : '';
+            
+            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            cardHeader.appendChild(h3Subject);
+            cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap));
+            itemDiv.appendChild(cardHeader);
+
+            const cardBody = createElement('div', 'p-6 space-y-5');
+            const infoContainer = createElement('div', 'space-y-4');
+
+            const createInfoRow = (icon, label, value, tooltip = null) => {
+                 if (value == null || (typeof value === 'string' && value.trim() === '')) {
+                     return document.createDocumentFragment();
+                 }
+                 const row = createElement('div', 'flex flex-col md:flex-row');
+                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
+                 if (tooltip) {
+                     labelDiv.setAttribute('data-tooltip', tooltip);
+                 }
+                 labelDiv.innerHTML = icon + label;
+                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
+                 valueDiv.innerHTML = value;
+                 row.appendChild(labelDiv);
+                 row.appendChild(valueDiv);
+                 return row;
+             };
+
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
+            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
+             if(item.votoVistaRelator) {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
+             }
+            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+            
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
+            }
+
+            if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
+
+            cardBody.appendChild(infoContainer);
+
+            // Rodapé com links
+            if (item.links && item.links.length > 0) {
+                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
+                 cardBody.appendChild(separator);
+
+                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
+                 item.links.forEach(link => {
+                     const linkTitle = link.title;
+                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${linkTitle} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                     cardFooter.appendChild(linkAnchor);
+                 });
+                 cardBody.appendChild(cardFooter);
+            }
+
+            itemDiv.appendChild(cardBody);
+            agendaGrid.appendChild(itemDiv);
+        });
+        container.appendChild(agendaGrid);
+    }
     
     // RENDER 41ª RPO (Pauta)
     function renderRpo41Page(container) {
@@ -910,7 +1115,6 @@
                 case 31: return "Proinfa 2026";
                 case 32: return "Homologação Tarifária Permissionárias";
                 case 33: return "Resultado CP 020/2023 (Descontos TUSD/TUST)";
-                // Items 52 and 55 removed
                 default:
                     let text = item.subject;
                     text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
@@ -1187,7 +1391,7 @@
         renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
     }
 
-    // RENDER IMERSÃO
+    // RENDER IMERSÃO (Mantido para referência futura, comentado)
      function renderImersaoPage(container) {
          container.innerHTML = '';
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersão Presencial i4 Economic Regulation');
@@ -1251,13 +1455,15 @@
       // Navegação
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
+      // BOTÕES DE NAVEGAÇÃO
+      const rpeButton = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPE 2025'); // NOVO
       const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', '41ª RPO - Pauta');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       // const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersão Presencial'); // Ocultado
 
       // navContainer.append(rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
-      navContainer.append(rpoButton, consultasAbertasButton, agendaButton);
+      navContainer.append(rpeButton, rpoButton, consultasAbertasButton, agendaButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1273,8 +1479,8 @@
       footer.innerHTML = `© ${currentYear} i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      // const buttons = [rpoButton, consultasAbertasButton, agendaButton, imersaoButton];
-      const buttons = [rpoButton, consultasAbertasButton, agendaButton];
+      // Atualizado para incluir rpeButton
+      const buttons = [rpeButton, rpoButton, consultasAbertasButton, agendaButton];
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
               button.classList.remove('nav-button-active');
@@ -1284,14 +1490,16 @@
           activeButton.classList.remove('nav-button-inactive');
       }
 
+      // Listeners
+      rpeButton.addEventListener('click', () => { setActiveButton(rpeButton); renderPageWithAnimation(renderRpe2Page, contentContainer); });
       rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRpo41Page, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       // imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Renderização Inicial
-      setActiveButton(rpoButton);
-      renderPageWithAnimation(renderRpo41Page, contentContainer);
+      // Renderização Inicial (Definir RPE como padrão já que é a mais nova)
+      setActiveButton(rpeButton);
+      renderPageWithAnimation(renderRpe2Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
