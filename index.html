@@ -1477,13 +1477,14 @@
       
       // BOTÕES DE NAVEGAÇÃO
       const rpeButton = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPE 2025'); // NOVO
-      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', '41ª RPO - Pauta');
+      // const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', '41ª RPO - Pauta');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       // const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersão Presencial'); // Ocultado
 
       // navContainer.append(rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
-      navContainer.append(rpeButton, rpoButton, consultasAbertasButton, agendaButton);
+      // navContainer.append(rpeButton, rpoButton, consultasAbertasButton, agendaButton);
+      navContainer.append(rpeButton, consultasAbertasButton, agendaButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1500,7 +1501,7 @@
       appContainer.appendChild(footer);
 
       // Atualizado para incluir rpeButton
-      const buttons = [rpeButton, rpoButton, consultasAbertasButton, agendaButton];
+      const buttons = [rpeButton, consultasAbertasButton, agendaButton];
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
               button.classList.remove('nav-button-active');
@@ -1512,7 +1513,7 @@
 
       // Listeners
       rpeButton.addEventListener('click', () => { setActiveButton(rpeButton); renderPageWithAnimation(renderRpe2Page, contentContainer); });
-      rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRpo41Page, contentContainer); });
+      // rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRpo41Page, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       // imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
