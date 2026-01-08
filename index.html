@@ -8,7 +8,7 @@
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
-  <meta property="og:description" content="Acompanhe a pauta e resultados da 2ª RPE, 41ª RPO e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
+  <meta property="og:description" content="Acompanhe a pauta e resultados das reuniões e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
@@ -226,7 +226,7 @@
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
     };
 
-    // --- DADOS DA 2ª RPE (PAUTA) - NOVO ---
+    // --- DADOS DA 2ª RPE (PAUTA) - MANTIDOS PARA REFERÊNCIA NO CÓDIGO ---
     const aneelAgenda2RPE = [
         {
             originalItemNumber: 1,
@@ -268,7 +268,6 @@
             details: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
             links: []
         },
-        // BLOCO DA PAUTA (Itens removidos: 5, 6, 7, 9, 10, 11, 13, 14, 15)
         {
             originalItemNumber: 8,
             process: "48500.035645/2025-15",
@@ -291,291 +290,6 @@
         }
     ];
 
-    // DADOS DA 41ª RPO (Pauta - 09/12/2025)
-    // Itens filtrados conforme solicitação. Itens removidos: 1, 10, 11, 18-21, 27, 29, 34-51, 52, 53, 54, 55.
-    const aneelAgenda41 = [
-        {
-            originalItemNumber: 2,
-            process: "48500.029180/2025-63",
-            subject: "Orçamento Anual da Conta de Desenvolvimento Energético – CDE de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "Instauração de Consulta Pública, por intercâmbio documental, por 47 dias (10/12/2025 a 26/01/2026). Definição provisória das quotas da CDE-Uso mensais a partir de jan/2026.",
-            details: null,
-            links: [
-                { title: "Apresentação Técnica", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQAfAhhXV7TjQLBmXFdyp7CjAQYb4Q0dqzr6-F2OgXY9HqE?e=LWzRmj" },
-                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item02-48500.029180-2025-63.pdf" }
-            ]
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.027333/2025-38",
-            subject: "Regulamentação Contábil Tributária do Fundo de Descomissionamento de Angra 1 e 2, em atendimento à determinação do Acórdão nº 2.502/2024 do Tribunal de Contas da União – TCU.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "Instauração de Consulta Pública, na modalidade de intercâmbio documental, entre 10/12/2025 e 24/01/2026. Aplicação imediata da proposta de revisão da regra de cobertura tarifária do FDES (provisório).",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item03-48500.027333-2025-38.pdf" }]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.002086/2019-19",
-            subject: "Resultado do processamento da Revisão Tarifária Extraordinária da Energisa Rondônia – Distribuidora de Energia S.A. – ERO (Centrais Elétricas de Rondônia S.A. – Ceron), nos termos do Despacho nº 1.568/2025",
-            areaResponsible: "STR, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Aprovado o processamento da RTE de 2019 da Energisa Rondônia. Homologados efeitos financeiros (R$ 377,17 milhões).",
-            details: null,
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item04-48500.002086-2019-19.pdf" }]
-        },
-        {
-            originalItemNumber: 5,
-            process: "48500.003999/2025-09",
-            subject: "Reajuste Tarifário Anual da Energisa Acre – Distribuidora de Energia S.A. – EAC, a vigorar a partir de 13 de dezembro de 2025.",
-            areaResponsible: "STR",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Homologadas novas tarifas da Energisa Acre. Efeito médio de 11,54% (AT: 20,24%, BT: 9,51%). Vigência a partir de 13/12/2025.",
-            details: null,
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item05-48500.003999-2025-09.pdf" }]
-        },
-        {
-            originalItemNumber: 6,
-            process: "48500.004004/2025-19",
-            subject: "Reajuste Tarifário Anual da Energisa Rondônia – Distribuidora de Energia S.A. – ERO, a vigorar a partir de 13 de dezembro de 2025.",
-            areaResponsible: "STR",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "Homologadas novas tarifas da Energisa Rondônia. Efeito médio de 15,72% (AT: 18,49%, BT: 15,01%). Vigência a partir de 13/12/2025.",
-            details: null,
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item06-48500.004004-2025-19.pdf" }]
-        },
-        {
-            originalItemNumber: 7,
-            process: "48500.003997/2025-10",
-            subject: "Reajuste Tarifário Anual da Companhia de Eletricidade do Amapá – CEA, a vigorar a partir de 13 de dezembro de 2025.",
-            areaResponsible: "STR",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "withdrawn",
-            decision: "Retirado de pauta",
-            details: null,
-            links: []
-        },
-        {
-            originalItemNumber: 8,
-            process: "48500.000385/2022-14",
-            subject: "Resultado da Consulta Pública nº 8/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da minuta de Resolução Normativa voltada para a implementação de ações para aumentar a satisfação do consumidor com a prestação dos serviços de distribuição de energia elétrica.",
-            areaResponsible: "STD",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "withdrawn",
-            decision: "Retirado de pauta",
-            details: null,
-            links: [{ title: "Consulta Pública Relacionada (CP 008/2024)", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3852&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }]
-        },
-        {
-            originalItemNumber: 9,
-            process: "48500.003725/2013-78",
-            subject: "Resultado da Consulta Pública nº 10/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da proposta de revisão da Resolução Normativa nº 914/2021, que estabelece os procedimentos para a delegação de competências da ANEEL aos Estados e ao Distrito Federal, para a execução de atividades descentralizadas em regime de gestão associada de serviços públicos.",
-            areaResponsible: "Assessoria Institucional - ASI.",
-            relator: "Sandoval de Araújo Feitosa Neto",
-            status: "withdrawn",
-            decision: "Retirado de pauta",
-            details: null,
-            links: [{ title: "Consulta Pública Relacionada (CP 010/2024)", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3854&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }]
-        },
-        {
-            originalItemNumber: 12,
-            process: "48500.017955/2025-58",
-            subject: "Resultado da Consulta Pública nº 32/2025, instituída com vistas a colher subsídios e informações adicionais para a regulação da Lei nº 15.235/2025, conversão da Medida Provisória nº 1.300/2025, para tratar as alterações na Lei nº 12.212/2010 e na Lei nº 10.438/2002, relativas à Tarifa Social de Energia Elétrica, à isenção do pagamento de quotas anuais da Conta de Desenvolvimento Energético – CDE pelas famílias elegíveis e ao desconto de atividades de irrigação e aquicultura.",
-            areaResponsible: "SFF, STR, STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "Aprovada a Resolução Normativa relativa à Tarifa Social de Energia Elétrica e outros descontos (Decisão por maioria).",
-            details: null,
-            links: [{ title: "Consulta Pública Relacionada (CP 032/2025)", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3963&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }]
-        },
-        {
-            originalItemNumber: 13,
-            process: "48500.028437/2025-60",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Companhia Jaguari de Energia – CPFL Santa Cruz.",
-            areaResponsible: "STR",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Instauração de Consulta Pública (10/12/2025 a 07/02/2026) sobre RTP CPFL Santa Cruz.",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.028437-2025-60.pdf" }]
-        },
-        {
-            originalItemNumber: 14,
-            process: "48500.034060/2025-88",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Proposta de Modernização das Tarifas de Distribuição – Ciclo 1 – Tarifas Horárias para baixa tensão (grupo B)",
-            areaResponsible: "STR",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Instauração de Consulta Pública, na modalidade intercâmbio documental (10/12/2025 a 09/03/2026), para discutir a aplicação automática da Tarifa Horária (Tarifa Branca).",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item14-48500.034060-2025-88.pdf" }]
-        },
-        {
-            originalItemNumber: 15,
-            process: "48500.002339/2024-11",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.",
-            areaResponsible: "STD",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "withdrawn",
-            decision: "Retirado de pauta",
-            details: null,
-            links: []
-        },
-        {
-            originalItemNumber: 16,
-            process: "48500.035714/2025-91",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a minuta de Resolução Normativa que aprimora as regras e procedimentos de distribuição relacionados ao acesso e conexão de instalações de eletromobilidade ao sistema de distribuição",
-            areaResponsible: "SFF, STD.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "Instauração de Consulta Pública (90 dias) sobre regras de acesso/conexão para eletromobilidade.",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.035714-2025-91.pdf" }]
-        },
-        {
-            originalItemNumber: 17,
-            process: "48500.001452/2024-80",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para tratar da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022, que regulamenta a licitação e a prorrogação das concessões de serviço público de transmissão de energia elétrica em fim de vigência.",
-            areaResponsible: "STD",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "Instauração de Consulta Pública (90 dias) sobre AIR da regulamentação do Decreto 11.314 (Licitação Transmissão).",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.901452-2024-800.pdf" }]
-        },
-        {
-            originalItemNumber: 22,
-            process: "48500.003611/2025-61",
-            subject: "Requerimento Administrativo protocolado pela Companhia Energética do Rio Grande do Norte – Neoenergia Cosern com vistas à prorrogação do Contrato de Concessão de Distribuição nº 8/1997, nos termos do Decreto nº 12.068/2024 e da Lei nº 9.074/1995.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Recomendação ao MME pela prorrogação do Contrato de Concessão (com antecipação). Encaminhamento de minuta de 5º Termo Aditivo.",
-            details: null,
-            links: [
-                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item22-48500.003611-2025-61.pdf" },
-                { title: "Minuta de voto divergente", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item22-48500.003611-2025-61-divergente.pdf" }
-            ]
-        },
-        {
-            originalItemNumber: 23,
-            process: "48500.002525/2024-51",
-            subject: "Requerimento Administrativo protocolado pela Companhia de Eletricidade do Estado da Bahia – Coelba com vistas à prorrogação do Contrato de Concessão de Distribuição nº 10/1997, nos termos do Decreto nº 12.068/2024 e da Lei nº 9.074/1995.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Recomendação ao MME pela prorrogação do Contrato de Concessão (com antecipação). Encaminhamento de minuta de 6º Termo Aditivo. (Decisão por maioria).",
-            details: null,
-            links: [
-                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item23-48500.002525-2024-51.pdf" },
-                { title: "Minuta de voto divergente", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item23-48500.002525-2024-51-divergente.pdf" }
-            ]
-        },
-        {
-            originalItemNumber: 24,
-            process: "48500.003615/2025-40",
-            subject: "Requerimento Administrativo protocolado pela Energisa Mato Grosso – Distribuidora de Energia S.A. com vistas à prorrogação do Contrato de Concessão de Distribuição nº 3/1997, nos termos do Decreto nº 12.068/2024, e da Lei nº 9.074/1995.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Recomendação ao MME pela prorrogação do Contrato de Concessão (com antecipação). Encaminhamento de minuta de 8º Termo Aditivo.",
-            details: null,
-            links: [
-                { title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item24-48500.003615-2025-40.pdf" },
-                { title: "Minuta de voto divergente", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item24-48500.003615-2025-40-divergente.pdf" }
-            ]
-        },
-        {
-            originalItemNumber: 25,
-            process: "48500.010865/2025-36",
-            subject: "Requerimento Administrativo protocolado pela Companhia Energética do Ceará – Coelce com vistas à antecipação dos efeitos da prorrogação do Contrato de Concessão de Distribuição nº 1/1998, nos termos do Decreto nº 12.068/2024, e da Lei nº 9.074/1995.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "view_request",
-            decision: "Pedido de Vista pelo Diretor Gentil Nogueira de Sá Júnior.",
-            details: null,
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item25-48500.010865-2025-36.pdf" }]
-        },
-        {
-            originalItemNumber: 26,
-            process: "48500.029413/2025-28",
-            subject: "Saldo do Uso de Bem Público – UBP a ser repactuado, nos termos do art. 4º da Lei nº 15.235/2025.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Instauração de Consulta Pública (11/12/2025 a 12/01/2026) sobre metodologia de cálculo do Saldo de UBP a repactuar.",
-            details: null,
-            links: [{ title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.029413-2025-28.pdf" }]
-        },
-        {
-            originalItemNumber: 28,
-            process: "48500.001167/2021-16",
-            subject: "Resultado da Consulta Pública nº 64/2022, instituída com vistas a colher subsídios e informações adicionais para Revisão da Norma de Organização ANEEL nº 40/2013, que dispõe sobre a Governança Regulatória da Agência e seus instrumentos: a Agenda Regulatória, a Análise de Impacto Regulatório – AIR, a Avaliação de Resultado Regulatório – ARR e a Gestão do Estoque Regulatório.",
-            areaResponsible: "Gabinete do Diretor-Geral - GDG.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Aprovada revisão da Norma de Organização nº 40/2013 (Governança Regulatória).",
-            details: "Item em Bloco.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901167-2021-16.pdf" }]
-        },
-        {
-            originalItemNumber: 30,
-            process: "48500.031261/2025-23",
-            subject: "Estabelecimento da Tarifa de Repasse da Potência Contratada de Itaipu Binacional para o Ano de 2026.",
-            areaResponsible: "STR",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "Homologada tarifa de repasse de Itaipu 2026 (US$ 17,66/kW.mês).",
-            details: "Item em Bloco.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.031261-2025-23.pdf" }]
-        },
-        {
-            originalItemNumber: 31,
-            process: "48500.031061/2025-71",
-            subject: "Programa de Incentivo às Fontes Alternativas de Energia Elétrica – Proinfa 2026.",
-            areaResponsible: "STR",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "Fixada energia anual e custo total do PROINFA 2026 (R$ 5,23 bi) e quotas de agentes.",
-            details: "Item em Bloco.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.031061-2025-71.pdf" }]
-        },
-        {
-            originalItemNumber: 32,
-            process: "48500.003853/2025-55",
-            subject: "Homologação dos Processos Tarifários das permissionárias com aniversário em dezembro de 2025.",
-            areaResponsible: "STR",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "Aprovados resultados tarifários de permissionárias com aniversário em 22/12/2025.",
-            details: "Item em Bloco.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003853-2025-55.pdf" }]
-        },
-        {
-            originalItemNumber: 33,
-            process: "48500.001367/2016-10",
-            subject: "Resultado da Consulta Pública nº 20/2023, instituída com vistas a colher subsídios e informações adicionais para revisão da Resolução Normativa nº 1.031/2022 e à revisão de módulos de Regras de Comercialização, em razão do art. 4º da Lei nº 14.120/2021, que versa sobre o término dos descontos na Tarifa de Uso dos Sistemas de Distribuição e Transmissão – TUSD/TUST para fontes incentivadas.",
-            areaResponsible: "SGM",
-            relator: "Helvio Neves Guerra",
-            votoVistaRelator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "Declarada insubsistência de voto anterior e extinto o processo sem decisão de mérito (Fato novo: Lei 15.269/2025).",
-            details: "Item em Bloco.",
-            links: [
-                { title: "Minutas de voto e ato (Original)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901367-2016-10_votooriginal_drhelvio.pdf" },
-                { title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901367-2016-10-votovista.pdf" },
-                { title: "Consulta Pública Relacionada (CP 020/2023)", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3792&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }
-            ]
-        }
-    ];
     
     // DADOS DAS CONSULTAS PÚBLICAS (Mantendo dados anteriores e adicionando MCPSE)
     const consultasPublicasData = [
@@ -951,7 +665,7 @@
         container.appendChild(tableContainer);
     }
 
-    // --- NOVO: RENDER 2ª RPE (Pauta) ---
+    // --- RENDER 2ª RPE (Pauta) - MANTIDO MAS OCULTO ---
     function renderRpe2Page(container) {
         container.innerHTML = '';
 
@@ -1101,174 +815,6 @@
         container.appendChild(agendaGrid);
     }
     
-    // RENDER 41ª RPO (Pauta)
-    function renderRpo41Page(container) {
-        container.innerHTML = '';
-
-        // TÍTULO ATUALIZADO
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 41ª Reunião Pública Ordinária de 2025`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo41DateText} | Início: 9h`);
-        container.appendChild(pageTitle);
-        container.appendChild(pageDate);
-
-        // Link Transmissão
-        const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão ao vivo');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir Transmissão ao Vivo`, { href: "https://www.youtube.com/live/NdYlCTwqKQs?si=d_I5Fw4U07CGUZud", target: '_blank', rel: 'noopener noreferrer' });
-        youtubeSection.appendChild(youtubeText);
-        youtubeSection.appendChild(youtubeLinkAnchor);
-        container.appendChild(youtubeSection);
-
-
-        // Sumário da Pauta
-        const summaryDiv = createElement('div', 'info-card mb-10');
-        const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Itens Selecionados)'));
-        summaryDiv.appendChild(summaryHeader);
-
-        const summaryList = createElement('ul', 'space-y-1 p-3');
-        
-        // Função para resumir assuntos da Pauta 41
-        const getSummarySubjectRPO41 = (item) => {
-             switch (item.originalItemNumber) {
-                case 2: return "CDE 2026 - Orçamento Anual";
-                case 3: return "Fundo Descomissionamento Angra 1 e 2";
-                case 4: return "RTE Energisa Rondônia (Resultado)";
-                case 5: return "RTA Energisa Acre";
-                case 6: return "RTA Energisa Rondônia";
-                case 7: return "RTA CEA (Amapá)";
-                case 8: return "Resultado CP 008/2024 (Satisfação do Consumidor)";
-                case 9: return "Resultado CP 010/2024 (Descentralização)";
-                case 12: return "Resultado CP 032/2025 (Lei 15.235/2025 - TSEE/CDE)";
-                case 13: return "CP RTP CPFL Santa Cruz (2026)";
-                case 14: return "CP Modernização Tarifas (Tarifas Horárias BT)";
-                case 15: return "CP Sistemas de Medição (Transição Energética)";
-                case 16: return "CP Eletromobilidade (Regulação Acesso/Conexão)";
-                case 17: return "CP AIR Decreto 11.314 (Licitação Transmissão)";
-                case 22: return "Prorrogação Concessão - Neoenergia Cosern";
-                case 23: return "Prorrogação Concessão - Coelba";
-                case 24: return "Prorrogação Concessão - Energisa Mato Grosso";
-                case 25: return "Prorrogação Concessão - Coelce";
-                case 26: return "Saldo UBP a Repactuar (Lei 15.235/2025)";
-                case 28: return "Resultado CP 064/2022 (Governança Regulatória)";
-                case 30: return "Tarifa de Repasse de Itaipu 2026";
-                case 31: return "Proinfa 2026";
-                case 32: return "Homologação Tarifária Permissionárias";
-                case 33: return "Resultado CP 020/2023 (Descontos TUSD/TUST)";
-                default:
-                    let text = item.subject;
-                    text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
-                    text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
-                    text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
-                    text = text.replace(/Consulta Pública/g, "CP");
-                    
-                    const maxLength = 90;
-                    if (text.length > maxLength) {
-                        return text.substring(0, maxLength) + '...';
-                    }
-                    return text;
-            }
-        };
-
-        // Ordena por número do item
-        aneelAgenda41.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            
-            const itemNumber = `Item ${item.originalItemNumber}:`;
-            
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
-            const itemNumberSpan = createElement('span', 'font-bold mr-2 text-i4-dark-gray', itemNumber);
-            const subjectSpan = createElement('span', '', getSummarySubjectRPO41(item));
-            itemLink.appendChild(itemNumberSpan);
-            itemLink.appendChild(subjectSpan);
-
-            // Status Badge
-            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
-            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
-
-            listItem.appendChild(itemLink);
-            listItem.appendChild(statusBadge);
-            summaryList.appendChild(listItem);
-        });
-        summaryDiv.appendChild(summaryList);
-        container.appendChild(summaryDiv);
-
-
-        // Grid de Itens da Pauta
-        const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda41.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
-
-            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
-            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
-            
-            // Verifica se faz parte de um bloco típico (ex: Consultas, Tarifárias em lote)
-            // Na 41ª RPO, o texto original indica "BLOCO DA PAUTA - Itens de 28 a 55"
-            const isBloco = item.originalItemNumber >= 28 && item.originalItemNumber <= 55;
-            const blockText = isBloco ? ' <span class="text-sm font-medium text-i4-blue">(Bloco)</span>' : '';
-            
-            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
-            cardHeader.appendChild(h3Subject);
-            cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap));
-            itemDiv.appendChild(cardHeader);
-
-            const cardBody = createElement('div', 'p-6 space-y-5');
-            const infoContainer = createElement('div', 'space-y-4');
-
-            const createInfoRow = (icon, label, value, tooltip = null) => {
-                 if (value == null || (typeof value === 'string' && value.trim() === '')) {
-                     return document.createDocumentFragment();
-                 }
-                 const row = createElement('div', 'flex flex-col md:flex-row');
-                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
-                 if (tooltip) {
-                     labelDiv.setAttribute('data-tooltip', tooltip);
-                 }
-                 labelDiv.innerHTML = icon + label;
-                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
-                 valueDiv.innerHTML = value;
-                 row.appendChild(labelDiv);
-                 row.appendChild(valueDiv);
-                 return row;
-             };
-
-            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-             if(item.votoVistaRelator) {
-                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
-             }
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
-            
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
-            }
-
-            if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
-            }
-
-            cardBody.appendChild(infoContainer);
-
-            // Rodapé com links
-            if (item.links && item.links.length > 0) {
-                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
-                 cardBody.appendChild(separator);
-
-                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
-                 item.links.forEach(link => {
-                     const linkTitle = link.title;
-                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${linkTitle} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
-                     cardFooter.appendChild(linkAnchor);
-                 });
-                 cardBody.appendChild(cardFooter);
-            }
-
-            itemDiv.appendChild(cardBody);
-            agendaGrid.appendChild(itemDiv);
-        });
-        container.appendChild(agendaGrid);
-    }
-
 
     // RENDER CONSULTAS ABERTAS
     function renderConsultasAbertasPage(container) {
@@ -1431,45 +977,94 @@
         renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
     }
 
-    // RENDER IMERSÃO (Mantido para referência futura, comentado)
+    // RENDER IMERSÃO - REATIVADO E ATUALIZADO PARA 2026
      function renderImersaoPage(container) {
          container.innerHTML = '';
-         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersão Presencial i4 Economic Regulation');
+         // Título simplificado conforme solicitado
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersões Presenciais - 2026');
          container.appendChild(pageTitle);
+         
+         const introText = createElement('p', 'text-lg text-i4-text-gray mb-6', 'Confira o calendário oficial das nossas imersões presenciais para o ano de 2026. Programe-se!');
+         container.appendChild(introText);
 
-         const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-2 gap-8');
+         // GRID DE IMERSÕES (Movido para cima conforme solicitado)
+         const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-3 gap-6 mb-10');
          const imersoes = [
             {
+                cidade: "Brasília",
+                data: "20 a 24 de abril de 2026",
+                local: "A definir",
+                status: "Agendado"
+            },
+            {
                 cidade: "São Paulo",
-                data: "2 a 5 de dezembro de 2025",
-                horario: "9h às 18h",
-                local: '<a href="https://deltabc.com.br/unidades/unidade-paulista/" target="_blank" rel="noopener noreferrer" class="text-i4-blue hover:underline font-semibold">Delta Business Coworking (Av. Paulista, 726 - 18º andar)</a>',
-                link: "https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit?gid=1363356232#gid=1363356232",
-                descricao: "Formulário para informações de passagem (saindo de BSB)."
+                data: "3 a 7 de agosto de 2026",
+                local: "A definir",
+                status: "Agendado"
+            },
+            {
+                cidade: "Brasília",
+                data: "30 de novembro a 3 de dezembro de 2026",
+                local: "A definir",
+                status: "Agendado"
             }
          ];
 
          imersoes.forEach(imersao => {
-             const card = createElement('div', 'info-card flex flex-col');
+             const card = createElement('div', 'info-card flex flex-col h-full hover:shadow-lg transition-shadow duration-300');
              card.innerHTML = `
-                <div class="card-header p-5">
-                     <h2 class="card-title text-xl font-bold">Imersão em ${imersao.cidade}</h2>
+                <div class="card-header p-5 bg-i4-blue bg-opacity-10 border-b border-i4-blue border-opacity-20">
+                     <h2 class="card-title text-xl font-bold text-i4-blue flex items-center">
+                        ${icons.building} ${imersao.cidade}
+                     </h2>
                 </div>
-                <div class="p-6 space-y-3 flex-grow">
-                    <p class="text-i4-text-gray"><strong class="text-i4-dark-gray">Datas:</strong> ${imersao.data}</p>
-                    <p class="text-i4-text-gray"><strong class="text-i4-dark-gray">Horário:</strong> ${imersao.horario}</p>
-                    <p class="text-i4-text-gray"><strong class="text-i4-dark-gray">Local:</strong> ${imersao.local}</p>
+                <div class="p-6 space-y-4 flex-grow">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Data</p>
+                            <p class="text-i4-dark-gray font-medium text-lg">${imersao.data}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer p-5 flex flex-col items-center">
-                    <a href="${imersao.link}" target="_blank" rel="noopener noreferrer" class="group w-full text-center bg-i4-blue text-white font-semibold py-3 px-5 rounded-lg hover:bg-blue-700 transition-colors inline-flex justify-center items-center">
-                        Preencher Informações ${icons.arrowRight}
-                    </a>
-                    <p class="text-sm text-i4-text-gray mt-3 text-center">${imersao.descricao}</p>
+                <div class="card-footer p-4 text-center bg-gray-50">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        ${imersao.status}
+                    </span>
                 </div>
              `;
              grid.appendChild(card);
          });
          container.appendChild(grid);
+
+         // Bloco de Logística (Link da Planilha) - MOVIDO PARA BAIXO
+         const logisticsDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-6');
+         
+         const logisticsTextContent = createElement('div', 'flex-1 text-center md:text-left');
+         const logisticsTitle = createElement('h3', 'text-lg font-bold text-blue-900 mb-2', 'Logística de Viagem');
+         const logisticsDesc = createElement('p', 'text-blue-800 text-sm', 'Por favor, preencha as planilhas de passagens correspondentes ao seu trecho.');
+         logisticsTextContent.appendChild(logisticsTitle);
+         logisticsTextContent.appendChild(logisticsDesc);
+
+         const buttonsContainer = createElement('div', 'flex flex-col sm:flex-row gap-3 w-full md:w-auto');
+
+         // Links das planilhas
+         const linkSPtoBSB = "https://docs.google.com/spreadsheets/d/1yoYBqXJH7QGZu6b0WYMrf21F6u3cn29KliKH25ZYg1M/edit#gid=0";
+         const linkBSBtoSP = "https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit#gid=820541553";
+
+         const btnStyle = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center shadow-sm text-sm whitespace-nowrap';
+
+         const button1 = createElement('a', btnStyle, `${icons.link} Planilha SP ➔ BSB`, { href: linkSPtoBSB, target: '_blank', rel: 'noopener noreferrer' });
+         const button2 = createElement('a', btnStyle, `${icons.link} Planilha BSB ➔ SP`, { href: linkBSBtoSP, target: '_blank', rel: 'noopener noreferrer' });
+         
+         buttonsContainer.appendChild(button1);
+         buttonsContainer.appendChild(button2);
+         
+         logisticsDiv.appendChild(logisticsTextContent);
+         logisticsDiv.appendChild(buttonsContainer);
+         container.appendChild(logisticsDiv);
     }
 
 
@@ -1496,15 +1091,13 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
       // BOTÕES DE NAVEGAÇÃO
-      const rpeButton = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPE 2025'); // NOVO
-      // const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', '41ª RPO - Pauta');
+      // const rpeButton = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPE 2025'); // OCULTO
+      const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026'); // REATIVADO
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
-      // const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersão Presencial'); // Ocultado
 
-      // navContainer.append(rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
-      // navContainer.append(rpeButton, rpoButton, consultasAbertasButton, agendaButton);
-      navContainer.append(rpeButton, consultasAbertasButton, agendaButton);
+      // Ordem dos botões atualizada: CPs, Agenda, Imersões (Imersões por último)
+      navContainer.append(consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1520,8 +1113,9 @@
       footer.innerHTML = `© ${currentYear} i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      // Atualizado para incluir rpeButton
-      const buttons = [rpeButton, consultasAbertasButton, agendaButton];
+      // Listeners e Gerenciamento de Estado
+      const buttons = [consultasAbertasButton, agendaButton, imersaoButton];
+      
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
               button.classList.remove('nav-button-active');
@@ -1531,20 +1125,18 @@
           activeButton.classList.remove('nav-button-inactive');
       }
 
-      // Listeners
-      rpeButton.addEventListener('click', () => { setActiveButton(rpeButton); renderPageWithAnimation(renderRpe2Page, contentContainer); });
-      // rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRpo41Page, contentContainer); });
+      // Configuração dos Eventos de Clique
+      // rpeButton oculto
+      imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
-      // imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Renderização Inicial (Definir RPE como padrão já que é a mais nova)
-      setActiveButton(rpeButton);
-      renderPageWithAnimation(renderRpe2Page, contentContainer);
+      // Renderização Inicial (Definir Imersão como padrão para visualização das mudanças)
+      setActiveButton(imersaoButton);
+      renderPageWithAnimation(renderImersaoPage, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
   </script>
 </body>
 </html>
-
