@@ -190,6 +190,52 @@
   <div id="app-container"></div>
 
   <script>
+    // --- FUNÇÕES HELPER (ESSENCIAIS - DEFINIDAS NO INÍCIO) ---
+    // Estas funções devem vir antes de qualquer código que as chame.
+    function createElement(tag, classes, textContent, attributes = {}) {
+        const element = document.createElement(tag);
+        if (classes) element.className = classes;
+        if (textContent) element.innerHTML = textContent;
+        for (const key in attributes) {
+            element.setAttribute(key, attributes[key]);
+        }
+        return element;
+    }
+
+    function createStatusBadge(statusKey, statusMap) {
+        const statusInfo = statusMap[statusKey] || { text: "Indefinido", classes: "bg-gray-100 text-gray-800 border border-gray-200" };
+        return createElement('span', `inline-block font-semibold rounded-full whitespace-nowrap px-3 py-1 text-xs ${statusInfo.classes}`, statusInfo.text);
+    }
+
+    function calculateDays(endDateStr) {
+        if (!endDateStr) return '';
+        const [day, month, year] = endDateStr.split('/');
+        const endDate = new Date(year, month - 1, day, 23, 59, 59, 999);
+        const now = new Date();
+        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        const diffTime = endDate - startOfToday;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays > 1) {
+            return `<span class="font-bold text-green-600">${diffDays} dias restantes</span>`;
+        } else if (diffDays === 1) {
+            return `<span class="font-bold text-orange-500">Último dia</span>`;
+        } else {
+             return `<span class="text-gray-500">Encerrada</span>`;
+        }
+    }
+    
+    function isConsultaAberta(endDateStr) {
+        if (!endDateStr) return false;
+        const parts = endDateStr.split('/');
+        if (parts.length !== 3) return false;
+        const [day, month, year] = parts;
+        const endDate = new Date(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), 23, 59, 59, 999);
+        const now = new Date();
+        return now <= endDate;
+    }
+
     // --- DADOS E CONSTANTES ---
     const pautaStatusMap = {
       scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
@@ -207,8 +253,7 @@
     };
     
     // DATAS
-    const rpo41DateText = '09 de dezembro de 2025';
-    const rpe2DateText = '18 de dezembro de 2025';
+    const rpo1_2026DateText = '20 de janeiro de 2026';
     
     // Links gerais
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
@@ -226,72 +271,86 @@
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
     };
 
-    // --- DADOS DA 2ª RPE (PAUTA) - MANTIDOS PARA REFERÊNCIA NO CÓDIGO ---
-    const aneelAgenda2RPE = [
+    // --- DADOS DA 1ª RPO 2026 ---
+    // Resumo da minuta: APENAS A DECISÃO DO RELATOR.
+    const aneelAgendaRPO1_2026 = [
         {
             originalItemNumber: 1,
-            process: "48500.037166/2025-33",
-            subject: "Rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam os §§ 8º e 9º do Art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
+            process: "48500.030634/2025-49",
+            subject: "Reajuste Tarifário Anual da Roraima Energia S.A., a vigorar a partir de 25 de janeiro de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            details: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, por intercâmbio documental, por 20 (vinte dias), a ser realizada no período de 19 dezembro de 2025 e 8 de janeiro de 2026, a fim de receber contribuições para definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam os §§ 8º e 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
-            links: [{title: "Consulta Pública 047/2025", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5JeDSa4F&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            // Sem link disponível no anexo, portanto, sem resumo.
+            links: [] 
         },
         {
             originalItemNumber: 2,
-            process: "48500.027334/2025-82",
-            subject: "Estabelecimento da Receita Fixa das Centrais de Geração Nucleoelétricas – UTNs Angra 1 e 2, a vigorar a partir de 1º de janeiro de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "withdrawn",
-            details: null,
-            links: []
+            process: "48500.007344/2025-00",
+            subject: "Homologação do resultado e adjudicação dos objetos dos Lotes 1 a 5 e Sublotes 6A, 6B, 7A e 7B do Leilão de Transmissão nº 4/2025-ANEEL, destinado a contratar concessões do serviço público de transmissão de energia elétrica.",
+            areaResponsible: "Secretaria de Leilões - SEL, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "Vota por homologar o resultado do Leilão nº 4/2025-ANEEL e adjudicar os objetos às proponentes vencedoras.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.007344-2025-00.pdf"}]
         },
         {
             originalItemNumber: 3,
-            process: "48500.003997/2025-10",
-            subject: "Reajuste Tarifário Anual da Companhia de Eletricidade do Amapá – CEA, a vigorar a partir de 13 de dezembro de 2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            process: "48500.015303/2025-89",
+            subject: "Homologação do resultado e adjudicação do objeto dos Leilões nº 5/2025-ANEEL, nº 6/2025- ANEEL e nº 7/2025-ANEEL (Leilões de Energia Existente A-1, A-2 e A-3, de 2025), destinados à compra de energia elétrica proveniente de empreendimentos de geração existentes.",
+            areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "view_request",
-            details: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
-            links: []
+            status: "scheduled",
+            votoSummary: "Vota por homologar o resultado e adjudicar o objeto dos Leilões de Energia Existente A-1, A-2 e A-3 de 2025.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.015303-2025-89.pdf"}]
         },
         {
-            originalItemNumber: 4,
+            originalItemNumber: 11,
+            process: "48500.005529/2023-18",
+            subject: "Recurso Administrativo interposto pela Isa Energia Brasil S.A. em face do Despacho n° 2.589/2024, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que autorizou a implantação de Reforços de Grande Porte em instalação de transmissão de energia elétrica sob responsabilidade da Recorrente, Contrato de Concessão do Serviço Público de Transmissão de Energia Elétrica n° 59/2001, conforme descrito no Anexo II daquele Despacho, e estabeleceu os valores das correspondentes parcelas da Receita Anual Permitida – RAP.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "Vota por conhecer do recurso e, no mérito, negar-lhe provimento.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.905529-2023-18.pdf"}]
+        },
+        {
+            originalItemNumber: 14,
+            process: "48500.003805/2024-86",
+            subject: "Pedido de Reconsideração interposto pela Light Energia S.A. em face do Resolução Homologatória nº 3.470/2025, que homologou o resultado das Revisões Tarifárias Periódicas da Receita Anual Permitida – RAP dos Contratos de Concessão de Transmissão de Energia Elétrica nº 20/2008, nº 1/2010 e nº 32/2018.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "Vota por conhecer do pedido de reconsideração e, no mérito, negar-lhe provimento.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903805-2024-86.pdf"}]
+        },
+        {
+            originalItemNumber: 15,
+            process: "48500.003993/2025-23",
+            subject: "Pedido de Reconsideração interposto pela Companhia Estadual de Distribuição de Energia Elétrica – CEEE-D em face da Resolução Homologatória nº 3.547/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025, das Tarifas de Energia – TE e das Tarifas de Uso do Sistema de Distribuição – TUSD referentes à Recorrente e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "Vota por conhecer do pedido de reconsideração e, no mérito, negar-lhe provimento.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003993-2025-23.pdf"}]
+        },
+        {
+            originalItemNumber: 19,
             process: "48500.030861/2025-74",
             subject: "Requerimento Administrativo protocolado pela Companhia de Saneamento Básico do Estado de São Paulo – Sabesp e pela Vórtx Distribuidora de Títulos e Valores Mobiliários Ltda. com vistas à anuência prévia para a transferência, para a Sabesp, do Controle Societário Direto da Empresa Metropolitana de Água e Energia S.A. – Emae e do Controle Societário Indireto da Pirapora Energia S.A., atualmente detidos pela Phoenix Água e Energia S.A.",
             areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "view_request",
-            details: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
-            links: []
-        },
-        {
-            originalItemNumber: 8,
-            process: "48500.035645/2025-15",
-            subject: "Pedido de Medida Cautelar protocolado pela Roraima Energia S.A. com vistas a revogar os efeitos dos Despachos nº 2.300/20219 e nº 3.519/2019, referentes aos Contratos de Comercialização de Energia no Ambiente Regulado – CCEARs e à conexão da requerente ao Sistema Interligado Nacional – SIN.",
-            areaResponsible: "SFF, STR, SCE, SFT, STD, SGM.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            details: "Item em Bloco. A Diretoria, por unanimidade, decidiu indeferir o Pedido de Medida Cautelar protocolado pela Roraima Energia S.A., com vistas a revogar os efeitos dos Despachos nº 2.300/2019 e nº 3.519/2019, referentes aos Contratos de Comercialização de Energia no Ambiente Regulado – CCEARs e à conexão da requerente ao Sistema Interligado Nacional – SIN.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.035645-2025-15.pdf" }]
-        },
-        {
-            originalItemNumber: 12,
-            process: "48500.034598/2025-92",
-            subject: "Autorização e estabelecimento da Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão, sob concessão da Cemig Geração e Transmissão S.A., em decorrência da 1ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2025.",
-            areaResponsible: "SCE",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            details: "Item em Bloco. A Diretoria, por unanimidade, decidiu: (i) autorizar a Cemig Geração e Transmissão S.A., titular do Contrato de Concessão nº 6/1997, a realizar o Reforço de Grande Porte sob sua responsabilidade, conforme listagem constante no Anexo I do ato decorrente desta decisão; (ii) estabelecer os cronogramas de execução conforme Anexo II; e (iii) autorizar a implantação dos Reforços de Pequeno Porte, conforme detalhamento no Anexo III.",
-            links: [{ title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034598-2025-92.pdf" }]
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "Vota por anuir previamente à transferência de controle societário.",
+            links: [
+                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030861-2025-74_votodiretora_agnes.pdf"},
+                {title: "Minuta de voto-vista", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030861-2025-74_voto-vista.pdf"}
+            ]
         }
     ];
 
-    
-    // DADOS DAS CONSULTAS PÚBLICAS (Mantendo dados anteriores e adicionando MCPSE)
+    // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
          // CPs do MME
          {
@@ -364,7 +423,6 @@
             origem: "ANEEL",
             link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" 
         },
-        // Novas CPs potenciais derivadas da Pauta
         {
             numero: "CP 39/2025",
             tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.",
@@ -560,51 +618,6 @@
     ];
 
 
-    // --- FUNÇÕES HELPER ---
-
-    function createStatusBadge(statusKey, statusMap) {
-        const statusInfo = statusMap[statusKey] || { text: "Indefinido", classes: "bg-gray-100 text-gray-800 border border-gray-200" };
-        return createElement('span', `inline-block font-semibold rounded-full whitespace-nowrap px-3 py-1 text-xs ${statusInfo.classes}`, statusInfo.text);
-    }
-
-    function createElement(tag, classes, textContent, attributes = {}) {
-        const element = document.createElement(tag);
-        if (classes) element.className = classes;
-        if (textContent) element.innerHTML = textContent; 
-        for (const key in attributes) {
-            element.setAttribute(key, attributes[key]);
-        }
-        return element;
-    }
-
-    function calculateDays(endDateStr) {
-        const [day, month, year] = endDateStr.split('/');
-        const endDate = new Date(year, month - 1, day, 23, 59, 59, 999);
-        const now = new Date();
-        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-        const diffTime = endDate - startOfToday;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        if (diffDays > 1) {
-            return `<span class="font-bold text-green-600">${diffDays} dias restantes</span>`;
-        } else if (diffDays === 1) {
-            return `<span class="font-bold text-orange-500">Último dia</span>`;
-        } else {
-             return `<span class="text-gray-500">Encerrada</span>`;
-        }
-    }
-    
-    function isConsultaAberta(endDateStr) {
-        if (!endDateStr) return false;
-        const parts = endDateStr.split('/');
-        if (parts.length !== 3) return false;
-        const [day, month, year] = parts;
-        const endDate = new Date(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), 23, 59, 59, 999);
-        const now = new Date();
-        return now <= endDate;
-    }
-
     // --- FUNÇÕES DE RENDERIZAÇÃO DE PÁGINA ---
 
     function renderPageWithAnimation(renderFunction, container) {
@@ -665,20 +678,20 @@
         container.appendChild(tableContainer);
     }
 
-    // --- RENDER 2ª RPE (Pauta) - MANTIDO MAS OCULTO ---
-    function renderRpe2Page(container) {
+    // --- RENDER 1ª RPO 2026 (NOVA) ---
+    function renderRpo12026Page(container) {
         container.innerHTML = '';
 
-        // TÍTULO ATUALIZADO
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 2ª Reunião Pública Extraordinária de 2025`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpe2DateText} | Início: 9h`);
+        // TÍTULO
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 1ª Reunião Pública Ordinária de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo1_2026DateText} | Início: 9h`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
-        // Link Transmissão
+        // Link Transmissão (Atualizado com link da live específica)
         const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a gravação da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no Youtube`, { href: "https://www.youtube.com/live/8ji67WrAHKQ?si=_nGaQwRi23R5mUl4", target: '_blank', rel: 'noopener noreferrer' });
+        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: "https://www.youtube.com/live/nbGTzQ_GkIo?si=Hx7SxU5j0_8dPx15", target: '_blank', rel: 'noopener noreferrer' });
         youtubeSection.appendChild(youtubeText);
         youtubeSection.appendChild(youtubeLinkAnchor);
         container.appendChild(youtubeSection);
@@ -686,50 +699,54 @@
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Itens Selecionados)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Sumário)'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
         
-        // Função para resumir assuntos da Pauta 2ª RPE
-        const getSummarySubjectRPE2 = (item) => {
-             switch (item.originalItemNumber) {
-                case 1: return "CDE 2026 - Repactuação UBP (Lei 15.235/2025)";
-                case 2: return "Receita Fixa Angra 1 e 2 2026";
-                case 3: return "RTA CEA (Amapá)";
-                case 4: return "Transferência Controle EMAE (Sabesp)";
-                case 8: return "Cautelar Roraima Energia (CCEARs e Conexão)";
-                case 12: return "RAP Reforços Cemig-GT (POTEE 2025)";
-                default:
-                    let text = item.subject;
-                    text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
-                    text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
-                    text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
-                    text = text.replace(/Consulta Pública/g, "CP");
-                    text = text.replace(/Recurso Administrativo/g, "Recurso");
-                    text = text.replace(/Declaração de Utilidade Pública/g, "DUP");
-                    
-                    const maxLength = 90;
-                    if (text.length > maxLength) {
-                        return text.substring(0, maxLength) + '...';
-                    }
-                    return text;
+        // Função para resumir assuntos com siglas
+        const getSummarySubject = (item) => {
+            // Regras específicas para itens conhecidos
+            switch (item.originalItemNumber) {
+                case 1: return "RTA Roraima Energia 2026";
+                case 2: return "Homologação Leilão Transmissão 4/2025";
+                case 3: return "Homologação Leilões Energia Existente (A-1, A-2, A-3) 2025";
+                case 11: return "Recurso Isa Energia - Reforços Transmissão";
+                case 14: return "Reconsideração Light Energia - RTP da RAP";
+                case 15: return "Reconsideração CEEE-D - RTA 2025";
+                case 19: return "Transferência de Controle EMAE para Sabesp";
             }
+
+            // Regras gerais de substituição para outros itens
+            let text = item.subject;
+            text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
+            text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
+            text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
+            text = text.replace(/Pedido de Reconsideração/g, "Ped. Reconsideração");
+            text = text.replace(/Recurso Administrativo/g, "Recurso");
+            text = text.replace(/Requerimento Administrativo/g, "Requerimento");
+            text = text.replace(/Consulta Pública/g, "CP");
+            text = text.replace(/Audiência Pública/g, "AP");
+            
+            const maxLength = 85;
+            if (text.length > maxLength) {
+                return text.substring(0, maxLength) + '...';
+            }
+            return text;
         };
 
-        // Ordena por número do item
-        aneelAgenda2RPE.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        // Ordena por número do item e cria lista do sumário
+        aneelAgendaRPO1_2026.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
             
             const itemNumber = `Item ${item.originalItemNumber}:`;
             
             const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
             const itemNumberSpan = createElement('span', 'font-bold mr-2 text-i4-dark-gray', itemNumber);
-            const subjectSpan = createElement('span', '', getSummarySubjectRPE2(item));
+            const subjectSpan = createElement('span', '', getSummarySubject(item));
             itemLink.appendChild(itemNumberSpan);
             itemLink.appendChild(subjectSpan);
 
-            // Status Badge
             const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
             statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
 
@@ -743,17 +760,13 @@
 
         // Grid de Itens da Pauta
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda2RPE.forEach(item => {
+        aneelAgendaRPO1_2026.forEach(item => {
             const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
 
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
-            // Verifica se faz parte de um bloco típico (ex: Consultas, Tarifárias em lote)
-            const isBloco = item.originalItemNumber >= 5 && item.originalItemNumber <= 15;
-            const blockText = isBloco ? ' <span class="text-sm font-medium text-i4-blue">(Bloco)</span>' : '';
-            
-            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -779,18 +792,20 @@
              };
 
             infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-             if(item.votoVistaRelator) {
-                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
-             }
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
             
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold">${item.decision}</span>`));
+            if (item.relator !== "-") {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
             }
-
-            if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            if (item.votoVistaRelator) {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
+            }
+            if (item.areaResponsible !== "-") {
+                infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+            }
+            
+            // "Resumo da Minuta de Voto" sem o assunto, apenas contexto e decisão
+            if (item.votoSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta de Voto', item.votoSummary));
             }
 
             cardBody.appendChild(infoContainer);
@@ -1091,13 +1106,13 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
       // BOTÕES DE NAVEGAÇÃO
-      // const rpeButton = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPE 2025'); // OCULTO
-      const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026'); // REATIVADO
+      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', '1ª RPO 2026'); // NOVA
+      const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
 
-      // Ordem dos botões atualizada: CPs, Agenda, Imersões (Imersões por último)
-      navContainer.append(consultasAbertasButton, agendaButton, imersaoButton);
+      // Ordem dos botões: RPO, CPs, Agenda, Imersões
+      navContainer.append(rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1114,7 +1129,7 @@
       appContainer.appendChild(footer);
 
       // Listeners e Gerenciamento de Estado
-      const buttons = [consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [rpoButton, consultasAbertasButton, agendaButton, imersaoButton];
       
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
@@ -1126,14 +1141,14 @@
       }
 
       // Configuração dos Eventos de Clique
-      // rpeButton oculto
+      rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRpo12026Page, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
 
-      // Renderização Inicial (Definir Imersão como padrão para visualização das mudanças)
-      setActiveButton(imersaoButton);
-      renderPageWithAnimation(renderImersaoPage, contentContainer);
+      // Renderização Inicial (Pauta 1ª RPO como padrão)
+      setActiveButton(rpoButton);
+      renderPageWithAnimation(renderRpo12026Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
