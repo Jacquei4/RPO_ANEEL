@@ -344,7 +344,7 @@
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
             status: "scheduled",
-            // Removido resumo de voto pois não há minuta disponível.
+            votoSummary: "Análise de recurso sobre postergação de início de CUSTs de usinas solares.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900894-2024-17.pdf"}]
         },
         {
@@ -947,6 +947,166 @@
         tableContainer.appendChild(table);
         container.appendChild(tableContainer);
     }
+
+    // RENDER AGENDA REGULATÓRIA (Atualizado para manter a tabela do 40_rpo)
+    function renderAgendaRegulatoriaPage(container) {
+         container.innerHTML = '';
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Aprovada na 40ª RPO');
+         
+         const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
+         const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
+         // Link da Portaria de Aprovação
+         const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
+
+         // Bloco de Acompanhamento
+         const linkSection = createElement('div', 'mb-8 bg-i4-light-gray p-5 rounded-xl border border-i4-border-gray');
+         const linkTitle = createElement('h2', 'text-xl font-bold text-i4-dark-gray mb-3', 'Acompanhamento da Execução');
+         const linkText = createElement('p', 'text-i4-text-gray mb-3 leading-relaxed', 'O Cronograma Referencial de Atividades Regulatórias foi aprovado e publicado. Você pode acompanhar a execução dos temas no portal da ANEEL.');
+         const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-i4-blue text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors', `${icons.link} Cronograma de Atividades ANEEL ${icons.arrowRight}`, { href: followUpLink, target: '_blank', rel: 'noopener noreferrer' });
+         
+         linkSection.appendChild(linkTitle);
+         linkSection.appendChild(linkText);
+         linkSection.appendChild(linkAnchor);
+         container.appendChild(linkSection);
+         
+         // NOVO BLOCO CONSOLIDADO: Decisão da 40ª RPO
+         const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
+         const item4Status = "(Processo: 48500.023180/2025-50 / Relator: Sandoval de Araújo Feitosa Neto)";
+         const rpo40DateTextForAgenda = '02 de dezembro de 2025';
+
+         // Conteúdo da Decisão
+         consolidatedDiv.innerHTML = `
+            <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO: Aprovação da Agenda</h2>
+            <p class="text-green-800 mb-6 leading-relaxed">A Agenda Regulatória 2026-2027 foi aprovada por unanimidade no Item 4 da 40ª RPO em ${rpo40DateTextForAgenda}. ${item4Status}</p>
+         `;
+
+         // Conteúdo da Classificação
+         const classificationContent = createElement('div', 'mb-6 p-4 rounded-lg bg-green-100 border border-green-200');
+         classificationContent.innerHTML = `
+             <h3 class="text-lg font-bold text-green-900 mb-3">Entenda a Classificação das Atividades:</h3>
+             <p class="text-green-900 mb-4 leading-relaxed">O Cronograma Referencial agrupa os projetos em três categorias, conforme a Nota Técnica nº 28/2025-GDG/ANEEL, para conferir transparência:</p>
+             <ul class="text-green-900 space-y-3 pl-5 list-disc list-outside">
+                 <li><strong class="font-bold">Agenda Regulatória (Anexo I):</strong> Atividades que possuem previsão de edição de norma na vigência do ciclo (2026-2027).</li>
+                 <li><strong class="font-bold">Demais Atividades Regulatórias (Anexo II):</strong> Atividades que passarão por um processo mais longo de amadurecimento e estudo.</li>
+                 <li><strong class="font-bold">Avaliação de Resultado Regulatório – ARR (Anexo III):</strong> Atividades de avaliação do impacto e eficácia de normas existentes (periodicidade quadrienal).</li>
+             </ul>
+         `;
+         consolidatedDiv.appendChild(classificationContent);
+         
+         // Conteúdo dos Links
+         const linksContent = createElement('div', 'mt-4 border-t border-green-300 pt-4 flex flex-wrap gap-x-6 gap-y-2');
+         
+         const ntAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Nota Técnica (TS 11/2025) ${icons.arrowRight}`, { href: ntLink, target: '_blank', rel: 'noopener noreferrer' });
+         const portariaAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Portaria de Aprovação ${icons.arrowRight}`, { href: portariaLink, target: '_blank', rel: 'noopener noreferrer' });
+
+         linksContent.appendChild(ntAnchor);
+         linksContent.appendChild(portariaAnchor);
+         
+         consolidatedDiv.appendChild(linksContent);
+         
+         container.appendChild(consolidatedDiv);
+
+
+        // 1. Tabela: ANEXO I - Agenda Regulatória 2026-2027
+        renderRegulatoryTable(container, agendaRegulatoriaDetalhada, 'ANEXO I: Agenda Regulatória 2026-2027 (Atividades com previsão de norma)', true);
+        
+        // 2. Tabela: ANEXO II - Demais Atividades Regulatórias
+        renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias para o Biênio 2026-2027');
+
+        // 3. Tabela: ANEXO III - Avaliações de Resultado Regulatório (ARR)
+        renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
+    }
+
+    // RENDER IMERSÃO - REATIVADO E ATUALIZADO PARA 2026
+     function renderImersaoPage(container) {
+         container.innerHTML = '';
+         // Título simplificado conforme solicitado
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersões Presenciais - 2026');
+         container.appendChild(pageTitle);
+         
+         const introText = createElement('p', 'text-lg text-i4-text-gray mb-6', 'Confira o calendário oficial das nossas imersões presenciais para o ano de 2026. Programe-se!');
+         container.appendChild(introText);
+
+         // GRID DE IMERSÕES (Movido para cima conforme solicitado)
+         const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-3 gap-6 mb-10');
+         const imersoes = [
+            {
+                cidade: "Brasília",
+                data: "20 a 24 de abril de 2026",
+                local: "A definir",
+                status: "Agendado"
+            },
+            {
+                cidade: "São Paulo",
+                data: "3 a 7 de agosto de 2026",
+                local: "A definir",
+                status: "Agendado"
+            },
+            {
+                cidade: "Brasília",
+                data: "30 de novembro a 3 de dezembro de 2026",
+                local: "A definir",
+                status: "Agendado"
+            }
+         ];
+
+         imersoes.forEach(imersao => {
+             const card = createElement('div', 'info-card flex flex-col h-full hover:shadow-lg transition-shadow duration-300');
+             card.innerHTML = `
+                <div class="card-header p-5 bg-i4-blue bg-opacity-10 border-b border-i4-blue border-opacity-20">
+                     <h2 class="card-title text-xl font-bold text-i4-blue flex items-center">
+                        ${icons.building} ${imersao.cidade}
+                     </h2>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Data</p>
+                            <p class="text-i4-dark-gray font-medium text-lg">${imersao.data}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer p-4 text-center bg-gray-50">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        ${imersao.status}
+                    </span>
+                </div>
+             `;
+             grid.appendChild(card);
+         });
+         container.appendChild(grid);
+
+         // Bloco de Logística (Link da Planilha) - MOVIDO PARA BAIXO
+         const logisticsDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-6');
+         
+         const logisticsTextContent = createElement('div', 'flex-1 text-center md:text-left');
+         const logisticsTitle = createElement('h3', 'text-lg font-bold text-blue-900 mb-2', 'Logística de Viagem');
+         const logisticsDesc = createElement('p', 'text-blue-800 text-sm', 'Por favor, preencha as planilhas de passagens correspondentes ao seu trecho.');
+         logisticsTextContent.appendChild(logisticsTitle);
+         logisticsTextContent.appendChild(logisticsDesc);
+
+         const buttonsContainer = createElement('div', 'flex flex-col sm:flex-row gap-3 w-full md:w-auto');
+
+         // Links das planilhas
+         const linkSPtoBSB = "https://docs.google.com/spreadsheets/d/1yoYBqXJH7QGZu6b0WYMrf21F6u3cn29KliKH25ZYg1M/edit#gid=0";
+         const linkBSBtoSP = "https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit#gid=820541553";
+
+         const btnStyle = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center shadow-sm text-sm whitespace-nowrap';
+
+         const button1 = createElement('a', btnStyle, `${icons.link} Planilha SP ➔ BSB`, { href: linkSPtoBSB, target: '_blank', rel: 'noopener noreferrer' });
+         const button2 = createElement('a', btnStyle, `${icons.link} Planilha BSB ➔ SP`, { href: linkBSBtoSP, target: '_blank', rel: 'noopener noreferrer' });
+         
+         buttonsContainer.appendChild(button1);
+         buttonsContainer.appendChild(button2);
+         
+         logisticsDiv.appendChild(logisticsTextContent);
+         logisticsDiv.appendChild(buttonsContainer);
+         container.appendChild(logisticsDiv);
+    }
+
 
     // --- FUNÇÃO DE RENDERIZAÇÃO PRINCIPAL DA APLICAÇÃO ---
     function renderApp() {
