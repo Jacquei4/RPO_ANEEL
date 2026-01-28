@@ -210,7 +210,7 @@
     function calculateDays(endDateStr) {
         if (!endDateStr) return '';
         const [day, month, year] = endDateStr.split('/');
-        const endDate = new Date(year, month - 1, day, 23, 59, 59, 999);
+        const endDate = new Date(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), 23, 59, 59, 999);
         const now = new Date();
         const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
@@ -279,9 +279,10 @@
             subject: "Resultado da Consulta Pública nº 8/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da minuta de Resolução Normativa voltada para a implementação de ações para aumentar a satisfação do consumidor com a prestação dos serviços de distribuição de energia elétrica.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Análise das contribuições recebidas na Consulta Pública nº 8/2024 sobre satisfação do consumidor.",
-            links: [],
+            status: "approved",
+            votoSummary: "A Diretoria, por unanimidade, decidiu aprovar Resolução Normativa com vistas a dispor ações para aumentar a satisfação dos consumidores e demais usuários com a prestação dos serviços de distribuição de energia elétrica, com efeitos a partir de 1º de janeiro de 2027.",
+            discussionDetails: "<strong>Sustentação Oral:</strong> Ricardo Brandão (ABRADEE) criticou a assimetria das curvas de incentivo e a calibração do consumidor.gov. <strong>Discussão:</strong> O Relator Fernando Mosna acolheu o pleito sobre a 'banda neutra', ajustando o voto para garantir resultado nulo (0%) na faixa de variação do IASC entre -3% e +3%.",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.900385-2022-14.pdf"}],
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=Wrki43Jr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3852&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
         {
@@ -290,8 +291,9 @@
             subject: "Resultado da Consulta Pública nº 3/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação sobre o compartilhamento de Outras Receitas no segmento de Distribuição de Energia Elétrica, conforme previsto nos submódulos 2.7 e 2.7A dos Procedimentos de Regulação Tarifária – PRORET.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Análise das contribuições recebidas na Consulta Pública nº 3/2025 sobre compartilhamento de Outras Receitas.",
+            status: "approved",
+            votoSummary: "A Diretoria, por unanimidade, decidiu aprimorar a regulação sobre o compartilhamento de Outras Receitas e as novas versões dos Submódulos 2.7 e 2.7A do PRORET, nos termos da Nota Técnica nº 142/2025-STR/ANEEL e com as modificações apresentadas nas Seções II.3.2 e II.3.3 do voto do Diretor-Relator.",
+            discussionDetails: "<strong>Apresentação Técnica:</strong> Recomendou compartilhar 50% da receita incremental. <strong>Discussão:</strong> O Relator Fernando Mosna alterou a proposta: (1) Revisão dos percentuais de inovação após 5 anos com dados reais; (2) Manutenção do compartilhamento de 60% para infraestrutura (postes) até definição de preço regulado conjunto com Anatel.",
             links: [],
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=Wrki43Jr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3910&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -301,8 +303,8 @@
             subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "Análise das contribuições recebidas na Consulta Pública nº 47/2025 sobre rateio da CDE/UBP.",
+            status: "withdrawn",
+            votoSummary: "O processo foi retirado de pauta na fase de debate dos Diretores.",
             links: [],
             consultaPublicaLink: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=Wrki43Jr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
@@ -312,9 +314,10 @@
             subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Proposta de abertura de CP para avaliar sistemas de medição na distribuição.",
-            links: []
+            status: "approved",
+            votoSummary: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública (nº 1/2026), na modalidade intercâmbio documental, no período de 29 de janeiro a 16 de março de 2026, com vistas a receber subsídios sobre a avaliação dos sistemas de medição para transição energética e modernização na distribuição.",
+            discussionDetails: "<strong>Discussão:</strong> O Relator Fernando Mosna dispensou a leitura do relatório e fundamentação, indo direto ao dispositivo. Aprovada a abertura da CP por unanimidade.",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.902339-2024-11.pdf"}]
         },
         {
             originalItemNumber: 6,
@@ -323,9 +326,10 @@
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Ricardo Lavorato Tili",
             votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "Análise de Pedido de Reconsideração da Light sobre Revisão Tarifária Extraordinária de perdas não técnicas.",
-            links: []
+            status: "approved",
+            votoSummary: "A Diretoria, por maioria, vencido o Diretor-Relator Ricardo Lavorato Tili e acompanhando o voto-vista da Diretora Ludimila Lima da Silva, decidiu conhecer e, no mérito, negar provimento ao Pedido de Reconsideração da Light.",
+            discussionDetails: "<strong>Contexto:</strong> Light alegava desequilíbrio por metas de perdas e glossas. <strong>Discussão:</strong> Prevaleceu o entendimento (votos de vista e área técnica) de ausência de fato gerador para Revisão Tarifária Extraordinária. O Diretor Mosna reforçou que os cálculos não indicaram desequilíbrio.",
+            links: [{title: "Despacho nº 223/2026", url: "#"}]
         },
         {
             originalItemNumber: 10,
@@ -333,8 +337,9 @@
             subject: "Estabelecimento da Receita Fixa das Centrais de Geração Nucleoelétricas – UTNs Angra 1 e 2, a vigorar a partir de 1º de janeiro de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "Proposta de fixação da Receita Fixa para Angra 1 e 2 a partir de 2026.",
+            status: "approved",
+            votoSummary: "A Diretoria, por unanimidade, decidiu aprovar a Receita Fixa das UTNs Angra 1 e 2 para 2026 no valor de R$ 4.814.184.419,33 (tarifa de repasse de R$ 361,56/MWh), fixar o montante anual de energia em 13.315.067 MWh e estabelecer o Fator de Ajuste de Mercado.",
+            discussionDetails: "<strong>Discussão:</strong> Item deliberado em bloco, sem discussão individualizada ou sustentação oral registrada.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027334-2025-82.pdf"}]
         },
         {
@@ -343,8 +348,9 @@
             subject: "Recurso Administrativo interposto pela Russas Energia Solar SPE Ltda. em face do Despacho nº 1.280/2024, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pleito formulado pela Recorrente de postergação de início de contratação dos Contratos de Uso do Sistema de Transmissão – CUSTs nº 11/2023, nº 12/2023, nº 13/2023 e nº 14/2023.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "Análise de recurso sobre postergação de início de CUSTs de usinas solares.",
+            status: "approved",
+            votoSummary: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo e, no mérito, negar-lhe provimento.",
+            discussionDetails: "<strong>Discussão:</strong> Item deliberado em bloco, sem discussão individualizada ou sustentação oral registrada.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900894-2024-17.pdf"}]
         },
         {
@@ -353,9 +359,9 @@
             subject: "Pedido de Medida Cautelar protocolado pela Assembleia Legislativa do Estado do Mato Grosso com vistas à suspensão da prorrogação do Contrato de Concessão de Distribuição nº 3/1997 até que sejam avaliadas pela ANEEL as adequações apontadas pela Requerente por intermédio da Comissão Parlamentar de Inquérito – CPI a respeito da prestação de serviço da Energisa Mato Grosso – Distribuidora de Energia S.A. – EMT.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "Análise de medida cautelar solicitada pela ALE-MT para suspender prorrogação de contrato da Energisa MT.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.038659-2025-91.pdf"}]
+            status: "withdrawn",
+            votoSummary: "O processo foi retirado da Pauta.",
+            links: []
         }
     ];
 
@@ -698,7 +704,7 @@
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
-        // Link Transmissão (Pode ser atualizado quando houver link específico)
+        // Link Transmissão
         const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
         const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião');
         const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: "https://www.youtube.com/live/83fLzZL2WIk?si=MXevS9YNLjH_lMWE", target: '_blank', rel: 'noopener noreferrer' });
@@ -727,19 +733,9 @@
                 case 11: return "Recurso Russas Energia Solar - CUSTs";
                 case 23: return "Cautelar Energisa MT - Suspensão Prorrogação";
             }
-
-            // Regras gerais de substituição para outros itens
-            let text = item.subject;
-            text = text.replace(/Reajuste Tarifário Anual/g, "RTA");
-            text = text.replace(/Revisão Tarifária Periódica/g, "RTP");
-            text = text.replace(/Revisão Tarifária Extraordinária/g, "RTE");
-            text = text.replace(/Pedido de Reconsideração/g, "Ped. Reconsideração");
-            text = text.replace(/Recurso Administrativo/g, "Recurso");
-            text = text.replace(/Requerimento Administrativo/g, "Requerimento");
-            text = text.replace(/Consulta Pública/g, "CP");
-            text = text.replace(/Audiência Pública/g, "AP");
             
             const maxLength = 85;
+            let text = item.subject;
             if (text.length > maxLength) {
                 return text.substring(0, maxLength) + '...';
             }
@@ -814,9 +810,12 @@
                 infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
             }
             
-            // "Resumo da Minuta de Voto" ou similar
-            if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo', item.votoSummary));
+            // Exibir Detalhes de Discussão (Novo Campo)
+            if (item.discussionDetails) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Discussão e Deliberação', item.discussionDetails));
+            } else if (item.votoSummary) {
+                // Fallback para votoSummary se não houver discussão detalhada
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo de Voto', item.votoSummary));
             }
 
             cardBody.appendChild(infoContainer);
@@ -844,9 +843,21 @@
                  }
                  
                  const cpLinkContainer = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
-                 const cpLinkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} Consulta Pública ${icons.arrowRight}`, { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' });
-                 cpLinkContainer.appendChild(cpLinkAnchor);
-                 cardBody.appendChild(cpLinkContainer);
+                 // Se já houver links, não precisa criar novo container se quisermos agrupar, mas aqui cria um novo bloco para destacar.
+                 // Na verdade, o código anterior anexava ao cardBody. Vou manter a lógica.
+                 if (cardBody.lastChild.classList && !cardBody.lastChild.classList.contains('flex-wrap')) {
+                      // Se o último filho não for um footer de links, adicionamos um wrapper
+                 }
+                 
+                 const cpLinkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors mt-2', `${icons.link} Consulta Pública ${icons.arrowRight}`, { href: item.consultaPublicaLink, target: '_blank', rel: 'noopener noreferrer' });
+                 
+                 // Se já existe um footer, adiciona lá. Senão cria um.
+                 let footer = cardBody.querySelector('.border-t');
+                 if(!footer) {
+                    footer = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center mt-4 pt-4 border-t border-i4-border-gray');
+                    cardBody.appendChild(footer);
+                 }
+                 footer.appendChild(cpLinkAnchor);
             }
 
             itemDiv.appendChild(cardBody);
@@ -927,12 +938,11 @@
             openConsultas.forEach(cp => {
                 const tr = createElement('tr', 'hover:bg-i4-light-gray');
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-semibold text-i4-dark-gray whitespace-nowrap">${cp.numero}</td>
-                    <td class="px-6 py-4 font-medium text-i4-dark-gray">${cp.origem || 'ANEEL'}</td>
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
                     <td class="px-6 py-4">${cp.tema}</td>
-                    <td class="px-6 py-4">${createStatusBadge('aberta', consultaStatusMap).outerHTML}</td>
+                    <td class="px-6 py-4"></td>
                     <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">${calculateDays(cp.fim)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap"></td>
                     <td class="px-6 py-4">${cp.area}</td>
                     <td class="px-6 py-4">
                         <a href="${cp.link}" target="_blank" rel="noopener noreferrer" class="group font-medium text-i4-blue hover:text-blue-700 inline-flex items-center">
@@ -940,6 +950,8 @@
                         </a>
                     </td>
                 `;
+                tr.children[2].appendChild(createStatusBadge(cp.status, consultaStatusMap));
+                tr.children[4].innerHTML = calculateDays(cp.fim);
                 tbody.appendChild(tr);
             });
         }
@@ -948,14 +960,13 @@
         container.appendChild(tableContainer);
     }
 
-    // RENDER AGENDA REGULATÓRIA (Atualizado para manter a tabela do 40_rpo)
+    // RENDER AGENDA REGULATÓRIA (Restored)
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Aprovada na 40ª RPO');
          
          const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
          const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
-         // Link da Portaria de Aprovação
          const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
 
          // Bloco de Acompanhamento
@@ -969,18 +980,16 @@
          linkSection.appendChild(linkAnchor);
          container.appendChild(linkSection);
          
-         // NOVO BLOCO CONSOLIDADO: Decisão da 40ª RPO
+         // Decisão da 40ª RPO
          const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          const item4Status = "(Processo: 48500.023180/2025-50 / Relator: Sandoval de Araújo Feitosa Neto)";
          const rpo40DateTextForAgenda = '02 de dezembro de 2025';
 
-         // Conteúdo da Decisão
          consolidatedDiv.innerHTML = `
             <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO: Aprovação da Agenda</h2>
             <p class="text-green-800 mb-6 leading-relaxed">A Agenda Regulatória 2026-2027 foi aprovada por unanimidade no Item 4 da 40ª RPO em ${rpo40DateTextForAgenda}. ${item4Status}</p>
          `;
 
-         // Conteúdo da Classificação
          const classificationContent = createElement('div', 'mb-6 p-4 rounded-lg bg-green-100 border border-green-200');
          classificationContent.innerHTML = `
              <h3 class="text-lg font-bold text-green-900 mb-3">Entenda a Classificação das Atividades:</h3>
@@ -993,9 +1002,7 @@
          `;
          consolidatedDiv.appendChild(classificationContent);
          
-         // Conteúdo dos Links
          const linksContent = createElement('div', 'mt-4 border-t border-green-300 pt-4 flex flex-wrap gap-x-6 gap-y-2');
-         
          const ntAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Nota Técnica (TS 11/2025) ${icons.arrowRight}`, { href: ntLink, target: '_blank', rel: 'noopener noreferrer' });
          const portariaAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors', `${icons.link} Acessar Portaria de Aprovação ${icons.arrowRight}`, { href: portariaLink, target: '_blank', rel: 'noopener noreferrer' });
 
@@ -1006,33 +1013,25 @@
          
          container.appendChild(consolidatedDiv);
 
-
-        // 1. Tabela: ANEXO I - Agenda Regulatória 2026-2027
         renderRegulatoryTable(container, agendaRegulatoriaDetalhada, 'ANEXO I: Agenda Regulatória 2026-2027 (Atividades com previsão de norma)', true);
-        
-        // 2. Tabela: ANEXO II - Demais Atividades Regulatórias
         renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias para o Biênio 2026-2027');
-
-        // 3. Tabela: ANEXO III - Avaliações de Resultado Regulatório (ARR)
         renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
     }
 
-    // RENDER IMERSÃO - REATIVADO E ATUALIZADO PARA 2026
-     function renderImersaoPage(container) {
+    // RENDER IMERSÃO (Restored)
+    function renderImersaoPage(container) {
          container.innerHTML = '';
-         // Título simplificado conforme solicitado
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersões Presenciais - 2026');
          container.appendChild(pageTitle);
          
          const introText = createElement('p', 'text-lg text-i4-text-gray mb-6', 'Confira o calendário oficial das nossas imersões presenciais para o ano de 2026. Programe-se!');
          container.appendChild(introText);
 
-         // GRID DE IMERSÕES (Movido para cima conforme solicitado)
          const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-3 gap-6 mb-10');
          const imersoes = [
             {
                 cidade: "Brasília",
-                data: "20 a 24 de abril de 2026",
+                data: "13 a 17 de abril de 2026",
                 local: "A definir",
                 status: "Agendado"
             },
@@ -1079,7 +1078,6 @@
          });
          container.appendChild(grid);
 
-         // Bloco de Logística (Link da Planilha) - MOVIDO PARA BAIXO
          const logisticsDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-6');
          
          const logisticsTextContent = createElement('div', 'flex-1 text-center md:text-left');
@@ -1089,11 +1087,8 @@
          logisticsTextContent.appendChild(logisticsDesc);
 
          const buttonsContainer = createElement('div', 'flex flex-col sm:flex-row gap-3 w-full md:w-auto');
-
-         // Links das planilhas
          const linkSPtoBSB = "https://docs.google.com/spreadsheets/d/1yoYBqXJH7QGZu6b0WYMrf21F6u3cn29KliKH25ZYg1M/edit#gid=0";
          const linkBSBtoSP = "https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit#gid=820541553";
-
          const btnStyle = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center shadow-sm text-sm whitespace-nowrap';
 
          const button1 = createElement('a', btnStyle, `${icons.link} Planilha SP ➔ BSB`, { href: linkSPtoBSB, target: '_blank', rel: 'noopener noreferrer' });
