@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Dashboard ANEEL - Pautas e Consultas</title>
+  <title>Dashboard ANEEL - 1º Circuito Deliberativo 2026</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -190,8 +190,7 @@
   <div id="app-container"></div>
 
   <script>
-    // --- FUNÇÕES HELPER (ESSENCIAIS - DEFINIDAS NO INÍCIO) ---
-    // Estas funções devem vir antes de qualquer código que as chame.
+    // --- FUNÇÕES HELPER ---
     function createElement(tag, classes, textContent, attributes = {}) {
         const element = document.createElement(tag);
         if (classes) element.className = classes;
@@ -238,7 +237,7 @@
 
     // --- DADOS E CONSTANTES ---
     const pautaStatusMap = {
-      scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
+      scheduled: { text: "Em Pauta", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800 border border-green-200" },
       denied: { text: "Negado", classes: "bg-red-100 text-red-800 border border-red-200" },
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
@@ -253,7 +252,7 @@
     };
     
     // DATAS
-    const rpo2_2026DateText = '27 de janeiro de 2026';
+    const circuito1_2026DateText = '03 de fevereiro de 2026';
     
     // Links gerais
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
@@ -269,106 +268,94 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         youtube: `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>`,
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
+        filePdf: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`,
     };
 
-    // --- DADOS DA 2ª RPO 2026 ---
-    const aneelAgendaRPO2_2026 = [
+    // --- DADOS DO 1º CIRCUITO DELIBERATIVO 2026 ---
+    const aneelAgendaCircuito1_2026 = [
         {
             originalItemNumber: 1,
-            process: "48500.000385/2022-14",
-            subject: "Resultado da Consulta Pública nº 8/2024, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da minuta de Resolução Normativa voltada para a implementação de ações para aumentar a satisfação do consumidor com a prestação dos serviços de distribuição de energia elétrica.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "A Diretoria, por unanimidade, decidiu aprovar Resolução Normativa com vistas a dispor ações para aumentar a satisfação dos consumidores e demais usuários com a prestação dos serviços de distribuição de energia elétrica, com efeitos a partir de 1º de janeiro de 2027.",
-            discussionDetails: "<strong>Sustentação Oral:</strong> Ricardo Brandão (ABRADEE) criticou a assimetria das curvas de incentivo e a calibração do consumidor.gov. <strong>Discussão:</strong> O Relator Fernando Mosna acolheu o pleito sobre a 'banda neutra', ajustando o voto para garantir resultado nulo (0%) na faixa de variação do IASC entre -3% e +3%.",
-            links: [
-                {title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.900385-2022-14.pdf"},
-                {title: "Consulta Pública", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=xJ8VzMus&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3852&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
-            ],
-            consultaPublicaLink: ""
-        },
-        {
-            originalItemNumber: 2,
-            process: "48500.000730/2023-09",
-            subject: "Resultado da Consulta Pública nº 3/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação sobre o compartilhamento de Outras Receitas no segmento de Distribuição de Energia Elétrica, conforme previsto nos submódulos 2.7 e 2.7A dos Procedimentos de Regulação Tarifária – PRORET.",
+            process: "48500.034297/2025-69",
+            subject: "Sandbox Tarifário, proposto pela Equatorial Alagoas Distribuidora de Energia S.A – Equatorial AL, com vistas à integração eficiente de recursos energéticos distribuídos.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "A Diretoria, por unanimidade, decidiu aprimorar a regulação sobre o compartilhamento de Outras Receitas e as novas versões dos Submódulos 2.7 e 2.7A do PRORET, nos termos da Nota Técnica nº 142/2025-STR/ANEEL e com as modificações apresentadas nas Seções II.3.2 e II.3.3 do voto do Diretor-Relator.",
-            discussionDetails: "<strong>Apresentação Técnica:</strong> Recomendou compartilhar 50% da receita incremental. <strong>Discussão:</strong> O Relator Fernando Mosna alterou a proposta: (1) Revisão dos percentuais de inovação após 5 anos com dados reais; (2) Manutenção do compartilhamento de 60% para infraestrutura (postes) até definição de preço regulado conjunto com Anatel.",
-            links: [
-                {title: "Consulta Pública", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=zRAuBhIn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3910&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
-            ],
-            consultaPublicaLink: ""
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.037166/2025-33",
-            subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "withdrawn",
-            votoSummary: "O processo foi retirado de pauta na fase de debate dos Diretores.",
-            links: [
-                {title: "Consulta Pública", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=zRAuBhIn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
-            ],
-            consultaPublicaLink: ""
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.002339/2024-11",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública (nº 1/2026), na modalidade intercâmbio documental, no período de 29 de janeiro a 16 de março de 2026, com vistas a receber subsídios sobre a avaliação dos sistemas de medição para transição energética e modernização na distribuição.",
-            discussionDetails: "<strong>Discussão:</strong> O Relator Fernando Mosna dispensou a leitura do relatório e fundamentação, indo direto ao dispositivo. Aprovada a abertura da CP por unanimidade.",
-            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/p48500.902339-2024-11.pdf"}]
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Trata-se da proposta da Equatorial AL para implementação de um Sandbox Tarifário focado em Recursos Energéticos Distribuídos (REDs). A minuta de voto do Diretor-Relator propõe a <strong>aprovação do projeto piloto</strong>, estabelecendo as condições e regras específicas para sua execução, visando coletar dados empíricos sobre a eficiência e impactos de novos modelos tarifários na integração de REDs na rede de distribuição.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034297-2025-69.pdf"}]
         },
         {
             originalItemNumber: 6,
-            process: "48500.001526/2023-05",
-            subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A., em face do Despacho nº 3.309/2024, que negou provimento ao pedido de Revisão Tarifária Extraordinária apresentado pela Recorrente, com vistas à alteração dos percentuais de perdas não técnicas definidos na Revisão Tarifária Periódica de 2022.",
+            process: "48500.005553/2023-49, 48500.005554/2023-93, 48500.005555/2023-38",
+            subject: "Recurso Administrativo interposto pela Companhia Estadual de Transmissão de Energia Elétrica – CEEE-T em face do Despacho nº 1.347/2024, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que autorizou a Recorrente a implantar os reforços em instalação de transmissão de energia elétrica sob sua responsabilidade.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Ricardo Lavorato Tili",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "A Diretoria, por maioria, vencido o Diretor-Relator Ricardo Lavorato Tili e acompanhando o voto-vista da Diretora Ludimila Lima da Silva, decidiu conhecer e, no mérito, negar provimento ao Pedido de Reconsideração da Light.",
-            discussionDetails: "<strong>Contexto:</strong> Light alegava desequilíbrio por metas de perdas e glossas. <strong>Discussão:</strong> Prevaleceu o entendimento (votos de vista e área técnica) de ausência de fato gerador para Revisão Tarifária Extraordinária. O Diretor Mosna reforçou que os cálculos não indicaram desequilíbrio.",
-            links: []
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> O processo analisa recurso da CEEE-T contra decisão da SCE sobre autorização de reforços. A transmissora contesta parâmetros definidos no Despacho nº 1.347/2024. A minuta de voto da Relatora Agnes propõe <strong>conhecer e, no mérito, negar provimento</strong> ao recurso, mantendo os termos da autorização original e os valores de RAP definidos pela área técnica.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.905553-2023-49.pdf"}]
         },
         {
-            originalItemNumber: 10,
-            process: "48500.027334/2025-82",
-            subject: "Estabelecimento da Receita Fixa das Centrais de Geração Nucleoelétricas – UTNs Angra 1 e 2, a vigorar a partir de 1º de janeiro de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            votoSummary: "A Diretoria, por unanimidade, decidiu aprovar a Receita Fixa das UTNs Angra 1 e 2 para 2026 no valor de R$ 4.814.184.419,33 (tarifa de repasse de R$ 361,56/MWh), fixar o montante anual de energia em 13.315.067 MWh e estabelecer o Fator de Ajuste de Mercado.",
-            discussionDetails: "<strong>Discussão:</strong> Item deliberado em bloco, sem discussão individualizada ou sustentação oral registrada.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027334-2025-82.pdf"}]
+            originalItemNumber: 7,
+            process: "48500.002887/2024-41",
+            subject: "Recurso Administrativo interposto pela Portocém Geração de Energia S.A. em face do Despacho nº 3.250/2024, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de isenção de pagamento de encargos relacionados à descontratação de ponto de conexão do Contrato de Uso do Sistema de Transmissão – CUST nº 141/2023.",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
+            relator: "Agnes Maria de Aragão da Costa",
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Julgamento do recurso da Portocém solicitando isenção de encargos de descontratação do CUST. A discussão gira em torno da responsabilidade pelos custos de uso do sistema. A minuta original da Relatora propõe <strong>negar provimento</strong>, mantendo a cobrança. O Diretor Gentil apresenta voto-vista para aprofundar a análise sobre a aplicabilidade da isenção pleiteada.",
+            links: [
+                {title: "Minutas de voto e ato (Original)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_votooriginal.pdf"},
+                {title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_voto-vista.pdf"}
+            ]
+        },
+        {
+            originalItemNumber: 9,
+            process: "48500.034576/2025-22",
+            subject: "Recurso Administrativo interposto pela Centrais Elétricas do Norte do Brasil S.A. – Eletronorte em face do Despacho nº 3.463/2025, emitido pela SCE, que autorizou a Recorrente a implantar Reforços de Grande Porte em instalações de transmissão e estabeleceu valores de RAP.",
+            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A Eletronorte recorre contra os valores de Receita Anual Permitida (RAP) e condições estabelecidas para reforços de grande porte. A minuta de voto do Relator Willamy analisa os custos de investimento apresentados versus os regulatórios e propõe <strong>conhecer e negar provimento</strong> ao recurso, ratificando os cálculos da área técnica (SCE).",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034576-2025-22_recursoadm.pdf"}]
         },
         {
             originalItemNumber: 11,
-            process: "48500.000894/2024-17",
-            subject: "Recurso Administrativo interposto pela Russas Energia Solar SPE Ltda. em face do Despacho nº 1.280/2024, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pleito formulado pela Recorrente de postergação de início de contratação dos Contratos de Uso do Sistema de Transmissão – CUSTs nº 11/2023, nº 12/2023, nº 13/2023 e nº 14/2023.",
+            process: "48500.008869/2025-54",
+            subject: "Pedido de Reconsideração interposto pela Guaraciaba Transmissora de Energia S.A. – TP Sul em face da Resolução Autorizativa nº 16.080/2025, que autorizou a Recorrente a implantar Reforços de Grande Porte e estabeleceu valores de RAP.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            votoSummary: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo e, no mérito, negar-lhe provimento.",
-            discussionDetails: "<strong>Discussão:</strong> Item deliberado em bloco, sem discussão individualizada ou sustentação oral registrada.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900894-2024-17.pdf"}]
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A TP Sul solicita reconsideração sobre a resolução que autorizou reforços, questionando prazos ou valores de RAP. A minuta de voto da Relatora Agnes propõe <strong>conhecer e negar provimento</strong> ao pedido, mantendo a Resolução Autorizativa nº 16.080/2025 inalterada por entender que seguiu a metodologia vigente.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.008869-2025-54.pdf"}]
         },
         {
-            originalItemNumber: 23,
-            process: "48500.038659/2025-91",
-            subject: "Pedido de Medida Cautelar protocolado pela Assembleia Legislativa do Estado do Mato Grosso com vistas à suspensão da prorrogação do Contrato de Concessão de Distribuição nº 3/1997 até que sejam avaliadas pela ANEEL as adequações apontadas pela Requerente por intermédio da Comissão Parlamentar de Inquérito – CPI a respeito da prestação de serviço da Energisa Mato Grosso – Distribuidora de Energia S.A. – EMT.",
+            originalItemNumber: 12,
+            process: "48500.034576/2025-22",
+            subject: "Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil S.A. – Eletronorte em face da Resolução Autorizativa nº 16.588/2025, que autorizou a Recorrente a implantar os Reforços de Grande Porte e estabeleceu valores de RAP.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Pedido de Reconsideração da Eletronorte referente a outra autorização de reforços (Res. 16.588/2025). A minuta de voto do Relator Willamy avalia os argumentos sobre o equilíbrio econômico-financeiro dos reforços e propõe <strong>conhecer e negar provimento</strong> ao pedido, mantendo a decisão anterior.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034576-2025-22_pedidorecon.pdf"}]
+        },
+        {
+            originalItemNumber: 13,
+            process: "48500.034598/2025-92",
+            subject: "Pedido de Reconsideração interposto pela Cemig Geração e Transmissão S.A. em face da Resolução Autorizativa nº 16.591/2025, que autorizou a Recorrente a implantar Reforços e estabeleceu valores de RAP.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "withdrawn",
-            votoSummary: "O processo foi retirado da Pauta.",
-            links: []
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A Cemig GT contesta a resolução autorizativa de reforços. A análise foca na adequação dos custos e cronogramas aprovados. A minuta de voto do Relator Gentil propõe <strong>conhecer e negar provimento</strong> ao pedido de reconsideração, confirmando os parâmetros técnicos e econômicos da resolução original.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034598-2025-92.pdf"}]
+        },
+        {
+            originalItemNumber: 14,
+            process: "48500.038659/2025-91",
+            subject: "Pedido de Medida Cautelar protocolado pela Assembleia Legislativa do Estado do Mato Grosso com vistas à suspensão da prorrogação do Contrato de Concessão de Distribuição nº 3/1997, até que sejam avaliadas pela ANEEL as adequações apontadas pela Requerente por intermédio da Comissão Parlamentar de Inquérito – CPI a respeito da prestação de serviço da Energisa Mato Grosso – Distribuidora de Energia S.A. – EMT.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A ALMT requer cautelarmente a suspensão da prorrogação da concessão da Energisa MT, baseada em apontamentos de CPI sobre a qualidade do serviço. A minuta de voto do Relator Gentil analisa os requisitos para cautelar (fumus boni iuris e periculum in mora) e propõe <strong>indeferir o pedido</strong>, mantendo o trâmite regular do processo de prorrogação conforme as regras do Decreto nº 12.068/2024.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.038659-2025-91.pdf"}]
         }
     ];
 
@@ -701,23 +688,24 @@
         container.appendChild(tableContainer);
     }
     
-    // --- RENDER 2ª RPO 2026 (NOVA) ---
-    function renderRpo22026Page(container) {
+    // --- RENDER 1º CIRCUITO DELIBERATIVO 2026 (NOVA) ---
+    function renderCircuito12026Page(container) {
         container.innerHTML = '';
 
         // TÍTULO
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 2ª Reunião Pública Ordinária de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo2_2026DateText} | Início: 9h`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 1º Circuito Deliberativo de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito1_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
-        // Link Transmissão
-        const youtubeSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.youtube} Assistir no YouTube`, { href: "https://www.youtube.com/live/83fLzZL2WIk?si=MXevS9YNLjH_lMWE", target: '_blank', rel: 'noopener noreferrer' });
-        youtubeSection.appendChild(youtubeText);
-        youtubeSection.appendChild(youtubeLinkAnchor);
-        container.appendChild(youtubeSection);
+        // Link Transmissão (Removido pois é Circuito Deliberativo)
+        const convocacaoSection = createElement('div', 'mb-10 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acompanhe a convocação da reunião');
+        // Link fictício ou para a página geral de reuniões, já que circuitos não têm live
+        const convocacaoLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ver Convocação`, { href: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0282042_convocacao.pdf", target: '_blank', rel: 'noopener noreferrer' });
+        convocacaoSection.appendChild(convocacaoText);
+        convocacaoSection.appendChild(convocacaoLinkAnchor);
+        container.appendChild(convocacaoSection);
 
         // Sumário da Pauta
         const summaryDiv = createElement('div', 'info-card mb-10');
@@ -729,16 +717,16 @@
         
         // Função para resumir assuntos com siglas
         const getSummarySubject = (item) => {
-             // Regras específicas para itens conhecidos da 2ª RPO
+             // Regras específicas para itens conhecidos do 1º Circuito
              switch (item.originalItemNumber) {
-                case 1: return "Resultado CP 8/2024 - Satisfação do Consumidor";
-                case 2: return "Resultado CP 3/2025 - Compartilhamento de Outras Receitas";
-                case 3: return "Resultado CP 47/2025 - Rateio CDE/UBP";
-                case 4: return "Abertura CP - Sistemas de Medição";
-                case 6: return "Reconsideração Light - Perdas Não Técnicas";
-                case 10: return "Receita Fixa Angra 1 e 2 - 2026";
-                case 11: return "Recurso Russas Energia Solar - CUSTs";
-                case 23: return "Cautelar Energisa MT - Suspensão Prorrogação";
+                case 1: return "Sandbox Tarifário - Equatorial AL";
+                case 6: return "Recurso CEEE-T (Reforços)";
+                case 7: return "Recurso Portocém (Descontratação)";
+                case 9: return "Recurso Eletronorte (Reforços)";
+                case 11: return "Reconsideração TP Sul (Reforços/RAP)";
+                case 12: return "Reconsideração Eletronorte (Reforços/RAP)";
+                case 13: return "Reconsideração Cemig GT (Reforços/RAP)";
+                case 14: return "Cautelar Energisa MT (Prorrogação Concessão)";
             }
             
             const maxLength = 85;
@@ -750,7 +738,7 @@
         };
 
         // Ordena por número do item e cria lista do sumário
-        aneelAgendaRPO2_2026.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        aneelAgendaCircuito1_2026.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
             
             const itemNumber = `Item ${item.originalItemNumber}:`;
@@ -774,7 +762,7 @@
 
         // Grid de Itens da Pauta
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgendaRPO2_2026.forEach(item => {
+        aneelAgendaCircuito1_2026.forEach(item => {
             const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
 
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
@@ -1133,14 +1121,13 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
       // BOTÕES DE NAVEGAÇÃO
-      const rpo2Button = createElement('button', 'nav-button-base nav-button-inactive', '2ª RPO 2026'); // NOVA (Ativa)
-      // Botão da 1ª RPO REMOVIDO conforme solicitado
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '1º Circuito 2026'); // NOVA (Ativa)
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
 
-      // Ordem dos botões: RPO 2 (padrão), CPs, Agenda, Imersões
-      navContainer.append(rpo2Button, consultasAbertasButton, agendaButton, imersaoButton);
+      // Ordem dos botões: Circuito (padrão), CPs, Agenda, Imersões
+      navContainer.append(circuitoButton, consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1157,7 +1144,7 @@
       appContainer.appendChild(footer);
 
       // Listeners e Gerenciamento de Estado
-      const buttons = [rpo2Button, consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [circuitoButton, consultasAbertasButton, agendaButton, imersaoButton];
       
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
@@ -1169,14 +1156,14 @@
       }
 
       // Configuração dos Eventos de Clique
-      rpo2Button.addEventListener('click', () => { setActiveButton(rpo2Button); renderPageWithAnimation(renderRpo22026Page, contentContainer); });
+      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderPageWithAnimation(renderCircuito12026Page, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
 
-      // Renderização Inicial (Pauta 2ª RPO como padrão)
-      setActiveButton(rpo2Button);
-      renderPageWithAnimation(renderRpo22026Page, contentContainer);
+      // Renderização Inicial (1º Circuito como padrão)
+      setActiveButton(circuitoButton);
+      renderPageWithAnimation(renderCircuito12026Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
