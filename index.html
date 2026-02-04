@@ -359,7 +359,60 @@
 
     // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
+         // Nova TS 004/2026
+         {
+            numero: "TS 004/2026",
+            tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, de 16 de novembro de 2021, que trata da avaliação da qualidade dos sistemas de governança corporativa dos agentes de distribuição de energia elétrica.",
+            status: "aberta",
+            inicio: "30/01/2026",
+            fim: "16/03/2026",
+            area: "SFF",
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+         // Nova TS 001/2026
+         {
+            numero: "TS 001/2026",
+            tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.",
+            status: "aberta",
+            inicio: "20/01/2026",
+            fim: "18/02/2026",
+            area: "SCE",
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
+         // Nova CP 001/2026
+         {
+            numero: "CP 001/2026",
+            tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\" prevista na Agenda Regulatória.",
+            status: "aberta",
+            inicio: "29/01/2026",
+            fim: "16/03/2026",
+            area: "STD-SFF-STR",
+            origem: "ANEEL",
+            link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
+        },
          // CPs do MME
+         {
+            numero: "CP 213/2026",
+            tema: "Minuta de Portaria para revisão e atualização do conteúdo da Portaria MME nº 331, de julho de 2005.",
+            status: "aberta",
+            inicio: "30/01/2026",
+            fim: "28/02/2026",
+            area: "SNTEP/DIEE/CGII",
+            origem: "MME",
+            link: "https://consultas-publicas.mme.gov.br/home"
+        },
+         {
+            numero: "CP 212/2026",
+            tema: "Diretrizes gerais para antecipação dos contratos de projetos vencedores do Leilão de Reserva de Capacidade na forma de Energia (LRCE) e do Leilão de Reserva de Capacidade na forma de Potência (LRCAP).",
+            status: "aberta",
+            inicio: "23/01/2026",
+            fim: "11/02/2026",
+            area: "DDOS/SNEE",
+            origem: "MME",
+            link: "https://consultas-publicas.mme.gov.br/home"
+        },
          {
             numero: "CP 201/2025",
             tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.",
@@ -370,7 +423,7 @@
             origem: "MME",
             link: mmeConsultaLink
         },
-        {
+         {
             numero: "CP 202/2025",
             tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).",
             status: "aberta",
@@ -932,10 +985,11 @@
                 const tr = createElement('tr', 'hover:bg-i4-light-gray');
                 tr.innerHTML = `
                     <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
-                    <td class="px-6 py-4">${cp.tema}</td>
-                    <td class="px-6 py-4"></td>
+                    <td class="px-6 py-4">${cp.origem || 'ANEEL'}</td>
+                    <td class="px-6 py-4 min-w-[300px]">${cp.tema}</td>
+                    <td class="px-6 py-4"></td> <!-- Status placeholder -->
                     <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
-                    <td class="px-6 py-4 whitespace-nowrap"></td>
+                    <td class="px-6 py-4 whitespace-nowrap"></td> <!-- Prazo placeholder -->
                     <td class="px-6 py-4">${cp.area}</td>
                     <td class="px-6 py-4">
                         <a href="${cp.link}" target="_blank" rel="noopener noreferrer" class="group font-medium text-i4-blue hover:text-blue-700 inline-flex items-center">
@@ -943,8 +997,8 @@
                         </a>
                     </td>
                 `;
-                tr.children[2].appendChild(createStatusBadge(cp.status, consultaStatusMap));
-                tr.children[4].innerHTML = calculateDays(cp.fim);
+                tr.children[3].appendChild(createStatusBadge(cp.status, consultaStatusMap));
+                tr.children[5].innerHTML = calculateDays(cp.fim);
                 tbody.appendChild(tr);
             });
         }
@@ -1168,3 +1222,4 @@
   </script>
 </body>
 </html>
+}
