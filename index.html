@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Dashboard ANEEL - 1º Circuito Deliberativo 2026</title>
+  <title>Resultados - 1º Circuito Deliberativo 2026</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -239,7 +239,7 @@
     const pautaStatusMap = {
       scheduled: { text: "Em Pauta", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800 border border-green-200" },
-      denied: { text: "Negado", classes: "bg-red-100 text-red-800 border border-red-200" },
+      denied: { text: "Negado / Não Conhecido", classes: "bg-red-100 text-red-800 border border-red-200" }, // Mantido para referência, mas itens decididos usarão 'approved'
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800 border border-yellow-200" },
       suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800 border border-orange-200" },
@@ -266,12 +266,10 @@
         building: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`,
         clipboard: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></path></svg>`,
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
-        youtube: `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>`,
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
-        filePdf: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`,
     };
 
-    // --- DADOS DO 1º CIRCUITO DELIBERATIVO 2026 ---
+    // --- DADOS DO 1º CIRCUITO DELIBERATIVO 2026 - ATUALIZADO COM RESULTADOS ---
     const aneelAgendaCircuito1_2026 = [
         {
             originalItemNumber: 1,
@@ -279,29 +277,29 @@
             subject: "Sandbox Tarifário, proposto pela Equatorial Alagoas Distribuidora de Energia S.A – Equatorial AL, com vistas à integração eficiente de recursos energéticos distribuídos.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Trata-se da proposta da Equatorial AL para implementação de um Sandbox Tarifário focado em Recursos Energéticos Distribuídos (REDs). A minuta de voto do Diretor-Relator propõe a <strong>aprovação do projeto piloto</strong>, estabelecendo as condições e regras específicas para sua execução, visando coletar dados empíricos sobre a eficiência e impactos de novos modelos tarifários na integração de REDs na rede de distribuição.",
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria, por unanimidade, decidiu: (i) autorizar a criação do ambiente regulatório experimental e temporário para que a Equatorial Alagoas execute a proposta de Sandbox Tarifário; (ii) delegar competência à STR para publicação das tarifas experimentais; e (iii) determinar o acompanhamento pelo Projeto de P&D Governança de Sandboxes Tarifários.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034297-2025-69.pdf"}]
         },
         {
             originalItemNumber: 6,
             process: "48500.005553/2023-49, 48500.005554/2023-93, 48500.005555/2023-38",
-            subject: "Recurso Administrativo interposto pela Companhia Estadual de Transmissão de Energia Elétrica – CEEE-T em face do Despacho nº 1.347/2024, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que autorizou a Recorrente a implantar os reforços em instalação de transmissão de energia elétrica sob sua responsabilidade.",
+            subject: "Recurso Administrativo interposto pela Companhia Estadual de Transmissão de Energia Elétrica – CEEE-T em face do Despacho nº 1.347/2024, emitido pela SCE.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> O processo analisa recurso da CEEE-T contra decisão da SCE sobre autorização de reforços. A transmissora contesta parâmetros definidos no Despacho nº 1.347/2024. A minuta de voto da Relatora Agnes propõe <strong>conhecer e, no mérito, negar provimento</strong> ao recurso, mantendo os termos da autorização original e os valores de RAP definidos pela área técnica.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.905553-2023-49.pdf"}]
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria decidiu conhecer e, no mérito, dar <strong>parcial provimento</strong> ao recurso, alterando de 30 para 36 meses o prazo para entrada em operação comercial dos empreendimentos T2024-120 e T2024-121, mantendo as demais alterações do Despacho nº 3.303/2024.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.905553-2023-499.pdf"}]
         },
         {
             originalItemNumber: 7,
             process: "48500.002887/2024-41",
-            subject: "Recurso Administrativo interposto pela Portocém Geração de Energia S.A. em face do Despacho nº 3.250/2024, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de isenção de pagamento de encargos relacionados à descontratação de ponto de conexão do Contrato de Uso do Sistema de Transmissão – CUST nº 141/2023.",
+            subject: "Recurso Administrativo interposto pela Portocém Geração de Energia S.A. em face do Despacho nº 3.250/2024 (isenção de encargos CUST).",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Agnes Maria de Aragão da Costa",
             votoVistaRelator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Julgamento do recurso da Portocém solicitando isenção de encargos de descontratação do CUST. A discussão gira em torno da responsabilidade pelos custos de uso do sistema. A minuta original da Relatora propõe <strong>negar provimento</strong>, mantendo a cobrança. O Diretor Gentil apresenta voto-vista para aprofundar a análise sobre a aplicabilidade da isenção pleiteada.",
+            status: "view_request",
+            votoSummary: "<strong>Situação:</strong> O Diretor Willamy Moreira Frota pediu vista do processo (vista coletiva).<br><strong>Histórico de Votos:</strong> A Relatora (Agnes) votou por dar parcial provimento (fator de redução de 57,9%). O Diretor Gentil apresentou voto-vista por parcial provimento (limite de 3 EUSTs).",
             links: [
                 {title: "Minutas de voto e ato (Original)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_votooriginal.pdf"},
                 {title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_voto-vista.pdf"}
@@ -310,51 +308,51 @@
         {
             originalItemNumber: 9,
             process: "48500.034576/2025-22",
-            subject: "Recurso Administrativo interposto pela Centrais Elétricas do Norte do Brasil S.A. – Eletronorte em face do Despacho nº 3.463/2025, emitido pela SCE, que autorizou a Recorrente a implantar Reforços de Grande Porte em instalações de transmissão e estabeleceu valores de RAP.",
+            subject: "Recurso Administrativo interposto pela Eletronorte em face do Despacho nº 3.463/2025 (Reforços de Grande Porte e RAP).",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A Eletronorte recorre contra os valores de Receita Anual Permitida (RAP) e condições estabelecidas para reforços de grande porte. A minuta de voto do Relator Willamy analisa os custos de investimento apresentados versus os regulatórios e propõe <strong>conhecer e negar provimento</strong> ao recurso, ratificando os cálculos da área técnica (SCE).",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034576-2025-22_recursoadm.pdf"}]
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria, por unanimidade, decidiu conhecer e, no mérito, <strong>negar provimento</strong> ao recurso, mantendo a decisão quanto à postergação de prazos dos empreendimentos T2025-088, T2025-091 e T2025-092 e a não inclusão de conexão no T2025-091.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034576-2025-222_recursoadm.pdf"}]
         },
         {
             originalItemNumber: 11,
             process: "48500.008869/2025-54",
-            subject: "Pedido de Reconsideração interposto pela Guaraciaba Transmissora de Energia S.A. – TP Sul em face da Resolução Autorizativa nº 16.080/2025, que autorizou a Recorrente a implantar Reforços de Grande Porte e estabeleceu valores de RAP.",
+            subject: "Pedido de Reconsideração interposto pela Guaraciaba Transmissora de Energia S.A. – TP Sul em face da Resolução Autorizativa nº 16.080/2025.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A TP Sul solicita reconsideração sobre a resolução que autorizou reforços, questionando prazos ou valores de RAP. A minuta de voto da Relatora Agnes propõe <strong>conhecer e negar provimento</strong> ao pedido, mantendo a Resolução Autorizativa nº 16.080/2025 inalterada por entender que seguiu a metodologia vigente.",
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria, por unanimidade, decidiu conhecer e, no mérito, <strong>negar provimento</strong> ao Pedido de Reconsideração, mantendo a Resolução Autorizativa nº 16.080/2025 inalterada.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.008869-2025-54.pdf"}]
         },
         {
             originalItemNumber: 12,
             process: "48500.034576/2025-22",
-            subject: "Pedido de Reconsideração interposto pelas Centrais Elétricas do Norte do Brasil S.A. – Eletronorte em face da Resolução Autorizativa nº 16.588/2025, que autorizou a Recorrente a implantar os Reforços de Grande Porte e estabeleceu valores de RAP.",
+            subject: "Pedido de Reconsideração interposto pela Eletronorte em face da Resolução Autorizativa nº 16.588/2025 (Reforços de Grande Porte e RAP).",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> Pedido de Reconsideração da Eletronorte referente a outra autorização de reforços (Res. 16.588/2025). A minuta de voto do Relator Willamy avalia os argumentos sobre o equilíbrio econômico-financeiro dos reforços e propõe <strong>conhecer e negar provimento</strong> ao pedido, mantendo a decisão anterior.",
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> Diferente da proposta inicial, a Diretoria decidiu, por unanimidade, conhecer e, no mérito, <strong>dar provimento</strong> ao Pedido de Reconsideração da Eletronorte.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034576-2025-22_pedidorecon.pdf"}]
         },
         {
             originalItemNumber: 13,
             process: "48500.034598/2025-92",
-            subject: "Pedido de Reconsideração interposto pela Cemig Geração e Transmissão S.A. em face da Resolução Autorizativa nº 16.591/2025, que autorizou a Recorrente a implantar Reforços e estabeleceu valores de RAP.",
+            subject: "Pedido de Reconsideração interposto pela Cemig Geração e Transmissão S.A. em face da Resolução Autorizativa nº 16.591/2025.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A Cemig GT contesta a resolução autorizativa de reforços. A análise foca na adequação dos custos e cronogramas aprovados. A minuta de voto do Relator Gentil propõe <strong>conhecer e negar provimento</strong> ao pedido de reconsideração, confirmando os parâmetros técnicos e econômicos da resolução original.",
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> Diferente da proposta inicial, a Diretoria decidiu, por unanimidade, conhecer e, no mérito, <strong>dar provimento</strong> ao pedido, alterando os Anexos I, II e III da Resolução Autorizativa nº 16.591/2025.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034598-2025-92.pdf"}]
         },
         {
             originalItemNumber: 14,
             process: "48500.038659/2025-91",
-            subject: "Pedido de Medida Cautelar protocolado pela Assembleia Legislativa do Estado do Mato Grosso com vistas à suspensão da prorrogação do Contrato de Concessão de Distribuição nº 3/1997, até que sejam avaliadas pela ANEEL as adequações apontadas pela Requerente por intermédio da Comissão Parlamentar de Inquérito – CPI a respeito da prestação de serviço da Energisa Mato Grosso – Distribuidora de Energia S.A. – EMT.",
+            subject: "Pedido de Medida Cautelar protocolado pela Assembleia Legislativa do Estado do Mato Grosso com vistas à suspensão da prorrogação do Contrato de Concessão da Energisa MT.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão e Decisão Proposta:</strong> A ALMT requer cautelarmente a suspensão da prorrogação da concessão da Energisa MT, baseada em apontamentos de CPI sobre a qualidade do serviço. A minuta de voto do Relator Gentil analisa os requisitos para cautelar (fumus boni iuris e periculum in mora) e propõe <strong>indeferir o pedido</strong>, mantendo o trâmite regular do processo de prorrogação conforme as regras do Decreto nº 12.068/2024.",
+            status: "approved",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria, por unanimidade, decidiu <strong>não conhecer</strong> do pedido cautelar por perda de objeto (prejudicialidade), encaminhando o processo ao MME para ciência e avaliação.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.038659-2025-91.pdf"}]
         }
     ];
@@ -693,7 +691,7 @@
         container.innerHTML = '';
 
         // TÍTULO
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 1º Circuito Deliberativo de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 1º Circuito Deliberativo de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito1_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
