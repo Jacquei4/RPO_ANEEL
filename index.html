@@ -351,7 +351,7 @@
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
             status: "approved",
-            votoSummary: "<strong>Situação:</strong> Aprovado conforme votos das áreas técnicas e relatores (Item de Bloco).",
+            votoSummary: "<strong>Decisão:</strong> A Diretoria, por unanimidade, decidiu conhecer e, no mérito, negar provimento ao Requerimento Administrativo protocolado pela Interligação Elétrica Tibagi S.A. – IE Tibagi, com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 6/2020-ANEEL...",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901347-2024-41.pdf"}]
         }
     ];
@@ -1057,8 +1057,9 @@
             {
                 cidade: "Brasília",
                 data: "13 a 17 de abril de 2026",
-                local: "A definir",
-                status: "Agendado"
+                local: "Coworking 4Work<br><span class='text-sm font-normal'>SAUS Q4 Bloco A, sala 601, Edifício Victoria Office Tower - Asa Sul</span>",
+                horario: "Seg-Qui: 8h às 18h | Sex: 8h às 17h",
+                status: "Confirmado"
             },
             {
                 cidade: "São Paulo",
@@ -1092,6 +1093,28 @@
                             <p class="text-i4-dark-gray font-medium text-lg">${imersao.data}</p>
                         </div>
                     </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Local</p>
+                            <p class="text-i4-dark-gray font-medium text-base">${imersao.local}</p>
+                        </div>
+                    </div>
+
+                    ${imersao.horario ? `
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Horário</p>
+                            <p class="text-i4-dark-gray font-medium text-base">${imersao.horario}</p>
+                        </div>
+                    </div>` : ''}
+
                 </div>
                 <div class="card-footer p-4 text-center bg-gray-50">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
@@ -1200,4 +1223,3 @@
   </script>
 </body>
 </html>
-
