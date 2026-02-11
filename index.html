@@ -1057,7 +1057,7 @@
             {
                 cidade: "Brasília",
                 data: "13 a 17 de abril de 2026",
-                local: "Coworking 4Work<br><span class='text-sm font-normal'>SAUS Q4 Bloco A, sala 601, Edifício Victoria Office Tower - Asa Sul</span>",
+                local: "<a href='https://4work.space/' target='_blank' rel='noopener noreferrer' class='text-i4-blue hover:underline hover:text-blue-800 transition-colors'>Coworking 4Work</a><br><span class='text-sm font-normal text-gray-600'>SAUS Q4 Bloco A, sala 601, Edifício Victoria Office Tower - Asa Sul</span>",
                 horario: "Seg-Qui: 8h às 18h | Sex: 8h às 17h",
                 status: "Confirmado"
             },
@@ -1085,7 +1085,7 @@
                 </div>
                 <div class="p-6 space-y-4 flex-grow">
                     <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue flex-shrink-0">
                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
                         <div>
@@ -1095,18 +1095,18 @@
                     </div>
                     
                     <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue flex-shrink-0">
                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Local</p>
-                            <p class="text-i4-dark-gray font-medium text-base">${imersao.local}</p>
+                            <div class="text-i4-dark-gray font-medium text-base leading-snug">${imersao.local}</div>
                         </div>
                     </div>
 
                     ${imersao.horario ? `
                     <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue flex-shrink-0">
                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
