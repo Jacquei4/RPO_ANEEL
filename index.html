@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation. Veja os resultados detalhados da 3ª Reunião Pública Ordinária de 2026.">
-  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, RPO, resultados">
+  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation. Veja a pauta da 2ª RPE e os resultados da 3ª RPO de 2026.">
+  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, RPO, resultados, RPE">
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Resultados - 3ª RPO 2026</title>
+  <title>Dashboard ANEEL 2026</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -253,6 +253,7 @@
     
     // DATAS
     const rpo3_2026DateText = '10 de fevereiro de 2026';
+    const rpe2_2026DateText = '13 de fevereiro de 2026';
     
     // Links gerais
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
@@ -355,6 +356,30 @@
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901347-2024-41.pdf"}]
         }
     ];
+    
+    // --- DADOS DA 2ª RPE DE 2026 - PAUTA ---
+    const aneelAgendaRPE2_2026 = [
+        {
+            originalItemNumber: 1,
+            process: "48500.032821/2025-67",
+            subject: "Aprovação do Edital do Leilão nº 2/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Gás Natural, Carvão Mineral e UHEs), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração novos e existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 35/2025.",
+            areaResponsible: "Secretaria de Leilões - SEL.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "", // REMOVIDO PARA CARD LIMPO
+            links: []
+        },
+        {
+            originalItemNumber: 2,
+            process: "48500.032822/2025-10",
+            subject: "Aprovação do Edital do Leilão nº 3/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Óleo e Biodiesel), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 36/2025.",
+            areaResponsible: "Secretaria de Leilões - SEL.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "", // REMOVIDO PARA CARD LIMPO
+            links: []
+        }
+    ];
 
     // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
@@ -442,7 +467,7 @@
             origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
-        {
+         {
             numero: "CP 35/2025",
             tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).",
             status: "aberta",
@@ -452,7 +477,7 @@
             origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
-        {
+         {
             numero: "CP 36/2025",
             tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).",
             status: "aberta",
@@ -462,7 +487,7 @@
             origem: "ANEEL",
             link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"
         },
-        {
+         {
             numero: "CP 37/2025",
             tema: "Rateio do custo e da geração de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).",
             status: "aberta",
@@ -890,6 +915,137 @@
         container.appendChild(agendaGrid);
     }
     
+    // --- RENDER 2ª RPE 2026 (NOVA) ---
+    function renderRPE22026Page(container) {
+        container.innerHTML = '';
+
+        // TÍTULO
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 2ª Reunião Pública Extraordinária de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpe2_2026DateText}`);
+        container.appendChild(pageTitle);
+        container.appendChild(pageDate);
+
+        // Link Transmissão YouTube (NOVO)
+        const youtubeSection = createElement('div', 'mb-6 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: "https://www.youtube.com/live/PtSzOQxp4BY?si=UEddvQjGJFlaiP1P", target: '_blank', rel: 'noopener noreferrer' });
+        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
+        
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
+
+        // Link Convocação
+        const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial (Convocação)');
+        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ver Arquivo`, { href: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0291517_convocacao.pdf", target: '_blank', rel: 'noopener noreferrer' });
+        convocacaoSection.appendChild(convocacaoText);
+        convocacaoSection.appendChild(convocacaoLinkAnchor);
+        container.appendChild(convocacaoSection);
+
+        // Sumário da Pauta (NOVO)
+        const summaryDiv = createElement('div', 'info-card mb-10');
+        const summaryHeader = createElement('div', 'card-header p-5');
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Sumário)'));
+        summaryDiv.appendChild(summaryHeader);
+
+        const summaryList = createElement('ul', 'space-y-1 p-3');
+        
+        // Função para resumir assuntos com siglas
+        const getSummarySubjectRPE2 = (item) => {
+            switch (item.originalItemNumber) {
+                case 1: return "Edital Leilão nº 2/2026 (LRCAP - UTEs Gás/Carvão e UHEs)";
+                case 2: return "Edital Leilão nº 3/2026 (LRCAP - UTEs Óleo e Biodiesel)";
+            }
+            return item.subject;
+        };
+
+        // Ordena por número do item e cria lista do sumário
+        aneelAgendaRPE2_2026.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
+            
+            const itemNumber = `Item ${item.originalItemNumber}:`;
+            
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
+            const itemNumberSpan = createElement('span', 'font-bold mr-2 text-i4-dark-gray', itemNumber);
+            const subjectSpan = createElement('span', '', getSummarySubjectRPE2(item));
+            itemLink.appendChild(itemNumberSpan);
+            itemLink.appendChild(subjectSpan);
+
+            const statusBadge = createStatusBadge(item.status || 'scheduled', pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
+
+            listItem.appendChild(itemLink);
+            listItem.appendChild(statusBadge);
+            summaryList.appendChild(listItem);
+        });
+        summaryDiv.appendChild(summaryList);
+        container.appendChild(summaryDiv);
+
+        // Grid de Itens da Pauta
+        const agendaGrid = createElement('div', 'space-y-8');
+        aneelAgendaRPE2_2026.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
+
+            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
+            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
+            
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            cardHeader.appendChild(h3Subject);
+            cardHeader.appendChild(createStatusBadge(item.status || 'scheduled', pautaStatusMap));
+            itemDiv.appendChild(cardHeader);
+
+            const cardBody = createElement('div', 'p-6 space-y-5');
+            const infoContainer = createElement('div', 'space-y-4');
+
+            const createInfoRow = (icon, label, value, tooltip = null) => {
+                 if (value == null || (typeof value === 'string' && value.trim() === '')) {
+                     return document.createDocumentFragment();
+                 }
+                 const row = createElement('div', 'flex flex-col md:flex-row');
+                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
+                 if (tooltip) {
+                     labelDiv.setAttribute('data-tooltip', tooltip);
+                 }
+                 labelDiv.innerHTML = icon + label;
+                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
+                 valueDiv.innerHTML = value;
+                 row.appendChild(labelDiv);
+                 row.appendChild(valueDiv);
+                 return row;
+             };
+
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
+            
+            if (item.relator !== "-") {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
+            }
+            if (item.areaResponsible !== "-") {
+                infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+            }
+            
+            cardBody.appendChild(infoContainer);
+
+            // Rodapé com links
+            if (item.links && item.links.length > 0) {
+                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
+                 cardBody.appendChild(separator);
+
+                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
+                 item.links.forEach(link => {
+                     const linkTitle = link.title;
+                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${linkTitle} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                     cardFooter.appendChild(linkAnchor);
+                 });
+                 cardBody.appendChild(cardFooter);
+            }
+
+            itemDiv.appendChild(cardBody);
+            agendaGrid.appendChild(itemDiv);
+        });
+        container.appendChild(agendaGrid);
+    }
+    
 
     // RENDER CONSULTAS ABERTAS
     function renderConsultasAbertasPage(container) {
@@ -1174,13 +1330,14 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
       // BOTÕES DE NAVEGAÇÃO
-      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3ª RPO 2026'); // NOVA (Ativa)
+      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3ª RPO 2026'); 
+      const rpe2Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 2ª RPE 2026'); // NOVA (Ativa por padrão)
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
 
-      // Ordem dos botões: RPO (padrão), CPs, Agenda, Imersões
-      navContainer.append(rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
+      // Ordem dos botões: RPE 2, RPO 3, CPs, Agenda, Imersões
+      navContainer.append(rpe2Button, rpoButton, consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       
       header.appendChild(headerContent);
@@ -1197,7 +1354,7 @@
       appContainer.appendChild(footer);
 
       // Listeners e Gerenciamento de Estado
-      const buttons = [rpoButton, consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [rpe2Button, rpoButton, consultasAbertasButton, agendaButton, imersaoButton];
       
       function setActiveButton(activeButton) {
           buttons.forEach(button => {
@@ -1210,13 +1367,14 @@
 
       // Configuração dos Eventos de Clique
       rpoButton.addEventListener('click', () => { setActiveButton(rpoButton); renderPageWithAnimation(renderRPO32026Page, contentContainer); });
+      rpe2Button.addEventListener('click', () => { setActiveButton(rpe2Button); renderPageWithAnimation(renderRPE22026Page, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
 
-      // Renderização Inicial (3ª RPO como padrão)
-      setActiveButton(rpoButton);
-      renderPageWithAnimation(renderRPO32026Page, contentContainer);
+      // Renderização Inicial (2ª RPE como padrão)
+      setActiveButton(rpe2Button);
+      renderPageWithAnimation(renderRPE22026Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
