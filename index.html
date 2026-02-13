@@ -357,7 +357,7 @@
         }
     ];
     
-    // --- DADOS DA 2ª RPE DE 2026 - PAUTA ---
+    // --- DADOS DA 2ª RPE DE 2026 - RESULTADOS ---
     const aneelAgendaRPE2_2026 = [
         {
             originalItemNumber: 1,
@@ -365,8 +365,9 @@
             subject: "Aprovação do Edital do Leilão nº 2/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Gás Natural, Carvão Mineral e UHEs), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração novos e existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 35/2025.",
             areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "", // REMOVIDO PARA CARD LIMPO
+            status: "approved",
+            votoSummary: "<strong>Contexto:</strong> Reunião de caráter urgente para alteração dos preços-teto conforme determinação do MME (Ofício nº 35/2026).<br><br><strong>Discussão e Alterações:</strong> O relator apresentou a nova tabela com aumentos expressivos para atrair investidores:<br>• Potência Termelétrica (Gás/Carvão) 2026/27: de R$ 1.120.000,00 para <strong>R$ 2.250.000,00</strong> por MW/ano.<br>• Novos Empreendimentos (2028-2031): de R$ 1.600.000,00 para <strong>R$ 2.900.000,00</strong>.<br>• Hidrelétricas: mantido em R$ 1.400.000,00.",
+            decision: "Aprovada por unanimidade a alteração do edital e a determinação para publicação imediata visando manter o cronograma do leilão.",
             links: []
         },
         {
@@ -375,8 +376,9 @@
             subject: "Aprovação do Edital do Leilão nº 3/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Óleo e Biodiesel), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 36/2025.",
             areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "", // REMOVIDO PARA CARD LIMPO
+            status: "approved",
+            votoSummary: "<strong>Contexto:</strong> Alteração do edital para substituição dos preços-teto dos produtos a óleo e biodiesel, seguindo a lógica do Item 1.<br><br><strong>Exemplos de Aumento:</strong><br>• Potência Termelétrica 2026/27: de R$ 920.000,00 para <strong>R$ 1.600.000,00</strong>.<br>• Potência Termelétrica 2030: de R$ 990.000,00 para <strong>R$ 1.750.000,00</strong>.",
+            decision: "Aprovada por unanimidade a alteração do edital.",
             links: []
         }
     ];
@@ -893,6 +895,10 @@
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo/Contexto', item.votoSummary));
             }
 
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', item.decision));
+            }
+
             cardBody.appendChild(infoContainer);
 
             // Rodapé com links
@@ -1024,6 +1030,15 @@
                 infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
             }
             
+            if (item.votoSummary) {
+                // REMOVED IN PREVIOUS TURN, NOW ADDING BACK BUT ONLY IF EXISTS (IT DOES FOR 2nd RPE NOW)
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo/Contexto', item.votoSummary));
+            }
+
+            if (item.decision) {
+                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', item.decision));
+            }
+
             cardBody.appendChild(infoContainer);
 
             // Rodapé com links
@@ -1330,8 +1345,8 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-3 justify-center md:justify-start');
       
       // BOTÕES DE NAVEGAÇÃO
-      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3ª RPO 2026'); 
       const rpe2Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 2ª RPE 2026'); // NOVA (Ativa por padrão)
+      const rpoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3ª RPO 2026'); 
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões Presenciais 2026');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
