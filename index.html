@@ -208,8 +208,6 @@
     
     // --- DATAS GERAIS ---
     const rpo4_2026DateText = '24 de fevereiro de 2026';
-    const rpo3_2026DateText = '10 de fevereiro de 2026';
-    const rpe2_2026DateText = '13 de fevereiro de 2026';
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     const mmeConsultaLink = "https://consultas-publicas.mme.gov.br/home"; 
     
@@ -223,7 +221,7 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
-    // --- DADOS DA 4ª RPO DE 2026 (FILTRADOS CONFORME SOLICITAÇÃO) ---
+    // --- DADOS DA 4ª RPO DE 2026 (FILTRADOS E ATUALIZADOS) ---
     const aneelAgendaRPO4_2026 = [
         {
             originalItemNumber: 1,
@@ -231,7 +229,9 @@
             subject: "Aprovação do Edital do Leilão nº 1/2026-ANEEL, destinado a outorgar concessões do serviço público de transmissão de energia elétrica, consolidado após análise técnica do Tribunal de Contas da União – TCU.",
             areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu aprovar o Edital do Leilão nº 1/2026-ANEEL, correspondente a 9 lotes de empreendimentos de transmissão, com sessão pública prevista para 27 de março de 2026 (lotes 1 a 5) e data posterior para os lotes 7 a 10.",
+            details: "Houve apresentação técnica por parte da Secretaria de Leilões (SEL). Ordem de julgamento: 5.",
             links: []
         },
         {
@@ -241,7 +241,9 @@
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
             votoVistaRelator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
+            details: "Ordem de julgamento: 1.",
             links: []
         },
         {
@@ -250,7 +252,9 @@
             subject: "Resultado da Terceira Fase da Consulta Pública nº 45/2019, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da norma que estabelecerá os critérios operativos para redução ou limitação de geração no Sistema Interligado Nacional – SIN.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
+            details: "Ordem de julgamento: 2.",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=qQrxLvLu&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3392&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -259,7 +263,9 @@
             subject: "Resultado da Consulta Pública nº 45/2025, instituída com vistas a colher subsídios e informações adicionais para a metodologia de apuração do saldo do Uso de Bem Público – UBP a ser repactuado, nos termos do art. 4º da Lei nº 15.235/2025.",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por maioria, decidiu encerrar a CP nº 45/2025, aprovar os valores de Saldo do UBP a serem repactuados e aprovar a minuta de Termo Aditivo ao contrato de concessão.",
+            details: "<strong>Sustentações Orais:</strong><br>• <strong>ABIAPE:</strong> Defendeu a repactuação parcial, permitindo que um único agente do consórcio possa aderir à repactuação independentemente dos demais. Argumentou que a decisão é de negócio e aplicável apenas para aqueles que fizer sentido.<br>• <strong>APINE:</strong> Sugeriu forma diferente de cálculo metodológico e concordou com o pleito da ABIAPE.<br>• <strong>ABRAGE:</strong> Ressaltou que a adesão precisa ser facultativa e também sugeriu mudança metodológica.<br><br><strong>Destaques do Voto:</strong> Permitida a adesão parcial de consórcios, desde que mantida cláusula reafirmando a solidariedade de todos perante o poder concedente. Definiu-se que a dedução da receita incorporada ao preço de venda do gerador ocorrerá <em>após</em> a aplicação do redutor de 50%. A receita incorporada também será trazida a valor presente.",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=qQrxLvLu&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3983&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -268,7 +274,9 @@
             subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
+            details: "Ordem de julgamento: 3.",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=qQrxLvLu&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -278,7 +286,9 @@
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
             votoVistaRelator: "Gentil Nogueira de Sá Junior",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
+            details: "Ordem de julgamento: 4.",
             links: []
         },
         {
@@ -287,7 +297,9 @@
             subject: "Pedido de Reconsideração interposto pela Equatorial Alagoas Distribuidora de Energia S.A. – Equatorial AL contra a Resolução Homologatória nº 3.450/2025, que homologou o índice de Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu conhecer para, no mérito, dar parcial provimento ao Pedido de Reconsideração interposto pela Equatorial Alagoas.",
+            details: "Aprovado em bloco. Ordem de julgamento: 16.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903314-2024-35.pdf"}]
         },
         {
@@ -297,7 +309,9 @@
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR e outras.",
             relator: "Daniel Cardoso Danna",
             votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu conceder prazo adicional de 30 dias para apresentação de voto-vista.",
+            details: "Aprovado em bloco. Ordem de julgamento: 43.",
             links: [
                 {title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.009885-2020-63_prorrogavista.pdf"},
                 {title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=qQrxLvLu&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
@@ -310,7 +324,8 @@
             areaResponsible: "Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
             relator: "Agnes Maria de Aragão da Costa",
             votoVistaRelator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "approved",
+            decision: "Aprovado em bloco.",
             links: [{title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903331-2024-72_prorrogavista.pdf"}]
         }
     ];
@@ -436,7 +451,7 @@
     function renderRPO42026Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta - 4ª RPO 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados - 4ª RPO 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo4_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -530,6 +545,13 @@
             }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área', item.areaResponsible));
             
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
+            if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
+
             cardBody.appendChild(infoContainer);
 
             if (item.links && item.links.length > 0) {
@@ -786,7 +808,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const rpo4Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 4ª RPO 2026'); 
+      const rpo4Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 4ª RPO 2026'); 
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
