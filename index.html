@@ -230,6 +230,7 @@
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Willamy Moreira Frota",
             status: "scheduled",
+            votoSummary: "A minuta propõe a retificação das Tarifas de Uso do Sistema de Transmissão (TUST) do ciclo tarifário atual, com o objetivo de corrigir inconsistências na base de dados que geraram desestabilização indevida nos cálculos homologados anteriormente. A discussão técnica foca em restabelecer a precisão regulatória e a neutralidade econômica.<br><br><strong>Decisão proposta pelo Relator:</strong> Aprovar a retificação da TUST, com efeitos prospectivos.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
         },
         {
@@ -239,6 +240,7 @@
             areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
             status: "scheduled",
+            votoSummary: "O recurso contesta a negativa da área técnica em anuir ao contrato de compartilhamento de infraestrutura e pessoal entre as subsidiárias da Celesc. A análise da relatora pondera a necessidade de assegurar a correta segregação contábil, mitigando o risco de subsídios cruzados entre as atividades de geração e distribuição monopolista.<br><br><strong>Decisão proposta pelo Relator:</strong> Conhecer do recurso e emitir deliberação final sobre as regras e condicionantes do compartilhamento.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001127-2018-79.pdf"}]
         },
         {
@@ -248,6 +250,7 @@
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
             status: "scheduled",
+            votoSummary: "A Light pleiteia a revisão de componentes do seu Reajuste Tarifário Anual de 2025, contestando o tratamento de custos financeiros e operacionais (como PMSO e encargos). A minuta examina a exatidão da metodologia aplicada pela STR, em linha com os normativos vigentes do PRORET.<br><br><strong>Decisão proposta pelo Relator:</strong> Conhecer do pedido e manifestar-se no mérito sobre a alteração dos índices tarifários.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903323-2024-26.pdf"}]
         },
         {
@@ -257,6 +260,7 @@
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
             status: "scheduled",
+            votoSummary: "Trata da autorização para que a Copel GT implante novos reforços em sua rede, de acordo com as necessidades sistêmicas listadas no POTEE 2025. O voto detalha o orçamento e propõe o estabelecimento do valor correspondente da Receita Anual Permitida (RAP) a ser adicionada à receita da transmissora em razão dos novos investimentos.<br><br><strong>Decisão proposta pelo Relator:</strong> Autorizar a implantação dos reforços e estabelecer os valores correspondentes de RAP.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.002658-2026-99.pdf"}]
         }
     ];
@@ -472,6 +476,9 @@
             }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área', item.areaResponsible));
             
+            if (item.votoSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+            }
             if (item.decision) {
                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
             }
