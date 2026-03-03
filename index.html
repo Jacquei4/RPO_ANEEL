@@ -229,8 +229,10 @@
             subject: "Retificação das Tarifas de Uso do Sistema de Transmissão de Energia Elétrica – TUST desestabilizadas indevidamente pela Resolução Homologatória nº 3.482/2025.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
+            status: "approved",
             votoSummary: "A minuta propõe a retificação das Tarifas de Uso do Sistema de Transmissão (TUST) do ciclo tarifário atual, com o objetivo de corrigir inconsistências na base de dados que geraram desestabilização indevida nos cálculos homologados anteriormente. A discussão técnica foca em restabelecer a precisão regulatória e a neutralidade econômica.<br><br><strong>Decisão proposta pelo Relator:</strong> Aprovar a retificação da TUST, com efeitos prospectivos.",
+            decision: "A Diretoria, por unanimidade, decidiu retificar o regime tarifário das usinas para TUST estabilizada, com compensação financeira em duodécimos ao longo do ciclo tarifário 2026-2027, e recomendou à STR avaliação dos procedimentos.",
+            details: "Houve sustentação oral por parte de representante da Marlim Azul Energia S.A. O processo será incluído na pauta da reunião pública ordinária subsequente para ratificação da decisão.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
         },
         {
@@ -239,8 +241,9 @@
             subject: "Recurso Administrativo interposto pelo Grupo Celesc contra o Despacho nº 499/2025, emitido pela Superintendência de Fiscalização Econômica, Financeira e de Mercado – SFF, que negou o pedido de anuência prévia para celebração de Contrato de Compartilhamento de Recursos Humanos e Infraestrutura entre as empresas Centrais Elétricas de Santa Catarina S.A. – Celesc-H, Celesc Distribuição S.A. – Celesc-D e Celesc Geração S.A. – Celesc-G.",
             areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "approved",
             votoSummary: "O recurso contesta a negativa da área técnica em anuir ao contrato de compartilhamento de infraestrutura e pessoal entre as subsidiárias da Celesc. A análise da relatora pondera a necessidade de assegurar a correta segregação contábil, mitigando o risco de subsídios cruzados entre as atividades de geração e distribuição monopolista.<br><br><strong>Decisão proposta pelo Relator:</strong> Conhecer do recurso e emitir deliberação final sobre as regras e condicionantes do compartilhamento.",
+            decision: "A Diretoria, por unanimidade, decidiu declarar a perda de objeto do Recurso Administrativo e conceder prazo de 270 dias (a partir de 01/09/2025) para desfazimento do Contrato de Compartilhamento.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001127-2018-79.pdf"}]
         },
         {
@@ -249,8 +252,9 @@
             subject: "Pedido de Reconsideração interposto pela Light Serviços de Eletricidade S.A. contra a Resolução Homologatória nº 3.474/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Recorrente; e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "approved",
             votoSummary: "A Light pleiteia a revisão de componentes do seu Reajuste Tarifário Anual de 2025, contestando o tratamento de custos financeiros e operacionais (como PMSO e encargos). A minuta examina a exatidão da metodologia aplicada pela STR, em linha com os normativos vigentes do PRORET.<br><br><strong>Decisão proposta pelo Relator:</strong> Conhecer do pedido e manifestar-se no mérito sobre a alteração dos índices tarifários.",
+            decision: "A Diretoria, por unanimidade, decidiu conhecer do Pedido e dar-lhe provimento parcial em relação ao pleito de refaturamento da UTE Gov. Leonel Brizola (Termorio), reconhecendo o componente financeiro negativo no valor de R$ 128.825.948,59 (a preços de março/2025).",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903323-2024-26.pdf"}]
         },
         {
@@ -259,8 +263,9 @@
             subject: "Autorização e estabelecimento de Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão sob responsabilidade da Copel Geração e Transmissão S.A., em decorrência da 2ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2025.",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "approved",
             votoSummary: "Trata da autorização para que a Copel GT implante novos reforços em sua rede, de acordo com as necessidades sistêmicas listadas no POTEE 2025. O voto detalha o orçamento e propõe o estabelecimento do valor correspondente da Receita Anual Permitida (RAP) a ser adicionada à receita da transmissora em razão dos novos investimentos.<br><br><strong>Decisão proposta pelo Relator:</strong> Autorizar a implantação dos reforços e estabelecer os valores correspondentes de RAP.",
+            decision: "A Diretoria, por unanimidade, decidiu autorizar a implantação de reforço de grande porte na instalação da Copel GT e estabelecer a parcela de RAP e o cronograma de implantação.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.002658-2026-99.pdf"}]
         }
     ];
@@ -388,19 +393,10 @@
     function renderCircuito2Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 2º Circuito Deliberativo de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 2º Circuito Deliberativo de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito2_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
-
-        // Card Informativo do Circuito (Substitui o YouTube Live)
-        const infoSection = createElement('div', 'mb-6 bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const infoText = createElement('p', 'text-lg font-semibold', 'Votação Eletrônica: 8h às 18h (Encerramento antecipado caso todos os Diretores votem)');
-        const infoIcon = createElement('div', 'bg-gray-700 text-white font-bold p-2.5 rounded-lg flex items-center');
-        infoIcon.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
-        infoSection.appendChild(infoText);
-        infoSection.appendChild(infoIcon);
-        container.appendChild(infoSection);
 
         // Link Convocação
         const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
@@ -742,7 +738,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const circuito2Button = createElement('button', 'nav-button-base nav-button-inactive', '2º Circuito Deliberativo'); 
+      const circuito2Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 2º Circuito'); 
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
