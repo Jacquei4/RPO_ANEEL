@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation. Veja a pauta da 5ª Reunião Pública Ordinária de 2026.">
-  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Reunião Pública Ordinária">
+  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation. Veja os resultados da 5ª Reunião Pública Ordinária de 2026.">
+  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Reunião Pública Ordinária, Resultados">
 
   <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
-  <meta property="og:description" content="Acompanhe a pauta e resultados das reuniões e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
+  <meta property="og:title" content="Dashboard ANEEL - Resultados 5ª RPO">
+  <meta property="og:description" content="Acompanhe os resultados das reuniões e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Dashboard ANEEL 2026 - 5ª RPO</title>
+  <title>Dashboard ANEEL 2026 - Resultados 5ª RPO</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -222,7 +222,7 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
-    // --- DADOS DA 5ª RPO DE 2026 (FILTRADOS) ---
+    // --- DADOS DA 5ª RPO DE 2026 (ATUALIZADOS) ---
     const aneelAgenda5RPO = [
         {
             originalItemNumber: 1,
@@ -230,7 +230,9 @@
             subject: "Reajuste Tarifário Anual da Enel Distribuição Rio – Enel RJ, a vigorar a partir de 15 de março de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas com efeito médio de 15,46% a ser percebido pelos consumidores (19,94% em média para Alta Tensão e 14,23% para Baixa Tensão). Também foi decidido negar provimento aos pleitos extraordinários interpostos pela distribuidora.",
+            details: "Ordem de julgamento: 2. Houve sustentação oral por parte do representante da Enel RJ e do Conselho de Consumidores da Enel Rio.",
         },
         {
             originalItemNumber: 2,
@@ -238,7 +240,9 @@
             subject: "Reajuste Tarifário Anual da Light Serviços de Eletricidade S.A., a vigorar a partir de 15 de março de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas com efeito médio de 8,59% a ser percebido pelos consumidores (13,46% em média para Alta Tensão e 6,56% para Baixa Tensão).",
+            details: "Ordem de julgamento: 3. Houve sustentação oral por parte do representante da Light S.A. O Diretor-Relator solicitou registro em Ata sobre a necessidade de alinhamento institucional entre ANEEL, Ministério da Fazenda e Receita Federal para apresentar os cálculos e efeitos tarifários da devolução de créditos de PIS e COFINS.",
         },
         {
             originalItemNumber: 3,
@@ -247,7 +251,8 @@
             areaResponsible: "STR, SCE, SFT, STD, SGM, STE",
             relator: "Daniel Cardoso Danna",
             votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta na fase de debate dos Diretores.",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5MtrrnHy&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -256,7 +261,8 @@
             subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5MtrrnHy&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -265,8 +271,10 @@
             subject: "Recurso Administrativo interposto pela Scala Data Centers S.A. – Scala III contra o Despacho nº 1.865/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de postergação da data de início de execução do Contrato de Uso do Sistema de Transmissão – CUST nº 59/2024.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            votoSummary: "O argumento central da relatora baseia-se no princípio de que a alocação de risco por atrasos nas instalações do usuário não pode ser repassada ao sistema, não restando comprovada excludente de responsabilidade (força maior) que justifique o adiamento do contrato. <strong>Decisão proposta:</strong> Conhecer do recurso e, no mérito, negar-lhe provimento, mantendo a data original de início de execução do CUST.",
+            status: "approved",
+            votoSummary: "O argumento central da relatora baseia-se no princípio de que a alocação de risco por atrasos nas instalações do usuário não pode ser repassada ao sistema, não restando comprovada excludente de responsabilidade (força maior) que justifique o adiamento do contrato.",
+            decision: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo e, no mérito, negar-lhe provimento, mantendo o indeferimento do pedido de postergação da data de início de execução do Contrato.",
+            details: "Ordem de julgamento: 5. O processo foi destacado do bloco em decorrência da admissão de sustentação oral, realizada pela representante da Scala Data Centers S.A.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.015499-2025-10.pdf"}]
         },
         {
@@ -275,8 +283,10 @@
             subject: "Requerimento Administrativo protocolado pela ISA Energia Brasil S.A. com vistas à anuência prévia para a exploração de atividades atípicas, além daquelas outorgadas pelos Contratos de Concessão de Transmissão de Energia Elétrica nº 59/2001, nº 12/2023, nº 8/2022, nº 6/2023 e nº 12/2023.",
             areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "O relator fundamentou sua análise na premissa de que a exploração de atividades atípicas otimiza o uso dos ativos da concessão sem prejudicar a prestação do serviço público de transmissão, desde que observada a rigorosa segregação contábil e a reversibilidade de parte das receitas para a modicidade tarifária. <strong>Decisão proposta:</strong> Conceder a anuência prévia solicitada, condicionada ao cumprimento das regras regulatórias vigentes.",
+            status: "withdrawn",
+            votoSummary: "O relator fundamentou sua análise na premissa de que a exploração de atividades atípicas otimiza o uso dos ativos da concessão sem prejudicar a prestação do serviço público de transmissão, desde que observada a rigorosa segregação contábil e a reversibilidade de parte das receitas.",
+            decision: "O processo foi retirado da Pauta.",
+            details: "Ordem de julgamento: 18.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.021385-2025-09.pdf"}]
         },
         {
@@ -285,27 +295,30 @@
             subject: "Ratificação da decisão proferida no 2º Circuito Deliberativo Público Ordinário de 2026, referente à retificação das Tarifas de Uso do Sistema de Transmissão de Energia Elétrica – TUST desestabilizadas indevidamente pela Resolução Homologatória nº 3.482/2025.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "O argumento do relator destaca a necessidade de garantir a segurança jurídica e a correção material dos cálculos tarifários, corrigindo inconsistências na base de dados que geraram a desestabilização indevida das tarifas homologadas anteriormente. <strong>Decisão proposta:</strong> Ratificar integralmente a decisão proferida no 2º Circuito Deliberativo, confirmando a retificação da TUST e a recomposição do equilíbrio no ciclo.",
+            status: "approved",
+            votoSummary: "O argumento do relator destaca a necessidade de garantir a segurança jurídica e a correção material dos cálculos tarifários, corrigindo inconsistências na base de dados que geraram a desestabilização indevida.",
+            decision: "A Diretoria, por unanimidade, decidiu ratificar a decisão proferida no 2º Circuito Deliberativo Público Ordinário de 2026, retificando, de ofício, o regime tarifário das usinas relacionadas no processo.",
+            details: "Ordem de julgamento: 26. Houve pedido de sustentação oral por parte da Marlim Azul Energia S.A., contudo, o pedido foi indeferido pelo Presidente da Reunião.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
         }
     ];
 
     // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
+         { numero: "CP 29/2025", tema: "Obter subsídios para a definição dos indicadores e metas de Performance Organizacional do ONS para o ciclo de janeiro de 2026 a dezembro de 2028.", status: "encerrada", inicio: "28/08/2025", fim: "13/10/2025", area: "SMA", origem: "ANEEL", link: "https://www.gov.br/participamaisbrasil/consulta-publica-n-29-2025-obter-subsidios-para-publicacao-da-res-hom-contendo-a-definicao-dos-indicadores-e-metas-de-performance-organizacional-do-ons-para-o-ciclo-de-jan-de-26-a-dez-de-28-" },
          { numero: "TS 004/2026", tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, que trata da avaliação da qualidade dos sistemas de governança corporativa.", status: "aberta", inicio: "30/01/2026", fim: "16/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 001/2026", tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.", status: "aberta", inicio: "20/01/2026", fim: "18/02/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", status: "aberta", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 213/2026", tema: "Minuta de Portaria para revisão e atualização do conteúdo da Portaria MME nº 331, de julho de 2005.", status: "aberta", inicio: "30/01/2026", fim: "28/02/2026", area: "SNTEP/DIEE/CGII", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 212/2026", tema: "Diretrizes gerais para antecipação dos contratos de projetos vencedores do Leilão de Reserva de Capacidade na forma de Energia (LRCE) e do Leilão de Reserva de Capacidade na forma de Potência (LRCAP).", status: "aberta", inicio: "23/01/2026", fim: "11/02/2026", area: "DDOS/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 201/2025", tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.", status: "aberta", inicio: "05/11/2025", fim: "05/12/2025", area: "DPSE/SNEE", origem: "MME", link: mmeConsultaLink },
-         { numero: "CP 202/2025", tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).", status: "aberta", inicio: "10/11/2025", fim: "01/12/2025", area: "DPOG/SNTEP", origem: "MME", link: mmeConsultaLink },
+         { numero: "CP 201/2025", tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.", status: "aberta", inicio: "05/11/2025", fim: "05/12/2025", area: "DPSE/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 202/2025", tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).", status: "aberta", inicio: "10/11/2025", fim: "01/12/2025", area: "DPOG/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 33/2025", tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).", status: "aberta", inicio: "06/11/2025", fim: "22/12/2025", area: "SGM/SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 35/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 36/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 37/2025", tema: "Rateio do custo e da generation de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).", status: "aberta", inicio: "20/11/2025", fim: "05/01/2026", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" },
          { numero: "CP 38/2025", tema: "Regras e Procedimentos de Comercialização (Garantias CCEARs LEE 2025).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" },
-         { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", status: "aberta", inicio: "04/12/2025", fim: "04/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3976&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", status: "aberta", inicio: "04/12/2025", fim: "03/04/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3976&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 40/2025", tema: "Obter subsídios e informações adicionais para promover regulamentação contábil tributária do fundo de descomissionamento de Angra 1 e 2 em atendimento à determinação do Acórdão nº 2502/2024 do Tribunal de Contas da União - TCU.", status: "aberta", inicio: "10/12/2025", fim: "24/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/consultas-publicas" },
          { numero: "CP 41/2025", tema: "Obter subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Companhia Jaguari de Energia - CPFL Santa Cruz.", status: "aberta", inicio: "10/12/2025", fim: "07/02/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3979&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 43/2025", tema: "Obter subsídios e informações adicionais com vistas à avaliação da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022, que regulamenta a licitação e a prorrogação das concessões de serviço público de transmissão de energia elétrica em fim de vigência.", status: "aberta", inicio: "11/12/2025", fim: "10/03/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3981&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -315,89 +328,26 @@
          { numero: "CP 47/2025", tema: "Receber contribuições para definição do critério de rateio dos recursos arrecadados na CDE de que tratam os parágrafos 8º e 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de UBP.", status: "aberta", inicio: "19/12/2025", fim: "08/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5JeDSa4F&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 25/2025", tema: "Obter subsídios para formação da base de dados e revisão da metodologia de perdas não técnicas e receitas irrecuperáveis - Submódulo 2.6 e 2.6A dos PRORET.", status: "aberta", inicio: "19/12/2025", fim: "06/03/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=cuFs1oXt&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3986&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 24/2025", tema: "Obter subsídios sobre a minuta de Manual de instruções para envio das informações sobre as famílias beneficiadas pela Tarifa Social de Energia Elétrica e pelo Desconto Social.", status: "aberta", inicio: "15/12/2025", fim: "13/01/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=cuFs1oXt&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3985&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 207/2025", tema: "Orçamento da CDE para a execução do Programa Luz para Todos no ano de 2026.", status: "aberta", inicio: "05/12/2025", fim: "22/12/2025", area: "DUPS/SNEE", origem: "MME", link: mmeConsultaLink },
-         { numero: "CP 214/2026", tema: "Minuta do Plano Decenal de Expansão de Energia 2035 - PDE 2035.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: mmeConsultaLink },
-         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: mmeConsultaLink }
+         { numero: "CP 207/2025", tema: "Orçamento da CDE para a execução do Programa Luz para Todos no ano de 2026.", status: "aberta", inicio: "05/12/2025", fim: "22/12/2025", area: "DUPS/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 214/2026", tema: "Minuta do Plano Decenal de Expansão de Energia 2035 - PDE 2035.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" }
     ];
 
     // DADOS DA AGENDA REGULATÓRIA
     const agendaRegulatoriaDetalhada = [
         { eixo: "Geração & Mercado", codigo: "GER21-07[B]", atividade: "Regulamentação do \"Constrained off\" de centrais geradoras hidrelétricas", ano: "2026" },
         { eixo: "Geração & Mercado", codigo: "C&M21-14", atividade: "Aprimoramento da regulamentação das Garantias Financeiras do Mercado de Curto Prazo", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "GER23-03[B]", atividade: "Definição de ambientes regulatórios controlados (sandbox) para prestação de serviços ancilares - controle secundário de frequência.", ano: "2026" },
-        { eixo: "Geração & Mercado", codigo: "GER23-03[C]", atividade: "Definição de ambientes regulatórios controlados (sandbox) para prestação de serviços ancilares - autorrestabelecimento integral", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "AR24-05", atividade: "Atualização da metodologia de cálculo dos limites máximos do Preço de Liquidação das Diferenças - PLD", ano: "2026" },
-        { eixo: "Geração & Mercado", codigo: "AR24-06", atividade: "Aprimoramento do processo de monitoramento do mercado de energia elétrica (regra definitiva pós-período sombra)", ano: "2026" },
-        { eixo: "Geração & Mercado", codigo: "AR25-07", atividade: "Aprimoramento das Regras de Comercialização 2027.", ano: "2026" },
-        { eixo: "Geração & Mercado", codigo: "AR24-18", atividade: "Avaliação das metodologias de cálculo do PLD mínimo e de definição da Tarifa de Energia de Otimização-TEO", ano: "2026" },
-        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Promoção das adequações regulatórias para inserção de sistemas de armazenamento, incluindo usinas reversíveis, no Sistema Interligado Nacional 2º ciclo", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento das Regras de Comercialização 2028.", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação quanto a inversão de Fluxo da MMGD no âmbito das contabilizações e liquidações da CCEE", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação referente ao Processo Sancionador do Monitoramento no âmbito da CCEE", ano: "2027" },
-        { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento das regras relativas aos Registro de Contratos no âmbito da CCEE", ano: "2027" },
         { eixo: "Transmissão & Distribuição", codigo: "TRA21-25", atividade: "Aprimoramento dos critérios de confiabilidade das instalações de transmissão", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "TRA21-40", atividade: "Aprimoramento da regulamentação de qualidade associada às Funções Transmissão - FT em Corrente Alternada - CA", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "TRV23-07", atividade: "Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR24-01", atividade: "Aprimoramentos regulatórios relacionados à abertura de mercado na regulação dos serviços de distribuição", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR24-02", atividade: "Regulamentação do Decreto nº 11.314/2022 que trata do fim das concessões de transmissão", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR24-22", atividade: "Regulamentação do art. 17 da Lei nº 14.300/2022-metodologia da valoração dos custos e dos benefícios da microgeração e minigeração distribuída.", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR25-02", atividade: "Aprimoramento das Regras e dos Procedimentos relacionados a Prestação do Serviço Público de Distribuição", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR25-09", atividade: "Aprimoramento Regulatório relacionado a operação do sistema de distribuição (DSO).", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "AR25-15", atividade: "Requisitos de observabilidade, operabilidade e controlabilidade de Recursos Energéticos Distribuídos (RED)", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento das regras de acesso ao sistema de transmissão,", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de aprimoramentos regulatórios sobre Padrões de Rede relacionados a resiliência do sistema de distribuição a eventos climáticos extremos (2º fase do tema Resiliência)", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de aprimoramentos regulatórios sobre Interrupção em Situação de Emergência (ISE) relacionados à resiliência do sistema de distribuição a eventos climáticos extremos (3º fase do tema Resiliência)", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Regulamentação do armazenamento de energia elétrica em sistemas de transmissão e distribuição", ano: "2027" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Estabelecimento de Indicadores de Atendimento de Mercado", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento regulatório para propiciar o avanço da eletromobilidade e sua conexão aos sistemas de distribuição.", ano: "2026" },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Ações regulatórias para propiciar a operação eficiente e coordenada da transmissão e distribuição, visando aumento da segurança na operação do SIN", ano: "2026" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "R&C21-14", atividade: "Revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE", ano: "2026" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "TAR23-01[A]", atividade: "Modernização das tarifas de distribuição - Ciclo 1", ano: "2027" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "TAR23-01[B]", atividade: "Modernização das tarifas de distribuição - Ciclo 2", ano: "2027" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-19", atividade: "Revisão dos Submódulos 2.6 e 2.6 A do Proret - Perdas não técnicas e Receitas irrecuperáveis.", ano: "2026" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-07", atividade: "Estabelecimento da Regulação do monitoramento do mercado", ano: "2026" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-08", atividade: "Instrução da Regulamentação de Monitoramento do Mercado", ano: "2026" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "AR24-09", atividade: "Revisão do Submódulo 2.3 do Proret - Base de Remuneração Regulatória.", ano: "2027" },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "AR25-14", atividade: "Revisão do cálculo do limite da Parcela B das permissionárias e atualização da norma de retirada do desconto de suprimento.", ano: "2027" },
-        { eixo: "Eficiência Energética & Consumidor", codigo: "Nova atividade", atividade: "Revisão do Anexo VII da REN 948/2021", ano: "2027" },
-        { eixo: "Eficiência Energética & Consumidor", codigo: "AR25-03", atividade: "Destinação de bens e de receitas oriundas do Programa de PDI ANEEL.", ano: "2027" },
-        { eixo: "Eficiência Energética & Consumidor", codigo: "P&E22-02", atividade: "Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética", ano: "2027" }
+        { eixo: "Regulação Tarifária e Financeira", codigo: "R&C21-14", atividade: "Revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE", ano: "2026" }
     ];
     
     const demaisAtividadesRegulatorias = [
          { eixo: "Geração & Mercado", codigo: "AR25-04", atividade: "Aprimoramento da REN 1.071/2023 e da REN 875/2020 com vistas a incorporação de práticas de ESG pelas empresas." },
-         { eixo: "Geração & Mercado", codigo: "AR25-05", atividade: "Aprimoramento da REN 1.027/2022, com vistas a revisar a metodologia de cálculo dos coeficientes de rateio dos recursos da Compensação Financeira pelo Uso dos Recursos Hídricos (CFURH), de forma a torná-los mais simples, transparentes e replicáveis. Além disso, a forma de cálculo referente ao rateio da CFURH deve ser atualizada, de forma a atender às futuras renovações de outorga de autorização de empreendimentos hidrelétricos autorizados a partir da Lei 9.427, de 1996." },
-         { eixo: "Geração & Mercado", codigo: "AR25-06", atividade: "Aprimoramento da REN 875/2020 com vistas a regulamentar os procedimentos para o desenvolvimento de inventários participativos." },
-         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Avaliação da autonomia da CCEE com vistas ao aprimoramento de suas atividades." },
-         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Aprimoramento do Calendário de Contabilização e Liquidação Financeira da CCEE." },
-         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Revisão da regulamentação referente ao Excedente Financeiro." },
-         { eixo: "Geração & Mercado", codigo: "Nova atividade", atividade: "Revisão da normatização do processo de desligamento de agentes na CCEE." },
-         { eixo: "Transmissão & Distribuição", codigo: "DIS21-01", atividade: "Avaliar aprimoramento na regulamentação de estabelecimento de limites de continuidade do fornecimento de energia elétrica" },
-         { eixo: "Transmissão & Distribuição", codigo: "DIS22-03", atividade: "Aprimoramento da regulamentação de apuração das perdas técnicas regulatórias" },
-         { eixo: "Transmissão & Distribuição", codigo: "AR24-14", atividade: "Aprimoramento da Regulamentação da Capacidade Operativa" },
-         { eixo: "Transmissão & Distribuição", codigo: "AR25-08", atividade: "Aprimoramentos regulatórios para promover a aplicação do disposto no caput do art. 28 da lei nº 14.300/2022." },
-         { eixo: "Transmissão & Distribuição", codigo: "AR25-10", atividade: "Aprimoramento das Regras e Procedimentos de Prestação do Serviço Público de Distribuição em função do Decreto nº 12.068/2024." },
-         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento da regra de incorporação das Demais Instalações de Transmissão - DIT pelas distribuidoras" },
-         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação da possibilidade de alteração da análise de solicitações de acesso ao sistema de transmissão por lotes ou janelas" },
-         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramento das Regras do Serviço de Transmissão para tratamento de desativação de instalações de transmissão." },
-         { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Aprimoramentos regulatórios nos contratos de concessão de transmissão." },
-         { eixo: "Transmissão & Distribuição", codigo: "TRV23-02", atividade: "Estabelecimento das diretrizes para programs de ambiente regulatório experimental (sandbox regulatório) no setor elétrico." },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de distribuição - Ciclo 3" },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de distribuição - Ciclo 4" },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Regime econômico dos novos contratos de Concessão de Distribuição - Decreto nº 12.068/2024" },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Avaliar aprimoramento nos Submódulos 9.1 e 9.2 do Proret, que tratam de revisão periódica da Receita Anual Permitida (RAP)" },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Avaliar aprimoramento no Submódulos 12.1, que trata da revisão periódica da Receita Anual de Geração (RAG)" },
-         { eixo: "Regulação Tarifária e Financeira", codigo: "Nova atividade", atividade: "Modernização das tarifas de transmissão" }
+         { eixo: "Transmissão & Distribuição", codigo: "DIS21-01", atividade: "Avaliar aprimoramento na regulamentação de estabelecimento de limites de continuidade do fornecimento de energia elétrica" }
     ];
     
     const arrAtividades = [
-        { eixo: "Geração & Mercado", codigo: "ARR24-02", atividade: "Avaliação do Resultado Regulatório -ARR da Resolução Normativa nº 1.030, de 2022, no que se refere ao Programa de Resposta da Demanda." },
-        { eixo: "Geração & Mercado", codigo: "ARR25-01", atividade: "Avaliação do Resultado Regulatório ARR da Resolução Normativa nº 1.014, de 2022, no que se refere a requisitos e procedimentos complementares atinentes à obtenção e à manutenção de autorização para comercializar energia elétrica no Sistema Interligado Nacional - SIN." },
-        { eixo: "Geração & Mercado", codigo: "ARR25-02", atividade: "Avaliação do Resultado Regulatório ARR da Resolução Normativa nº 1.103, de 2024, que dispõe sobre a contratação de Reserva de Capacidade, na forma de potência, aprova o modelo do Contrato de Uso de Potência para Reserva de Capacidade - COPCAP." },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR25-03", atividade: "Avaliação do Resultado Regulatório - ARR da Resolução Normativa nº 899, de 2022-Sazonalização de Garantia Física." },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR24-03", atividade: "Avaliação de Resultado Regulatório do Submódulo 2.5 do Proret - Fator X - Componente Pd." },
-        { eixo: "Regulação Tarifária e Financeira", codigo: "ARR25-04", atividade: "Avaliação regulatória do tratamento conferido aos investimentos em Reforços e Melhorias de Pequeno Porte." },
-        { eixo: "Transmissão & Distribuição", codigo: "Nova atividade", atividade: "Avaliação de Resultado Regulatório (ARR) da Teleassistência das Instalações de Transmissão" }
+        { eixo: "Geração & Mercado", codigo: "ARR24-02", atividade: "Avaliação do Resultado Regulatório -ARR da Resolução Normativa nº 1.030, de 2022, no que se refere ao Programa de Resposta da Demanda." }
     ];
 
     // --- RENDERIZADORES DE PÁGINA ---
@@ -410,11 +360,11 @@
         renderFunction(container);
     }
     
-    // --- RENDER PAUTA DA 5ª RPO (NOVA) ---
+    // --- RENDER PAUTA DA 5ª RPO (ATUALIZADA) ---
     function renderRPO5Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 5ª Reunião Pública Ordinária de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 5ª Reunião Pública Ordinária de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo5_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -429,7 +379,7 @@
 
         // Link do YouTube
         const youtubeSection = createElement('div', 'bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4 mb-10');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a gravação da reunião');
         const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
         youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
         youtubeSection.appendChild(youtubeText);
@@ -439,7 +389,7 @@
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Sumário)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques dos Resultados (Sumário)'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
@@ -771,7 +721,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 5ª RPO'); 
+      const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados da 5ª RPO'); 
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
