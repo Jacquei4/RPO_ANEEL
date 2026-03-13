@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation. Veja os resultados da 5ª Reunião Pública Ordinária de 2026.">
+  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation.">
   <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Reunião Pública Ordinária, Resultados">
 
   <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="Dashboard ANEEL - Resultados 5ª RPO">
-  <meta property="og:description" content="Acompanhe os resultados das reuniões e consultas públicas da ANEEL com a análise da i4 Economic Regulation.">
+  <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
+  <meta property="og:description" content="Acompanhe os resultados das reuniões, circuitos deliberativos e consultas públicas da ANEEL.">
   <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
   <meta property="og:type" content="website">
 
-  <title>Dashboard ANEEL 2026 - Resultados 5ª RPO</title>
+  <title>Dashboard ANEEL 2026 - i4 Economic Regulation</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
@@ -208,6 +208,7 @@
     
     // --- DATAS GERAIS ---
     const rpo5_2026DateText = '10 de março de 2026';
+    const circuito3_2026DateText = '17 de março de 2026';
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     const mmeConsultaLink = "https://consultas-publicas.mme.gov.br/home"; 
     const youtubeLink = "https://www.youtube.com/live/_r7LA4qkPWc?si=Kbepws9OCJCgrjfp";
@@ -222,7 +223,61 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
-    // --- DADOS DA 5ª RPO DE 2026 (ATUALIZADOS) ---
+    // --- DADOS DO 3º CIRCUITO DELIBERATIVO DE 2026 ---
+    const aneelAgenda3Circuito = [
+        {
+            originalItemNumber: 1,
+            process: "48500.028437/2025-60",
+            subject: "Resultado da Revisão Tarifária Periódica da Companhia Jaguari de Energia – CPFL Santa Cruz, a vigorar a partir de 22 de março de 2026, após análise das contribuições recebidas na Consulta Pública nº 41/2025.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "O relator propõe a homologação do resultado da Revisão Tarifária Periódica da CPFL Santa Cruz, estabelecendo os novos limites para os indicadores de continuidade (DEC e FEC) e redefinindo a Base de Remuneração Regulatória (BRR) e os custos operacionais eficientes, com base nas contribuições recebidas na Consulta Pública nº 41/2025.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.028437-2025-60.pdf"}]
+        },
+        {
+            originalItemNumber: 2,
+            process: "48500.006391/2022-85",
+            subject: "Resultado da Consulta Pública nº 37/2024, que trata dos pedidos de Revisão Tarifária Extraordinária das concessionárias de distribuição Light Serviços de Eletricidade S.A., Neoenergia Coelba, Neoenergia Pernambuco, Neoenergia Cosern, Neoenergia Brasília e Copel devido à pandemia de Covid-19, nos termos do Submódulo 2.10 do PRORET.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "A minuta de voto propõe o reconhecimento dos impactos econômico-financeiros decorrentes da pandemia de Covid-19 nas áreas de concessão das distribuidoras analisadas. A decisão propõe o deferimento dos valores a serem recompostos via Revisão Tarifária Extraordinária, seguindo a metodologia estabelecida no Submódulo 2.10 do PRORET.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006391-2022-85.pdf"}]
+        },
+        {
+            originalItemNumber: 6,
+            process: "48500.003318/2024-13",
+            subject: "Pedido de Reconsideração interposto pela Companhia Paulista de Força e Luz – CPFL Paulista contra a Resolução Homologatória nº 3.452/2025, que homologou o índice de Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "A distribuidora alega divergências no cálculo de componentes financeiros no seu Reajuste Tarifário Anual de 2025. O voto do relator avalia o mérito dos pleitos e propõe conhecer do Pedido de Reconsideração para, no mérito, negar-lhe provimento, mantendo integralmente as disposições da Resolução Homologatória nº 3.452/2025.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903318-2024-13.pdf"}]
+        },
+        {
+            originalItemNumber: 7,
+            process: "48500.003971/2025-63",
+            subject: "Pedido de Reconsideração interposto pela RGE Sul Distribuidora de Energia S.A. – RGE contra a Resolução Homologatória nº 3.473/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "O relator analisa o recurso da RGE Sul que questiona o tratamento de determinados custos com encargos setoriais no Reajuste Tarifário Anual de 2025. O voto propõe o conhecimento do recurso para, no mérito, dar-lhe parcial provimento, com o intuito de corrigir inconsistências pontuais identificadas na base de cálculo.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003971-2025-63.pdf"}]
+        },
+        {
+            originalItemNumber: 20,
+            process: "48500.001037/2023-45",
+            subject: "Pedido para edição de súmula para uniformização de penalidades editalícias.",
+            areaResponsible: "SFF, SEL, SCE, SFT, SGA.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "A minuta propõe a edição de uma súmula vinculante para uniformizar a aplicação de penalidades decorrentes do descumprimento de obrigações previstas em editais de leilão. O relator defende que a medida trará maior segurança jurídica, isonomia e previsibilidade aos agentes do setor elétrico.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001037-2023-45.pdf"}]
+        }
+    ];
+
+    // --- DADOS DA 5ª RPO DE 2026 ---
     const aneelAgenda5RPO = [
         {
             originalItemNumber: 1,
@@ -314,7 +369,6 @@
 
     // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
-         { numero: "CP 29/2025", tema: "Obter subsídios para a definição dos indicadores e metas de Performance Organizacional do ONS para o ciclo de janeiro de 2026 a dezembro de 2028.", status: "encerrada", inicio: "28/08/2025", fim: "13/10/2025", area: "SMA", origem: "ANEEL", link: "https://www.gov.br/participamaisbrasil/consulta-publica-n-29-2025-obter-subsidios-para-publicacao-da-res-hom-contendo-a-definicao-dos-indicadores-e-metas-de-performance-organizacional-do-ons-para-o-ciclo-de-jan-de-26-a-dez-de-28-" },
          { numero: "TS 004/2026", tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, que trata da avaliação da qualidade dos sistemas de governança corporativa.", status: "aberta", inicio: "30/01/2026", fim: "16/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 001/2026", tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.", status: "aberta", inicio: "20/01/2026", fim: "18/02/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", status: "aberta", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -368,56 +422,50 @@
         container.classList.add('content-area');
         renderFunction(container);
     }
-    
-    // --- RENDER PAUTA DA 5ª RPO (ATUALIZADA) ---
-    function renderRPO5Page(container) {
+
+    // --- RENDER PAUTA 3º CIRCUITO ---
+    function renderCircuito3Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 5ª Reunião Pública Ordinária de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${rpo5_2026DateText}`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 3º Circuito Deliberativo Público Ordinário de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito3_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
         // Link Convocação
         const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
         const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial (Convocação)');
-        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ver Arquivo PDF`, { href: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/2026-10_-_sei_0303284_convocacao.pdf", target: '_blank', rel: 'noopener noreferrer' });
+        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ver Arquivo PDF`, { href: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0308426_convocacao.pdf", target: '_blank', rel: 'noopener noreferrer' });
         convocacaoSection.appendChild(convocacaoText);
         convocacaoSection.appendChild(convocacaoLinkAnchor);
         container.appendChild(convocacaoSection);
 
-        // Link do YouTube
-        const youtubeSection = createElement('div', 'bg-gray-800 text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4 mb-10');
-        const youtubeText = createElement('p', 'text-lg font-semibold', 'Acompanhe a gravação da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
-        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
-        youtubeSection.appendChild(youtubeText);
-        youtubeSection.appendChild(youtubeLinkAnchor);
-        container.appendChild(youtubeSection);
+        // Detalhes do circuito
+        const circuitoDetails = createElement('div', 'bg-gray-50 border border-gray-200 p-4 rounded-lg mb-8 text-sm text-gray-700');
+        circuitoDetails.innerHTML = `<strong>Aviso:</strong> O Circuito Deliberativo é realizado por votação eletrônica e não possui transmissão ao vivo. O período de votação ocorre das 8h às 18h.`;
+        container.appendChild(circuitoDetails);
 
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques dos Resultados (Sumário)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Sumário)'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
         const getSummarySubject = (item) => {
             switch (item.originalItemNumber) {
-                case 1: return "Reajuste Tarifário Anual - Enel RJ";
-                case 2: return "Reajuste Tarifário Anual - Light S.A.";
-                case 3: return "Resultado CP 39/2023 - Armazenamento de Energia";
-                case 4: return "Resultado CP 47/2025 - Rateio CDE/UBP";
-                case 10: return "Recurso Scala Data Centers - Postergação CUST";
-                case 18: return "Anuência Prévia ISA Energia - Atividades Atípicas";
-                case 26: return "Ratificação 2º Circuito - Retificação TUST";
+                case 1: return "RTP CPFL Santa Cruz";
+                case 2: return "RTE Distribuidoras (Covid-19)";
+                case 6: return "Reconsideração CPFL Paulista - RTA 2025";
+                case 7: return "Reconsideração RGE Sul - RTA 2025";
+                case 20: return "Súmula - Uniformização de Penalidades Editalícias";
                 default: return item.subject.substring(0, 85) + '...';
             }
         };
 
-        aneelAgenda5RPO.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        aneelAgenda3Circuito.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito-${item.originalItemNumber}` });
             itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject(item)}</span>`;
             
             const statusBadge = createStatusBadge(item.status, pautaStatusMap);
@@ -432,8 +480,8 @@
 
         // Grid
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda5RPO.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-${item.originalItemNumber}` });
+        aneelAgenda3Circuito.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito-${item.originalItemNumber}` });
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
@@ -459,13 +507,10 @@
 
             infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
             infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            if (item.votoVistaRelator) {
-                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Vista', item.votoVistaRelator));
-            }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área', item.areaResponsible));
-            
+
             if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão Proposta / Resumo', item.votoSummary));
             }
             if (item.decision) {
                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
@@ -730,12 +775,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 3º Circuito');
       const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados da 5ª RPO'); 
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pautaButton, consultasAbertasButton, agendaButton, imersaoButton);
+      navContainer.append(circuitoButton, pautaButton, consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -749,20 +795,21 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pautaButton, consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [circuitoButton, pautaButton, consultasAbertasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
+      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderPageWithAnimation(renderCircuito3Page, contentContainer); });
       pautaButton.addEventListener('click', () => { setActiveButton(pautaButton); renderPageWithAnimation(renderRPO5Page, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na Pauta da 5ª RPO
-      setActiveButton(pautaButton);
-      renderPageWithAnimation(renderRPO5Page, contentContainer);
+      // Inicia na Pauta do 3º Circuito por ser a mais recente
+      setActiveButton(circuitoButton);
+      renderPageWithAnimation(renderCircuito3Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
