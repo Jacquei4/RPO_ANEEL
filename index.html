@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation.">
-  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Reunião Pública Ordinária, Resultados">
+  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Circuito Deliberativo, Resultados">
 
   <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
@@ -207,18 +207,15 @@
     };
     
     // --- DATAS GERAIS ---
-    const rpo5_2026DateText = '10 de março de 2026';
     const circuito3_2026DateText = '17 de março de 2026';
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
-    const mmeConsultaLink = "https://consultas-publicas.mme.gov.br/home"; 
-    const youtubeLink = "https://www.youtube.com/live/_r7LA4qkPWc?si=Kbepws9OCJCgrjfp";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
         info: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         user: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`,
         building: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`,
-        clipboard: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></path></svg>`,
+        clipboard: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>`,
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
@@ -231,8 +228,9 @@
             subject: "Resultado da Revisão Tarifária Periódica da Companhia Jaguari de Energia – CPFL Santa Cruz, a vigorar a partir de 22 de março de 2026, após análise das contribuições recebidas na Consulta Pública nº 41/2025.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "O relator propõe a homologação do resultado da Revisão Tarifária Periódica da CPFL Santa Cruz, estabelecendo os novos limites para os indicadores de continuidade (DEC e FEC) e redefinindo a Base de Remuneração Regulatória (BRR) e os custos operacionais eficientes, com base nas contribuições recebidas na Consulta Pública nº 41/2025.",
+            status: "view_request",
+            decision: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
+            votoSummary: "O Diretor-Relator votou no sentido de aprovar a RTP de 2026 da CPFL Santa Cruz, estabelecendo um efeito médio a ser percebido pelos consumidores de 18,89% (sendo de 11,46% na AT e 22,66% na BT), além da fixação do componente T do Fator X em 0,502% e do referencial regulatório de perdas.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.028437-2025-60.pdf"}]
         },
         {
@@ -241,9 +239,15 @@
             subject: "Resultado da Consulta Pública nº 37/2024, que trata dos pedidos de Revisão Tarifária Extraordinária das concessionárias de distribuição Light Serviços de Eletricidade S.A., Neoenergia Coelba, Neoenergia Pernambuco, Neoenergia Cosern, Neoenergia Brasília e Copel devido à pandemia de Covid-19, nos termos do Submódulo 2.10 do PRORET.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            votoSummary: "A minuta de voto propõe o reconhecimento dos impactos econômico-financeiros decorrentes da pandemia de Covid-19 nas áreas de concessão das distribuidoras analisadas. A decisão propõe o deferimento dos valores a serem recompostos via Revisão Tarifária Extraordinária, seguindo a metodologia estabelecida no Submódulo 2.10 do PRORET.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006391-2022-85.pdf"}]
+            status: "view_request",
+            decision: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
+            votoSummary: "O Diretor-Relator votou no sentido de conhecer e, no mérito, indeferir os pedidos de Revisão Tarifária Extraordinária, e ainda propor a revogação do Submódulo 2.10 dos Procedimentos de Regulação Tarifária (PRORET).",
+            details: "Houve sustentação oral por parte dos representantes da ABRADEE e da Neoenergia S.A. As manifestações foram realizadas por vídeo.",
+            links: [
+                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006391-2022-85.pdf"},
+                {title: "Sustentação Oral (ABRADEE)", url: "https://youtu.be/ee7j2owJFco?si=B-9PoRWLIih3fkeq"},
+                {title: "Sustentação Oral (Neoenergia S.A.)", url: "https://youtu.be/gN8smE2KiTg?si=VhJGthA6txSo4u5V"}
+            ]
         },
         {
             originalItemNumber: 6,
@@ -251,8 +255,8 @@
             subject: "Pedido de Reconsideração interposto pela Companhia Paulista de Força e Luz – CPFL Paulista contra a Resolução Homologatória nº 3.452/2025, que homologou o índice de Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "A distribuidora alega divergências no cálculo de componentes financeiros no seu Reajuste Tarifário Anual de 2025. O voto do relator avalia o mérito dos pleitos e propõe conhecer do Pedido de Reconsideração para, no mérito, negar-lhe provimento, mantendo integralmente as disposições da Resolução Homologatória nº 3.452/2025.",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu: (i) não conhecer do pedido de atualização sobre o pagamento de impostos de PIS e COFINS; (ii) conhecer e negar provimento aos pedidos sobre consumidores em SCEE e perdas técnicas; e (iii) dar provimento parcial para deduzir R$ 24 milhões (atualizados pelo IGP-M) do repasse da CDE no processo de 2026, além de determinar a reapresentação dos valores da CDE Covid e Escassez Hídrica.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903318-2024-13.pdf"}]
         },
         {
@@ -261,8 +265,8 @@
             subject: "Pedido de Reconsideração interposto pela RGE Sul Distribuidora de Energia S.A. – RGE contra a Resolução Homologatória nº 3.473/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "O relator analisa o recurso da RGE Sul que questiona o tratamento de determinados custos com encargos setoriais no Reajuste Tarifário Anual de 2025. O voto propõe o conhecimento do recurso para, no mérito, dar-lhe parcial provimento, com o intuito de corrigir inconsistências pontuais identificadas na base de cálculo.",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu conhecer do Pedido de Reconsideração e, no mérito, dar-lhe parcial provimento, para incluir no próximo processo tarifário da RGE um valor financeiro negativo de R$ 4.151.271,34 correspondente ao ajuste da cobertura tarifária de compra de energia por recálculo de perdas (corrigido pela variação de mercado e taxa Selic).",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003971-2025-63.pdf"}]
         },
         {
@@ -271,104 +275,18 @@
             subject: "Pedido para edição de súmula para uniformização de penalidades editalícias.",
             areaResponsible: "SFF, SEL, SCE, SFT, SGA.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            votoSummary: "A minuta propõe a edição de uma súmula vinculante para uniformizar a aplicação de penalidades decorrentes do descumprimento de obrigações previstas em editais de leilão. O relator defende que a medida trará maior segurança jurídica, isonomia e previsibilidade aos agentes do setor elétrico.",
+            status: "withdrawn",
+            decision: "O processo foi retirado da Pauta.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001037-2023-45.pdf"}]
-        }
-    ];
-
-    // --- DADOS DA 5ª RPO DE 2026 ---
-    const aneelAgenda5RPO = [
-        {
-            originalItemNumber: 1,
-            process: "48500.030702/2025-70",
-            subject: "Reajuste Tarifário Anual da Enel Distribuição Rio – Enel RJ, a vigorar a partir de 15 de março de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas com efeito médio de 15,46% a ser percebido pelos consumidores (19,94% em média para Alta Tensão e 14,23% para Baixa Tensão). Também foi decidido negar provimento aos pleitos extraordinários interpostos pela distribuidora.",
-            details: "Ordem de julgamento: 2. Houve sustentação oral por parte do representante da Enel RJ e do Conselho de Consumidores da Enel Rio.",
-            links: [
-                {title: "Apresentação Técnica", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQDMpGZunjXWSLN54J-sh9mBAdHv8jZKSuHmM4U1KvOIDjk?e=xAm5af"},
-                {title: "Sustentação Oral (Enel RJ)", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQDTD9fDgNYkSoiGJTLaDOhPAfsrlqW-Uy54tFMQZSaQaVo?e=Mg0fwo"},
-                {title: "Sustentação Oral (Conselho)", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQAn2KbCjTIPRaiVe_5OlRBXAXIAcYP6llCXNA_O3Doe1Nk?e=DFBWai"}
-            ]
-        },
-        {
-            originalItemNumber: 2,
-            process: "48500.030636/2025-38",
-            subject: "Reajuste Tarifário Anual da Light Serviços de Eletricidade S.A., a vigorar a partir de 15 de março de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas com efeito médio de 8,59% a ser percebido pelos consumidores (13,46% em média para Alta Tensão e 6,56% para Baixa Tensão).",
-            details: "Ordem de julgamento: 3. Houve sustentação oral por parte do representante da Light S.A. O Diretor-Relator solicitou registro em Ata sobre a necessidade de alinhamento institucional entre ANEEL, Ministério da Fazenda e Receita Federal para apresentar os cálculos e efeitos tarifários da devolução de créditos de PIS e COFINS.",
-            links: [
-                {title: "Apresentação Técnica", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQD6X8CtsTXETb4C3L1a79w9AUiJl879QJsRmOKtnHH_aH4?e=U95b8f"},
-                {title: "Sustentação Oral", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQA9Qaf4QfjrS5LtSuhWsgEhAYQ1Lvz_Ilq5Zr53Wum29c8?e=1dOsCb"}
-            ]
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.004885/2020-63",
-            subject: "Resultado da Consulta Pública nº 39/2023, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação para o armazenamento de energia elétrica.",
-            areaResponsible: "STR, SCE, SFT, STD, SGM, STE",
-            relator: "Daniel Cardoso Danna",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "withdrawn",
-            decision: "O processo foi retirado da Pauta na fase de debate dos Diretores.",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5MtrrnHy&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.037166/2025-33",
-            subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "withdrawn",
-            decision: "O processo foi retirado da Pauta.",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5MtrrnHy&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
-        },
-        {
-            originalItemNumber: 10,
-            process: "48500.015499/2025-10",
-            subject: "Recurso Administrativo interposto pela Scala Data Centers S.A. – Scala III contra o Despacho nº 1.865/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de postergação da data de início de execução do Contrato de Uso do Sistema de Transmissão – CUST nº 59/2024.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            votoSummary: "O argumento central da relatora baseia-se no princípio de que a alocação de risco por atrasos nas instalações do usuário não pode ser repassada ao sistema, não restando comprovada excludente de responsabilidade (força maior) que justifique o adiamento do contrato.",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo e, no mérito, negar-lhe provimento, mantendo o indeferimento do pedido de postergação da data de início de execução do Contrato.",
-            details: "Ordem de julgamento: 5. O processo foi destacado do bloco em decorrência da admissão de sustentação oral, realizada pela representante da Scala Data Centers S.A.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.015499-2025-10.pdf"}]
-        },
-        {
-            originalItemNumber: 18,
-            process: "48500.021385/2025-09",
-            subject: "Requerimento Administrativo protocolado pela ISA Energia Brasil S.A. com vistas à anuência prévia para a exploração de atividades atípicas, além daquelas outorgadas pelos Contratos de Concessão de Transmissão de Energia Elétrica nº 59/2001, nº 12/2023, nº 8/2022, nº 6/2023 e nº 12/2023.",
-            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
-            relator: "Willamy Moreira Frota",
-            status: "withdrawn",
-            votoSummary: "O relator fundamentou sua análise na premissa de que a exploração de atividades atípicas otimiza o uso dos ativos da concessão sem prejudicar a prestação do serviço público de transmissão, desde que observada a rigorosa segregação contábil e a reversibilidade de parte das receitas.",
-            decision: "O processo foi retirado da Pauta.",
-            details: "Ordem de julgamento: 18.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.021385-2025-09.pdf"}]
-        },
-        {
-            originalItemNumber: 26,
-            process: "48500.003353/2024-32",
-            subject: "Ratificação da decisão proferida no 2º Circuito Deliberativo Público Ordinário de 2026, referente à retificação das Tarifas de Uso do Sistema de Transmissão de Energia Elétrica – TUST desestabilizadas indevidamente pela Resolução Homologatória nº 3.482/2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            votoSummary: "O argumento do relator destaca a necessidade de garantir a segurança jurídica e a correção material dos cálculos tarifários, corrigindo inconsistências na base de dados que geraram a desestabilização indevida.",
-            decision: "A Diretoria, por unanimidade, decidiu ratificar a decisão proferida no 2º Circuito Deliberativo Público Ordinário de 2026, retificando, de ofício, o regime tarifário das usinas relacionadas no processo.",
-            details: "Ordem de julgamento: 26. Houve pedido de sustentação oral por parte da Marlim Azul Energia S.A., contudo, o pedido foi indeferido pelo Presidente da Reunião.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
         }
     ];
 
     // DADOS DAS CONSULTAS PÚBLICAS
     const consultasPublicasData = [
+         { numero: "CP 218/2026", tema: "Proposta de diretrizes para a adoção da contabilização dupla no Mercado de Curto Prazo – MCP e para a transição para ofertas de quantidade de energia elétrica a serem consideradas nos processos de otimização energética e formação do preço de curto prazo.", status: "aberta", inicio: "02/03/2026", fim: "15/04/2026", area: "Secretaria Executiva", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 217/2026", tema: "Diretrizes para as Temporadas de Acesso da Política Nacional de Acesso ao Sistema de Transmissão – PNAST", status: "aberta", inicio: "02/03/2026", fim: "31/03/2026", area: "Departamento de Planejamento e Outorgas de Transmissão e Distribuição de Energia Elétrica e Interligações Internacionais", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "TS 05/2026", tema: "Obter subsídios para aprimoramentos das regras de acesso ao sistema de transmissão.", status: "aberta", inicio: "17/03/2026", fim: "30/04/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=TMU8yQRH&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3994&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 29/2025", tema: "Obter subsídios para a definição dos indicadores e metas de Performance Organizacional do ONS para o ciclo de janeiro de 2026 a dezembro de 2028.", status: "encerrada", inicio: "28/08/2025", fim: "13/10/2025", area: "SMA", origem: "ANEEL", link: "https://www.gov.br/participamaisbrasil/consulta-publica-n-29-2025-obter-subsidios-para-publicacao-da-res-hom-contendo-a-definicao-dos-indicadores-e-metas-de-performance-organizacional-do-ons-para-o-ciclo-de-jan-de-26-a-dez-de-28-" },
          { numero: "TS 004/2026", tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, que trata da avaliação da qualidade dos sistemas de governança corporativa.", status: "aberta", inicio: "30/01/2026", fim: "16/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 001/2026", tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.", status: "aberta", inicio: "20/01/2026", fim: "18/02/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", status: "aberta", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -385,15 +303,15 @@
          { numero: "CP 40/2025", tema: "Obter subsídios e informações adicionais para promover regulamentação contábil tributária do fundo de descomissionamento de Angra 1 e 2 em atendimento à determinação do Acórdão nº 2502/2024 do Tribunal de Contas da União - TCU.", status: "aberta", inicio: "10/12/2025", fim: "24/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/consultas-publicas" },
          { numero: "CP 41/2025", tema: "Obter subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Companhia Jaguari de Energia - CPFL Santa Cruz.", status: "aberta", inicio: "10/12/2025", fim: "07/02/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3979&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 43/2025", tema: "Obter subsídios e informações adicionais com vistas à avaliação da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022, que regulamenta a licitação e a prorrogação das concessões de serviço público de transmissão de energia elétrica em fim de vigência.", status: "aberta", inicio: "11/12/2025", fim: "10/03/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3981&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 44/2025", tema: "Obter subsídios e informações adicionais para definir o orçamento e as quotas anuais da Conta de Desenvolvimentos Energético (CDE) de 2026.", status: "aberta", inicio: "10/12/2025", fim: "26/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3982&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 45/2025", tema: "Obter subsídios visando ao aprimoramento da metodologia de cálculo do Saldo do Uso de Bem Público (UBP) a ser repactuado, conforme disposto no art. 4º da Lei nº 15.235, de 2025.", status: "aberta", inicio: "11/12/2025", fim: "12/01/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3983&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 46/2025", tema: "Obter subsídios para discutir com a sociedade a aplicação automática de Tarifa Horária (Tarifa Branca) para os consumidores de baixa tensão dos subgrupos B1 (residencial), B2 (rural) e B3 (comercial, industrial e outros) com consumo mensal igual ou superior a 1 MWh.", status: "aberta", inicio: "10/12/2025", fim: "09/03/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3984&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 47/2025", tema: "Receber contribuições para definição do critério de rateio dos recursos arrecadados na CDE de que tratam os parágrafos 8º e 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de UBP.", status: "aberta", inicio: "19/12/2025", fim: "08/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=5JeDSa4F&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3987&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 25/2025", tema: "Obter subsídios para formação da base de dados e revisão da metodologia de perdas não técnicas e receitas irrecuperáveis - Submódulo 2.6 e 2.6A dos PRORET.", status: "aberta", inicio: "19/12/2025", fim: "06/03/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=cuFs1oXt&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3986&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 24/2025", tema: "Obter subsídios sobre a minuta de Manual de instruções para envio das informações sobre as famílias beneficiadas pela Tarifa Social de Energia Elétrica e pelo Desconto Social.", status: "aberta", inicio: "15/12/2025", fim: "13/01/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=cuFs1oXt&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3985&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 207/2025", tema: "Orçamento da CDE para a execução do Programa Luz para Todos no ano de 2026.", status: "aberta", inicio: "05/12/2025", fim: "22/12/2025", area: "DUPS/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 214/2026", tema: "Minuta do Plano Decenal de Expansão de Energia 2035 - PDE 2035.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" }
+         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 30/2025", tema: "Obter subsídios e informações adicionais acerca do aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.", status: "aberta", inicio: "10/09/2025", fim: "24/10/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=b70gaSvf&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 028/2025", tema: "Obter subsídios e informações adicionais para aperfeiçoar a minuta do Edital e Anexos do Leilão nº 1/2026-ANEEL (Leilão de Transmissão).", status: "aberta", inicio: "21/08/2025", fim: "19/09/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=rGI8tW6C&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 011/2025", tema: "Obter subsídios para a elaboração da Agenda Regulatória 2026/2027 da ANEEL.", status: "encerrada", inicio: "21/07/2025", fim: "20/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=btRxrr0q&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3950&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 027/2025", tema: "Aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.", status: "aberta", inicio: "03/07/2025", fim: "12/09/2025", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 025/2025", tema: "Edital e Anexos dos Leilões de Energia Existente “A-1”, “A-2” e “A-3”, de 2025.", status: "encerrada", inicio: "18/06/2025", fim: "04/08/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3945&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 010/2025", tema: "Aprimoramento da base de dados (triênio 2021-23) para o Submódulo 2.2 do PRORET (Custos Operacionais).", status: "encerrada", inicio: "01/07/2025", fim: "15/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3948&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 009/2025", tema: "Aprimoramento do Programa de Eficiência Energética - PEE.", status: "encerrada", inicio: "01/07/2025", fim: "14/08/2025", area: "SRD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3947&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 007/2025", tema: "Guia Prático sobre Mudanças Climáticas e Transição Energética.", status: "aberta", inicio: "20/05/2025", fim: "04/08/2025", area: "SRD/SGM", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3939&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }
     ];
 
     // DADOS DA AGENDA REGULATÓRIA
@@ -427,7 +345,7 @@
     function renderCircuito3Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 3º Circuito Deliberativo Público Ordinário de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 3º Circuito Deliberativo Público Ordinário de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito3_2026DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -442,13 +360,13 @@
 
         // Detalhes do circuito
         const circuitoDetails = createElement('div', 'bg-gray-50 border border-gray-200 p-4 rounded-lg mb-8 text-sm text-gray-700');
-        circuitoDetails.innerHTML = `<strong>Aviso:</strong> O Circuito Deliberativo é realizado por votação eletrônica e não possui transmissão ao vivo. O período de votação ocorre das 8h às 18h.`;
+        circuitoDetails.innerHTML = `<strong>Aviso:</strong> O Circuito Deliberativo é realizado por votação eletrônica de forma assíncrona. O período de votação ocorreu das 8h às 18h.`;
         container.appendChild(circuitoDetails);
 
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques da Pauta (Sumário)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques dos Resultados (Sumário)'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
@@ -510,10 +428,10 @@
             infoContainer.appendChild(createInfoRow(icons.building, 'Área', item.areaResponsible));
 
             if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Decisão Proposta / Resumo', item.votoSummary));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Proposta do Relator', item.votoSummary));
             }
             if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão / Status Final', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
             }
             if (item.details) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
@@ -546,6 +464,11 @@
         const tableContainer = createElement('div', 'info-card overflow-x-auto');
 
         let openConsultas = consultasPublicasData.filter(cp => isConsultaAberta(cp.fim));
+        
+        openConsultas.forEach(cp => {
+            cp.status = 'aberta';
+        });
+
         openConsultas.sort((a, b) => {
             const parseDate = (dateStr) => {
                 const parts = dateStr.split('/');
@@ -775,13 +698,12 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 3º Circuito');
-      const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados da 5ª RPO'); 
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3º Circuito');
       const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(circuitoButton, pautaButton, consultasAbertasButton, agendaButton, imersaoButton);
+      navContainer.append(circuitoButton, consultasAbertasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -795,14 +717,13 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [circuitoButton, pautaButton, consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [circuitoButton, consultasAbertasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
       circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderPageWithAnimation(renderCircuito3Page, contentContainer); });
-      pautaButton.addEventListener('click', () => { setActiveButton(pautaButton); renderPageWithAnimation(renderRPO5Page, contentContainer); });
       consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
