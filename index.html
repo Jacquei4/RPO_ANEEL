@@ -4,14 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation.">
-  <meta name="keywords" content="ANEEL, i4 Economic Regulation, dashboard, regulação, setor elétrico, Circuito Deliberativo, Resultados">
-
-  <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="Dashboard ANEEL - i4 Economic Regulation">
-  <meta property="og:description" content="Acompanhe os resultados das reuniões, circuitos deliberativos e consultas públicas da ANEEL.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_social_preview.png">
-  <meta property="og:type" content="website">
-
   <title>Dashboard ANEEL 2026 - i4 Economic Regulation</title>
 
   <!-- Favicon -->
@@ -22,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Configuração de Cores Tailwind -->
+  
+  <!-- Configuração de Cores Tailwind Personalizadas i4 -->
   <script>
     tailwind.config = {
       theme: {
@@ -38,6 +31,7 @@
       }
     }
   </script>
+  
   <style>
     /* Estilos globais */
     body {
@@ -50,6 +44,7 @@
     html {
       scroll-behavior: smooth;
     }
+    
     /* Estilo base do botão de navegação */
     .nav-button-base {
         padding-left: 1.25rem; 
@@ -78,35 +73,6 @@
         background-color: #cbd5e0; 
         color: #2d3748; 
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    }
-    [data-tooltip] {
-      position: relative;
-      cursor: help;
-    }
-    [data-tooltip]::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 115%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #2d3748; 
-      color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.875rem;
-      white-space: normal;
-      width: max-content;
-      max-width: 250px;
-      text-align: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    [data-tooltip]:hover::after {
-      opacity: 1;
-      visibility: visible;
     }
 
     /* Animação de Fade-in */
@@ -168,7 +134,9 @@
 
     function calculateDays(endDateStr) {
         if (!endDateStr) return '';
-        const [day, month, year] = endDateStr.split('/');
+        const parts = endDateStr.split('/');
+        if (parts.length !== 3) return '';
+        const [day, month, year] = parts;
         const endDate = new Date(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), 23, 59, 59, 999);
         const now = new Date();
         const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -176,8 +144,8 @@
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         if (diffDays > 1) { return `<span class="font-bold text-green-600">${diffDays} dias restantes</span>`; } 
-        else if (diffDays === 1) { return `<span class="font-bold text-orange-500">Último dia</span>`; } 
-        else { return `<span class="text-gray-500">Encerrada</span>`; }
+        else if (diffDays === 1 || diffDays === 0) { return `<span class="font-bold text-orange-500">Último dia</span>`; } 
+        else { return `<span class="text-gray-500 font-semibold">Encerrada</span>`; }
     }
     
     function isConsultaAberta(endDateStr) {
@@ -194,11 +162,8 @@
     const pautaStatusMap = {
       scheduled: { text: "Agendado / Em Pauta", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800 border border-green-200" },
-      denied: { text: "Negado / Não Conhecido", classes: "bg-red-100 text-red-800 border border-red-200" },
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800 border border-yellow-200" },
-      suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800 border border-orange-200" },
-      in_deliberation: { text: "Em Deliberação", classes: "bg-purple-100 text-purple-800 border border-purple-200" },
     };
 
     const consultaStatusMap = {
@@ -206,9 +171,10 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    // --- DATAS GERAIS ---
-    const circuito3_2026DateText = '17 de março de 2026';
+    const rpo6DateText = '24 de março de 2026';
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
+    const convocacaoLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/convoca6rpo.pdf";
+    const youtubeLink = "https://www.youtube.com/live/QMXrsScu8Ek?si=W2BNfUUsBVps37m7";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -220,101 +186,115 @@
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
     };
 
-    // --- DADOS DO 3º CIRCUITO DELIBERATIVO DE 2026 ---
-    const aneelAgenda3Circuito = [
-        {
-            originalItemNumber: 1,
-            process: "48500.028437/2025-60",
-            subject: "Resultado da Revisão Tarifária Periódica da Companhia Jaguari de Energia – CPFL Santa Cruz, a vigorar a partir de 22 de março de 2026, após análise das contribuições recebidas na Consulta Pública nº 41/2025.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "view_request",
-            decision: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
-            votoSummary: "O Diretor-Relator votou no sentido de aprovar a RTP de 2026 da CPFL Santa Cruz, estabelecendo um efeito médio a ser percebido pelos consumidores de 18,89% (sendo de 11,46% na AT e 22,66% na BT), além da fixação do componente T do Fator X em 0,502% e do referencial regulatório de perdas.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.028437-2025-60.pdf"}]
-        },
+    // --- DADOS DA 6ª RPO DE 2026 ---
+    const aneelAgenda6RPO = [
         {
             originalItemNumber: 2,
-            process: "48500.006391/2022-85",
-            subject: "Resultado da Consulta Pública nº 37/2024, que trata dos pedidos de Revisão Tarifária Extraordinária das concessionárias de distribuição Light Serviços de Eletricidade S.A., Neoenergia Coelba, Neoenergia Pernambuco, Neoenergia Cosern, Neoenergia Brasília e Copel devido à pandemia de Covid-19, nos termos do Submódulo 2.10 do PRORET.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            process: "48500.003331/2024-72",
+            subject: "Termo de Intimação nº 49/2024, lavrado pela Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica – SFT, que trata do Relatório de Falhas e Transgressões à legislação e ao Contrato de Concessão da Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.).",
+            areaResponsible: "Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
+            relator: "Agnes Maria de Aragão da Costa",
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled"
+        },
+        {
+            originalItemNumber: 3,
+            process: "48500.010865/2025-36",
+            subject: "Requerimento Administrativo protocolado pela Enel Distribuição Ceará – Enel CE (Companhia Energética do Ceará – Coelce) com vistas à antecipação dos efeitos da prorrogação do Contrato de Concessão de Distribuição nº 1/1998, nos termos do Decreto nº 12.068/2024 e da Lei nº 9.074/1995.",
+            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "view_request",
-            decision: "O Diretor Gentil Nogueira de Sá Júnior pediu vista deste processo.",
-            votoSummary: "O Diretor-Relator votou no sentido de conhecer e, no mérito, indeferir os pedidos de Revisão Tarifária Extraordinária, e ainda propor a revogação do Submódulo 2.10 dos Procedimentos de Regulação Tarifária (PRORET).",
-            details: "Houve sustentação oral por parte dos representantes da ABRADEE e da Neoenergia S.A. As manifestações foram realizadas por vídeo.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006391-2022-85.pdf"},
-                {title: "Sustentação Oral (ABRADEE)", url: "https://youtu.be/ee7j2owJFco?si=B-9PoRWLIih3fkeq"},
-                {title: "Sustentação Oral (Neoenergia S.A.)", url: "https://youtu.be/gN8smE2KiTg?si=VhJGthA6txSo4u5V"}
-            ]
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled"
         },
         {
-            originalItemNumber: 6,
-            process: "48500.003318/2024-13",
-            subject: "Pedido de Reconsideração interposto pela Companhia Paulista de Força e Luz – CPFL Paulista contra a Resolução Homologatória nº 3.452/2025, que homologou o índice de Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
+            originalItemNumber: 8,
+            process: "48500.001967/2024-80",
+            subject: "Recurso Administrativo interposto pela Eneva S.A. contra o Despacho nº 784/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido da Recorrente de isenção de pagamento dos Encargos de Uso do Sistema de Transmissão – EUST “rescisórios” relacionados ao Contrato de Uso do Sistema de Transmissão – CUST nº 3/2002.",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> A recorrente pleiteia a isenção do pagamento de encargos de uso (EUST) de caráter rescisório referentes ao CUST nº 3/2002, alegando a ocorrência de excludentes de responsabilidade em função de fatores alheios ao seu controlo.<br><strong>Decisão do Relator:</strong> A minuta propõe conhecer do recurso e, no mérito, negar-lhe provimento, mantendo a cobrança dos encargos rescisórios por considerar que os factos não caracterizam as excludentes alegadas conforme a regulação vigente.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901967-2024-80.pdf"}]
+        },
+        {
+            originalItemNumber: 10,
+            process: "48500.001221/2024-76",
+            subject: "Pedido de Reconsideração interposto pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra a Resolução Autorizativa nº 16.051/2025, que autorizou a Recorrente a realizar as Melhorias de Grande Porte sob sua responsabilidade, referentes ao Contrato de Concessão nº 62/2001, e estabeleceu os valores das parcelas adicionais de Receita Anual Permitida – RAP.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) não conhecer do pedido de atualização sobre o pagamento de impostos de PIS e COFINS; (ii) conhecer e negar provimento aos pedidos sobre consumidores em SCEE e perdas técnicas; e (iii) dar provimento parcial para deduzir R$ 24 milhões (atualizados pelo IGP-M) do repasse da CDE no processo de 2026, além de determinar a reapresentação dos valores da CDE Covid e Escassez Hídrica.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903318-2024-13.pdf"}]
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> A concessionária contesta o orçamento regulatório estabelecido na Resolução Autorizativa para Melhorias de Grande Porte (MGP), requerendo a revisão da Parcela adicional de RAP com base em custos específicos de equipamentos que não teriam sido valorizados adequadamente.<br><strong>Decisão do Relator:</strong> A minuta propõe conhecer do pedido e dar-lhe provimento parcial, ajustando o valor da Parcela de RAP para incluir parcelas de custos comprovados que se enquadram na base de remuneração regulatória estrita.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901221-2024-76.pdf"}]
         },
         {
-            originalItemNumber: 7,
-            process: "48500.003971/2025-63",
-            subject: "Pedido de Reconsideração interposto pela RGE Sul Distribuidora de Energia S.A. – RGE contra a Resolução Homologatória nº 3.473/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
+            originalItemNumber: 16,
+            process: "48500.003470/2024-04",
+            subject: "Requerimento Administrativo protocolado pelas Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra o Despacho nº 3.408/2025, que deu parcial provimento ao Pedido de Reconsideração interposto pela Recorrente contra a Resolução Autorizativa nº 15.683/2024, que autorizou e estabeleceu a Parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão sob responsabilidade da Recorrente.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer do Pedido de Reconsideração e, no mérito, dar-lhe parcial provimento, para incluir no próximo processo tarifário da RGE um valor financeiro negativo de R$ 4.151.271,34 correspondente ao ajuste da cobertura tarifária de compra de energia por recálculo de perdas (corrigido pela variação de mercado e taxa Selic).",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003971-2025-63.pdf"}]
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> Avaliação do requerimento da transmissora contra um despacho anterior relacionado à autorização de reforços, discutindo a retroatividade e a data de início da remuneração das obras executadas.<br><strong>Decisão do Relator:</strong> O voto propõe conhecer do requerimento administrativo e negar-lhe provimento, mantendo na íntegra o despacho contestado e as premissas originais de cálculo da RAP dos referidos reforços.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903470-2024-04.pdf"}]
         },
         {
-            originalItemNumber: 20,
-            process: "48500.001037/2023-45",
-            subject: "Pedido para edição de súmula para uniformização de penalidades editalícias.",
-            areaResponsible: "SFF, SEL, SCE, SFT, SGA.",
-            relator: "Willamy Moreira Frota",
-            status: "withdrawn",
-            decision: "O processo foi retirado da Pauta.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.001037-2023-45.pdf"}]
+            originalItemNumber: 22,
+            process: "48500.005573/2026-62",
+            subject: "Autorização e estabelecimento da Parcela da Receita Anual Permitida – RAP referente a Melhorias de Grande Porte em instalações de transmissão sob responsabilidade da Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras), Contrato de Concessão nº 62/2001.",
+            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> O processo analisa o pleito de autorização para a implantação de um novo pacote de Melhorias de Grande Porte (MGP) nas instalações da transmissora, com a necessidade de definir o orçamento regulatório que comporá a Parcela de Receita Anual Permitida (RAP).<br><strong>Decisão do Relator:</strong> A minuta propõe autorizar a realização das obras de MGP e estabelecer a parcela correspondente de RAP adicional, de acordo com o banco de preços da ANEEL e alinhada ao cronograma físico-financeiro aprovado.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.005573-2026-62.pdf"}]
         }
     ];
 
-    // DADOS DAS CONSULTAS PÚBLICAS
+    // DADOS DAS CONSULTAS PÚBLICAS (Lista Completa)
     const consultasPublicasData = [
-         { numero: "CP 218/2026", tema: "Proposta de diretrizes para a adoção da contabilização dupla no Mercado de Curto Prazo – MCP e para a transição para ofertas de quantidade de energia elétrica a serem consideradas nos processos de otimização energética e formação do preço de curto prazo.", status: "aberta", inicio: "02/03/2026", fim: "15/04/2026", area: "Secretaria Executiva", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 217/2026", tema: "Diretrizes para as Temporadas de Acesso da Política Nacional de Acesso ao Sistema de Transmissão – PNAST", status: "aberta", inicio: "02/03/2026", fim: "31/03/2026", area: "Departamento de Planejamento e Outorgas de Transmissão e Distribuição de Energia Elétrica e Interligações Internacionais", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "TS 05/2026", tema: "Obter subsídios para aprimoramentos das regras de acesso ao sistema de transmissão.", status: "aberta", inicio: "17/03/2026", fim: "30/04/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=TMU8yQRH&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3994&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 29/2025", tema: "Obter subsídios para a definição dos indicadores e metas de Performance Organizacional do ONS para o ciclo de janeiro de 2026 a dezembro de 2028.", status: "encerrada", inicio: "28/08/2025", fim: "13/10/2025", area: "SMA", origem: "ANEEL", link: "https://www.gov.br/participamaisbrasil/consulta-publica-n-29-2025-obter-subsidios-para-publicacao-da-res-hom-contendo-a-definicao-dos-indicadores-e-metas-de-performance-organizacional-do-ons-para-o-ciclo-de-jan-de-26-a-dez-de-28-" },
-         { numero: "TS 004/2026", tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, que trata da avaliação da qualidade dos sistemas de governança corporativa.", status: "aberta", inicio: "30/01/2026", fim: "16/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 001/2026", tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.", status: "aberta", inicio: "20/01/2026", fim: "18/02/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", status: "aberta", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 213/2026", tema: "Minuta de Portaria para revisão e atualização do conteúdo da Portaria MME nº 331, de julho de 2005.", status: "aberta", inicio: "30/01/2026", fim: "28/02/2026", area: "SNTEP/DIEE/CGII", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 212/2026", tema: "Diretrizes gerais para antecipação dos contratos de projetos vencedores do Leilão de Reserva de Capacidade na forma de Energia (LRCE) e do Leilão de Reserva de Capacidade na forma de Potência (LRCAP).", status: "aberta", inicio: "23/01/2026", fim: "11/02/2026", area: "DDOS/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 201/2025", tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.", status: "aberta", inicio: "05/11/2025", fim: "05/12/2025", area: "DPSE/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 202/2025", tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).", status: "aberta", inicio: "10/11/2025", fim: "01/12/2025", area: "DPOG/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 33/2025", tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).", status: "aberta", inicio: "06/11/2025", fim: "22/12/2025", area: "SGM/SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 35/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 36/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 37/2025", tema: "Rateio do custo e da generation de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).", status: "aberta", inicio: "20/11/2025", fim: "05/01/2026", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" },
-         { numero: "CP 38/2025", tema: "Regras e Procedimentos de Comercialização (Garantias CCEARs LEE 2025).", status: "aberta", inicio: "19/11/2025", fim: "18/12/2025", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" },
-         { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", status: "aberta", inicio: "04/12/2025", fim: "03/04/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3976&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 40/2025", tema: "Obter subsídios e informações adicionais para promover regulamentação contábil tributária do fundo de descomissionamento de Angra 1 e 2 em atendimento à determinação do Acórdão nº 2502/2024 do Tribunal de Contas da União - TCU.", status: "aberta", inicio: "10/12/2025", fim: "24/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/consultas-publicas" },
-         { numero: "CP 41/2025", tema: "Obter subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Companhia Jaguari de Energia - CPFL Santa Cruz.", status: "aberta", inicio: "10/12/2025", fim: "07/02/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3979&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 43/2025", tema: "Obter subsídios e informações adicionais com vistas à avaliação da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022, que regulamenta a licitação e a prorrogação das concessões de serviço público de transmissão de energia elétrica em fim de vigência.", status: "aberta", inicio: "11/12/2025", fim: "10/03/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3981&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", status: "aberta", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 30/2025", tema: "Obter subsídios e informações adicionais acerca do aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.", status: "aberta", inicio: "10/09/2025", fim: "24/10/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=b70gaSvf&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 028/2025", tema: "Obter subsídios e informações adicionais para aperfeiçoar a minuta do Edital e Anexos do Leilão nº 1/2026-ANEEL (Leilão de Transmissão).", status: "aberta", inicio: "21/08/2025", fim: "19/09/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=rGI8tW6C&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 011/2025", tema: "Obter subsídios para a elaboração da Agenda Regulatória 2026/2027 da ANEEL.", status: "encerrada", inicio: "21/07/2025", fim: "20/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=btRxrr0q&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3950&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 027/2025", tema: "Aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.", status: "aberta", inicio: "03/07/2025", fim: "12/09/2025", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 025/2025", tema: "Edital e Anexos dos Leilões de Energia Existente “A-1”, “A-2” e “A-3”, de 2025.", status: "encerrada", inicio: "18/06/2025", fim: "04/08/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3945&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 010/2025", tema: "Aprimoramento da base de dados (triênio 2021-23) para o Submódulo 2.2 do PRORET (Custos Operacionais).", status: "encerrada", inicio: "01/07/2025", fim: "15/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3948&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 009/2025", tema: "Aprimoramento do Programa de Eficiência Energética - PEE.", status: "encerrada", inicio: "01/07/2025", fim: "14/08/2025", area: "SRD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3947&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "TS 007/2025", tema: "Guia Prático sobre Mudanças Climáticas e Transição Energética.", status: "aberta", inicio: "20/05/2025", fim: "04/08/2025", area: "SRD/SGM", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3939&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }
+         { numero: "CP 218/2026", tema: "Proposta de diretrizes para a adoção da contabilização dupla no Mercado de Curto Prazo – MCP e para a transição para ofertas de quantidade de energia elétrica a serem consideradas nos processos de otimização energética e formação do preço de curto prazo.", inicio: "02/03/2026", fim: "15/04/2026", area: "Secretaria Executiva", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 217/2026", tema: "Diretrizes para as Temporadas de Acesso da Política Nacional de Acesso ao Sistema de Transmissão – PNAST", inicio: "02/03/2026", fim: "31/03/2026", area: "Departamento de Planejamento e Outorgas de Transmissão e Distribuição de Energia Elétrica e Interligações Internacionais", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "TS 05/2026", tema: "Obter subsídios para aprimoramentos das regras de acesso ao sistema de transmissão.", inicio: "17/03/2026", fim: "30/04/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=TMU8yQRH&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3994&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 29/2025", tema: "Obter subsídios para a definição dos indicadores e metas de Performance Organizacional do ONS para o ciclo de janeiro de 2026 a dezembro de 2028.", inicio: "28/08/2025", fim: "13/10/2025", area: "SMA", origem: "ANEEL", link: "https://www.gov.br/participamaisbrasil/consulta-publica-n-29-2025-obter-subsidios-para-publicacao-da-res-hom-contendo-a-definicao-dos-indicadores-e-metas-de-performance-organizacional-do-ons-para-o-ciclo-de-jan-de-26-a-dez-de-28-" },
+         { numero: "TS 004/2026", tema: "Obter subsídios acerca do Relatório de Análise Resultado Regulatório – ARR nº 1/2026-SFF/ANEEL referente à aplicação do Anexo VII da Resolução Normativa - REN nº 948, que trata da avaliação da qualidade dos sistemas de governança corporativa.", inicio: "30/01/2026", fim: "16/03/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3992&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 001/2026", tema: "Incentivar práticas ESG por empresas de geração do setor elétrico.", inicio: "20/01/2026", fim: "18/02/2026", area: "SCE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3988&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4Yb4VbGN&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3989&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 213/2026", tema: "Minuta de Portaria para revisão e atualização do conteúdo da Portaria MME nº 331, de julho de 2005.", inicio: "30/01/2026", fim: "28/02/2026", area: "SNTEP/DIEE/CGII", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 212/2026", tema: "Diretrizes gerais para antecipação dos contratos de projetos vencedores do Leilão de Reserva de Capacidade na forma de Energia (LRCE) e do Leilão de Reserva de Capacidade na forma de Potência (LRCAP).", inicio: "23/01/2026", fim: "11/02/2026", area: "DDOS/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 201/2025", tema: "Proposta de diretrizes e regras para a contratação e atuação de Verificador Independente na distribuição de energia elétrica.", inicio: "05/11/2025", fim: "05/12/2025", area: "DPSE/SNEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 202/2025", tema: "Portaria de Diretrizes e Sistemática do LRCAP de 2026 - Armazenamento (MME).", inicio: "10/11/2025", fim: "01/12/2025", area: "DPOG/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 33/2025", tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).", inicio: "06/11/2025", fim: "22/12/2025", area: "SGM/SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 35/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 36/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 37/2025", tema: "Rateio do custo e da generation de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).", inicio: "20/11/2025", fim: "05/01/2026", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" },
+         { numero: "CP 38/2025", tema: "Regras e Procedimentos de Comercialização (Garantias CCEARs LEE 2025).", inicio: "19/11/2025", fim: "18/12/2025", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" },
+         { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", inicio: "04/12/2025", fim: "03/04/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3976&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 40/2025", tema: "Obter subsídios e informações adicionais para promover regulamentação contábil tributária do fundo de descomissionamento de Angra 1 e 2 em atendimento à determinação do Acórdão nº 2502/2024 do Tribunal de Contas da União - TCU.", inicio: "10/12/2025", fim: "24/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/consultas-publicas" },
+         { numero: "CP 41/2025", tema: "Obter subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Companhia Jaguari de Energia - CPFL Santa Cruz.", inicio: "10/12/2025", fim: "07/02/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3979&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 43/2025", tema: "Obter subsídios e informações adicionais com vistas à avaliação da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022, que regulamenta a licitação e a prorrogação das concessões de serviço público de transmissão de energia elétrica em fim de vigência.", inicio: "11/12/2025", fim: "10/03/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=BXGXg9Rn&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3981&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 30/2025", tema: "Obter subsídios e informações adicionais acerca do aprimoramento da proposta referente à Revisão Tarifária Periódica de 2025 da DME Distribuição S.A. – DMED.", inicio: "10/09/2025", fim: "24/10/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=b70gaSvf&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3953&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 028/2025", tema: "Obter subsídios e informações adicionais para aperfeiçoar a minuta do Edital e Anexos do Leilão nº 1/2026-ANEEL (Leilão de Transmissão).", inicio: "21/08/2025", fim: "19/09/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=rGI8tW6C&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3951&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 011/2025", tema: "Obter subsídios para a elaboração da Agenda Regulatória 2026/2027 da ANEEL.", inicio: "21/07/2025", fim: "20/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=btRxrr0q&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3950&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 027/2025", tema: "Aprimoramento da regulamentação associada à confiabilidade das instalações de transmissão.", inicio: "03/07/2025", fim: "12/09/2025", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3949&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 025/2025", tema: "Edital e Anexos dos Leilões de Energia Existente “A-1”, “A-2” e “A-3”, de 2025.", inicio: "18/06/2025", fim: "04/08/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3945&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 010/2025", tema: "Aprimoramento da base de dados (triênio 2021-23) para o Submódulo 2.2 do PRORET (Custos Operacionais).", inicio: "01/07/2025", fim: "15/08/2025", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3948&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 009/2025", tema: "Aprimoramento do Programa de Eficiência Energética - PEE.", inicio: "01/07/2025", fim: "14/08/2025", area: "SRD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3947&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 007/2025", tema: "Guia Prático sobre Mudanças Climáticas e Transição Energética.", inicio: "20/05/2025", fim: "04/08/2025", area: "SRD/SGM", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=SfwaPAiK&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3939&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" }
     ];
 
-    // DADOS DA AGENDA REGULATÓRIA
+    // DADOS DA AGENDA REGULATÓRIA (Temas e Anexos Aprovados)
+    const agendaRegulatoriaThemes = [
+        { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária." },
+        { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização." },
+        { title: "3. Operação e preço de curto prazo", description: "Este tema visa o aprimoramento contínuo dos modelos computacionais de otimização (NEWAVE, DECOMP) e de formação de preço (PLD), incorporando novas tecnologias como usinas híbridas e sistemas de armazenamento para refletir a complexidade crescente do sistema elétrico." },
+        { title: "4. Contabilidade do setor elétrico", description: "Propõe-se a revisão e modernização dos manuais de contabilidade do setor elétrico para aumentar a transparência, a padronização e a comparabilidade das informações financeiras dos agentes, refletindo as novas dinâmicas do mercado." },
+        { title: "5. Regulação de operações econômico-financeiras", description: "A ANEEL busca fortalecer o monitoramento da saúde financeira dos agentes, especialmente em um cenário de mercado mais aberto. O foco está na adequação de garantias financeiras e na gestão de riscos para garantir a liquidez e a segurança das operações." },
+        { title: "6. Modernização da regulação econômica e das tarifas", description: "Este eixo trata da revisão das metodologias tarifárias de transmissão e distribuição, buscando maior eficiência, incentivos à qualidade e uma alocação de custos que considere novas tecnologias, como redes inteligentes e armazenamento de energia." },
+        { title: "7. Novos contratos de concessão de transmissão e distribuição", description: "A agência se prepara para futuras licitações de concessão, desenvolvendo contratos que incentivem a modernização, a resiliência das redes e a melhoria contínua da qualidade dos serviços prestados à população." },
+        { title: "8. Acesso e atendimento de usuários e consumidores", description: "O objetivo é simplificar as regras de acesso às redes, principalmente para a geração distribuída, e aprimorar os canais de atendimento e os mecanismos de proteção ao consumidor, garantindo um relacionamento mais justo e transparente." },
+        { title: "9. Modernização do serviço de transmissão e distribuição", description: "A regulação buscará incorporar avanços como redes inteligentes (smart grids), digitalização, armazenamento e recursos energéticos distribuídos (REDs), visando aumentar a eficiência, a segurança e a flexibilidade da operação do sistema." },
+        { title: "10. Eficiência energética", description: "Baseado em avaliações de resultados e recomendações do TCU, este tema foca no aprimoramento do Programa de Eficiência Energética (PEE) para otimizar a aplicação dos recursos e maximizar os benefícios socioeconômicos e ambientais." }
+    ];
+
     const agendaRegulatoriaDetalhada = [
         { eixo: "Geração & Mercado", codigo: "GER21-07[B]", atividade: "Regulamentação do \"Constrained off\" de centrais geradoras hidrelétricas", ano: "2026" },
         { eixo: "Geração & Mercado", codigo: "C&M21-14", atividade: "Aprimoramento da regulamentação das Garantias Financeiras do Mercado de Curto Prazo", ano: "2027" },
@@ -341,47 +321,52 @@
         renderFunction(container);
     }
 
-    // --- RENDER PAUTA 3º CIRCUITO ---
-    function renderCircuito3Page(container) {
+    // --- RENDER PAUTA 6ª RPO ---
+    function renderPautaPage(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 3º Circuito Deliberativo Público Ordinário de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data: ${circuito3_2026DateText}`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 6ª Reunião Pública Ordinária de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo6DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
+        // Link do YouTube
+        const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-6');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
+
         // Link Convocação
         const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial (Convocação)');
-        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ver Arquivo PDF`, { href: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0308426_convocacao.pdf", target: '_blank', rel: 'noopener noreferrer' });
+        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial completa (Convocação PDF)');
+        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Visualizar Convocação`, { href: convocacaoLink, target: '_blank', rel: 'noopener noreferrer' });
         convocacaoSection.appendChild(convocacaoText);
         convocacaoSection.appendChild(convocacaoLinkAnchor);
         container.appendChild(convocacaoSection);
 
-        // Detalhes do circuito
-        const circuitoDetails = createElement('div', 'bg-gray-50 border border-gray-200 p-4 rounded-lg mb-8 text-sm text-gray-700');
-        circuitoDetails.innerHTML = `<strong>Aviso:</strong> O Circuito Deliberativo é realizado por votação eletrônica de forma assíncrona. O período de votação ocorreu das 8h às 18h.`;
-        container.appendChild(circuitoDetails);
-
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Destaques dos Resultados (Sumário)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Destaques'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
         const getSummarySubject = (item) => {
             switch (item.originalItemNumber) {
-                case 1: return "RTP CPFL Santa Cruz";
-                case 2: return "RTE Distribuidoras (Covid-19)";
-                case 6: return "Reconsideração CPFL Paulista - RTA 2025";
-                case 7: return "Reconsideração RGE Sul - RTA 2025";
-                case 20: return "Súmula - Uniformização de Penalidades Editalícias";
+                case 2: return "Relatório de Falhas Enel SP (Termo de Intimação nº 49/2024)";
+                case 3: return "Prorrogação de Concessão Enel CE";
+                case 8: return "Recurso Eneva S.A. - Isenção EUST rescisórios";
+                case 10: return "Reconsideração Axia Energia (Eletrobras) - MGP";
+                case 16: return "Requerimento Axia Energia (Eletrobras) - RAP Reforços";
+                case 22: return "Autorização RAP - Axia Energia (Eletrobras) MGP";
                 default: return item.subject.substring(0, 85) + '...';
             }
         };
 
-        aneelAgenda3Circuito.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        aneelAgenda6RPO.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
             const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito-${item.originalItemNumber}` });
             itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject(item)}</span>`;
@@ -396,14 +381,15 @@
         summaryDiv.appendChild(summaryList);
         container.appendChild(summaryDiv);
 
-        // Grid
+        // Grid de Itens
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda3Circuito.forEach(item => {
+        aneelAgenda6RPO.forEach(item => {
             const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito-${item.originalItemNumber}` });
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            const blockText = item.originalItemNumber >= 4 ? ' (Bloco)' : '';
+            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
             itemDiv.appendChild(cardHeader);
@@ -425,13 +411,14 @@
 
             infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
             infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área', item.areaResponsible));
+            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) do Voto-Vista', item.votoVistaRelator));
+            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
 
             if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Proposta do Relator', item.votoSummary));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
             }
             if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão / Status Final', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
             }
             if (item.details) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
@@ -456,26 +443,25 @@
         container.appendChild(agendaGrid);
     }
 
-    function renderConsultasAbertasPage(container) {
+    function renderConsultasPage(container) {
         container.innerHTML = '';
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Acompanhamento das Consultas Públicas e Tomadas de Subsídios Abertas');
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Acompanhamento de Consultas Públicas e Tomadas de Subsídios');
         container.appendChild(pageTitle);
 
         const tableContainer = createElement('div', 'info-card overflow-x-auto');
 
-        let openConsultas = consultasPublicasData.filter(cp => isConsultaAberta(cp.fim));
-        
-        openConsultas.forEach(cp => {
-            cp.status = 'aberta';
+        // Update status baseados na data
+        consultasPublicasData.forEach(cp => {
+            cp.status = isConsultaAberta(cp.fim) ? 'aberta' : 'encerrada';
         });
 
-        openConsultas.sort((a, b) => {
-            const parseDate = (dateStr) => {
-                const parts = dateStr.split('/');
-                return new Date(parseInt(parts[2], 10), parseInt(parts[1], 10) - 1, parseInt(parts[0], 10), 23, 59, 59, 999);
-            };
-            return parseDate(a.fim) - parseDate(b.fim);
-        });
+        // Ordenação: primeiro as abertas (por data mais próxima de vencer), depois encerradas (pela data mais recente de encerramento)
+        const parseDate = (dateStr) => {
+            const parts = dateStr.split('/');
+            return new Date(parseInt(parts[2], 10), parseInt(parts[1], 10) - 1, parseInt(parts[0], 10), 23, 59, 59, 999);
+        };
+
+        const openConsultas = consultasPublicasData.filter(cp => cp.status === 'aberta').sort((a, b) => parseDate(a.fim) - parseDate(b.fim));
 
         // Mobile View
         const mobileContainer = createElement('div', 'md:hidden divide-y divide-i4-border-gray');
@@ -487,7 +473,7 @@
                 card.innerHTML = `
                     <div class="flex justify-between items-start gap-4">
                         <div class="font-bold text-i4-dark-gray">${cp.numero} <span class="font-normal text-i4-text-gray">(${cp.origem || 'ANEEL'})</span></div>
-                        <div class="flex-shrink-0">${createStatusBadge('aberta', consultaStatusMap).outerHTML}</div>
+                        <div class="flex-shrink-0">${createStatusBadge(cp.status, consultaStatusMap).outerHTML}</div>
                     </div>
                     <div class="text-i4-dark-gray leading-relaxed">${cp.tema}</div>
                     <div class="text-sm text-i4-text-gray space-y-1">
@@ -509,30 +495,31 @@
                 <tr>
                     <th scope="col" class="px-6 py-4">Número</th>
                     <th scope="col" class="px-6 py-4">Origem</th>
-                    <th scope="col" class="px-6 py-4">Tema</th>
-                    <th scope="col" class="px-6 py-4">Status</th>
+                    <th scope="col" class="px-6 py-4 min-w-[300px]">Tema</th>
+                    <th scope="col" class="px-6 py-4 text-center">Status</th>
                     <th scope="col" class="px-6 py-4">Período</th>
-                    <th scope="col" class="px-6 py-4">Prazo</th>
+                    <th scope="col" class="px-6 py-4 text-center">Prazo</th>
                     <th scope="col" class="px-6 py-4">Área</th>
-                    <th scope="col" class="px-6 py-4">Link</th>
+                    <th scope="col" class="px-6 py-4 text-center">Acesso</th>
                 </tr>
             </thead>
         `;
         const tbody = createElement('tbody', 'bg-white divide-y divide-i4-border-gray');
-         if (openConsultas.length === 0) {
+        if (openConsultas.length === 0) {
             tbody.innerHTML = `<tr><td colspan="8" class="px-6 py-4 text-center text-i4-text-gray">Nenhuma consulta aberta no momento.</td></tr>`;
         } else {
             openConsultas.forEach(cp => {
-                const tr = createElement('tr', 'hover:bg-i4-light-gray');
+                const trClasses = 'hover:bg-i4-light-gray';
+                const tr = createElement('tr', trClasses);
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">${cp.numero}</td>
+                    <td class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">${cp.numero}</td>
                     <td class="px-6 py-4">${cp.origem || 'ANEEL'}</td>
-                    <td class="px-6 py-4 min-w-[300px]">${cp.tema}</td>
-                    <td class="px-6 py-4"></td>
+                    <td class="px-6 py-4 text-justify">${cp.tema}</td>
+                    <td class="px-6 py-4 text-center"></td>
                     <td class="px-6 py-4 whitespace-nowrap">${cp.inicio} a ${cp.fim}</td>
-                    <td class="px-6 py-4 whitespace-nowrap"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-center"></td>
                     <td class="px-6 py-4">${cp.area}</td>
-                    <td class="px-6 py-4"><a href="${cp.link}" target="_blank" rel="noopener noreferrer" class="group font-medium text-i4-blue hover:text-blue-700 inline-flex items-center">Acessar ${icons.arrowRight}</a></td>
+                    <td class="px-6 py-4 text-center"><a href="${cp.link}" target="_blank" rel="noopener noreferrer" class="group font-medium text-i4-blue hover:text-blue-700 inline-flex items-center">Acessar ${icons.arrowRight}</a></td>
                 `;
                 tr.children[3].appendChild(createStatusBadge(cp.status, consultaStatusMap));
                 tr.children[5].innerHTML = calculateDays(cp.fim);
@@ -559,7 +546,7 @@
                 <th scope="col" class="w-20 px-6 py-4">Código</th>
         `;
         if (hasYearColumn) {
-            headerHtml += `<th scope="col" class="w-32 px-6 py-4">Ano Previsto</th>`;
+            headerHtml += `<th scope="col" class="w-32 px-6 py-4 text-center">Ano Previsto</th>`;
         }
         headerHtml += `<th scope="col" class="px-6 py-4">Atividade Regulatória</th></tr>`;
         thead.innerHTML = headerHtml;
@@ -576,7 +563,7 @@
                 currentEixo = item.eixo;
             }
 
-            let yearCell = hasYearColumn ? `<td class="px-6 py-4 whitespace-nowrap font-medium text-i4-dark-gray">${item.ano || '-'}</td>` : '';
+            let yearCell = hasYearColumn ? `<td class="px-6 py-4 whitespace-nowrap font-medium text-i4-dark-gray text-center">${item.ano || '-'}</td>` : '';
             
             tr.innerHTML = `
                 ${eixoCell}
@@ -594,20 +581,14 @@
 
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
-         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027: Aprovada na 40ª RPO');
+         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027');
+         container.appendChild(pageTitle);
          
          const followUpLink = "https://portalrelatorios.aneel.gov.br/agendaRegulatoria/CronogramaReferencialRealizacaoAtividadesRegulatorias";
          const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
          const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
 
-         const linkSection = createElement('div', 'mb-8 bg-i4-light-gray p-5 rounded-xl border border-i4-border-gray');
-         linkSection.innerHTML = `
-            <h2 class="text-xl font-bold text-i4-dark-gray mb-3">Acompanhamento da Execução</h2>
-            <p class="text-i4-text-gray mb-3 leading-relaxed">O Cronograma Referencial de Atividades Regulatórias foi aprovado e publicado. Você pode acompanhar a execução dos temas no portal da ANEEL.</p>
-            <a href="${followUpLink}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center text-sm font-medium bg-i4-blue text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">${icons.link} Cronograma de Atividades ANEEL ${icons.arrowRight}</a>
-         `;
-         container.appendChild(linkSection);
-         
+         // Seção: Agenda Aprovada (Tabelas)
          const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          consolidatedDiv.innerHTML = `
             <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO: Aprovação da Agenda</h2>
@@ -623,6 +604,7 @@
             <div class="mt-4 border-t border-green-300 pt-4 flex flex-wrap gap-x-6 gap-y-2">
                 <a href="${ntLink}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">${icons.link} Acessar Nota Técnica (TS 11/2025) ${icons.arrowRight}</a>
                 <a href="${portariaLink}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center text-sm font-medium bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">${icons.link} Acessar Portaria de Aprovação ${icons.arrowRight}</a>
+                <a href="${followUpLink}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center text-sm font-medium bg-i4-blue text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">${icons.link} Cronograma de Atividades Oficial ${icons.arrowRight}</a>
             </div>
          `;
          container.appendChild(consolidatedDiv);
@@ -630,6 +612,25 @@
         renderRegulatoryTable(container, agendaRegulatoriaDetalhada, 'ANEXO I: Agenda Regulatória 2026-2027 (Atividades com previsão de norma)', true);
         renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias para o Biênio 2026-2027');
         renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
+
+        // Seção: 10 Temas Prioritários (Background/Histórico)
+        const introDiv = createElement('div', 'mb-6 bg-blue-50 p-6 rounded-xl border border-blue-200 mt-12');
+        introDiv.innerHTML = `
+            <h2 class="text-xl font-bold text-blue-800 mb-2">Histórico: 10 Temas Prioritários (Tomada de Subsídios nº 11/2025)</h2>
+            <p class="text-blue-700">Durante a construção da agenda (via TS nº 11/2025), a ANEEL baseou-se em dez grandes temas prioritários para focar nos desafios e oportunidades do setor elétrico para o biênio.</p>
+        `;
+        container.appendChild(introDiv);
+        
+        const themesGrid = createElement('div', 'grid grid-cols-1 md:grid-cols-2 gap-4 mb-10');
+        agendaRegulatoriaThemes.forEach(theme => {
+            const card = createElement('div', 'info-card p-6 flex flex-col hover:shadow-md transition-shadow');
+            card.innerHTML = `
+                <h3 class="text-base font-bold text-i4-dark-gray mb-3">${theme.title}</h3>
+                <p class="text-sm text-i4-text-gray leading-relaxed text-justify flex-grow">${theme.description}</p>
+            `;
+            themesGrid.appendChild(card);
+        });
+        container.appendChild(themesGrid);
     }
 
     function renderImersaoPage(container) {
@@ -698,12 +699,12 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 3º Circuito');
-      const consultasAbertasButton = createElement('button', 'nav-button-base nav-button-inactive', 'CPs/TSs Abertas');
+      const circuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta da 6ª RPO');
+      const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(circuitoButton, consultasAbertasButton, agendaButton, imersaoButton);
+      navContainer.append(circuitoButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -717,20 +718,20 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [circuitoButton, consultasAbertasButton, agendaButton, imersaoButton];
+      const buttons = [circuitoButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
-      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderPageWithAnimation(renderCircuito3Page, contentContainer); });
-      consultasAbertasButton.addEventListener('click', () => { setActiveButton(consultasAbertasButton); renderPageWithAnimation(renderConsultasAbertasPage, contentContainer); });
+      circuitoButton.addEventListener('click', () => { setActiveButton(circuitoButton); renderPageWithAnimation(renderPautaPage, contentContainer); });
+      consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na Pauta do 3º Circuito por ser a mais recente
+      // Inicia na Pauta 
       setActiveButton(circuitoButton);
-      renderPageWithAnimation(renderCircuito3Page, contentContainer);
+      renderPageWithAnimation(renderPautaPage, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
