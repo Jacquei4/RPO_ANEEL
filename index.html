@@ -172,7 +172,7 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    const circuito5DateText = '14 de abril de 2026';
+    const circuito6DateText = '28 de abril de 2026';
     const rpo8DateText = '22 de abril de 2026';
     
     const rpo8ConvocacaoLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0333152_convocacao_(1).pdf";
@@ -192,62 +192,89 @@
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
     };
 
-    // --- DADOS DO 5º CIRCUITO DELIBERATIVO (COM RESULTADOS) ---
-    const aneelCircuito5 = [
+    // --- DADOS DO 6º CIRCUITO DELIBERATIVO (PAUTA) ---
+    const aneelCircuito6 = [
+        {
+            originalItemNumber: 1,
+            process: "48500.030715/2025-49",
+            subject: "Reajuste Tarifário Anual da Neoenergia Pernambuco S.A. (Companhia Energética de Pernambuco – Celpe), a vigorar a partir de 29 de abril de 2026.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Fernando Luiz Mosna Ferreira da Silva",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030715-2025-49.pdf"}]
+        },
         {
             originalItemNumber: 2,
-            process: "48500.030641/2025-41",
-            subject: "Reajuste Tarifário Anual da Energisa Mato Grosso do Sul – Distribuidora de Energia S.A. – EMS, a vigorar a partir de 8 de abril de 2026.",
+            process: "48500.030722/2025-41",
+            subject: "Reajuste Tarifário Anual da Equatorial Alagoas Distribuidora de Energia S.A., a vigorar a partir de 3 de maio de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "highlight",
-            decision: "O Diretor-Geral, Sandoval de Araújo Feitosa Neto, solicitou destaque deste processo, o qual será incluído na pauta da próxima reunião pública ordinária.",
-            votoSummary: "O processo avalia os cálculos do Reajuste Tarifário Anual da EMS para 2026, considerando o repasse da variação de custos não gerenciáveis (Parcela A) e a atualização dos custos gerenciáveis (Parcela B). A minuta propõe a homologação dos novos índices tarifários calculados pela STR, visando assegurar o equilíbrio econômico-financeiro da concessão com aplicação a partir de 8 de abril de 2026.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030641-2025-41.pdf"}]
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030722-2025-41.pdf"}]
         },
         {
             originalItemNumber: 3,
-            process: "48500.030696/2025-51",
-            subject: "Reajuste Tarifário Anual de 2026 da Companhia de Eletricidade do Estado da Bahia – Coelba, a vigorar a partir de 22 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "highlight",
-            decision: "O Diretor-Geral, Sandoval de Araújo Feitosa Neto, solicitou destaque deste processo, o qual será incluído na pauta da próxima reunião pública ordinária.",
-            votoSummary: "Análise da atualização tarifária anual da Coelba, apurando os custos de geração e transmissão de energia do último período, além de encargos e do Fator X. A minuta propõe a aprovação das tarifas definitivas formuladas pela STR, recomendando a aplicação imediata dos índices a fim de refletir os custos reais da prestação do serviço na Bahia.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030696-2025-51.pdf"}]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.030071/2025-99",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Energisa Sul Sudeste – ESS.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "highlight",
-            decision: "O Diretor-Geral, Sandoval de Araújo Feitosa Neto, solicitou destaque deste processo, o qual será incluído na pauta da próxima reunião pública ordinária.",
-            votoSummary: "Definição dos parâmetros iniciais para o novo ciclo tarifário da ESS (RTP 2026), discutindo a Base de Remuneração Regulatória (BRR), custos operacionais eficientes (PMSO), trajetória de perdas não técnicas e novos limites de qualidade. A minuta propõe a aprovação da instauração de Consulta Pública para submeter as metodologias e cálculos ao crivo da sociedade e dos agentes.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030071-2025-99.pdf"}]
+            process: "48500.009318/2022-65",
+            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para tratamento regulatório e contábil dos créditos de Microgeração e Minigeração Distribuída – MMGD em prol da modicidade tarifária, conforme determina a Lei nº 14.300/2022 e o Despacho nº 684/2025.",
+            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.909318-2022-65.pdf"}]
         },
         {
             originalItemNumber: 5,
-            process: "48500.037386/2025-67",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para o estabelecimento de mechanismos regulatórios excepcionais referente à manutenção de Contratos de Uso do Sistema de Transmissão – CUST celebrados por centrais geradoras.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, na modalidade intercâmbio documental, pelo prazo de 15 dias, com o objetivo de colher subsídios e informações adicionais quanto à minuta de Resolução Normativa bem como ao Termo de Adesão e Outras Avenças.",
-            votoSummary: "Avaliação da necessidade de estabelecer regras excepcionais para geradores que enfrentam restrições sistêmicas ou atrasos alheios à sua governança para escoar sua energia, focando na flexibilização ou manutenção de vigência de seus CUSTs. A minuta recomenda a abertura de Consulta Pública para colher contribuições visando mitigar riscos de penalidades injustas.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.037386-2025-67.pdf"}]
+            process: "48500.032821/2025-67",
+            subject: "Recursos Administrativos interpostos pelas empresas J&F S.A. e UEG Araucárias S.A. contra o resultado do Leilão nº 2/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Gás Natural, Carvão Mineral e UHEs), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração novos e existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 35/2025.",
+            areaResponsible: "Secretaria de Leilões - SEL, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032821-2025-67.pdf"}]
         },
         {
             originalItemNumber: 7,
-            process: "48500.002547/2026-82",
-            subject: "Recurso Administrativo interposto pela Axia Energia Norte S.A. (Centrais Elétricas do Norte do Brasil – Eletronorte) contra o Despacho nº 710/2026, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que estabeleceu as parcelas adicionais de Receita Anual Permitida – RAP referentes à operação e manutenção de instalações de transmissão transferidas à Recorrente e deu outras providências.",
+            process: "48500.023970/2025-35",
+            subject: "Recurso Administrativo interposto pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra o Despacho nº 674/2026, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que estabeleceu as parcelas adicionais de Receita Anual Permitida – RAP referentes à operação e à manutenção de instalações de transmissão transferidas à Recorrente e deu outras providências.",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo e, no mérito, negar-lhe provimento.",
-            votoSummary: "A Eletronorte recorre dos valores estabelecidos pela SCE para as parcelas adicionais de RAP, argumentando que a receita estipulada é insuficiente para cobrir os reais custos de Operação e Manutenção (O&M) dos ativos transferidos. A minuta promove uma análise das justificativas frente à regulação vigente e laudos técnicos, propondo conhecer e deliberar o mérito do recurso administrativo.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.002547-2026-82.pdf"}]
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023970-2025-35.pdf"}]
+        },
+        {
+            originalItemNumber: 8,
+            process: "48500.003658/2024-44",
+            subject: "Recurso Administrativo interposto por Ivoni Teixeira de Oliveira Mendonça contra o Despacho nº 2.972/2025, emitido pela Superintendência de Mediação Administrativa e das Relações de Consumo – SMA, que deu parcial provimento à reclamação referente ao pedido de compensação por descumprimento de prazo regulatório pela Equatorial Goiás Distribuidora de Energia S.A. em unidades consumidoras localizadas no município de Itaberaí, estado de Goiás.",
+            areaResponsible: "Superintendência de Mediação Administrativa e das Relações de Consumo - SMA, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903658-2024-44.pdf"}]
+        },
+        {
+            originalItemNumber: 9,
+            process: "48500.036702/2025-83",
+            subject: "Pedido de Reconsideração interposto pela Axia Energia Norte S.A. (Centrais Elétricas do Norte do Brasil – Eletronorte) contra a Resolução Autorizativa nº 16.594/2026, que autorizou a Recorrente a implantar os Reforços de Grande e Pequeno Porte em instalações de transmissão de energia elétrica sob sua responsabilidade, estabeleceu os valores das parcelas de Receita Anual Permitida – RAP e o cronograma para a entrada em operação comercial das instalações de transmissão de energia elétrica referentes ao Contrato de Concessão nº 58/2001.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.036702-2025-83.pdf"}]
+        },
+        {
+            originalItemNumber: 10,
+            process: "48500.001221/2024-76",
+            subject: "Requerimento Administrativo protocolado pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra a Resolução Autorizativa nº 16.647/2026, que deu provimento ao Pedido de Reconsideração interposto pela Recorrente contra a Resolução Autorizativa nº 16.051/2025, que autorizou a Recorrente a realizar as Melhorias de Grande Porte sob sua responsabilidade; estabeleceu os valores das parcelas adicionais de Receita Anual Permitida – RAP; e deu outras providências referentes ao Contrato de Concessão nº 62/2001.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901221-2024-76.pdf"}]
+        },
+        {
+            originalItemNumber: 12,
+            process: "48500.008476/2022-06",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Pedido de Reconsideração interposto pela Itapebi Geração de Energia S.A. contra o Despacho nº 3.213/2025, que aprovou o resultado da avaliação inicial das propostas de projetos de Pesquisa, Desenvolvimento e Inovação – PDI recebidas no âmbito da Chamada nº 23: 'Hidrogênio no Contexto do Setor Elétrico Brasileiro', nos termos da Nota Técnica nº 396/2024, emitida pela Superintendência de Inovação e Transição Energética – STE, e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            votoVistaRelator: "Willamy Moreira Frota",
+            status: "scheduled",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2024-41-prorrogacaovista.pdf"}]
         }
     ];
 
@@ -302,7 +329,7 @@
             status: "approved",
             decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, no período de 24 de abril de 2026 a 8 de junho de 2026, com reunião presencial em Presidente Prudente (SP) em 22 de maio de 2026.",
             details: "Processo destacado do 5º Circuito Deliberativo Público Ordinário.",
-            votoSummary: "A minuta propõe o estabelecimento dos parâmetros iniciais para a Revisão Tarifária Periódica da Energisa Sul Sudeste. O documento fundamenta a abertura de Consulta Pública para submeter metodologias como a definição da BRR, PMSO e limites de perdas ao crivo da sociedade.",
+            votoSummary: "A minuta propõe o estabelecimento dos parâmetros iniciais para a Revisão Tarifária Periódica da Energisa Sul Sudeste. O documenta fundamenta a abertura de Consulta Pública para submeter metodologias como a definição da BRR, PMSO e limites de perdas ao crivo da sociedade.",
             orderOfJudgment: "9",
             links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item4-48500.030071-2025-99.pdf"}]
         },
@@ -479,6 +506,128 @@
         renderFunction(container);
     }
 
+    // --- RENDER PAUTA 6º CIRCUITO ---
+    function renderCircuito6Page(container) {
+        container.innerHTML = '';
+
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 6º Circuito Deliberativo de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${circuito6DateText}`);
+        container.appendChild(pageTitle);
+        container.appendChild(pageDate);
+
+        // Informação da Reunião
+        const pautaInfoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const pautaText = createElement('p', 'text-lg font-semibold', 'Reunião Eletrônica (Assíncrona)');
+        const pautaSubText = createElement('p', 'text-sm text-blue-100', 'Votação a ser realizada no período de 8h às 18h do dia 28/04/2026.');
+        const textDiv = createElement('div', '');
+        textDiv.appendChild(pautaText);
+        textDiv.appendChild(pautaSubText);
+        pautaInfoSection.appendChild(textDiv);
+        container.appendChild(pautaInfoSection);
+
+        // Sumário
+        const summaryDiv = createElement('div', 'info-card mb-10');
+        const summaryHeader = createElement('div', 'card-header p-5');
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
+        summaryDiv.appendChild(summaryHeader);
+
+        const summaryList = createElement('ul', 'space-y-1 p-3');
+        const getSummarySubject6 = (item) => {
+            switch (item.originalItemNumber) {
+                case 1: return "RTA Neoenergia Pernambuco (Celpe)";
+                case 2: return "RTA Equatorial Alagoas";
+                case 3: return "CP Créditos MMGD";
+                case 5: return "Recurso Leilão de Reserva de Capacidade";
+                case 7: return "Recurso Axia Energia (Eletrobras)";
+                case 8: return "Recurso Consumidor vs. Equatorial Goiás";
+                case 9: return "Reconsideração Axia Energia Norte (Eletronorte)";
+                case 10: return "Requerimento Axia Energia (Eletrobras)";
+                case 12: return "Prorrogação Vista - Itapebi Geração";
+                default: return item.subject.substring(0, 85) + '...';
+            }
+        };
+
+        aneelCircuito6.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito6-${item.originalItemNumber}` });
+            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject6(item)}</span>`;
+            
+            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
+
+            listItem.appendChild(itemLink);
+            listItem.appendChild(statusBadge);
+            summaryList.appendChild(listItem);
+        });
+        summaryDiv.appendChild(summaryList);
+        container.appendChild(summaryDiv);
+
+        // Grid de Itens
+        const agendaGrid = createElement('div', 'space-y-8');
+        aneelCircuito6.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito6-${item.originalItemNumber}` });
+            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
+            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
+            
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            cardHeader.appendChild(h3Subject);
+            cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
+            itemDiv.appendChild(cardHeader);
+
+            const cardBody = createElement('div', 'p-6 space-y-5');
+            const infoContainer = createElement('div', 'space-y-4');
+
+            const createInfoRow = (icon, label, value) => {
+                 if (!value || value === "-") return document.createDocumentFragment();
+                 const row = createElement('div', 'flex flex-col md:flex-row');
+                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
+                 labelDiv.innerHTML = icon + label;
+                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
+                 valueDiv.innerHTML = value;
+                 row.appendChild(labelDiv);
+                 row.appendChild(valueDiv);
+                 return row;
+             };
+
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
+            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
+            if (item.votoVistaRelator) {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) do Voto-Vista', item.votoVistaRelator));
+            }
+            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+
+            if (item.votoSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+            }
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
+            if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
+
+            cardBody.appendChild(infoContainer);
+
+            if (item.links && item.links.length > 0) {
+                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
+                 cardBody.appendChild(separator);
+                 
+                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
+                 
+                 item.links.forEach(link => {
+                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                     cardFooter.appendChild(linkAnchor);
+                 });
+                 
+                 cardBody.appendChild(cardFooter);
+            }
+
+            itemDiv.appendChild(cardBody);
+            agendaGrid.appendChild(itemDiv);
+        });
+        container.appendChild(agendaGrid);
+    }
+
     // --- RENDER PAUTA 8ª RPO ---
     function renderPauta8Page(container) {
         container.innerHTML = '';
@@ -611,121 +760,6 @@
                          cardFooter.appendChild(linkAnchor);
                      });
                  }
-                 
-                 cardBody.appendChild(cardFooter);
-            }
-
-            itemDiv.appendChild(cardBody);
-            agendaGrid.appendChild(itemDiv);
-        });
-        container.appendChild(agendaGrid);
-    }
-
-    // --- RENDER PAUTA 5º CIRCUITO ---
-    function renderCircuito5Page(container) {
-        container.innerHTML = '';
-
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 5º Circuito Deliberativo de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${circuito5DateText}`);
-        container.appendChild(pageTitle);
-        container.appendChild(pageDate);
-
-        // Informação da Reunião
-        const pautaInfoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const pautaText = createElement('p', 'text-lg font-semibold', 'Reunião Eletrônica (Assíncrona)');
-        const pautaSubText = createElement('p', 'text-sm text-blue-100', 'Votação realizada no período de 8h às 18h do dia 14/04/2026.');
-        const textDiv = createElement('div', '');
-        textDiv.appendChild(pautaText);
-        textDiv.appendChild(pautaSubText);
-        pautaInfoSection.appendChild(textDiv);
-        container.appendChild(pautaInfoSection);
-
-        // Sumário
-        const summaryDiv = createElement('div', 'info-card mb-10');
-        const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
-        summaryDiv.appendChild(summaryHeader);
-
-        const summaryList = createElement('ul', 'space-y-1 p-3');
-        const getSummarySubject5 = (item) => {
-            switch (item.originalItemNumber) {
-                case 2: return "RTA Energisa Mato Grosso do Sul (EMS)";
-                case 3: return "RTA 2026 Coelba";
-                case 4: return "CP Revisão Tarifária Energisa Sul Sudeste (ESS)";
-                case 5: return "CP Mecanismo Excepcional CUST Centrais Geradoras";
-                case 7: return "Recurso RAP O&M - Axia Energia Norte (Eletronorte)";
-                default: return item.subject.substring(0, 85) + '...';
-            }
-        };
-
-        aneelCircuito5.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito5-${item.originalItemNumber}` });
-            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject5(item)}</span>`;
-            
-            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
-            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
-
-            listItem.appendChild(itemLink);
-            listItem.appendChild(statusBadge);
-            summaryList.appendChild(listItem);
-        });
-        summaryDiv.appendChild(summaryList);
-        container.appendChild(summaryDiv);
-
-        // Grid de Itens
-        const agendaGrid = createElement('div', 'space-y-8');
-        aneelCircuito5.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito5-${item.originalItemNumber}` });
-            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
-            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
-            
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
-            cardHeader.appendChild(h3Subject);
-            cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
-            itemDiv.appendChild(cardHeader);
-
-            const cardBody = createElement('div', 'p-6 space-y-5');
-            const infoContainer = createElement('div', 'space-y-4');
-
-            const createInfoRow = (icon, label, value) => {
-                 if (!value || value === "-") return document.createDocumentFragment();
-                 const row = createElement('div', 'flex flex-col md:flex-row');
-                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
-                 labelDiv.innerHTML = icon + label;
-                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
-                 valueDiv.innerHTML = value;
-                 row.appendChild(labelDiv);
-                 row.appendChild(valueDiv);
-                 return row;
-             };
-
-            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
-
-            if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
-            }
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
-            }
-            if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
-            }
-
-            cardBody.appendChild(infoContainer);
-
-            if (item.links && item.links.length > 0) {
-                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
-                 cardBody.appendChild(separator);
-                 
-                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
-                 
-                 item.links.forEach(link => {
-                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
-                     cardFooter.appendChild(linkAnchor);
-                 });
                  
                  cardBody.appendChild(cardFooter);
             }
@@ -992,13 +1026,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
+      const circuito6Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 6º Circuito');
       const pauta8Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados da 8ª RPO');
-      const circuito5Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 5º Circuito');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta8Button, circuito5Button, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(circuito6Button, pauta8Button, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -1012,21 +1046,21 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta8Button, circuito5Button, consultasButton, agendaButton, imersaoButton];
+      const buttons = [circuito6Button, pauta8Button, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
+      circuito6Button.addEventListener('click', () => { setActiveButton(circuito6Button); renderPageWithAnimation(renderCircuito6Page, contentContainer); });
       pauta8Button.addEventListener('click', () => { setActiveButton(pauta8Button); renderPageWithAnimation(renderPauta8Page, contentContainer); });
-      circuito5Button.addEventListener('click', () => { setActiveButton(circuito5Button); renderPageWithAnimation(renderCircuito5Page, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na Pauta da 8ª RPO como primeira aba
-      setActiveButton(pauta8Button);
-      renderPageWithAnimation(renderPauta8Page, contentContainer);
+      // Inicia na Pauta do 6º Circuito como primeira aba
+      setActiveButton(circuito6Button);
+      renderPageWithAnimation(renderCircuito6Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
