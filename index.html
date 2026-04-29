@@ -529,7 +529,7 @@
         container.innerHTML = '';
 
         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 6º Circuito Deliberativo de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${circuito6DateText}`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: 28 de abril de 2026`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
@@ -542,6 +542,144 @@
         textDiv.appendChild(pautaSubText);
         pautaInfoSection.appendChild(textDiv);
         container.appendChild(pautaInfoSection);
+
+        // Sumário
+        const summaryDiv = createElement('div', 'info-card mb-10');
+        const summaryHeader = createElement('div', 'card-header p-5');
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
+        summaryDiv.appendChild(summaryHeader);
+
+        const summaryList = createElement('ul', 'space-y-1 p-3');
+        const getSummarySubject6 = (item) => {
+            switch (item.originalItemNumber) {
+                case 1: return "RTA Neoenergia Pernambuco (Celpe)";
+                case 2: return "RTA Equatorial Alagoas";
+                case 3: return "CP Créditos MMGD";
+                case 5: return "Recurso Leilão de Reserva de Capacidade";
+                case 7: return "Recurso Axia Energia (Eletrobras)";
+                case 8: return "Recurso Consumidor vs. Equatorial Goiás";
+                case 9: return "Reconsideração Axia Energia Norte (Eletronorte)";
+                case 10: return "Requerimento Axia Energia (Eletrobras)";
+                case 12: return "Prorrogação Vista - Itapebi Geração";
+                default: return item.subject.substring(0, 85) + '...';
+            }
+        };
+
+        aneelCircuito6.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito6-${item.originalItemNumber}` });
+            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject6(item)}</span>`;
+            
+            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
+            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
+
+            listItem.appendChild(itemLink);
+            listItem.appendChild(statusBadge);
+            summaryList.appendChild(listItem);
+        });
+        summaryDiv.appendChild(summaryList);
+        container.appendChild(summaryDiv);
+
+        // Grid de Itens
+        const agendaGrid = createElement('div', 'space-y-8');
+        aneelCircuito6.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito6-${item.originalItemNumber}` });
+            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
+            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
+            
+            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            
+            cardHeader.appendChild(h3Subject);
+            cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
+            itemDiv.appendChild(cardHeader);
+
+            const cardBody = createElement('div', 'p-6 space-y-5');
+            const infoContainer = createElement('div', 'space-y-4');
+
+            const createInfoRow = (icon, label, value) => {
+                 if (!value || value === "-") return document.createDocumentFragment();
+                 const row = createElement('div', 'flex flex-col md:flex-row');
+                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
+                 labelDiv.innerHTML = icon + label;
+                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
+                 valueDiv.innerHTML = value;
+                 row.appendChild(labelDiv);
+                 row.appendChild(valueDiv);
+                 return row;
+             };
+
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
+            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
+            if (item.votoVistaRelator) {
+                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) do Voto-Vista', item.votoVistaRelator));
+            }
+            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
+
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
+            if (item.votoSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+            }
+            if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
+            }
+
+            cardBody.appendChild(infoContainer);
+
+            if ((item.links && item.links.length > 0) || item.actNumber) {
+                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
+                 cardBody.appendChild(separator);
+                 
+                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
+                 
+                 if (item.actNumber) {
+                    const actText = createElement('span', 'inline-flex items-center text-sm font-medium text-red-600');
+                    actText.innerHTML = `<strong>Ato Administrativo:</strong> ${item.actNumber}`;
+                    cardFooter.appendChild(actText);
+                 }
+                 
+                 if (item.links) {
+                     item.links.forEach(link => {
+                         const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                         cardFooter.appendChild(linkAnchor);
+                     });
+                 }
+                 
+                 cardBody.appendChild(cardFooter);
+            }
+
+            itemDiv.appendChild(cardBody);
+            agendaGrid.appendChild(itemDiv);
+        });
+        container.appendChild(agendaGrid);
+    }
+
+    // --- RENDER PAUTA 8ª RPO ---
+    function renderPauta8Page(container) {
+        container.innerHTML = '';
+
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 8ª Reunião Pública Ordinária de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo8DateText}`);
+        container.appendChild(pageTitle);
+        container.appendChild(pageDate);
+
+        // Link do YouTube
+        const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-6');
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: rpo8YoutubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
+        youtubeSection.appendChild(youtubeText);
+        youtubeSection.appendChild(youtubeLinkAnchor);
+        container.appendChild(youtubeSection);
+
+        // Link Convocação
+        const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial completa (Convocação PDF)');
+        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Visualizar Convocação`, { href: rpo8ConvocacaoLink, target: '_blank', rel: 'noopener noreferrer' });
+        convocacaoSection.appendChild(convocacaoText);
+        convocacaoSection.appendChild(convocacaoLinkAnchor);
+        container.appendChild(convocacaoSection);
 
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
