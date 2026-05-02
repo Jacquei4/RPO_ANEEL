@@ -1,0 +1,30 @@
+name: Notificar Equipe de Atualização
+
+on:
+  push:
+    branches:
+      - main # (Mude para 'master' se a sua branch principal tiver esse nome)
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar E-mail de Atualização
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Atualização: Dashboard ANEEL - i4 Economic Regulation"
+          to: jacqueline@i4economicregulation.com
+          from: Dashboard i4
+          html_body: |
+            <p>Olá a todos,</p>
+            
+            <p>O <a href="[https://jacquei4.github.io/RPO_ANEEL/](https://jacquei4.github.io/RPO_ANEEL/)">Dashboard de acompanhamento</a> acabou de ser atualizado!</p>
+            
+            <p>As pautas, resultados das reuniões, além das Consultas Públicas e Tomadas de Subsídios mais recentes já estão disponíveis no painel.</p>
+            
+            <p>Atenciosamente,</p>
