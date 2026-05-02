@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "Atualização: Dashboard ANEEL - i4 Economic Regulation"
-          to: jacqueline@i4economicregulation.com
+          to: camila@i4economicregulation.com, fernanda@i4economicregulation.com, lucas@i4economicregulation.com, vitor@i4economicregulation.com, hermano@i4economicregulation.com, halisson@i4economicregulation.com, thais@i4economicregulation.com, kenji@i4economicregulation.com, gabardo@i4economicregulation.com, jacqueline@i4economicregulation.com, gabriel@i4economicregulation.com
           from: Dashboard i4
           html_body: |
             <p>Olá,</p>
