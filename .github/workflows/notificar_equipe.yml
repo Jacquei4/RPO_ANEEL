@@ -23,7 +23,7 @@ jobs:
           html_body: |
             <p>Olá,</p>
             
-            <p>O <a href="[https://jacquei4.github.io/RPO_ANEEL/](https://jacquei4.github.io/RPO_ANEEL/)">Dashboard de acompanhamento</a> acabou de ser atualizado!</p>
+            <p>O <a href="https://jacquei4.github.io/RPO_ANEEL/">Dashboard de acompanhamento</a> acabou de ser atualizado!</p>
             
             <p>As pautas, resultados das reuniões, além das Consultas Públicas e Tomadas de Subsídios mais recentes já estão disponíveis no painel.</p>
             
