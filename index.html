@@ -172,9 +172,10 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    const circuito6DateText = '28 de abril de 2026';
+    const circuito7DateText = '12 de maio de 2026';
     const rpo9DateText = '05 de maio de 2026';
     
+    const circuito7PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/pautacdpo12-5-2026.pdf";
     const rpo9ConvocacaoLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0341786_convocacao.pdf";
     const rpo9YoutubeLink = "https://www.youtube.com/watch?v=3zfdHaNlbfc";
     
@@ -246,259 +247,64 @@
         }
     ];
 
-    // --- DADOS DO 6º CIRCUITO DELIBERATIVO (RESULTADOS) ---
-    const aneelCircuito6 = [
+    // --- DADOS DO 7º CIRCUITO DELIBERATIVO (PAUTA) ---
+    const aneelCircuito7 = [
         {
             originalItemNumber: 1,
-            process: "48500.030715/2025-49",
-            subject: "Reajuste Tarifário Anual da Neoenergia Pernambuco S.A. (Companhia Energética de Pernambuco – Celpe), a vigorar a partir de 29 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            process: "48500.023612/2025-22",
+            subject: "Homologação do resultado e adjudicação dos objetos dos Lotes 1, 2, 4 e 5 e Sublotes 3A, 3B, 3C, 3D, do Leilão de Transmissão nº 1/2026-ANEEL, destinado a contratar concessões do serviço público de transmissão de energia elétrica.",
+            areaResponsible: "Secretaria de Leilões - SEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar as novas tarifas de aplicação da Neoenergia Pernambuco S.A. (Companhia Energética de Pernambuco – Celpe), com vigência a partir de 29 de abril de 2026, correspondendo a um efeito médio a ser percebido pelos consumidores de 4,25%, sendo de 7,19%, em média, para os consumidores conectados na Alta Tensão e de 3,41%, em média, para os consumidores conectados na Baixa Tensão; (ii) fixar as Tarifas de Energia – TE e as Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da Neoenergia Pernambuco S.A.; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações–DIT de uso exclusivo; e (iv) homologar o valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à distribuidora para custeio dos subsídios retirados da estrutura tarifária.",
-            votoSummary: "A minuta analisa o cálculo do Reajuste Tarifário Anual da Celpe para 2026, abordando o repasse dos custos com compra e transporte de energia (Parcela A) e a atualização dos custos operacionais e encargos (Parcela B). O Relator propõe a homologação dos novos índices tarifários calculados pela área técnica, visando assegurar o equilíbrio econômico-financeiro da concessão com aplicação a partir de 29 de abril de 2026.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030715-2025-49.pdf"}]
+            status: "scheduled",
+            votoSummary: "<strong>Argumentação:</strong> O processo avalia a regularidade dos trâmites licitatórios e a habilitação das proponentes vencedoras dos Lotes 1, 2, 4 e 5 e Sublotes 3A a 3D. A comissão de licitação atestou o cumprimento de todos os requisitos do edital, assegurando a competitividade e modicidade tarifária.<br><br><strong>Posição do Relator:</strong> O relator encaminha proposta para homologar o resultado do leilão e adjudicar os objetos às respectivas vencedoras, autorizando a convocação para a assinatura dos contratos de concessão.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023612-2025-22.pdf"}]
         },
         {
             originalItemNumber: 2,
-            process: "48500.030722/2025-41",
-            subject: "Reajuste Tarifário Anual da Equatorial Alagoas Distribuidora de Energia S.A., a vigorar a partir de 3 de maio de 2026.",
+            process: "48500.031061/2025-71",
+            subject: "Alteração das quotas de custeio referentes ao Programa de Incentivo às Fontes Alternativas de Energia Elétrica – PROINFA, para o ano de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar as novas tarifas de aplicação da Equatorial Alagoas Distribuidora de Energia S.A., com vigência a partir de 3 de maio de 2026, correspondendo a um efeito médio a ser percebido pelos consumidores de 5,43%, sendo de 7,80%, em média, para os consumidores conectados em Alta Tensão e de 4,71%, em média, para aqueles conectados em Baixa Tensão; (ii) fixar as Tarifas de Energia – TE e as Tarifas de Uso dos Sistemas de Distribuição – TUSD aplicáveis aos consumidores e usuários da Equatorial Alagoas Distribuidora de Energia S.A.; (iii) estabelecer os valores da receita anual referente às instalações de transmissão classificadas como Demais Instalações de Transmissão – DIT de uso exclusivo; e (iv) homologar o valor mensal a ser repassado pela Câmara de Comercialização de Energia Elétrica – CCEE à distribuidora para custeio dos subsídios retirados da estrutura tarifária.",
-            votoSummary: "O documento detalha os componentes do Reajuste Tarifário Anual da Equatorial Alagoas, destacando os impactos dos encargos setoriais e da variação da inflação no último período. O posicionamento do Relator acompanha a nota técnica da STR pela aprovação dos novos percentuais tarifários, para entrarem em vigor em 3 de maio de 2026.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030722-2025-41.pdf"}]
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.009318/2022-65",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para tratamento regulatório e contábil dos créditos de Microgeração e Minigeração Distribuída – MMGD em prol da modicidade tarifária, conforme determina a Lei nº 14.300/2022 e o Despacho nº 684/2025.",
-            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF, Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, por intercâmbio documental, com período de contribuições entre 30 de abril e 15 de junho de 2026, com vistas a obter subsídios e contribuições da sociedade e dos agentes setoriais sobre a proposta de tratamento regulatório e contábil dos créditos de Microgeração e Minigeração Distribuída – MMGD em prol da modicidade tarifária, conforme minutas anexas ao voto da Diretora-Relatora, nos termos da proposta apresentada pela Superintendência de Gestão Tarifária e Regulação Econômica – STR e pela Superintendência de Fiscalização Econômica, Financeira e de Mercado – SFF na Nota Técnica Conjunta nº 2/2026-SFF-STR/ANEEL.",
-            votoSummary: "O processo propõe a abertura de Consulta Pública para debater o tratamento regulatório e contábil dos créditos da MMGD (Geração Distribuída). O foco principal é viabilizar a modicidade tarifária conforme estipulado pela Lei nº 14.300/2022. A Relatora vota favoravelmente à instauração da consulta para colher as percepções de agentes e sociedade na formulação dessas regras.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.909318-2022-65.pdf"}]
-        },
-        {
-            originalItemNumber: 5,
-            process: "48500.032821/2025-67",
-            subject: "Recursos Administrativos interpostos pelas empresas J&F S.A e UEG Araucárias S.A. contra o resultado do Leilão nº 2/2026-ANEEL (Leilão de Reserva de Capacidade na forma de Potência de 2026 – LRCAP 2026 – UTEs a Gás Natural, Carvão Mineral e UHEs), destinado à contratação de Potência Elétrica, na modalidade disponibilidade, proveniente de empreendimentos de geração novos e existentes, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 35/2025.",
-            areaResponsible: "Secretaria de Leilões - SEL, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer dos Recursos Administrativos interpostos pelas empresas J&F S.A. e UEG Araucárias S.A. contra o resultado do Leilão nº 2/2026-ANEEL para, no mérito, negar-lhes provimento. O Diretor Fernando Luiz Mosna Ferreira da Silva declarou sua suspeição em deliberar neste processo.",
-            votoSummary: "A minuta avalia os recursos interpostos pelas empresas J&F S.A. e UEG Araucárias S.A. contra os resultados do recente Leilão de Reserva de Capacidade (LRCAP). O Relator analisa as contestações das empresas referentes à inabilitação/desclassificação frente às regras do edital, propondo conhecer dos recursos para, no mérito, negar-lhes provimento, mantendo as deliberações originais da comissão de licitação.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032821-2025-67.pdf"}]
+            status: "scheduled",
+            votoSummary: "<strong>Argumentação:</strong> A revisão das quotas é necessária para adequar o rateio do custeio do PROINFA à atual projeção de mercado das distribuidoras e consumidores livres para 2026, garantindo o equilíbrio da conta e o repasse correto dos custos.<br><br><strong>Posição do Relator:</strong> O relator encaminha a aprovação das novas quotas de custeio anuais propostas pela área técnica (STR), com aplicação para o ciclo de 2026.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.031061-2025-71.pdf"}]
         },
         {
             originalItemNumber: 7,
-            process: "48500.023970/2025-35",
-            subject: "Recurso Administrativo interposto pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra o Despacho nº 674/2026, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que estabeleceu as parcelas adicionais de Receita Anual Permitida – RAP referentes à operação e à manutenção de instalações de transmissão transferidas à Recorrente e deu outras providências.",
-            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer do Recurso Administrativo interposto pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras), para, no mérito, negar-lhe provimento.",
-            votoSummary: "O documento examina o recurso da Axia Energia questionando os valores fixados para as parcelas adicionais de RAP referentes à O&M de instalações de transmissão transferidas para a empresa. O Relator avaliou as justificativas de custo apresentadas e concluiu que os cálculos da área técnica refletem a modicidade tarifária e a regulação, propondo negar provimento ao recurso.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.023970-2025-35.pdf"}]
-        },
-        {
-            originalItemNumber: 8,
-            process: "48500.003658/2024-44",
-            subject: "Recurso Administrativo interposto por Ivoni Teixeira de Oliveira Mendonça contra o Despacho nº 2.972/2025, emitido pela Superintendência de Mediação Administrativa e das Relações de Consumo – SMA, que deu parcial provimento à reclamação referente ao pedido de compensação por descumprimento de prazo regulatório pela Equatorial Goiás Distribuidora de Energia S.A. em unidades consumidoras localizadas no município de Itaberaí, estado de Goiás.",
-            areaResponsible: "Superintendência de Mediação Administrativa e das Relações de Consumo - SMA, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            process: "48500.003997/2025-10",
+            subject: "Pedido de Reconsideração interposto pela Energisa Amapá Transmissora de Energia S.A. – EAP contra a Resolução Homologatória nº 3.572/2026, que homologou o índice de Reajuste Tarifário Anual da Companhia de Eletricidade do Amapá – CEA e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer e, no mérito, negar provimento ao Recurso Administrativo interposto por Ivoni Teixeira de Oliveira Mendonça contra o Despacho nº 2.972/2025, emitido pela Superintendência de Mediação Administrativa e das Relações de Consumo – SMA, que deu parcial provimento à reclamação referente ao pedido de compensação por descumprimento de prazo regulatório pela Equatorial Goiás Distribuidora de Energia S.A. em unidades consumidoras localizadas no município de Itaberaí, estado de Goiás.",
-            votoSummary: "A minuta trata de um recurso de consumidora insatisfeita com o provimento apenas parcial de seu pleito de compensação financeira por prazos regulatórios descumpridos pela Equatorial GO. A Relatora revisou o histórico e as evidências técnicas do atendimento, propondo conhecer o recurso e negar-lhe provimento, confirmando o entendimento prévio da SMA.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903658-2024-44.pdf"}]
+            status: "scheduled",
+            votoSummary: "<strong>Argumentação:</strong> A concessionária contesta os parâmetros utilizados no cálculo de perdas e custos operacionais homologados no último reajuste. A área técnica demonstrou que os cálculos seguiram estritamente as regras do PRORET, não havendo inconsistências ou fatos novos que justifiquem a alteração da base de cálculo.<br><br><strong>Posição da Relatora:</strong> A relatora propõe conhecer do pedido de reconsideração para, no mérito, negar-lhe provimento, mantendo o índice de reajuste tarifário originalmente homologado.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003997-2025-10.pdf"}]
         },
         {
-            originalItemNumber: 9,
-            process: "48500.036702/2025-83",
-            subject: "Pedido de Reconsideração interposto pela Axia Energia Norte S.A. (Centrais Elétricas do Norte do Brasil – Eletronorte) contra a Resolução Autorizativa nº 16.594/2026, que autorizou a Recorrente a implantar os Reforços de Grande e Pequeno Porte em instalações de transmissão de energia elétrica sob sua responsabilidade, estabeleceu os valores das parcelas de Receita Anual Permitida – RAP e o cronograma para a entrada em operação comercial das instalações de transmissão de energia elétrica referentes ao Contrato de Concessão nº 58/2001.",
+            originalItemNumber: 10,
+            process: "48500.010697/2026-60",
+            subject: "Pedido de Medida Cautelar protocolado pela Associação Brasileira de Energia Eólica – Abeeólica e pela Associação Brasileira de Energia Solar Fotovoltaica – Absolar com vistas à prorrogação do prazo determinado no Despacho nº 148/2026.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conhecer do Pedido de Reconsideração interposto pela Axia Energia Norte S.A. (Centrais Elétricas do Norte do Brasil – Eletronorte) contra a Resolução Autorizativa nº 16.594/2026, que autorizou a Recorrente a implantar os Reforços de Grande e Pequeno Porte em instalações de transmissão de energia elétrica sob sua responsabilidade e estabeleceu os valores das parcelas de Receita Anual Permitida – RAP e o cronograma para a entrada em operação comercial das instalações de transmissão de energia elétrica referentes ao Contrato de Concessão nº 58/2001 e, no mérito, dar-lhe provimento.",
-            votoSummary: "O voto examina o pedido de reconsideração da Axia Energia Norte quanto aos prazos e receitas definidos em Resolução Autorizativa para implantação de reforços de transmissão. O Relator analisou os obstáculos supervenientes apresentados para o cronograma de obras, propondo dar provimento parcial ao recurso apenas para ajustar pontualmente os prazos de entrada em operação.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.036702-2025-83.pdf"}]
+            status: "scheduled",
+            votoSummary: "<strong>Argumentação:</strong> As associações alegam risco de dano irreparável a diversos projetos de geração renovável devido à iminente expiração dos prazos definidos no Despacho nº 148/2026. A urgência reside em resguardar as condições operativas e os pareceres de acesso dos associados enquanto o pleito principal não é julgado.<br><br><strong>Posição do Relator:</strong> O relator reconhece o perigo na demora e a plausibilidade do direito, votando pelo deferimento da medida cautelar para suspender a contagem dos prazos até a decisão final de mérito pelo colegiado.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010697-2026-60.pdf"}]
         },
         {
-            originalItemNumber: 10,
-            process: "48500.001221/2024-76",
-            subject: "Requerimento Administrativo protocolado pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra a Resolução Autorizativa nº 16.647/2026, que deu provimento ao Pedido de Reconsideração interposto pela Recorrente contra a Resolução Autorizativa nº 16.051/2025, que autorizou a Recorrente a realizar as Melhorias de Grande Porte sob sua responsabilidade; estabeleceu os valores das parcelas adicionais de Receita Anual Permitida – RAP; e deu outras providências referentes ao Contrato de Concessão nº 62/2001.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu não conhecer do Requerimento Administrativo protocolado pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra a Resolução Autorizativa nº 16.647/2026, que deu provimento ao Pedido de Reconsideração interposto pela Recorrente contra a Resolução Autorizativa nº 16.051/2025, a qual autorizou a Recorrente a realizar as Melhorias de Grande Porte sob sua responsabilidade, estabeleceu os valores das parcelas adicionais de Receita Anual Permitida – RAP e deu outras providências referentes ao Contrato de Concessão nº 62/2001, uma vez que se encontra exaurida a esfera administrativa e não se constatou ilegalidade na condução do processo.",
-            votoSummary: "A minuta analisa um requerimento administrativo onde a Axia Energia questiona aspectos residuais sobre os valores adicionais de RAP para Melhorias de Grande Porte aprovados. A Relatora avalia que o pleito busca reabrir discussões meritórias já vencidas, propondo conhecer do requerimento e manter integralmente as condições de receita e escopo anteriormente estabelecidas.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901221-2024-76.pdf"}]
-        },
-        {
-            originalItemNumber: 12,
-            process: "48500.008476/2022-06",
-            subject: "Prorrogação do prazo de pedido de vista referente ao Pedido de Reconsideração interposto pela Itapebi Geração de Energia S.A. contra o Despacho nº 3.213/2025, que aprovou o resultado da avaliação inicial das propostas de projetos de Pesquisa, Desenvolvimento e Inovação – PDI recebidas no âmbito da Chamada nº 23: 'Hidrogênio no Contexto do Setor Elétrico Brasileiro', nos termos da Nota Técnica nº 396/2024, emitida pela Superintendência de Inovação e Transição Energética – STE, e deu outras providências.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            votoVistaRelator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu conceder prazo adicional de 60 dias para apresentação do voto-vista.",
-            votoSummary: "Trata-se de uma solicitação de dilação de prazo pelo Diretor autor do voto-vista (Willamy Moreira Frota) para analisar detidamente as razões do pedido de reconsideração da Itapebi Geração sobre a avaliação de seu projeto de Hidrogênio (PDI). O Diretor-Relator original propõe aprovar o prazo adicional para propiciar uma deliberação segura sobre a viabilidade regulatória da proposta.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.908476-2024-41-prorrogacaovista.pdf"}]
-        }
-    ];
-
-    // --- DADOS DA 8ª RPO DE 2026 ---
-    const aneelAgenda8RPO = [
-        {
-            originalItemNumber: 1,
-            process: "48500.030641/2025-41",
-            subject: "Reajuste Tarifário Anual da Energisa Mato Grosso do Sul – Distribuidora de Energia S.A. – EMS.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar o índice de Reajuste Tarifário Anual da EMS, que conduz ao efeito médio a ser percebido pelos consumidores de 12,11%, sendo 12,39% para a Alta Tensão e 11,98% para a Baixa Tensão.",
-            details: "Processo destacado do 5º Circuito Deliberativo Público Ordinário.",
-            votoSummary: "A minuta analisa o cálculo do Reajuste Tarifário Anual da Energisa MS, abordando a cobertura dos custos não gerenciáveis (Parcela A) e a remuneração dos custos operacionais (Parcela B). A proposta é pela homologação dos novos índices, garantindo o equilíbrio econômico-financeiro da concessão.",
-            orderOfJudgment: "3",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item1-48500.030641-2025-41.pdf"}]
-        },
-        {
-            originalItemNumber: 2,
-            process: "48500.030696/2025-51",
-            subject: "Reajuste Tarifário Anual de 2026 da Companhia de Eletricidade do Estado da Bahia – Coelba, a vigorar a partir de 22 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas da Coelba, correspondendo a um efeito médio a ser percebido pelos consumidores de 5,85%, sendo de 10,21% em média para a Alta Tensão e de 4,19% para a Baixa Tensão.",
-            details: "Processo destacado do 5º Circuito Deliberativo Público Ordinário.",
-            votoSummary: "O voto analisa a atualização tarifária anual da Coelba, abordando os custos não gerenciáveis (Parcela A) e gerenciáveis (Parcela B) do período. A decisão do relator propõe a homologação dos novos índices de reajuste calculados pela área técnica, garantindo o equilíbrio econômico-financeiro com aplicação a partir de 22 de abril de 2026.",
-            orderOfJudgment: "6",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item2-48500.030696-2025-51.pdf"}]
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.028437/2025-60",
-            subject: "Resultado da Revisão Tarifária Periódica da Companhia Jaguari de Energia – CPFL Santa Cruz, a vigorar a partir de 22 de março de 2026, após análise das contribuições recebidas na Consulta Pública nº 41/2025.",
+            originalItemNumber: 19,
+            process: "48500.006391/2022-85",
+            subject: "Prorrogação do prazo de pedido de vista referente ao Resultado da Consulta Pública nº 37/2024, que trata dos pedidos de Revisão Tarifária Extraordinária das concessionárias de distribuição Light, Neoenergia Coelba, Neoenergia Pernambuco, Neoenergia Cosern, Neoenergia Brasília e Copel devido à pandemia de Covid-19, nos termos do Submódulo 2.10 dos Procedimentos de Regulação Tarfária – PRORET.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            votoVistaRelator: "Gentil Nogueira de Sa Junior",
-            status: "view_request",
-            votoSummary: "O processo trata do reposicionamento tarifário da CPFL Santa Cruz. A minuta detalha o cálculo da Base de Remuneração Regulatória, o redimensionamento dos custos operacionais eficientes e a definição das metas de qualidade e perdas, consolidando as contribuições recebidas em Consulta Pública.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item3-48500.028437-2025-60-votooriginal.pdf"},
-                {title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item3-48500.028437-2025-60-voto-vista.pdf"}
-            ]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.030071/2025-99",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Energisa Sul Sudeste – ESS.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, no período de 24 de abril de 2026 a 8 de junho de 2026, com reunião presencial em Presidente Prudente (SP) em 22 de maio de 2026.",
-            details: "Processo destacado do 5º Circuito Deliberativo Público Ordinário.",
-            votoSummary: "A minuta propõe o estabelecimento dos parâmetros iniciais para a Revisão Tarifária Periódica da Energisa Sul Sudeste. O documenta fundamenta a abertura de Consulta Pública para submeter metodologias como a definição da BRR, PMSO e limites de perdas ao crivo da sociedade.",
-            orderOfJudgment: "9",
-            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item4-48500.030071-2025-99.pdf"}]
-        },
-        {
-            originalItemNumber: 5,
-            process: "48500.035430/2025-02",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para os aprimoramentos regulatórios para tratamento de excedentes de energia e maior flexibilidade operativa na Rede de Distribuição.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) instaurar Consulta Pública por 45 dias para aprimoramentos como combate à alteração à revelia de MMGD e sinalização de restrições sistêmicas; e (ii) aplicar, de forma imediata, as regras de sinalização sistêmica de restrições na transmissão para novas conexões.",
-            details: "Houve apresentação técnica por parte do servidor Daniel Vieira (STD).",
-            votoSummary: "A proposta avalia aprimoramentos regulatórios na distribuição, focando no tratamento de excedentes de energia, gestão da MMGD e sinalização de restrições sistêmicas. A minuta sugere a abertura de Consulta Pública e a aplicação imediata de regras para novas conexões, visando maior flexibilidade e segurança operativa.",
-            orderOfJudgment: "2",
-            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item5-48500.035430-2025-02.pdf"}]
-        },
-        {
-            originalItemNumber: 8,
-            process: "48500.030643/2025-30",
-            subject: "Reajuste Tarifário Anual da Companhia Paulista de Força e Luz – CPFL Paulista, a vigorar a partir de 8 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar o índice de Reajuste Tarifário Anual da CPFL Paulista, que conduz ao efeito médio a ser percebido pelos consumidores de 12,13%, sendo 18,75% para a Alta Tensão e 9,25% para a Baixa Tensão.",
-            votoSummary: "A minuta detalha o Reajuste Tarifário Anual da CPFL Paulista, discutindo o repasse dos custos com compra e transporte de energia, além dos encargos setoriais. A decisão da relatora é pela aprovação dos percentuais tarifários propostos para entrarem em vigor em 8 de abril de 2026.",
-            orderOfJudgment: "12",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item8-48500.030643-2025-30.pdf"}]
-        },
-        {
-            originalItemNumber: 9,
-            process: "48500.030639/2025-71",
-            subject: "Reajuste Tarifário Anual da Energisa Mato Grosso – Distribuidora de Energia S.A. – EMT, a vigorar a partir de 8 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas da EMT, correspondendo a um efeito médio a ser percebido pelos consumidores de 6,86%, sendo de 10,42% em média para a Alta Tensão e de 5,27% para a Baixa Tensão. A diferença de receita do período postergado será compensada em 2027.",
-            details: "A pedido do Diretor-Geral, Sandoval de Araújo Feitosa Neto, este processo foi destacado do bloco da pauta.",
-            votoSummary: "O documento consolida os cálculos para o Reajuste Tarifário Anual da EMT, considerando a variação de custos do último ciclo e a aplicação do Fator X. O relator votou por homologar as novas Tarifas de Energia (TE) e de Uso do Sistema de Distribuição (TUSD) aplicáveis a partir de 8 de abril de 2026.",
-            orderOfJudgment: "8",
-            actNumber: "Resolução Homologatória nº 3.581/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item9-48500.030639-2025-71.pdf"}]
-        },
-        {
-            originalItemNumber: 10,
-            process: "48500.030697/2025-03",
-            subject: "Reajuste Tarifário Anual de 2026 da Companhia Energética do Rio Grande do Norte – Cosern, a vigorar a partir de 22 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas da Cosern, correspondendo a um efeito médio a ser percebido pelos consumidores de 5,40%, sendo de 10,90% em média para a Alta Tensão e de 3,74% para a Baixa Tensão.",
-            votoSummary: "A minuta examina o Reajuste Tarifário Anual da Cosern. O debate focou na adequação dos custos de aquisição de energia e encargos à realidade da concessão. A decisão do relator propõe a aprovação e homologação das novas tarifas com vigência em 22 de abril de 2026.",
-            orderOfJudgment: "13",
-            actNumber: "Resolução Homologatória nº 3.573/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item10-48500.030697-2025-033.pdf"}]
-        },
-        {
-            originalItemNumber: 11,
-            process: "48500.030704/2025-69",
-            subject: "Reajuste Tarifário Anual de 2026 da Energisa Sergipe – Distribuidora de Energia S.A. – ESE, a vigorar a partir de 22 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas da ESE, correspondendo a um efeito médio a ser percebido pelos consumidores de 6,86%, sendo de 12,36% em média para a Alta Tensão e de 5,24% para a Baixa Tensão.",
-            votoSummary: "O voto trata do Reajuste Tarifário Anual da Energisa Sergipe, avaliando os components que compõem o reposicionamento tarifário. A decisão do relator acata a metodologia da área técnica, aprovando os novos índices para vigorarem a partir de 22 de abril de 2026.",
-            orderOfJudgment: "14",
-            actNumber: "Resolução Homologatória nº 3.575/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030704-2025-69.pdf"}]
-        },
-        {
-            originalItemNumber: 12,
-            process: "48500.030710/2025-16",
-            subject: "Reajuste Tarifário Anual de 2026 da Enel Distribuição Ceará – Enel CE, a vigorar a partir de 22 de abril de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas da Enel CE, correspondendo a um efeito médio a ser percebido pelos consumidores de 5,78%, sendo de 9,61% em média para a Alta Tensão e de 4,67% para a Baixa Tensão.",
-            votoSummary: "A minuta aborda os índices do Reajuste Tarifário Anual da Enel Ceará, com discussão sobre os encargos setoriais e os custos do serviço de distribuição. A decisão do relator encaminha a homologação do reajuste e a fixação das tarifas aplicáveis a partir de 22 de abril de 2026.",
-            orderOfJudgment: "15",
-            actNumber: "Resolução Homologatória nº 3.574/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item12-48500.030710-2025-16.pdf"}]
-        },
-        {
-            originalItemNumber: 14,
-            process: "48500.009874/2026-65",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a proposta de regulamentação do art. 26 da Lei nº 9.427/1996, relativas à inclusão do § 1º-W pela Lei nº 15.269/2025, que passou a permitir o ajuste da data de início de execução do Contrato de Uso do Sistema de Transmissão – CUST para determinados empreendimentos de geração beneficiados pela prorrogação excepcional de prazos prevista na Medida Provisória nº 1.212/2024.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, com período de contribuições entre 23 de abril de 2026 e 12 de maio de 2026.",
-            votoSummary: "O processo discute a regulamentação para o ajuste na data de início da execução do CUST para geradores beneficiados pela MP nº 1.212/2024 e Lei nº 15.269/2025. A decisão da relatora é por aprovar a abertura de Consulta Pública para coletar subsídios da sociedade e agentes visando aprimorar as regras propostas.",
-            orderOfJudgment: "17",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.009874-2026-65.pdf"}]
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Argumentação:</strong> A análise dos pleitos de Revisão Tarifária Extraordinária (RTE Covid-19) de seis grandes distribuidoras envolve extrema complexidade regulatória e volumosa base de dados técnicos e econômicos. A extensão temporal é essencial para a devida fundamentação técnica da divergência ou alinhamento.<br><br><strong>Posição do Relator do Voto-Vista:</strong> O diretor Gentil Nogueira de Sá Júnior solicita, em consonância com o Regimento Interno da ANEEL, a concessão de prazo adicional de 60 dias para a devida instrução e apresentação de seu voto-vista.",
+            links: [{title: "Minutas de voto-vista", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006391-2022-85.pdf"}]
         }
     ];
 
     // DADOS DAS CONSULTAS PÚBLICAS (Lista Completa)
     const consultasPublicasData = [
+         { numero: "CP 012/2026", tema: "Obter subsídios para o aprimoramento das minutas do Edital e do Termo de Referência do Desenvolvimento e da Implantação da Plataforma de Inovação do Setor Elétrico – PINSE.", inicio: "06/05/2026", fim: "22/06/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4dpulIlY&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4013&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "12/06/2026", area: "Coordenação Geral de Estudos Integrados - DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 221/2026", tema: "Proposta de aprimoramento das diretrizes para a exportação de energia elétrica interruptível proveniente de geração de usinas termelétricas.", inicio: "27/04/2026", fim: "07/05/2026", area: "SNEE/DPME", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 220/2026", tema: "Proposta de aprimoramento das diretrizes para a exportação de energia elétrica interruptível de excedente de geração de usinas hidrelétricas", inicio: "27/04/2026", fim: "11/06/2026", area: "SNEE/DPME", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
@@ -586,51 +392,51 @@
         renderFunction(container);
     }
 
-    // --- RENDER PAUTA 6º CIRCUITO ---
-    function renderCircuito6Page(container) {
+    // --- RENDER PAUTA 7º CIRCUITO ---
+    function renderCircuito7Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 6º Circuito Deliberativo de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: 28 de abril de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 7º Circuito Deliberativo de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${circuito7DateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
         // Informação da Reunião
-        const pautaInfoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
+        const pautaInfoSection = createElement('div', 'mb-6 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
         const pautaText = createElement('p', 'text-lg font-semibold', 'Reunião Eletrônica (Assíncrona)');
-        const pautaSubText = createElement('p', 'text-sm text-blue-100', 'Votação realizada no período de 8h às 18h do dia 28/04/2026.');
+        const pautaSubText = createElement('p', 'text-sm text-blue-100', 'Votação realizada no período de 8h às 18h do dia 12/05/2026.');
         const textDiv = createElement('div', '');
         textDiv.appendChild(pautaText);
         textDiv.appendChild(pautaSubText);
+        
+        const pautaLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Pauta Oficial (PDF)`, { href: circuito7PautaLink, target: '_blank', rel: 'noopener noreferrer' });
+        
         pautaInfoSection.appendChild(textDiv);
+        pautaInfoSection.appendChild(pautaLinkAnchor);
         container.appendChild(pautaInfoSection);
 
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
-        const getSummarySubject6 = (item) => {
+        const getSummarySubject7 = (item) => {
             switch (item.originalItemNumber) {
-                case 1: return "RTA Neoenergia Pernambuco (Celpe)";
-                case 2: return "RTA Equatorial Alagoas";
-                case 3: return "CP Créditos MMGD";
-                case 5: return "Recurso Leilão de Reserva de Capacidade";
-                case 7: return "Recurso Axia Energia (Eletrobras)";
-                case 8: return "Recurso Consumidor vs. Equatorial Goiás";
-                case 9: return "Reconsideração Axia Energia Norte (Eletronorte)";
-                case 10: return "Requerimento Axia Energia (Eletrobras)";
-                case 12: return "Prorrogação Vista - Itapebi Geração";
+                case 1: return "Homologação Leilão de Transmissão nº 1/2026";
+                case 2: return "Alteração quotas PROINFA 2026";
+                case 7: return "Pedido de Reconsideração Energisa Amapá (RTA CEA)";
+                case 10: return "Medida Cautelar Abeeólica e Absolar (Despacho 148/2026)";
+                case 19: return "Prorrogação Vista - CP 37/2024 (RTE Covid-19)";
                 default: return item.subject.substring(0, 85) + '...';
             }
         };
 
-        aneelCircuito6.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        aneelCircuito7.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito6-${item.originalItemNumber}` });
-            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject6(item)}</span>`;
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito7-${item.originalItemNumber}` });
+            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject7(item)}</span>`;
             
             const statusBadge = createStatusBadge(item.status, pautaStatusMap);
             statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
@@ -644,8 +450,8 @@
 
         // Grid de Itens
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelCircuito6.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito6-${item.originalItemNumber}` });
+        aneelCircuito7.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito7-${item.originalItemNumber}` });
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
@@ -1099,13 +905,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
+      const circuito7Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 7º Circuito');
       const pauta9Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados da 9ª RPO');
-      const circuito6Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 6º Circuito');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta9Button, circuito6Button, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(circuito7Button, pauta9Button, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -1119,21 +925,21 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta9Button, circuito6Button, consultasButton, agendaButton, imersaoButton];
+      const buttons = [circuito7Button, pauta9Button, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
       pauta9Button.addEventListener('click', () => { setActiveButton(pauta9Button); renderPageWithAnimation(renderPauta9Page, contentContainer); });
-      circuito6Button.addEventListener('click', () => { setActiveButton(circuito6Button); renderPageWithAnimation(renderCircuito6Page, contentContainer); });
+      circuito7Button.addEventListener('click', () => { setActiveButton(circuito7Button); renderPageWithAnimation(renderCircuito7Page, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na Pauta da 9ª RPO como primeira aba
-      setActiveButton(pauta9Button);
-      renderPageWithAnimation(renderPauta9Page, contentContainer);
+      // Inicia na Pauta do 7º Circuito como primeira aba
+      setActiveButton(circuito7Button);
+      renderPageWithAnimation(renderCircuito7Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
