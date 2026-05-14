@@ -173,11 +173,10 @@
     };
     
     const circuito7DateText = '12 de maio de 2026';
-    const rpo9DateText = '05 de maio de 2026';
+    const rpo10DateText = '19 de maio de 2026';
     
     const circuito7PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/pautacdpo12-5-2026.pdf";
-    const rpo9ConvocacaoLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0341786_convocacao.pdf";
-    const rpo9YoutubeLink = "https://www.youtube.com/watch?v=3zfdHaNlbfc";
+    const rpo10YoutubeLink = "https://www.youtube.com/live/eiVViLGtcgc?si=Mr92-1TdEspyjfmG";
     
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     
@@ -193,57 +192,64 @@
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
     };
 
-    // --- DADOS DA 9ª RPO DE 2026 (RESULTADOS) ---
-    const aneelAgenda9RPO = [
+    // --- DADOS DA 10ª RPO DE 2026 (PAUTA) ---
+    const aneelAgenda10RPO = [
         {
-            originalItemNumber: 3,
-            process: "48500.000953/2021-04",
-            subject: "Recursos Administrativos interpostos pela Associação Brasileira de Distribuidores de Energia Elétrica – Abradee, pela Associação Brasileira das Empresas de Transmissão de Energia Elétrica – Abrate e pela Cemig Distribuição S.A. – Cemig-D contra o Despacho nº 675/2026, emitido pela Superintendência de Gestão Tarifária e Regulação Econômica – STR, que trata da atualização da Taxa Regulatória de Remuneração do Capital.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            decision: "A diretoria, por maioria (voto do Diretor-Geral vencido), deu parcial provimento aos recursos. Foi determinado que a apuração considere a janela 2016-2025, elevando o custo de emissão de debêntures para 0,57% (em vez dos 0,51% propostos inicialmente) e incluindo debêntures omitidas na base original.",
-            details: "O debate central, liderado pelo relator Diretor Fernando Mosna, focou na janela amostral utilizada para calcular o custo de emissão de debêntures. A área técnica sugeriu a janela 2013-2022 devido à escassez de dados recentes provocada pela Resolução CVM 160. O relator, contudo, argumentou que a agência deve seguir estritamente o submódulo 2.4 do Proret, que exige o uso dos últimos 10 anos (2016-2025), para evitar o 'congelamento' de dados defasados.",
-            actNumber: "Despacho nº 1.567/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item3-48500.000953-2021-044.pdf"}]
+            originalItemNumber: 1,
+            process: "48500.030780/2025-74",
+            subject: "Reajuste Tarifário Anual da Amazonas Energia S.A. – AME, a vigorar a partir de 26 de maio de 2026.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
         },
         {
-            originalItemNumber: 12,
-            process: "48500.006917/2026-51",
-            subject: "Recurso Administrativo interposto pela Axia Energia Nordeste S.A. (Companhia Hidro Elétrica do São Francisco S.A. – Chesf) contra o Despacho nº 521/2026, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que retificou alterações na autorização à Recorrente de reforços que constam no Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2025 (3ª Emissão) – Reforços de Pequeno Porte das Instalações de Transmissão.",
-            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "O processo analisa o recurso da Axia Energia Nordeste (Chesf) referente às retificações promovidas pela SCE nas autorizações para implantação de reforços de pequeno porte previstos no POTEE 2025. A minuta de voto do Relator encaminha proposta no sentido de conhecer do recurso para, no mérito, negar-lhe provimento, mantendo integralmente o entendimento técnico consubstanciado no despacho recorrido.",
-            decision: "Aprovado por unanimidade, seguindo os termos dos votos dos relatores e das áreas técnicas.",
-            details: "Por tratar-se de item de bloco, não houve discussão individualizada durante a sessão pública. Os votos e atos foram disponibilizados previamente para consulta.",
-            actNumber: "Despacho nº 1.565/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.006917-2026-51.pdf"}]
-        },
-        {
-            originalItemNumber: 13,
-            process: "48500.034723/2025-64",
-            subject: "Recursos Administrativos interpostos pelas empresas Copel Geração e Transmissão S.A. – Copel GT, Isa Energia Brasil, Argo VI Transmissão de Energia S.A., Axia Energia Norte S.A. (Centrais Elétricas do Norte do Brasil – Eletrobras Eletronorte), Axia Energia Nordeste S.A. (Companhia Hidrelétrica do São Francisco – Eletrobras Chesf) e Axia Energia S.A. (Centrais Elétricas – Eletrobras) contra o Despacho nº 200/2026, emitido pela Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica – SCE, que autorizou a implantação dos Reforços de Pequeno Porte que constaram no Plano de Outorga de Transmissão de Energia Elétrica – POTEE 2025 (3ª Emissão).",
-            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            originalItemNumber: 2,
+            process: "48500.037166/2025-33",
+            subject: "Resultado da Consulta Pública nº 47/2025, instituída com vistas a colher subsídios e informações adicionais para a definição do critério de rateio dos recursos arrecadados na Conta de Desenvolvimento Energético – CDE de que tratam o § 8º e o § 9º do art. 4º da Lei nº 15.235/2025, relativos à repactuação de parcelas vincendas devidas a título de Uso de Bem Público – UBP.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            votoSummary: "O item abrange os recursos de diversas transmissoras contra a autorização dada pela SCE para implantação de reforços de pequeno porte do POTEE 2025, buscando uniformizar o entendimento regulatório quanto ao escopo, orçamentação e aos prazos estipulados. A minuta de voto da Relatora propõe conhecer dos recursos interpostos para, no mérito, negar-lhes provimento.",
-            decision: "Aprovado por unanimidade, juntamente com os demais itens do bloco, seguindo a ordem de julgamento definida pela presidência.",
-            details: "Classificado como um item de bloco (integrando o grupo dos itens 8 a 24). A deliberação ocorreu de forma simplificada, sem leitura do relatório ou discussões individualizadas na sessão pública. Não houve pedidos de sustentação oral.",
-            actNumber: "Despacho nº 1.569/2026",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.034723-2025-64.pdf"}]
+            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+        },
+        {
+            originalItemNumber: 6,
+            process: "48500.008014/2026-12",
+            subject: "Adequação da Receita Anual Permitida – RAP dos Contratos de Transmissão anteriores a 2006, em decorrência da reforma tributária instituída pela Lei Complementar nº 214/2025.",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> A matéria trata da necessidade de recomposição do equilíbrio econômico-financeiro dos Contratos de Transmissão firmados antes de 2006, impactados pelas novas regras e alíquotas impostas pela Lei Complementar nº 214/2025 (Reforma Tributária).<br><br><strong>Posicionamento do Relator:</strong> O relator acompanha a instrução da área técnica, propondo a aprovação da adequação da RAP com a aplicação dos novos parâmetros metodológicos para assegurar a neutralidade tributária na prestação do serviço.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.008014-2026-12.pdf"}]
+        },
+        {
+            originalItemNumber: 8,
+            process: "48500.000407/2024-16",
+            subject: "Requerimento Administrativo protocolado pela Energia Sustentável do Brasil S.A. – ESBR com vistas ao cálculo de extensão da outorga da Usina Hidrelétrica – UHE Jirau, nos termos do artigo 3º-C da Lei nº 10.848/2004, incluído pela Lei nº 14.146/2021.",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
+            relator: "Willamy Moreira Frota",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> O processo analisa o requerimento da ESBR para a extensão da outorga da UHE Jirau, em razão de impactos não imputáveis ao empreendedor. A área técnica avaliou os parâmetros estabelecidos na Lei nº 14.146/2021 para realizar o recálculo.<br><br><strong>Posicionamento do Relator:</strong> O relator reconhece o pleito da concessionária e vota pelo deferimento da memória de cálculo elaborada pela SGM, estipulando os dias exatos de extensão do prazo de outorga.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900407-2024-16.pdf"}]
         },
         {
             originalItemNumber: 21,
-            process: "48500.001052/2005-59",
-            subject: "Aprimoramento do Banco de Preços de Referência – BPR ANEEL.",
+            process: "48500.003353/2024-32",
+            subject: "Pedido de Reconsideração interposto pela Marlim Azul Energia S.A. contra o Despacho nº 719/2026, que retificou, de ofício, o regime tarifário da Usina Terméletrica – UTE Marlim Azul e outras, para a Tarifa de Uso do Sistema de Transmissão – TUST estabilizada, estabelecendo que as diferenças financeiras decorrentes da desestabilização aplicada indevidamente sejam compensadas integralmente, em duodécimos, ao longo do ciclo tarifário 2026-2027, e deu outras providências.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
+            relator: "Gentil Nogueira de Sá Júnior",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> A geradora contesta a forma de compensação em duodécimos imposta pelo Despacho, que retificou de ofício o regime tarifário da UTE para TUST estabilizada, alegando risco de impacto em seu fluxo de caixa durante o ciclo tarifário 2026-2027.<br><br><strong>Posicionamento do Relator:</strong> O relator avalia que a retificação de ofício foi um procedimento regular para correção de falha no regime tarifário e vota pelo conhecimento do pedido para, no mérito, negar-lhe provimento, mantendo a sistemática de compensação parcelada inalterada.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
+        },
+        {
+            originalItemNumber: 32,
+            process: "48500.010541/2026-89",
+            subject: "Estabelecimento de novos valores para os redutores relativos ao Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura – REIDI a serem utilizados no estabelecimento do valor de investimento necessário ao cálculo das Receitas Anuais Permitidas – RAP, em decorrência da Lei Complementar nº 224/2025.",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "approved",
-            votoSummary: "O processo discute as diretrizes para o aprimoramento do Banco de Preços de Referência (BPR) da ANEEL, ferramenta central para a avaliação e orçamentação de investimentos prudentes pelas concessionárias. A minuta de voto do Relator propõe a aprovação das inovações metodológicas e a consequente atualização da base de dados, garantindo maior aderência à realidade dos custos de mercado do setor elétrico.",
-            decision: "Decidido por maioria (voto do relator vencido) que os serviços do Banco de Preços de Referência (BPR) passarão a ser atualizados pela variação do IPCA a partir de 30 de junho de 2026, mantendo-se o cronograma de estudos para outros aprimoramentos metodológicos.",
-            details: "Este item foi retirado do bloco para discussão detalhada. O relator Fernando Mosna sugeriu postergar a definição do índice para uma consulta pública no segundo semestre de 2026. No entanto, abriu-se uma divergência liderada pela Diretora Agnes e acompanhada pelos Diretores Gentil e William. O argumento vencedor foi de que o uso do INPC sobrevalora os serviços (onerando o consumidor) e que o setor de transmissão teve anos para apresentar estudos alternativos sem sucesso.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.901052-2005-59.pdf"}]
+            relator: "Agnes Maria de Aragão da Costa",
+            status: "scheduled",
+            votoSummary: "<strong>Discussão:</strong> O processo trata da atualização imperativa dos redutores tributários do REIDI utilizados na composição do Banco de Preços de Referência da ANEEL, adequando-os aos novos comandos da Lei Complementar nº 224/2025.<br><br><strong>Posicionamento da Relatora:</strong> Acompanhando a nota técnica, a relatora vota pela aprovação dos novos percentuais de redução do REIDI, com aplicação imediata na orçamentação da RAP dos novos lotes de transmissão para assegurar a modicidade tarifária.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010541-2026-89.pdf"}]
         }
     ];
 
@@ -340,7 +346,7 @@
          { numero: "CP 33/2025", tema: "Obter subsídios referente ao Manual Algébrico do Monitoramento Prudencial e Procedimentos de Comercialização (PdCs).", inicio: "06/11/2025", fim: "22/12/2025", area: "SGM/SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=jk9Q07eV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3967&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 35/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - Gás Natural, Carvão Mineral e UHEs).", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3970&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 36/2025", tema: "Edital e Anexos do Leilão nº 03/2025-ANEEL (LRCAP 2026 - UTEs a Óleo e Biodiesel).", inicio: "19/11/2025", fim: "18/12/2025", area: "SEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=yINGools&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3971&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 37/2025", tema: "Rateio do custo e da generation de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).", inicio: "20/11/2025", fim: "05/01/2026", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" },
+         { numero: "CP 37/2025", tema: "Rateio do custo e da geração de Angra 1 e 2 entre os usuários finais de energia elétrica do SIN (Lei 15.235/2025).", inicio: "20/11/2025", fim: "05/01/2026", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.033330-2025-33.pdf" },
          { numero: "CP 38/2025", tema: "Regras e Procedimentos de Comercialização (Garantias CCEARs LEE 2025).", inicio: "19/11/2025", fim: "18/12/2025", area: "SGM", origem: "ANEEL", link: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.032917-2025-25.pdf" },
          { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", inicio: "04/12/2025", fim: "03/04/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=OQ0YpDif&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3976&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 40/2025", tema: "Obter subsídios e informações adicionais para promover regulamentação contábil tributária do fundo de descomissionamento de Angra 1 e 2 em atendimento à determinação do Acórdão nº 2502/2024 do Tribunal de Contas da União - TCU.", inicio: "10/12/2025", fim: "24/01/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/consultas-publicas" },
@@ -492,7 +498,7 @@
                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
             }
             if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Argumentação', item.votoSummary));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Discussão', item.votoSummary));
             }
             if (item.details) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
@@ -520,19 +526,19 @@
         container.appendChild(agendaGrid);
     }
 
-    // --- RENDER PAUTA 9ª RPO ---
-    function renderPauta9Page(container) {
+    // --- RENDER PAUTA 10ª RPO ---
+    function renderPauta10Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 9ª Reunião Pública Ordinária de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo9DateText}`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 10ª Reunião Pública Ordinária de 2026`);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo10DateText} | Início: 9h`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
         // Link do YouTube
         const youtubeSection = createElement('div', 'bg-gray-800 text-white p-4 rounded-lg flex items-center justify-between flex-wrap gap-4 mb-6');
-        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a gravação da reunião');
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: rpo9YoutubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        const youtubeText = createElement('p', 'font-semibold', 'Acompanhe a transmissão da reunião ao vivo');
+        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center', 'Assistir no YouTube', { href: rpo10YoutubeLink, target: '_blank', rel: 'noopener noreferrer' });
         youtubeLinkAnchor.innerHTML = `<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>` + youtubeLinkAnchor.textContent;
         youtubeSection.appendChild(youtubeText);
         youtubeSection.appendChild(youtubeLinkAnchor);
@@ -540,8 +546,8 @@
 
         // Link Convocação
         const convocacaoSection = createElement('div', 'mb-10 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial completa (Convocação PDF)');
-        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Visualizar Convocação`, { href: rpo9ConvocacaoLink, target: '_blank', rel: 'noopener noreferrer' });
+        const convocacaoText = createElement('p', 'text-lg font-semibold', 'Acesse a pauta oficial completa (PDF)');
+        const convocacaoLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Visualizar Pauta Oficial`, { href: "https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14752&idAreaNoticia=425", target: '_blank', rel: 'noopener noreferrer' });
         convocacaoSection.appendChild(convocacaoText);
         convocacaoSection.appendChild(convocacaoLinkAnchor);
         container.appendChild(convocacaoSection);
@@ -549,23 +555,25 @@
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
         const getSummarySubject = (item) => {
             switch (item.originalItemNumber) {
-                case 3: return "Recurso Abradee, Abrate e Cemig-D - WACC";
-                case 12: return "Recurso Axia Energia Nordeste (Chesf) - Reforços POTEE";
-                case 13: return "Recurso Copel, ISA, Argo e Axia - Reforços POTEE";
-                case 21: return "Aprimoramento do Banco de Preços de Referência";
+                case 1: return "RTA Amazonas Energia S.A. - AME";
+                case 2: return "Resultado CP 47/2025 - Critério Rateio CDE (UBP)";
+                case 6: return "Adequação RAP Contratos Transmissão (LC 214/2025)";
+                case 8: return "Cálculo Extensão Outorga UHE Jirau";
+                case 21: return "Reconsideração UTE Marlim Azul - TUST Estabilizada";
+                case 32: return "Novos Redutores REIDI para cálculo de RAP (LC 224/2025)";
                 default: return item.subject.substring(0, 85) + '...';
             }
         };
 
-        aneelAgenda9RPO.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
+        aneelAgenda10RPO.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-rpo9-${item.originalItemNumber}` });
+            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-rpo10-${item.originalItemNumber}` });
             itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject(item)}</span>`;
             
             const statusBadge = createStatusBadge(item.status, pautaStatusMap);
@@ -580,12 +588,12 @@
 
         // Grid de Itens
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda9RPO.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-rpo9-${item.originalItemNumber}` });
+        aneelAgenda10RPO.forEach(item => {
+            const itemDiv = createElement('div', 'info-card', null, { id: `item-rpo10-${item.originalItemNumber}` });
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
-            const blockText = item.originalItemNumber >= 8 && item.originalItemNumber <= 24 && item.originalItemNumber !== 21 ? ' (Bloco)' : '';
+            const blockText = (item.originalItemNumber >= 6 && item.originalItemNumber <= 32) ? ' (Bloco)' : '';
             h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
             
             cardHeader.appendChild(h3Subject);
@@ -618,7 +626,7 @@
                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
             }
             if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Discussão', item.votoSummary));
             }
             if (item.details) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
@@ -910,13 +918,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
+      const pauta10Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 10ª RPO');
       const circuito7Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 7º Circuito');
-      const pauta9Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 9ª RPO');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(circuito7Button, pauta9Button, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta10Button, circuito7Button, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -930,21 +938,21 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [circuito7Button, pauta9Button, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta10Button, circuito7Button, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
-      pauta9Button.addEventListener('click', () => { setActiveButton(pauta9Button); renderPageWithAnimation(renderPauta9Page, contentContainer); });
+      pauta10Button.addEventListener('click', () => { setActiveButton(pauta10Button); renderPageWithAnimation(renderPauta10Page, contentContainer); });
       circuito7Button.addEventListener('click', () => { setActiveButton(circuito7Button); renderPageWithAnimation(renderCircuito7Page, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia nos Resultados do 7º Circuito como primeira aba
-      setActiveButton(circuito7Button);
-      renderPageWithAnimation(renderCircuito7Page, contentContainer);
+      // Inicia na Pauta da 10ª RPO como primeira aba
+      setActiveButton(pauta10Button);
+      renderPageWithAnimation(renderPauta10Page, contentContainer);
     }
 
     document.addEventListener('DOMContentLoaded', renderApp);
