@@ -176,7 +176,7 @@
     const rpo10DateText = '19 de maio de 2026';
     
     const circuito7PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/pautacdpo12-5-2026.pdf";
-    const rpo10YoutubeLink = "https://www.youtube.com/live/eiVViLGtcgc?si=Mr92-1TdEspyjfmG";
+    const rpo10YoutubeLink = "https://www.youtube.com/live/mMzlOUa6zIo?si=Y1GET0oOo1luk7ig";
     
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     
@@ -192,7 +192,7 @@
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
     };
 
-    // --- DADOS DA 10ª RPO DE 2026 (PAUTA) ---
+    // --- DADOS DA 10ª RPO DE 2026 (RESULTADOS) ---
     const aneelAgenda10RPO = [
         {
             originalItemNumber: 1,
@@ -200,7 +200,11 @@
             subject: "Reajuste Tarifário Anual da Amazonas Energia S.A. – AME, a vigorar a partir de 26 de maio de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
+            status: "approved",
+            judgmentOrder: 5,
+            decision: "A Diretoria, por unanimidade, decidiu homologar as novas tarifas de aplicação da Amazonas Energia S.A. – AME, correspondendo a um efeito médio a ser percebido pelos consumidores de 6,58%.",
+            votoSummary: "<strong>Discussão:</strong> O processo trata da homologação das novas tarifas para a AME, incluindo a definição de repasses da CCEE e flexibilizações contratuais associadas ao Reajuste Tarifário Anual de 2025.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item01-48500.030780-2025-74.pdf"}]
         },
         {
             originalItemNumber: 2,
@@ -209,7 +213,11 @@
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
             votoVistaRelator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "approved",
+            judgmentOrder: 4,
+            decision: "A Diretoria, por maioria, acompanhando o voto-vista do Diretor Gentil Nogueira de Sá Júnior e vencida a Diretora-Relatora, Agnes Maria de Aragão da Costa, decidiu aprovar a emissão de Despacho com as diretrizes a serem observadas no rateio dos eventuais recursos a serem arrecadados na repactuação de UBP.",
+            votoSummary: "<strong>Discussão:</strong> O debate girou em torno do critério de rateio dos recursos da CDE e UBP para a modicidade tarifária. O voto vencedor definiu a apuração do Efeito Tarifário Limite Equilibrado Preliminar (ETLEP) para as distribuidoras da SUDAM e SUDENE, ajustando as diretrizes propostas inicialmente pela Relatora.",
+            links: [{title: "Minuta de voto-vista", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item2-48500.037166-2025-33_voto-vista.pdf"}]
         },
         {
             originalItemNumber: 6,
@@ -217,7 +225,9 @@
             subject: "Adequação da Receita Anual Permitida – RAP dos Contratos de Transmissão anteriores a 2006, em decorrência da reforma tributária instituída pela Lei Complementar nº 214/2025.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "approved",
+            judgmentOrder: 9,
+            decision: "A Diretoria, por unanimidade, decidiu aprovar a adequação da Receita Anual Permitida – RAP das concessionárias de transmissão cujos contratos foram celebrados até 31 de dezembro de 2005, retirando os montantes destinados à cobertura de PIS/PASEP e Cofins.",
             votoSummary: "<strong>Discussão:</strong> A matéria trata da necessidade de recomposição do equilíbrio econômico-financeiro dos Contratos de Transmissão firmados antes de 2006, impactados pelas novas regras e alíquotas impostas pela Lei Complementar nº 214/2025 (Reforma Tributária).<br><br><strong>Posicionamento do Relator:</strong> O relator acompanha a instrução da área técnica, propondo a aprovação da adequação da RAP com a aplicação dos novos parâmetros metodológicos para assegurar a neutralidade tributária na prestação do serviço.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.008014-2026-12.pdf"}]
         },
@@ -227,7 +237,9 @@
             subject: "Requerimento Administrativo protocolado pela Energia Sustentável do Brasil S.A. – ESBR com vistas ao cálculo de extensão da outorga da Usina Hidrelétrica – UHE Jirau, nos termos do artigo 3º-C da Lei nº 10.848/2004, incluído pela Lei nº 14.146/2021.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
+            status: "view_request",
+            judgmentOrder: 11,
+            decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo. O Diretor-Relator havia votado no sentido de homologar o prazo de extensão da outorga em 615 dias.",
             votoSummary: "<strong>Discussão:</strong> O processo analisa o requerimento da ESBR para a extensão da outorga da UHE Jirau, em razão de impactos não imputáveis ao empreendedor. A área técnica avaliou os parâmetros estabelecidos na Lei nº 14.146/2021 para realizar o recálculo.<br><br><strong>Posicionamento do Relator:</strong> O relator reconhece o pleito da concessionária e vota pelo deferimento da memória de cálculo elaborada pela SGM, estipulando os dias exatos de extensão do prazo de outorga.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900407-2024-16.pdf"}]
         },
@@ -237,7 +249,9 @@
             subject: "Pedido de Reconsideração interposto pela Marlim Azul Energia S.A. contra o Despacho nº 719/2026, que retificou, de ofício, o regime tarifário da Usina Terméletrica – UTE Marlim Azul e outras, para a Tarifa de Uso do Sistema de Transmissão – TUST estabilizada, estabelecendo que as diferenças financeiras decorrentes da desestabilização aplicada indevidamente sejam compensadas integralmente, em duodécimos, ao longo do ciclo tarifário 2026-2027, e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "approved",
+            judgmentOrder: 7,
+            decision: "A Diretoria, por unanimidade, decidiu conhecer do Pedido de Reconsideração interposto pela Marlim Azul Energia S.A. contra o Despacho nº 719/2026, para, no mérito, negar-lhe provimento.",
             votoSummary: "<strong>Discussão:</strong> A geradora contesta a forma de compensação em duodécimos imposta pelo Despacho, que retificou de ofício o regime tarifário da UTE para TUST estabilizada, alegando risco de impacto em seu fluxo de caixa durante o ciclo tarifário 2026-2027.<br><br><strong>Posicionamento do Relator:</strong> O relator avalia que a retificação de ofício foi um procedimento regular para correção de falha no regime tarifário e vota pelo conhecimento do pedido para, no mérito, negar-lhe provimento, mantendo a sistemática de compensação parcelada inalterada.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.903353-2024-32.pdf"}]
         },
@@ -247,7 +261,9 @@
             subject: "Estabelecimento de novos valores para os redutores relativos ao Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura – REIDI a serem utilizados no estabelecimento do valor de investimento necessário ao cálculo das Receitas Anuais Permitidas – RAP, em decorrência da Lei Complementar nº 224/2025.",
             areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "approved",
+            judgmentOrder: 32,
+            decision: "A Diretoria, por unanimidade, decidiu homologar os novos valores para os redutores relativos ao Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura – REIDI.",
             votoSummary: "<strong>Discussão:</strong> O processo trata da atualização imperativa dos redutores tributários do REIDI utilizados na composição do Banco de Preços de Referência da ANEEL, adequando-os aos novos comandos da Lei Complementar nº 224/2025.<br><br><strong>Posicionamento da Relatora:</strong> Acompanhando a nota técnica, a relatora vota pela aprovação dos novos percentuais de redução do REIDI, com aplicação imediata na orçamentação da RAP dos novos lotes de transmissão para assegurar a modicidade tarifária.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.010541-2026-89.pdf"}]
         }
@@ -530,7 +546,7 @@
     function renderPauta10Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 10ª Reunião Pública Ordinária de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 10ª Reunião Pública Ordinária de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo10DateText} | Início: 9h`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -555,7 +571,7 @@
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
@@ -624,6 +640,9 @@
 
             if (item.decision) {
                 infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
+            if (item.judgmentOrder) {
+                infoContainer.appendChild(createInfoRow(icons.order, 'Ordem de Julgamento', `<span class="font-semibold text-i4-dark-gray">${item.judgmentOrder}</span>`));
             }
             if (item.votoSummary) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Discussão', item.votoSummary));
@@ -918,7 +937,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pauta10Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 10ª RPO');
+      const pauta10Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 10ª RPO');
       const circuito7Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 7º Circuito');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
