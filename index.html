@@ -172,10 +172,8 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    const circuito8DateText = '26 de maio de 2026';
     const rpo11DateText = '02 de junho de 2026';
     
-    const circuito8PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0361805_pauta_de_circuito_deliberativo_publico.pdf";
     const rpo11PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/pautaassinada11arpo.pdf";
     const rpo11YoutubeLink = "https://www.youtube.com/live/hMMZn8NbS6o?si=pEub2TcGHt0Ikjg8";
     
@@ -193,7 +191,7 @@
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
     };
 
-    // --- DADOS DA 11ª RPO DE 2026 (PAUTA) ---
+    // --- DADOS DA 11ª RPO DE 2026 (RESULTADOS) ---
     const aneelAgenda11RPO = [
         {
             originalItemNumber: 1,
@@ -201,7 +199,12 @@
             subject: "Tratamento de casos extraordinários e excepcionais que afetarão o processo de reajuste de 2026 da Receita Anual Permitida – RAP.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu: (i) aprovar o tratamento regulatório dos encargos rescisórios; (ii) determinar a recomposição da RAP das transmissoras afetadas pela redução judicial do MUST (Gerdau); (iii) negar a inclusão dos valores de EUST não pagos pela Norte Energia; e (iv) considerar em Parcela de Ajuste os valores referentes a Encargos Rescisórios de CUST rescindidos.",
+            judgmentOrder: 4,
+            details: "Houve sustentação oral por parte do Sr. Rafael Janiques, representante da Abrate.",
+            votoSummary: "<strong>Discussão:</strong> O processo trata da recomposição do equilíbrio econômico-financeiro dos contratos de transmissão impactados por decisões judiciais sobre o MUST e encargos rescisórios de CUST.<br><br><strong>Posicionamento do Relator:</strong> O relator acompanhou a área técnica e votou favoravelmente ao reconhecimento em Parcela de Ajuste dos impactos financeiros sofridos pelas transmissoras, exceto para o caso pendente da Norte Energia.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item1-48500.007946-2026-30.pdf"}]
         },
         {
             originalItemNumber: 2,
@@ -209,8 +212,13 @@
             subject: "Resultado da Consulta Pública nº 39/2023, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da regulação para o armazenamento de energia elétrica.",
             areaResponsible: "STR, SCE, SFT, STD, SGM, STE.",
             relator: "Willamy Moreira Frota (Voto-Vista)",
-            status: "scheduled",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
+            status: "approved",
+            decision: "A Diretoria, por maioria, decidiu: (i) APROVAR a regulamentação para outorga de autorização de Sistemas de Armazenamento de Energia; (ii) APROVAR o tratamento regulatório e alterar diversas Resoluções Normativas (nº 846/2019 e seguintes); (iii) ALTERAR o Submódulo 5.5 do PRORET; (iv) ALTERAR Módulos das Regras dos Serviços de Transmissão; (v) RECOMENDAR ao ONS a divulgação anual de pontos de conexão adequados no SIN; (vi) DETERMINAR ao ONS o envio de proposta de alteração dos Procedimentos de Rede em até 180 dias; e (vii) DETERMINAR à SGI a priorização de adequações sistêmicas.",
+            votoSummary: "<strong>Discussão:</strong> O aprimoramento regulatório para a implantação e operação de sistemas de armazenamento de energia elétrica no país.<br><br><strong>Posicionamento do Relator (Voto-Vista):</strong> O voto-vista aprovado trouxe ajustes ao voto original, definindo e aprovando os requisitos de outorga, tratamento regulatório e alterações estruturais no PRORET e nas Regras de Transmissão.",
+            links: [
+                {title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3828&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"},
+                {title: "Apresentação Técnica", url: "https://i4solucoeseconsultoriaemene-my.sharepoint.com/:b:/g/personal/consultoria_i4economicregulation_com_br/IQBMK2VolpssR72H07tRAZetAdGs0D6AsxfxXhGGoRPbYCM?e=wsgLJP"}
+            ]
         },
         {
             originalItemNumber: 3,
@@ -218,7 +226,9 @@
             subject: "Resultado da Consulta Pública nº 7/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento regulatório dos serviços de distribuição em consequência da abertura de mercado para consumidores do Grupo A e instituição do Open Energy.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
+            decision: "O processo foi retirado de pauta.",
+            judgmentOrder: 1,
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3916&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -227,8 +237,15 @@
             subject: "Resultado da Consulta Pública nº 7/2026, instituída com vistas a colher subsídios e informações adicionais para o estabelecimento de mecanismo regulatório excepcional referente à manutenção de Contratos de Uso do Sistema de Transmissão – CUST celebrados por centrais geradoras.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4004&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu estabelecer requisitos e procedimentos atinentes ao mecanismo excepcional para tratamento de outorgas de geração e dos Contratos de Uso do Sistema de Transmissão – CUST celebrados por centrais geradoras.",
+            details: "Houve apresentação técnica e sustentação oral por parte da Abeeólica e da Auren Energia S.A.",
+            judgmentOrder: 5,
+            votoSummary: "<strong>Discussão:</strong> O tema engloba a implementação de um mecanismo excepcional para regularizar geradores que firmaram CUST mas enfrentam obstáculos na viabilidade de implantação de suas usinas, permitindo tratamento padronizado.<br><br><strong>Posicionamento do Relator:</strong> O relator aprovou as resoluções derivadas da CP 7/2026, ratificando regras e exigências para os geradores aderirem ao mecanismo excepcional de manutenção e rescisão de contratos.",
+            links: [
+                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item4-48500.037386-2025-67.pdf"},
+                {title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4004&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
+            ]
         },
         {
             originalItemNumber: 5,
@@ -236,7 +253,12 @@
             subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a modernização das Tarifas de Distribuição – Ciclo 1 (Custo Comercial).",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, pelo prazo de 93 dias, a partir de 8 de junho de 2026, com vistas à obter subsídios e informações adicionais para o aprimoramento do Relatório de Análise de Impacto Regulatório Conjunto nº 1/2026-STR/STD/ANEEL.",
+            details: "Houve apresentação técnica por parte do servidor Diego Luís Brancher.",
+            judgmentOrder: 6,
+            votoSummary: "<strong>Discussão:</strong> O processo trata da modernização das Tarifas de Distribuição, especificamente propondo a definição de um encargo fixo para cobrir os custos comerciais aplicados a consumidores de baixa tensão (Ciclo 1).<br><br><strong>Posicionamento do Relator:</strong> O relator encaminhou voto favorável à abertura de Consulta Pública para colher a percepção da sociedade sobre o novo modelo de cobrança fixa dos custos comerciais.",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item5-48500.011409-2026-944.pdf"}]
         },
         {
             originalItemNumber: 23,
@@ -244,91 +266,12 @@
             subject: "Ratificação da decisão proferida no 8º Circuito Deliberativo Público Ordinário de 2026, referente ao Reajuste Tarifário Anual da Cemig Distribuição S.A. – Cemig-D, a vigorar a partir de 28 de maio de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu ratificar a decisão proferida no 8º Circuito Deliberativo Público Ordinário de 2026 (item 2), homologando as novas tarifas de aplicação da Cemig-D com um efeito médio a ser percebido pelos consumidores de 6,50%.",
+            details: "Houve sustentação oral por parte do Deputado Federal Weliton Prado.",
+            judgmentOrder: 3,
+            votoSummary: "<strong>Discussão:</strong> Processo para ratificação formal em sessão ordinária do resultado do reajuste da Cemig-D (efeito médio de +6,50%) deliberado anteriormente por circuito eletrônico.<br><br><strong>Posicionamento do Relator:</strong> O relator ratifica e consolida a decisão do circuito deliberativo.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030885-2025-23.pdf"}]
-        }
-    ];
-
-    // --- DADOS DO 8º CIRCUITO DELIBERATIVO ---
-    const aneelCircuito8 = [
-        {
-            originalItemNumber: 2,
-            process: "48500.030885/2025-23",
-            subject: "Reajuste Tarifário Anual da Cemig Distribuição S.A. – Cemig-D, a vigorar a partir de 28 de maio de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) homologar as novas tarifas de aplicação da Cemig-D, correspondendo a um efeito médio a ser percebido pelos consumidores de 6,50%; (ii) fixar as TE e TUSD; (iii) estabelecer os valores da receita anual DIT; (iv) homologar repasse CDE; e (v) determinar apresentação de histórico completo de receitas a serem revertidas à modicidade tarifária.",
-            details: "Houve sustentação oral por parte do Deputado Federal Weliton Prado e do Sr. José Ciro Mota. O processo será incluído na pauta da reunião pública ordinária subsequente para ratificação de decisão.",
-            votoSummary: "<strong>Discussão:</strong> O processo trata do Reajuste Tarifário Anual da Cemig-D para o ciclo de 2026, avaliando o repasse dos custos de aquisição de energia, encargos setoriais (Parcela A) e a atualização dos custos operacionais eficientes (Parcela B).<br><br><strong>Posicionamento do Relator:</strong> O relator posiciona-se pela aprovação dos índices propostos pela área técnica, visando assegurar a cobertura dos custos não gerenciáveis e a manutenção do equilíbrio econômico-financeiro da concessão.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030885-2025-23.pdf"},
-                {title: "Sustentação Oral - YouTube", url: "https://www.youtube.com/watch?v=O2B3AmzGxPI"}
-            ]
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.030135/2025-51",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Revisão Tarifária Periódica da Celesc Distribuição S.A., a vigorar a partir de 22 de agosto de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, no período de 28 de maio de 2026 a 13 de julho de 2026, com reunião presencial na cidade de Florianópolis (SC) em 18 de junho de 2026.",
-            votoSummary: "<strong>Discussão:</strong> A pauta propõe a abertura de Consulta Pública para debater os parâmetros da Revisão Tarifária Periódica da Celesc, com foco especial na definição da Base de Remuneração Regulatória (BRR), custos operacionais eficientes (PMSO) e limites de perdas técnicas e não técnicas.<br><br><strong>Posicionamento do Relator:</strong> O relator encaminha voto favorável à abertura do processo de participação pública, ressaltando a importância de submeter a metodologia e os cálculos preliminares ao escrutínio da sociedade e dos agentes do setor.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item03-48500.030135-2025-51.pdf"}]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.035979/2025-99",
-            subject: "Proposta de abertura de Consulta Pública com vistas ao aprimoramento do Critério de Eficiência com relação à Gestão Econômico-Financeira, regulamentado no Anexo VIII da Resolução Normativa nº 948/2021, aplicável aos contratos de concessão do serviço público de distribuição de energia elétrica.",
-            areaResponsible: "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, pelo período de 45 dias, com vistas a obter subsídios e informações adicionais para o aprimoramento do Relatório de Análise de Impacto Regulatório e da minuta de Resolução Normativa que altera o Anexo VIII da REN nº 948/2021.",
-            votoSummary: "<strong>Discussão:</strong> O aprimoramento dos critérios de eficiência econômico-financeira (REN 948/2021) busca mitigar riscos de insustentabilidade das distribuidoras, criando incentivos adequados para uma gestão mais austera frente aos desafios tecnológicos e de mercado atuais.<br><br><strong>Posicionamento do Relator:</strong> O relator propõe a aprovação da abertura de Consulta Pública para aperfeiçoar os indicadores de saúde financeira e governança exigidos das concessionárias, garantindo maior segurança na prestação do serviço.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.035979-2025-99.pdf"}]
-        },
-        {
-            originalItemNumber: 9,
-            process: "48500.002887/2024-41",
-            subject: "Recurso Administrativo interposto pela Portocém Geração de Energia S.A. contra o Despacho nº 3.250/2024, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de isenção de pagamento de encargos relacionados à descontratação de ponto de conexão do Contrato de Uso do Sistema de Transmissão – CUST nº 141/2023.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            votoVistaRelator: "Willamy Moreira Frota",
-            status: "approved",
-            decision: "A Diretoria, por maioria, acompanhando o voto-vista do Diretor Gentil Nogueira de Sá Júnior e vencidos o Diretor Willamy Moreira Frota e o Diretor-Geral, decidiu conhecer do Recurso para, no mérito, conceder-lhe parcial provimento, no sentido de atenuar o encargo rescisório para 3 (três) EUSTs, e determinar à STD que considere os preceitos deste voto-vista no aprimoramento normativo.",
-            votoSummary: "<strong>Discussão:</strong> A geradora recorre da cobrança de encargos decorrentes da descontratação de capacidade (MUST), alegando que o atraso na conexão decorreu de fatores macroeconômicos e de força maior alheios à sua vontade. O debate central recai sobre os riscos intrínsecos assumidos na assinatura do CUST.<br><br><strong>Posicionamento Final:</strong> O colegiado, seguindo o voto divergente do Dr. Gentil, atenuou as sanções para 3 Encargos de Uso (EUSTs), equilibrando o risco assumido e a flexibilização das regras.",
-            links: [
-                {title: "Minuta de voto (Dra. Agnes)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_votodraagnes.pdf"},
-                {title: "Minuta de voto-vista (Dr. Gentil)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_votodrgentil.pdf"},
-                {title: "Minuta de voto-vista (Dr. Willamy)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.902887-2024-41_voto-vistadrwillamy.pdf"}
-            ]
-        },
-        {
-            originalItemNumber: 10,
-            process: "48500.027275/2025-42",
-            subject: "Recurso Administrativo interposto pela Associação Brasileira de Empresas de Transmissão de Energia Elétrica – Abrate contra o Despacho nº 1.103/2026, emitido pela Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica – SFT, que negou provimento ao pleito da Recorrente com vistas à alteração da valoração da condicionante gravidade nas dosimetrias de multas aplicadas no contexto de fiscalizações relacionadas a elevado número de desligamentos forçados em instalações de transmissão, aliado ao descumprimento de Planos de Resultados.",
-            areaResponsible: "Superintendência de Fiscalização Técnica dos Serviços de Energia Elétrica - SFT.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "highlight",
-            decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva solicitou destaque deste processo, o qual será incluído na pauta da próxima reunião pública ordinária.",
-            details: "Houve sustentação oral por parte do Sr. Rafael Janiques, representante da Associação Brasileira das Grandes Empresas de Transmissão de Energia Elétrica – Abrate. A manifestação foi realizada por vídeo.",
-            votoSummary: "<strong>Discussão:</strong> O processo analisa o pleito da Abrate para flexibilizar a dosimetria (condicionante de gravidade) em multas aplicadas às transmissoras por reincidência em desligamentos forçados e falhas sistêmicas em seus Planos de Resultados, sob alegação de desproporcionalidade das penalidades.<br><br><strong>Posicionamento do Relator:</strong> O relator encaminhava voto por manter o entendimento da fiscalização (SFT), porém pediu destaque para levar a discussão para sessão presencial/ordinária.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.027275-2025-42.pdf"},
-                {title: "Sustentação Oral - YouTube", url: "https://www.youtube.com/watch?v=f4yHS-TGXYE"}
-            ]
-        },
-        {
-            originalItemNumber: 19,
-            process: "48500.013326/2026-30, 48500.013330/2026-06, 48500.013335/2026-21, 48500.013336/2026-75, 48500.013338/2026-64",
-            subject: "Pedidos de Medida Cautelar protocolados pelas empresas Borborema Transmissão de Energia S.A., Solaris Transmissão de Energia S.A., Goyaz Transmissão de Energia S.A., São Francisco Transmissão de Energia S.A. e Marituba Transmissão de Energia S.A. com vistas ao reconhecimento da observância do máximo esforço das Requerentes na cobrança dos valores referentes aos encargos rescisórios dos Contratos de Uso do Sistema de Transmissão – CUST, nos termos da Resolução Normativa nº 1.125/2025, a fim de que não sejam aplicados ônus, glosas ou descontos na Receita Anual Permitida – RAP das Interessadas até o julgamento de mérito dos requerimentos.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A Diretoria, por unanimidade, decidiu: (i) conhecer e, no mérito, negar provimento aos pedidos de medida cautelar, com vistas à suspensão da aplicação de efeitos tarifários adversos (glosas na RAP) até apreciação de mérito; e (ii) encaminhar o processo para a STD e STR analisarem o mérito.",
-            votoSummary: "<strong>Discussão:</strong> As concessionárias de transmissão pedem a suspensão de penalidades e glosas na RAP resultantes da inadimplência de encargos rescisórios (CUST) por parte de usuários de rede, alegando terem comprovado o cumprimento do rito de 'máximo esforço' de cobrança exigido na REN 1.125/2025.<br><br><strong>Posicionamento do Relator:</strong> O relator considerou que não estão presentes todos os requisitos para a medida de urgência, votando pelo não provimento da liminar, direcionando a questão para análise terminativa de mérito pelas áreas técnicas.",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.013326-2026-30_e_outros.pdf"}]
         }
     ];
 
@@ -424,143 +367,11 @@
         renderFunction(container);
     }
 
-    // --- RENDER PAUTA 8º CIRCUITO ---
-    function renderCircuito8Page(container) {
-        container.innerHTML = '';
-
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 8º Circuito Deliberativo de 2026`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${circuito8DateText}`);
-        container.appendChild(pageTitle);
-        container.appendChild(pageDate);
-
-        // Informação da Reunião
-        const pautaInfoSection = createElement('div', 'mb-6 bg-i4-blue text-white p-5 rounded-xl flex items-center justify-between flex-wrap gap-4');
-        const pautaText = createElement('p', 'text-lg font-semibold', 'Reunião Eletrônica (Assíncrona)');
-        const pautaSubText = createElement('p', 'text-sm text-blue-100', 'Votação realizada no período estabelecido para o circuito.');
-        const textDiv = createElement('div', '');
-        textDiv.appendChild(pautaText);
-        textDiv.appendChild(pautaSubText);
-        
-        const pautaLinkAnchor = createElement('a', 'bg-white text-i4-blue hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center', `${icons.link} Ata Oficial (PDF)`, { href: circuito8PautaLink, target: '_blank', rel: 'noopener noreferrer' });
-        
-        pautaInfoSection.appendChild(textDiv);
-        pautaInfoSection.appendChild(pautaLinkAnchor);
-        container.appendChild(pautaInfoSection);
-
-        if (aneelCircuito8.length === 0) {
-            const emptyMessage = createElement('div', 'p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center text-gray-500', 'Os itens da pauta do 8º Circuito Deliberativo serão atualizados em breve.');
-            container.appendChild(emptyMessage);
-            return;
-        }
-
-        // Sumário
-        const summaryDiv = createElement('div', 'info-card mb-10');
-        const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
-        summaryDiv.appendChild(summaryHeader);
-
-        const summaryList = createElement('ul', 'space-y-1 p-3');
-
-        const getSummarySubject8 = (item) => {
-            switch (item.originalItemNumber) {
-                case 2: return "RTA Cemig Distribuição S.A. - Cemig-D";
-                case 3: return "CP para Revisão Tarifária da Celesc";
-                case 4: return "CP - Critério de Eficiência (Gestão Econômico-Financeira)";
-                case 9: return "Recurso Portocém - Encargos de Descontratação (CUST)";
-                case 10: return "Recurso Abrate - Dosimetria de Multas de Transmissão";
-                case 19: return "Cautelar Transmissoras - Encargos Rescisórios CUST";
-                default: return item.subject.length > 85 ? item.subject.substring(0, 85) + '...' : item.subject;
-            }
-        };
-
-        aneelCircuito8.sort((a,b) => a.originalItemNumber - b.originalItemNumber).forEach(item => {
-            const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
-            const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-circuito8-${item.originalItemNumber}` });
-            
-            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject8(item)}</span>`;
-            
-            const statusBadge = createStatusBadge(item.status, pautaStatusMap);
-            statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
-
-            listItem.appendChild(itemLink);
-            listItem.appendChild(statusBadge);
-            summaryList.appendChild(listItem);
-        });
-        summaryDiv.appendChild(summaryList);
-        container.appendChild(summaryDiv);
-
-        // Grid de Itens
-        const agendaGrid = createElement('div', 'space-y-8');
-        aneelCircuito8.forEach(item => {
-            const itemDiv = createElement('div', 'info-card', null, { id: `item-circuito8-${item.originalItemNumber}` });
-            const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
-            const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
-            
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
-            
-            cardHeader.appendChild(h3Subject);
-            cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
-            itemDiv.appendChild(cardHeader);
-
-            const cardBody = createElement('div', 'p-6 space-y-5');
-            const infoContainer = createElement('div', 'space-y-4');
-
-            const createInfoRow = (icon, label, value) => {
-                 if (!value || value === "-") return document.createDocumentFragment();
-                 const row = createElement('div', 'flex flex-col md:flex-row');
-                 const labelDiv = createElement('div', 'flex-shrink-0 w-full md:w-48 flex items-center text-sm font-semibold text-i4-text-gray mb-1 md:mb-0');
-                 labelDiv.innerHTML = icon + label;
-                 const valueDiv = createElement('div', 'text-sm text-i4-dark-gray flex-1 leading-relaxed');
-                 valueDiv.innerHTML = value;
-                 row.appendChild(labelDiv);
-                 row.appendChild(valueDiv);
-                 return row;
-             };
-
-            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
-            infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            if (item.votoVistaRelator) {
-                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) do Voto-Vista', item.votoVistaRelator));
-            }
-            infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
-
-            if (item.decision) {
-                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
-            }
-            if (item.votoSummary) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Discussão', item.votoSummary));
-            }
-            if (item.details) {
-                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes', item.details));
-            }
-
-            cardBody.appendChild(infoContainer);
-
-            if (item.links && item.links.length > 0) {
-                 const separator = createElement('hr', 'border-t border-i4-border-gray my-5');
-                 cardBody.appendChild(separator);
-                 
-                 const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
-                 
-                 item.links.forEach(link => {
-                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
-                     cardFooter.appendChild(linkAnchor);
-                 });
-                 
-                 cardBody.appendChild(cardFooter);
-            }
-
-            itemDiv.appendChild(cardBody);
-            agendaGrid.appendChild(itemDiv);
-        });
-        container.appendChild(agendaGrid);
-    }
-
     // --- RENDER PAUTA 11ª RPO ---
     function renderPauta11Page(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 11ª Reunião Pública Ordinária de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 11ª Reunião Pública Ordinária de 2026`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${rpo11DateText} | Início: 9h`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -585,7 +396,7 @@
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário dos Resultados'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
@@ -951,13 +762,12 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pauta11Button = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 11ª RPO');
-      const circuito8Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 8º Circuito');
+      const pauta11Button = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 11ª RPO');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta11Button, circuito8Button, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta11Button, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -971,14 +781,13 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta11Button, circuito8Button, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta11Button, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
       pauta11Button.addEventListener('click', () => { setActiveButton(pauta11Button); renderPageWithAnimation(renderPauta11Page, contentContainer); });
-      circuito8Button.addEventListener('click', () => { setActiveButton(circuito8Button); renderPageWithAnimation(renderCircuito8Page, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
