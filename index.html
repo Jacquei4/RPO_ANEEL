@@ -175,7 +175,7 @@
     };
     
     const circuito9DateText = '09 de junho de 2026';
-    const circuito9PautaLink = "https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14762&idAreaNoticia=425";
+    const circuito9PautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0374127_pauta_de_circuito_deliberativo_publico.pdf";
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     
     const icons = {
@@ -187,45 +187,52 @@
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         order: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-6 4h6m-6 4h4m5.586-11.414a2 2 0 00-2.828 0L7 10.172V17h6.828l4.586-4.586a2 2 0 000-2.828z"></path></svg>`,
-        file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`
+        file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
+        video: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`
     };
 
-    // --- STREAMING_CHUNK:Definindo Dados da Pauta do 9º Circuito Deliberativo (Itens 10, 11 e 14) ---
+    // --- STREAMING_CHUNK:Definindo Dados da Pauta do 9º Circuito Deliberativo (Itens 1, 2 e 5 da Ata Original) ---
     const aneelAgenda9Circuito = [
         {
-            originalItemNumber: 10,
+            originalItemNumber: 1, // Antigo 10
             process: "48500.030710/2025-16",
             subject: "Pedido de Reconsideração interposto pelo Conselho de Consumidores da Enel Distribuição Ceará – Conerge, pela Federação das Indústrias do estado do Ceará – Fiec e pela Federação da Agricultura e Pecuária do estado do Ceará – Faec contra a Resolução Homologatória nº 3.574/2026, que homologou o resultado do Reajuste Tarifário Anual de 2026, as Tarifas de Energia – TE e as Tarifas de Uso dos Sistemas de Distribuição – TUSD referentes à Enel Distribuição Ceará – Enel CE e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão:</strong> O cerne do debate é o questionamento das entidades cearenses sobre a magnitude do impacto tarifário aprovado. A discussão foca especificamente na correção dos cálculos dos repasses de custos não gerenciáveis (Parcela A) e na aderência aos princípios de modicidade tarifária, argumentando que os índices homologados oneram desproporcionalmente o setor produtivo e os consumidores locais face à qualidade do serviço prestado.<br><br><strong>Posicionamento do Relator:</strong> O relator acompanha os pareceres da área técnica, votando pelo conhecimento e, no mérito, pelo não provimento dos pedidos, mantendo inalterados os parâmetros e índices homologados.",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu: (i) conhecer e, no mérito, dar provimento parcial ao Pedido de Reconsideração interposto pelo Conerge, Fiec e Faec contra a Resolução Homologatória nº 3.574/2026, de modo a incorporar ao cálculo tarifário da Enel Distribuição Ceará – Enel CE valores referentes à repactuação do Uso de Bem Público – UBP; e (ii) delegar à Superintendência de Gestão Tarifária e Regulação Econômica – STR o cálculo e publicação de novas tarifas da Enel CE com a incorporação dos valores de UBP, com validade a partir do recebimento da 1ª parcela dos valores pela distribuidora, nos termos do Despacho nº 1.832/2026.",
+            votoSummary: "<strong>Discussão Central:</strong> O cerne do debate residiu na contestação, por parte das entidades representativas do Ceará (Conerge, Fiec e Faec), dos cálculos que fundamentaram o Reajuste Tarifário de 2026 da Enel CE. A argumentação focou na necessidade de mitigação do impacto tarifário aprovado, especificamente requerendo a inclusão de receitas extraordinárias decorrentes da repactuação do Uso de Bem Público (UBP) como forma de abater os custos na modicidade tarifária.<br><br><strong>Posicionamento do Relator:</strong> O relator acolheu o argumento principal das entidades, votando pelo provimento parcial do recurso. Seu posicionamento reconheceu a pertinência de incorporar os valores da repactuação do UBP no cálculo tarifário para aliviar a tarifa, condicionando a aplicação prática (novas tarifas) ao efetivo recebimento da primeira parcela desses recursos pela distribuidora.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.030710-2025-16.pdf"}]
         },
         {
-            originalItemNumber: 11,
+            originalItemNumber: 2, // Antigo 11
             process: "48500.003980/2025-54",
             subject: "Pedido de Reconsideração interposto pela Equatorial Goiás Distribuidora de Energia S.A. contra a Resolução Homologatória nº 3.544/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025, as Tarifas de Energia – TE e as Tarifas de Uso do Sistema de Distribuição – TUSD referentes à Recorrente, e deu outras providências.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão:</strong> A análise centraliza-se nas contestações da distribuidora quanto a rubricas específicas negadas na homologação original. O debate técnico aprofunda-se sobre a não inclusão de determinados componentes financeiros e divergências no cálculo da Base de Remuneração Regulatória (BRR), que, segundo a concessionária, afetaram negativamente o equilíbrio econômico-financeiro do contrato no ciclo de 2025.<br><br><strong>Posicionamento do Relator:</strong> O relator propõe o conhecimento do recurso e, no mérito, o seu não provimento, considerando que os cálculos originais seguiram estritamente a metodologia tarifária vigente.",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu conhecer e, no mérito negar provimento ao Pedido de Reconsideração interposto pela Equatorial Goiás Distribuidora de Energia S.A. contra a Resolução Homologatória nº 3.544/2025.",
+            votoSummary: "<strong>Discussão Central:</strong> A Equatorial Goiás questionou os parâmetros técnicos utilizados pela ANEEL na homologação do seu Reajuste Tarifário Anual de 2025. O litígio centrou-se na reivindicação da distribuidora de que certos componentes financeiros e ajustes na Base de Remuneração Regulatória (BRR) foram indevidamente glosados pela agência, argumentando que tais glosas comprometeriam o equilíbrio econômico-financeiro do contrato.<br><br><strong>Posicionamento do Relator:</strong> O relator votou pelo não provimento do pedido de reconsideração. Seu posicionamento baseou-se na análise técnica de que a Resolução Homologatória original aplicou corretamente a metodologia tarifária vigente (PRORET), não havendo amparo regulatório para a inclusão das rubricas adicionais pleiteadas pela concessionária.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.003980-2025-54.pdf"}]
         },
         {
-            originalItemNumber: 14,
+            originalItemNumber: 5, // Antigo 14
             process: "48500.015167/2026-16",
             subject: "Pedido de Medida Cautelar protocolado pela Associação Brasileira das Empresas de Transmissão de Energia Elétrica – Abrate, com vistas à suspensão da inclusão, na Parcela de Ajuste para o Ciclo Tarifário 2026-2027, dos valores de Encargos Rescisórios referentes às Transmissoras que celebraram Contratos de Uso do Sistema de Transmissão – CUSTs sem aportes de garantias financeiras até a análise de mérito do requerimento de extensão da aplicabilidade da Resolução Normativa nº 1.125/2025.",
             areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            votoSummary: "<strong>Discussão:</strong> O ponto central é a mitigação do risco de repasse de inadimplência sistêmica para o segmento de transmissão. A associação defende que as transmissoras não devem suportar na Parcela de Ajuste do ciclo 26/27 o ônus gerado por encargos rescisórios de geradores que celebraram o CUST sem o devido aporte prévio de garantias financeiras. Solicita-se a suspensão dessa contabilização até o julgamento definitivo sobre a aplicação da REN nº 1.125/2025.<br><br><strong>Posicionamento do Relator:</strong> O relator vota pelo indeferimento do pedido de medida cautelar, entendendo não estarem preenchidos simultaneamente os requisitos de probabilidade do direito (<em>fumus boni iuris</em>) e de perigo de dano (<em>periculum in mora</em>).",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu declarar extinto, por perda superveniente de objeto, nos termos do art. 69 da Norma de Organização da ANEEL nº 1, o Pedido de Medida Cautelar formulado pela Abrate, com vistas à suspensão provisória da consideração, no ciclo tarifário 2026-2027, dos encargos rescisórios associados a Contratos de Uso do Sistema de Transmissão – CUST celebrados sem garantias financeiras e rescindidos após a publicação do Despacho nº 1.687/2024, determinando, por conseguinte, o arquivamento dos autos.",
+            votoSummary: "<strong>Discussão Central:</strong> O pedido cautelar da Abrate buscava proteger as transmissoras de assumirem os custos (Encargos Rescisórios) deixados por geradores que firmaram Contratos de Uso do Sistema de Transmissão (CUST) mas não aportaram as garantias financeiras exigidas, posteriormente tendo seus contratos rescindidos. A associação solicitava a suspensão provisória da contabilização desses calotes na Parcela de Ajuste (PA) tarifária das transmissoras para o ciclo 26/27, evitando perdas de caixa enquanto o mérito da regra de garantias (REN 1.125) fosse julgado.<br><br><strong>Posicionamento do Relator:</strong> O relator votou pela extinção do pedido por perda de objeto. Seu posicionamento sustentou-se no fato de que o pleito liminar perdeu sua utilidade prática, seja porque a recomposição já foi tratada em deliberações regulatórias recentes ou porque o encerramento do prazo do ciclo tarifário tornou a medida cautelar ineficaz para o fim pretendido.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.015167-2026-16.pdf"}]
         }
     ];
 
     // --- STREAMING_CHUNK:Definindo Dados das Consultas Públicas (Lista Completa) ---
     const consultasPublicasData = [
+         { numero: "AP 004/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "18/06/2026", fim: "18/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/audiencias-publicas?p_auth=vRibFpUT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4017&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 012/2026", tema: "Obter subsídios para aprimoramento da Base de Dados relativa ao triênio 2022-24 a ser utilizada na atualização dos Anexos I a V e da eficiência de referência relativa ao Submódulo 2.2 dos Procedimentos de Regulação Tarifária – PRORET que trata dos Custos Operacionais a serem reconhecidos nos processos de Revisão Tarifária de 2027 das concessionárias de Distribuição.", inicio: "01/06/2026", fim: "30/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=vRibFpUT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4018&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "CP 016/2026", tema: "Obter subsídios para aprimoramento do Relatório de Análise de Impacto Regulatório Conjunto nº 1/2026- STR/STD/ANEEL e da proposta de regulamentação relativa ao método de definição de encargo fixo destinado à cobertura dos custos comerciais na estrutura tarifária aplicável aos consumidores de baixa tensão, no âmbito da agenda de modernização das tarifas de distribuição – Ciclo 1.", inicio: "08/06/2026", fim: "08/09/2026", area: "STR/STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=vRibFpUT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4019&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 015/2026", tema: "Obter subsídios para o aprimoramento do Relatório de Análise de Impacto Regulatório e da minuta de Resolução Normativa que altera o Anexo VIII da Resolução Normativa nº 948, de 16 de novembro de 2021.", inicio: "28/05/2026", fim: "13/07/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4016&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 014/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "28/05/2026", fim: "13/07/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4015&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 012/2026", tema: "Obter subsídios para o aprimoramento das minutas do Edital e do Termo de Referência do Desenvolvimento e da Implantação da Plataforma de Inovação do Setor Elétrico – PINSE.", inicio: "06/05/2026", fim: "22/06/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4dpulIlY&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4013&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -320,9 +327,15 @@
         const circuitoSection = createElement('div', 'bg-i4-dark-gray text-white p-5 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 mb-6');
         const avisoText = createElement('div', '');
         avisoText.innerHTML = `<p class="font-bold text-lg mb-1">Deliberação em Circuito Eletrônico</p><p class="text-sm text-gray-300">Os votos são apurados eletronicamente entre as 8h e 18h, com encerramento assim que todos os Diretores votarem.</p>`;
-        const linkAnchor = createElement('a', 'bg-i4-blue hover:bg-blue-600 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md', `${icons.link} Visualizar Pauta Completa`, { href: circuito9PautaLink, target: '_blank', rel: 'noopener noreferrer' });
+        
+        const buttonsDiv = createElement('div', 'flex gap-3');
+        const linkAnchor = createElement('a', 'bg-white text-i4-dark-gray hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.file} Ver Ata Prévia`, { href: circuito9PautaLink, target: '_blank', rel: 'noopener noreferrer' });
+        const videoAnchor = createElement('a', 'bg-i4-blue hover:bg-blue-600 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.video} Sessão de Sorteio`, { href: "https://www.youtube.com/watch?v=flCMHVXHTdE", target: '_blank', rel: 'noopener noreferrer' });
+        
+        buttonsDiv.appendChild(linkAnchor);
+        buttonsDiv.appendChild(videoAnchor);
         circuitoSection.appendChild(avisoText);
-        circuitoSection.appendChild(linkAnchor);
+        circuitoSection.appendChild(buttonsDiv);
         container.appendChild(circuitoSection);
 
         // Sumário
@@ -334,9 +347,9 @@
         const summaryList = createElement('ul', 'space-y-1 p-3');
         const getSummarySubject9 = (item) => {
             switch (item.originalItemNumber) {
-                case 10: return "Reconsideração Conerge/Fiec/Faec - RTA 2026 Enel CE";
-                case 11: return "Reconsideração Equatorial GO - RTA 2025";
-                case 14: return "Medida Cautelar Abrate - Encargos Rescisórios CUST";
+                case 1: return "Reconsideração Conerge/Fiec/Faec - RTA 2026 Enel CE";
+                case 2: return "Reconsideração Equatorial GO - RTA 2025";
+                case 5: return "Medida Cautelar Abrate - Encargos Rescisórios CUST";
                 default: return item.subject.substring(0, 85) + '...';
             }
         };
@@ -388,6 +401,9 @@
             infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
             infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
 
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
             if (item.votoSummary) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Discussão', item.votoSummary));
             }
@@ -611,7 +627,7 @@
 
          const grid = createElement('div', 'grid grid-cols-1 md:grid-cols-3 gap-6 mb-10');
          const imersoes = [
-            { cidade: "Brasília", data: "13 a 17 de abril de 2026", local: "<a href='https://4work.space/' target='_blank' class='text-i4-blue hover:underline hover:text-blue-800 transition-colors'>Coworking 4Work</a>", horario: "Seg-Qui: 8h às 18h | Sex: 8h às 17h", status: "Confirmado" },
+            { cidade: "Brasília", data: "13 a 17 de abril de 2026", local: "<a href='https://4work.space/' target='_blank' class='text-i4-blue hover:underline hover:text-blue-800 transition-colors'>Coworking 4Work</a><br><span class='text-sm font-normal text-gray-600'>SAUS Q4 Bloco A, sala 601, Edifício Victoria Office Tower - Asa Sul</span>", horario: "Seg-Qui: 8h às 18h | Sex: 8h às 17h", status: "Confirmado" },
             { cidade: "São Paulo", data: "3 a 7 de agosto de 2026", local: "A definir", status: "Agendado" },
             { cidade: "Brasília", data: "30 de novembro a 3 de dezembro de 2026", local: "A definir", status: "Agendado" }
          ];
@@ -631,12 +647,30 @@
                         <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
                         <div><p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Local</p><div class="text-i4-dark-gray font-medium text-base leading-snug">${imersao.local}</div></div>
                     </div>
+                    ${imersao.horario ? `
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-2 mr-3 text-i4-blue flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <div><p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Horário</p><p class="text-i4-dark-gray font-medium text-base">${imersao.horario}</p></div>
+                    </div>` : ''}
                 </div>
                 <div class="card-footer p-4 text-center bg-gray-50"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">${imersao.status}</span></div>
              `;
              grid.appendChild(card);
          });
          container.appendChild(grid);
+
+         const logisticsDiv = createElement('div', 'mb-10 bg-blue-50 p-6 rounded-xl border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-6');
+         logisticsDiv.innerHTML = `
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="text-lg font-bold text-blue-900 mb-2">Logística de Viagem</h3>
+                <p class="text-blue-800 text-sm">Por favor, preencha as planilhas de passagens correspondentes ao seu trecho.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <a href="https://docs.google.com/spreadsheets/d/1yoYBqXJH7QGZu6b0WYMrf21F6u3cn29KliKH25ZYg1M/edit#gid=0" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center shadow-sm text-sm whitespace-nowrap">${icons.link} Planilha SP ➔ BSB</a>
+                <a href="https://docs.google.com/spreadsheets/d/1uvVmFZ-Zk7DZ_LlCwtWTzVet-987S5AR18cc7SW7Vf4/edit#gid=820541553" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center shadow-sm text-sm whitespace-nowrap">${icons.link} Planilha BSB ➔ SP</a>
+            </div>
+         `;
+         container.appendChild(logisticsDiv);
     }
 
     // --- STREAMING_CHUNK:Inicializando a Aplicação ---
@@ -650,8 +684,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      // Update Button Label to 9º Circuito
-      const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta 9º Circuito Deliberativo');
+      const pautaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Ata Pauta 9º Circuito');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
