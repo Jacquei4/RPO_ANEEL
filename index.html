@@ -160,7 +160,7 @@
         return now <= endDate;
     }
 
-    // --- STREAMING_CHUNK:Configurando Mapas de Status e Ícones ---
+    // --- CONFIGURANDO MAPAS DE STATUS E ÍCONES ---
     const pautaStatusMap = {
       scheduled: { text: "Em Circuito / Agendado", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
       approved: { text: "Aprovado", classes: "bg-green-100 text-green-800 border border-green-200" },
@@ -193,7 +193,7 @@
         video: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`
     };
 
-    // --- STREAMING_CHUNK:Definindo Dados da Pauta da 12ª RPO ---
+    // --- DADOS DA PAUTA DA 12ª RPO ---
     const aneelAgenda12RPO = [
         {
             originalItemNumber: 1,
@@ -201,7 +201,10 @@
             subject: "Resultado da Revisão Tarifária Periódica da Energisa Minas Rio – Distribuidora de Energia S.A. – EMR, após análise das contribuições recebidas na Consulta Pública nº 4/2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A diretoria aprovou por unanimidade o resultado da revisão tarifária nos termos do voto do relator, com o efeito médio de 11,27%.",
+            votoSummary: "<strong>Apresentação Técnica:</strong> O resultado da revisão tarifária conduziu a um efeito médio final de 11,27% para os consumidores (sendo 5,23% para alta tensão e 12,8% para baixa tensão). O reajuste foi impactado pela Parcela B (6,13%), itens financeiros (4,32%) e encargos setoriais (destaque para CDE uso e encargos relacionados a leilões de reserva de capacidade). Na definição de parâmetros para o ciclo, as perdas técnicas foram calculadas em 8,11% e as não técnicas em 1,526%.",
+            details: "<strong>Sustentação Oral:</strong> O foco principal foi o cálculo das perdas técnicas e o impacto da Geração Distribuída (GD). O representante argumentou que a injeção de GD saltou de 2,3 GWh/mês (2019) para 43,7 GWh/mês (2024). Criticou a inovação da área técnica de considerar como atípicos apenas os alimentadores em que a GD representa mais de 25% da energia passante, e pediu a consideração das perdas declaradas.<br><br><strong>Discussão e Voto:</strong> O relator manteve a recomendação de utilizar a trava de 25% de GD, explicando que a EMR declarou 84% de seus alimentadores como atípicos, o que é uma dispersão fora do padrão. Citou estudo da UFU de que a GD é benéfica para redução de perdas até 20-30% de penetração. O relator frisou que a regra geral de como a GD será tratada nas perdas será objeto de uma Consulta Pública futura."
         },
         {
             originalItemNumber: 2,
@@ -209,7 +212,10 @@
             subject: "Reajuste Tarifário Anual da RGE Sul Distribuidora de Energia S.A. – RGE, a vigorar a partir de 19 de junho de 2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled"
+            status: "approved",
+            decision: "A diretoria aprovou por unanimidade a emissão da resolução homologatória, fixando o índice médio de reajuste de 16,06% a partir de 19 de junho de 2026.",
+            votoSummary: "<strong>Apresentação Técnica:</strong> O reajuste resultou em um efeito médio de 16,06% para os consumidores (19,02% na AT e 14,94% na BT). Os principais fatores de pressão foram os itens financeiros (13,04%), especificamente a CVA Energia e a reversão de um diferimento concedido em 2024. Em 2024, devido à calamidade no RS, a ANEEL aprovou reajuste de 0%, criando ativo regulatório de R$ 1,23 bilhão que está sendo recomposto gradativamente (esta foi a 2ª parcela). Além disso, aplicaram-se regras de transição contratual (uso provisório do IGPM).",
+            details: "<strong>Sustentação Oral:</strong> Não houve pedidos.<br><br><strong>Discussão e Voto:</strong> A relatora dispensou a leitura completa do voto, visto que refletia estritamente a apresentação técnica, e seguiu para a leitura do dispositivo. Houve apenas um rápido esclarecimento sobre a regra de transição contratual que determinou o uso proporcional do IGPM naquele mês específico."
         },
         {
             originalItemNumber: 3,
@@ -217,7 +223,7 @@
             subject: "Resultado da Terceira Fase da Consulta Pública nº 45/2019, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da norma que estabelecerá os critérios operativos para redução ou limitação de geração no Sistema Interligado Nacional – SIN.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3392&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -226,7 +232,7 @@
             subject: "Resultado da Consulta Pública nº 7/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento regulatório dos serviços de distribuição em consequência da abertura de mercado para consumidores do Grupo A e instituição do Open Energy.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "withdrawn",
             links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3916&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
         },
         {
@@ -235,8 +241,9 @@
             subject: "Resultado da Consulta Pública nº 3/2026, instituída com vistas a colher subsídios e informações adicionais para a revisão do Submódulo 6.2 dos Procedimentos de Regulação Tarifária – PRORET, decorrente da criação da Reserva Técnica Financeira da Conta de Comercialização de Energia Elétrica de Itaipu pelo Decreto nº 12.390/2025, e de aperfeiçoamentos de procedimentos relativos à Tarifa Bônus de Itaipu e aos valores de repasse para as Distribuidoras de Energia Elétrica do Sistema Interligado Nacional – SIN.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
+            status: "approved",
             isBloco: true,
+            decision: "A Diretoria, por unanimidade, decidiu: (i) aprovar os aprimoramentos do Submódulo 6.2 dos Procedimentos de Regulação Tarifária – PRORET, nos termos da proposta apresentada pela Superintendência de Gestão Tarifária e Regulação Econômica – STR na Nota Técnica nº 89/2026-STR/ANEEL, a serem considerados inclusive no processo da aprovação da tarifa Bônus e valores de repasse de 2026; (ii) revogar a delegação da STR para aprovação da tarifa bônus e dos valores de repasse e estabelecer delegação para STR emitir despacho até 5 de maio nos anos em que o resultado da Conta de Comercialização for negativo; (iii) estabelecer prazo de 6 meses para que a STR disponibilize no site da ANEEL informações sobre o bônus de Itaipu; e (iv) transferir os dispositivos do Submódulo 12.6 dos PRORET referentes à Itaipu para o Submódulo 6.2, de modo a concentrar em um único submódulo todos os comandos tarifários associados à usina binacional.",
             links: [
                 {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/12rpo2026-48500.907732-2007-09.pdf"},
                 {title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3996&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
@@ -244,7 +251,7 @@
         }
     ];
 
-    // --- STREAMING_CHUNK:Definindo Dados da Pauta do 9º Circuito Deliberativo ---
+    // --- DADOS DA PAUTA DO 9º CIRCUITO DELIBERATIVO ---
     const aneelAgenda9Circuito = [
         {
             originalItemNumber: 1, // Antigo 10
@@ -281,7 +288,7 @@
         }
     ];
 
-    // --- STREAMING_CHUNK:Definindo Dados das Consultas Públicas (Lista Completa) ---
+    // --- DADOS DAS CONSULTAS PÚBLICAS ---
     const consultasPublicasData = [
          { numero: "AP 004/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "18/06/2026", fim: "18/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/audiencias-publicas?p_auth=vRibFpUT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4017&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "TS 012/2026", tema: "Obter subsídios para aprimoramento da Base de Dados relativa ao triênio 2022-24 a ser utilizada na atualização dos Anexos I a V e da eficiência de referência relativa ao Submódulo 2.2 dos Procedimentos de Regulação Tarifária – PRORET que trata dos Custos Operacionais a serem reconhecidos nos processos de Revisão Tarifária de 2027 das concessionárias de Distribuição.", inicio: "01/06/2026", fim: "30/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=vRibFpUT&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4018&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -328,7 +335,7 @@
          { numero: "CP 215/2026", tema: "Minuta do Relatório Síntese do Plano Nacional de Energia 2055 - PNE 2055.", inicio: "12/02/2026", fim: "14/03/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" }
     ];
 
-    // --- STREAMING_CHUNK:Definindo Dados da Agenda Regulatória ---
+    // --- DADOS DA AGENDA REGULATÓRIA ---
     const agendaRegulatoriaThemes = [
         { title: "1. Novos modelos de negócio e inovação tecnológica", description: "O setor elétrico passa por transformações impulsionadas por novas tecnologias, compromissos de descarbonização e maior participação dos consumidores. A ANEEL busca eliminar barreiras regulatórias para fomentar um desenvolvimento de mercado equilibrado e garantir a modicidade tarifária." },
         { title: "2. Mercado de energia elétrica", description: "Com a abertura do mercado livre para todos os consumidores de alta tensão e a futura inclusão da baixa tensão, a ANEEL foca em aprimorar a regulação para assegurar a sustentabilidade do setor, a segurança do suprimento e a proteção dos consumidores, tratando de temas como migração, alocação de custos e modernização das regras de comercialização." },
@@ -367,7 +374,7 @@
         renderFunction(container);
     }
 
-    // --- STREAMING_CHUNK:Renderizando Pauta da 12ª RPO ---
+    // --- RENDERIZANDO PAUTA DA 12ª RPO ---
     function renderPauta12RPOPage(container) {
         container.innerHTML = '';
 
@@ -457,6 +464,16 @@
             infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
             infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
 
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
+            if (item.votoSummary) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Resumo / Apresentação', item.votoSummary));
+            }
+            if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Discussão', item.details));
+            }
+
             cardBody.appendChild(infoContainer);
 
             if (item.links && item.links.length > 0) {
@@ -477,7 +494,7 @@
         container.appendChild(agendaGrid);
     }
 
-    // --- STREAMING_CHUNK:Renderizando Pauta do 9º Circuito ---
+    // --- RENDERIZANDO PAUTA DO 9º CIRCUITO ---
     function renderPauta9CircuitoPage(container) {
         container.innerHTML = '';
 
@@ -591,7 +608,7 @@
         container.appendChild(agendaGrid);
     }
 
-    // --- STREAMING_CHUNK:Renderizando a página de Consultas Públicas ---
+    // --- RENDERIZANDO A PÁGINA DE CONSULTAS PÚBLICAS ---
     function renderConsultasPage(container) {
         container.innerHTML = '';
         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Acompanhamento de Consultas Públicas e Tomadas de Subsídios');
@@ -725,7 +742,7 @@
         container.appendChild(tableContainer);
     }
 
-    // --- STREAMING_CHUNK:Renderizando a página da Agenda Regulatória ---
+    // --- RENDERIZANDO A PÁGINA DA AGENDA REGULATÓRIA ---
     function renderAgendaRegulatoriaPage(container) {
          container.innerHTML = '';
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Agenda Regulatória 2026-2027');
@@ -780,7 +797,7 @@
          container.appendChild(themesGrid);
     }
 
-    // --- STREAMING_CHUNK:Renderizando a página de Imersões ---
+    // --- RENDERIZANDO A PÁGINA DE IMERSÕES ---
     function renderImersaoPage(container) {
          container.innerHTML = '';
          const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Imersões Presenciais - 2026');
@@ -836,7 +853,7 @@
          container.appendChild(logisticsDiv);
     }
 
-    // --- STREAMING_CHUNK:Inicializando a Aplicação ---
+    // --- INICIALIZANDO A APLICAÇÃO ---
     function renderApp() {
       const appContainer = document.getElementById('app-container');
       
