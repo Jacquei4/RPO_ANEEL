@@ -172,8 +172,6 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    const reuniaoDateText = '16 de junho de 2026';
-    const reuniaoPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0379339_pauta_de_reuniao_publica.pdf";
     const reuniao4RpeDateText = '22 de junho de 2026';
     const reuniao4RpeYoutubeLink = "https://www.youtube.com/live/JRc2F2Eq0aY?si=v8jaSBDX_sGyB2r_";
     const circuito10DateText = '23 de junho de 2026';
@@ -193,63 +191,6 @@
         video: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`
     };
 
-    const aneelAgenda12RPO = [
-        {
-            originalItemNumber: 1,
-            process: "48500.030067/2025-21",
-            subject: "Resultado da Revisão Tarifária Periódica da Energisa Minas Rio – Distribuidora de Energia S.A. – EMR, após análise das contribuições recebidas na Consulta Pública nº 4/2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "approved",
-            decision: "A diretoria aprovou por unanimidade o resultado da revisão tarifária nos termos do voto do relator, com o efeito médio de 11,27%.",
-            votoSummary: "<strong>Apresentação Técnica:</strong> O resultado da revisão tarifária conduziu a um efeito médio final de 11,27% para os consumidores (sendo 5,23% para alta tensão e 12,8% para baixa tensão). O reajuste foi impactado pela Parcela B (6,13%), itens financeiros (4,32%) e encargos setoriais (destaque para CDE uso e encargos relacionados a leilões de reserva de capacidade). Na definição de parâmetros para o ciclo, as perdas técnicas foram calculadas em 8,11% e as não técnicas em 1,526%.",
-            details: "<strong>Sustentação Oral:</strong> O foco principal foi o cálculo das perdas técnicas e o impacto da Geração Distribuída (GD). O representante argumentou que a injeção de GD saltou de 2,3 GWh/mês (2019) para 43,7 GWh/mês (2024). Criticou a inovação da área técnica de considerar como atípicos apenas os alimentadores em que a GD representa mais de 25% da energia passante, e pediu a consideração das perdas declaradas.<br><br><strong>Discussão e Voto:</strong> O relator manteve a recomendação de utilizar a trava de 25% de GD, explicando que a EMR declarou 84% de seus alimentadores como atípicos, o que é uma dispersão fora do padrão. Citou estudo da UFU de que a GD é benéfica para redução de perdas até 20-30% de penetração. O relator frisou que a regra geral de como a GD será tratada nas perdas será objeto de uma Consulta Pública futura."
-        },
-        {
-            originalItemNumber: 2,
-            process: "48500.030889/2025-10",
-            subject: "Reajuste Tarifário Anual da RGE Sul Distribuidora de Energia S.A. – RGE, a vigorar a partir de 19 de junho de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            decision: "A diretoria aprovou por unanimidade a emissão da resolução homologatória, fixando o índice médio de reajuste de 16,06% a partir de 19 de junho de 2026.",
-            votoSummary: "<strong>Apresentação Técnica:</strong> O reajuste resultou em um efeito médio de 16,06% para os consumidores (19,02% na AT e 14,94% na BT). Os principais fatores de pressão foram os itens financeiros (13,04%), especificamente a CVA Energia e a reversão de um diferimento concedido em 2024. Em 2024, devido à calamidade no RS, a ANEEL aprovou reajuste de 0%, criando ativo regulatório de R$ 1,23 bilhão que está sendo recomposto gradativamente (esta foi a 2ª parcela). Além disso, aplicaram-se regras de transição contratual (uso provisório do IGPM).",
-            details: "<strong>Sustentação Oral:</strong> Não houve pedidos.<br><br><strong>Discussão e Voto:</strong> A relatora dispensou a leitura completa do voto, visto que refletia estritamente a apresentação técnica, e seguiu para a leitura do dispositivo. Houve apenas um rápido esclarecimento sobre a regra de transição contratual que determinou o uso proporcional do IGPM naquele mês específico."
-        },
-        {
-            originalItemNumber: 3,
-            process: "48500.000375/2019-83",
-            subject: "Resultado da Terceira Fase da Consulta Pública nº 45/2019, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da norma que estabelecerá os critérios operativos para redução ou limitação de geração no Sistema Interligado Nacional – SIN.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "withdrawn",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3392&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
-        },
-        {
-            originalItemNumber: 4,
-            process: "48500.000503/2024-56",
-            subject: "Resultado da Consulta Pública nº 7/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento regulatório dos serviços de distribuição em consequência da abertura de mercado para consumidores do Grupo A e instituição do Open Energy.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "withdrawn",
-            links: [{title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3916&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}]
-        },
-        {
-            originalItemNumber: 9,
-            process: "48500.007732/2007-09",
-            subject: "Resultado da Consulta Pública nº 3/2026, instituída com vistas a colher subsídios e informações adicionais para a revisão do Submódulo 6.2 dos Procedimentos de Regulação Tarifária – PRORET, decorrente da criação da Reserva Técnica Financeira da Conta de Comercialização de Energia Elétrica de Itaipu pelo Decreto nº 12.390/2025, e de aperfeiçoamentos de procedimentos relativos à Tarifa Bônus de Itaipu e aos valores de repasse para as Distribuidoras de Energia Elétrica do Sistema Interligado Nacional – SIN.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "approved",
-            isBloco: true,
-            decision: "A Diretoria, por unanimidade, decidiu: (i) aprovar os aprimoramentos do Submódulo 6.2 dos Procedimentos de Regulação Tarifária – PRORET, nos termos da proposta apresentada pela Superintendência de Gestão Tarifária e Regulação Econômica – STR na Nota Técnica nº 89/2026-STR/ANEEL, a serem considerados inclusive no processo da aprovação da tarifa Bônus e valores de repasse de 2026; (ii) revogar a delegação da STR para aprovação da tarifa bônus e dos valores de repasse e estabelecer delegação para STR emitir despacho até 5 de maio nos anos em que o resultado da Conta de Comercialização for negativo; (iii) estabelecer prazo de 6 meses para que a STR disponibilize no site da ANEEL informações sobre o bônus de Itaipu; e (iv) transferir os dispositivos do Submódulo 12.6 dos PRORET referentes à Itaipu para o Submódulo 6.2, de modo a concentrar em um único submódulo todos os comandos tarifários associados à usina binacional.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/12rpo2026-48500.907732-2007-09.pdf"},
-                {title: "Consulta Pública Relacionada", url: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=caFj6qdP&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3996&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica"}
-            ]
-        }
-    ];
-
     const aneelAgenda10Circuito = [
         {
             originalItemNumber: 1, 
@@ -257,8 +198,10 @@
             subject: "Resultado da Revisão Tarifária Periódica de 2026 da Copel Distribuição S.A. – Copel-DIS, a vigorar a partir de 24 de junho de 2026, após análise das contribuições recebidas na Consulta Pública nº 5/2026.",
             areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/10cdpo2026-48500.030069-2025-10.pdf"}]
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu aprovar o resultado da Revisão Tarifária com efeito médio de 20,51% para os consumidores (21,87% AT e 19,85% BT), além de fixar os limites regulatórios para perdas técnicas e não técnicas.",
+            votoSummary: "Houve sustentação oral por parte da Fiep e do Conselho de Consumidores da Copel. O processo será incluído na pauta da reunião pública ordinária subsequente para ratificação da decisão em função das sustentações orais.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/10cdpo2026-item01-48500.030069-2025-10.pdf"}]
         },
         {
             originalItemNumber: 2, 
@@ -266,7 +209,9 @@
             subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para o aprimoramento do Programa de Eficiência Energética para a Transição Energética.",
             areaResponsible: "Superintendência de Inovação e Transição Energética - STE.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública por intercâmbio documental, no período de 25 de junho a 10 de agosto de 2026.",
+            votoSummary: "O objetivo é receber contribuições para aprimoramento da Análise de Impacto Regulatório da ANEEL no âmbito da atividade da Agenda Regulatória referente à transição energética.",
             links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/10cdpo2026-48500.019238-2025-61.pdf"}]
         }
     ];
@@ -278,7 +223,10 @@
             subject: "Aprovação do Edital do Leilão nº 4/2026 (Leilão de Transmissão), destinado a contratação de concessões de serviço público de transmissão de energia elétrica, com instalações localizadas nos estados da Bahia, Goiás, Mato Grosso do Sul, Paraíba, Paraná, Rondônia e São Paulo, consolidado após avaliação das contribuições apresentadas na Consulta Pública nº 6/2026.",
             areaResponsible: "Secretaria de Leilões - SEL, Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
             relator: "Gentil Nogueira de Sá Junior",
-            status: "scheduled"
+            status: "approved",
+            decision: "A Diretoria, por unanimidade, decidiu aprovar a minuta do Edital do Leilão nº 4/2026-ANEEL e autorizar seu encaminhamento ao TCU. Também autorizou visitas técnicas dos interessados e prorrogou determinação para aprofundamento técnico de medidas restritivas.",
+            votoSummary: "Houve apresentação técnica por parte da Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica (SCE).",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/4rpe2026-48500.004996-2026-65.pdf"}]
         },
         {
             originalItemNumber: 2, 
@@ -286,7 +234,10 @@
             subject: "Resultado da Terceira Fase da Consulta Pública nº 45/2019, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da norma que estabelecerá os critérios operativos para redução ou limitação de geração no Sistema Interligado Nacional – SIN.",
             areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled"
+            status: "view_request",
+            decision: "O Diretor Fernando Luiz Mosna Ferreira da Silva pediu vista deste processo.",
+            votoSummary: "A Diretora-Relatora votou por encerrar a Consulta Pública, acompanhada por dois diretores. O julgamento teve ampla sustentação oral de representantes de diversas associações e empresas (Apine, Absolar, Abeeólica, Abiape, Volt Robotics, entre outras).",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/4rpe2026-48500.000375-2019-83.pdf"}]
         }
     ];
 
@@ -297,7 +248,7 @@
          { numero: "CP 015/2026", tema: "Obter subsídios para o aprimoramento do Relatório de Análise de Impacto Regulatório e da minuta de Resolução Normativa que altera o Anexo VIII da Resolução Normativa nº 948, de 16 de novembro de 2021.", inicio: "28/05/2026", fim: "13/07/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4016&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 014/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "28/05/2026", fim: "13/07/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=gwzAE0zX&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4015&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 012/2026", tema: "Obter subsídios para o aprimoramento das minutas do Edital e do Termo de Referência do Desenvolvimento e da Implantação da Plataforma de Inovação do Setor Elétrico – PINSE.", inicio: "06/05/2026", fim: "22/06/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=4dpulIlY&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4013&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
-         { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "12/06/2026", area: "Coordenação Geral de Estudos Integrados - DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "26/06/2026", area: "Coordenação Geral de Estudos Integrados - DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 220/2026", tema: "Proposta de aprimoramento das diretrizes para a exportação de energia elétrica interruptível de excedente de geração de usinas hidrelétricas", inicio: "27/04/2026", fim: "11/06/2026", area: "SNEE/DPME", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 011/2026", tema: "Obter subsídios para tratamento regulatório e contábil dos créditos de Microgeração e Minigeração Distribuída – MMGD em prol da modicidade tarifária, conforme determina a Lei nº 14.300/2022 e o Despacho nº 684/2025.", inicio: "30/04/2026", fim: "15/06/2026", area: "SFF/STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=bMFfeyNM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4012&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 009/2026", tema: "Obter subsídios para aprimoramentos regulatórios para tratamento de excedentes de energia e maior flexibilidade operativa na Rede de Distribuição.", inicio: "23/04/2026", fim: "08/06/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=bMFfeyNM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4008&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
@@ -348,7 +299,7 @@
     function renderPauta10CircuitoPage(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta do 10º Circuito Deliberativo Público Ordinário`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados do 10º Circuito Deliberativo Público Ordinário`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data do Circuito: ${circuito10DateText} | Votação Eletrônica`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -356,10 +307,10 @@
         // Aviso do Circuito
         const circuitoSection = createElement('div', 'bg-i4-dark-gray text-white p-5 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 mb-6');
         const avisoText = createElement('div', '');
-        avisoText.innerHTML = `<p class="font-bold text-lg mb-1">Deliberação em Circuito Eletrônico</p><p class="text-sm text-gray-300">Os votos são apurados eletronicamente entre as 8h e 18h, com encerramento assim que todos os Diretores votarem.</p>`;
+        avisoText.innerHTML = `<p class="font-bold text-lg mb-1">Deliberação em Circuito Eletrônico</p><p class="text-sm text-gray-300">Os votos foram apurados eletronicamente. As decisões e atas completas já estão disponíveis.</p>`;
         
         const buttonsDiv = createElement('div', 'flex gap-3');
-        const linkAnchor = createElement('a', 'bg-white text-i4-dark-gray hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.file} Ver Pauta Prévia`, { href: circuito10PautaLink, target: '_blank', rel: 'noopener noreferrer' });
+        const linkAnchor = createElement('a', 'bg-white text-i4-dark-gray hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.file} Ver Ata Completa`, { href: circuito10PautaLink, target: '_blank', rel: 'noopener noreferrer' });
         
         buttonsDiv.appendChild(linkAnchor);
         circuitoSection.appendChild(avisoText);
@@ -459,7 +410,7 @@
     function renderPauta4RPEPage(container) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 4ª Reunião Pública Extraordinária da Diretoria`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Resultados da 4ª Reunião Pública Extraordinária da Diretoria`);
         const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${reuniao4RpeDateText}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
@@ -938,14 +889,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pauta10CircuitoButton = createElement('button', 'nav-button-base nav-button-inactive', '10º Circuito Deliberativo');
-      const pauta4RPEButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta da 4ª RPE');
-      const pauta12RPOButton = createElement('button', 'nav-button-base nav-button-inactive', 'Pauta da 12ª RPO');
+      const pauta10CircuitoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 10º Circuito');
+      const pauta4RPEButton = createElement('button', 'nav-button-base nav-button-inactive', 'Resultados 4ª RPE');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta10CircuitoButton, pauta4RPEButton, pauta12RPOButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta10CircuitoButton, pauta4RPEButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -959,7 +909,7 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta10CircuitoButton, pauta4RPEButton, pauta12RPOButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta10CircuitoButton, pauta4RPEButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
@@ -967,7 +917,6 @@
 
       pauta10CircuitoButton.addEventListener('click', () => { setActiveButton(pauta10CircuitoButton); renderPageWithAnimation(renderPauta10CircuitoPage, contentContainer); });
       pauta4RPEButton.addEventListener('click', () => { setActiveButton(pauta4RPEButton); renderPageWithAnimation(renderPauta4RPEPage, contentContainer); });
-      pauta12RPOButton.addEventListener('click', () => { setActiveButton(pauta12RPOButton); renderPageWithAnimation(renderPauta12RPOPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
