@@ -173,9 +173,7 @@
     };
     
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
-    const youtubeLink13RPO = "https://www.youtube.com/live/ZTSS83pM5PA?si=S1Yv2jzx7AtumR4n";
     const aneel11CDPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0397310_pauta_de_circuito_deliberativo_publico.pdf";
-    const aneel13RPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-pauta_assinada.pdf";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -242,105 +240,6 @@
         }
     ];
 
-    const aneelAgenda13RPO = [
-        {
-            originalItemNumber: 1,
-            isBloco: false,
-            process: "48500.030070/2025-44",
-            subject: "Revisão Tarifária Periódica de 2026 da Companhia Campolarguense de Energia – Cocel.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
-        },
-        {
-            originalItemNumber: 2,
-            isBloco: false,
-            process: "48500.027624/2025-26",
-            subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a revisão da metodologia do Fator X – Componente de Produtividade (Pd).",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
-        },
-        {
-            originalItemNumber: 3,
-            isBloco: false,
-            process: "48500.002339/2024-11",
-            subject: "Proposta de abertura da Segunda Fase da Consulta Pública nº 1/2026, instituída com vistas a colher subsídios e informações adicionais para a avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled"
-        },
-        {
-            originalItemNumber: 6,
-            isBloco: false,
-            process: "48500.008476/2022-06",
-            subject: "Pedido de Reconsideração interposto pela Itapebi Geração de Energia S.A. contra o Despacho nº 3.213/2025, que aprovou o resultado da avaliação inicial das propostas de projetos de Pesquisa, Desenvolvimento e Inovação – PDI recebidas no âmbito da Chamada nº 23: \"Hidrogênio no Contexto do Setor Elétrico Brasileiro\".",
-            areaResponsible: "Superintendência de Inovação e Transição Energética - STE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled"
-        },
-        {
-            originalItemNumber: 11,
-            isBloco: true,
-            process: "48500.030910/2025-79",
-            subject: "Reajuste Tarifário Anual da Energisa Tocantins Distribuidora de Energia S.A. – ETO, a vigorar a partir de 4 de julho de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-48500.030910-2025-79.pdf"}]
-        },
-        {
-            originalItemNumber: 12,
-            isBloco: true,
-            process: "48500.030915/2025-00",
-            subject: "Reajuste Tarifário Anual da Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.), a vigorar a partir de 4 de julho de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-item12-48500.030915-2025-00.pdf"}]
-        },
-        {
-            originalItemNumber: 13,
-            isBloco: true,
-            process: "48500.007732/2007-09",
-            subject: "Homologações da Reserva Técnica Financeira da Conta de Comercialização de Energia Elétrica de Itaipu, da Tarifa Bônus de Itaipu e dos valores de repasse para as distribuidoras para o ano de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Agnes Maria de Aragão da Costa",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-48500.007732-2007-09.pdf"}]
-        },
-        {
-            originalItemNumber: 17,
-            isBloco: true,
-            process: "48500.002847/2023-19 e outros",
-            subject: "Recursos Administrativos interpostos pelas transmissoras Celg Geração e Transmissão S.A. – Celg G&T e outras contra o Despacho nº 951/2024, emitido pela SCE, referente à regularização de ativos no Sistema de Gestão da Transmissão – SIGET.",
-            areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE, Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-48500.005614-2021-14.pdf"}]
-        },
-        {
-            originalItemNumber: 21,
-            isBloco: true,
-            process: "48500.003674/2025-18",
-            subject: "Pedido de Reconsideração interposto pela Energisa Paraíba – Distribuidora de Energia S.A. – EPB contra a Resolução Homologatória nº 3.518/2025, que homologou o resultado da Revisão Tarifária Periódica da Recorrente.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-            relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-48500.003674-2025-18.pdf"}]
-        },
-        {
-            originalItemNumber: 36,
-            isBloco: true,
-            process: "48500.030069/2025-10",
-            subject: "Ratificação da decisão proferida no 10º Circuito Deliberativo Público Ordinário de 2026, referente ao Resultado da Revisão Tarifária Periódica de 2026 da Copel Distribuição S.A. – Copel-DIS, a vigorar a partir de 24 de junho de 2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-            relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13rpo2026-48500.030069-2025-10.pdf"}]
-        }
-    ];
-
     const consultasPublicasData = [
          { numero: "CP 018/2026", tema: "Obter subsídios para aprimoramento da Análise de Impacto Regulatório da ANEEL no âmbito da atividade P&E 22-02- “Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética” da Agenda Regulatória.", inicio: "25/06/2026", fim: "10/08/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "AP 004/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "18/06/2026", fim: "18/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/audiencias-publicas" },
@@ -404,7 +303,6 @@
         renderFunction(container);
     }
 
-    // --- RENDERIZANDO PAUTA DO 11º CD ---
     function renderPauta11CDPage(container) {
         container.innerHTML = '';
 
@@ -429,22 +327,27 @@
         // Sumário
         const summaryDiv = createElement('div', 'info-card mb-10');
         const summaryHeader = createElement('div', 'card-header p-5');
-        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta (Itens Selecionados)'));
+        summaryHeader.appendChild(createElement('h2', 'text-xl font-bold text-i4-dark-gray', 'Sumário da Pauta'));
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
+        
         const getSummarySubject11CD = (item) => {
+            if (!item || !item.subject) return "";
             switch (item.originalItemNumber) {
                 case 1: return "CP Leilões Energia Existente (A-1, A-2, A-3) de 2026";
                 case 9: return "Recurso Epesa - REN 1.157/2026";
                 case 11: return "Recurso Isa Energia Brasil - Melhorias de Transmissão";
                 case 12: return "Cautelar MS Energia Limpa - Suspensão Encargos Rescisórios";
                 case 14: return "Exclusão do ICMS da base de cálculo do PIS/COFINS";
-                default: return item.subject.substring(0, 85) + '...';
+                default:
+                    return item.subject.length > 70 ? item.subject.substring(0, 70) + '...' : item.subject;
             }
         };
 
-        aneelAgenda11CD.forEach(item => {
+        const sortedAgenda11CD = [...aneelAgenda11CD].filter(Boolean).sort((a, b) => a.originalItemNumber - b.originalItemNumber);
+
+        sortedAgenda11CD.forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
             const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-11cd-${item.originalItemNumber}` });
             itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject11CD(item)}</span>`;
@@ -461,7 +364,7 @@
 
         // Grid de Itens
         const agendaGrid = createElement('div', 'space-y-8');
-        aneelAgenda11CD.forEach(item => {
+        sortedAgenda11CD.forEach(item => {
             const itemDiv = createElement('div', 'info-card', null, { id: `item-11cd-${item.originalItemNumber}` });
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
@@ -545,7 +448,9 @@
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
+        
         const getSummarySubject13RPO = (item) => {
+            if (!item || !item.subject) return "";
             switch (item.originalItemNumber) {
                 case 1: return "RTP Cocel - 2026";
                 case 2: return "CP Fator X (Pd)";
@@ -556,7 +461,8 @@
                 case 17: return "Recursos Celg G&T e Outras - SIGET";
                 case 21: return "Reconsideração RTP Energisa Paraíba";
                 case 36: return "Ratificação RTP Copel-DIS (10º Circuito)";
-                default: return item.subject.substring(0, 85) + '...';
+                default: 
+                    return item.subject.length > 70 ? item.subject.substring(0, 70) + '...' : item.subject;
             }
         };
 
@@ -880,12 +786,11 @@
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
       const pauta11CDButton = createElement('button', 'nav-button-base nav-button-inactive', '11º Circuito Deliberativo');
-      const pauta13RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '13ª RPO');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta11CDButton, pauta13RPOButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta11CDButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -899,14 +804,13 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta11CDButton, pauta13RPOButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta11CDButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
       pauta11CDButton.addEventListener('click', () => { setActiveButton(pauta11CDButton); renderPageWithAnimation(renderPauta11CDPage, contentContainer); });
-      pauta13RPOButton.addEventListener('click', () => { setActiveButton(pauta13RPOButton); renderPageWithAnimation(renderPauta13RPOPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
