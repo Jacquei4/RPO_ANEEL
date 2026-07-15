@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard de acompanhamento da ANEEL pela i4 Economic Regulation.">
   <title>Dashboard ANEEL 2026 - i4 Economic Regulation</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4_favicon.png" type="image/png">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -165,6 +161,7 @@
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800 border border-yellow-200" },
       highlight: { text: "Destaque / Retirado", classes: "bg-purple-100 text-purple-800 border border-purple-200" },
+      suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800 border border-orange-200" },
     };
 
     const consultaStatusMap = {
@@ -173,8 +170,8 @@
     };
     
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
-    const rpo14PautaPdfLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0402522_pauta_de_reuniao_publica.pdf";
-    const rpo14YoutubeLink = "https://www.youtube.com/live/0_VWjl5r3lg?si=Vzu_1tiZhMGvt7bY";
+    const aneel14RPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0402522_pauta_de_reuniao_publica.pdf";
+    const youtubeLink14RPO = "https://www.youtube.com/live/0_VWjl5r3lg?si=Vzu_1tiZhMGvt7bY";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -185,7 +182,8 @@
         arrowRight: `<svg class="w-4 h-4 ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`,
         gavel: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
         file: `<svg class="w-5 h-5 mr-2 inline-block align-middle text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
-        video: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`
+        video: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`,
+        order: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-6 4h6m-6 4h4m5.586-11.414a2 2 0 00-2.828 0L7 10.172V17h6.828l4.586-4.586a2 2 0 000-2.828z"></path></svg>`
     };
 
     const aneelAgenda14RPO = [
@@ -193,88 +191,98 @@
             originalItemNumber: 1,
             process: "48500.030071/2025-99",
             subject: "Resultado da Revisão Tarifária Periódica da Energisa Sul-Sudeste – Distribuidora de Energia S.A. – ESS, após análise das contribuições recebidas na Consulta Pública nº 10/2026.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            summaryLabel: "Resultado RTP Energisa Sul-Sudeste (ESS)"
+            status: "approved",
+            decision: "O Diretor-Relator Gentil Nogueira incorporou integralmente a divergência do Diretor Mosna. A Diretoria aprovou por unanimidade a revisão tarifária da Energisa Sul Sudeste com efeito médio de 9,63% para os consumidores (sendo 9,99% para a alta tensão e 9,49% para a baixa tensão), fixando o referencial de perdas técnicas em 5,55%. Ficou determinado que o limite de 25% não será utilizado em outras revisões antes de uma consulta pública específica sobre o tema.",
+            details: "<strong>Sustentações Orais:</strong><br>Danilo Batista (Energisa Sul Sudeste): Destacou que a geração distribuída (GD) cresceu 85 vezes na concessão ao longo do ciclo e que a empresa está entre as cinco mais eficientes do país no controle de perdas não técnicas. Argumentou que a metodologia atual da ANEEL é defasada por desconsiderar a energia injetada por GD no balanço energético, gerando \"perdas negativas\" em 70% dos alimentadores da distribuidora. Criticou a proposta da área técnica de criar um critério ad hoc de 25% de penetração de GD para reconhecer a atipicidade de um alimentador, alegando que o estudo da Universidade Federal de Uberlândia usado como justificativa se baseou em uma realidade diferente (região de Múrcia, Espanha) e que o Prodist (Módulo 7, item 74) garante à empresa o direito de declarar suas perdas técnicas quando há atipicidade. Apontou que a diferença metodológica equivale a 100 GWh no ciclo.<br><br>Ricardo Brandão (ABRADEE): Apoiou o pleito da distribuidora. Afirmou que a regra do Prodist é clara em determinar o uso do melhor dado disponível da distribuidora quando há divergência na metodologia. Argumentou que a criação de uma linha de corte de 25% representa uma inovação normativa que, por lei, obrigatoriamente deveria passar por consulta pública prévia antes de ser aplicada a processos tarifários.<br><br><strong>Discussão:</strong> A área técnica (STR) apresentou inicialmente uma proposta de efeito tarifário médio de 9,44%, considerando perdas técnicas regulatórias de 5,23% baseadas no limite de 25% de GD. Contudo, o Diretor Fernando Mosna apresentou divergência. Ele argumentou que a imposição do limite de 25% sem consulta pública prévia violava a Lei das Agências e o Prodist. Mosna pediu vistas em mesa e propôs recalcular o processo utilizando estritamente a regra vigente do Prodist (adotando as perdas de 5,55% declaradas pela empresa para os alimentadores com GD significativa).",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-item01-48500.030071-2025-99.pdf"}],
+            isBloco: false
         },
         {
             originalItemNumber: 2,
             process: "48500.004063/2020-82",
             subject: "Análise dos contratos firmados entre comercializadoras e distribuidoras de pequeno porte.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR, Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            summaryLabel: "Contratos de comercializadoras e distribuidoras de pequeno porte"
+            status: "approved",
+            decision: "A Diretoria aprovou por unanimidade a resolução dos 19 contratos. Foi determinado que as distribuidoras apurem as penalidades por rescisão antecipada e perdas e danos em até 30 dias para futura habilitação no processo de recuperação judicial da Electra. Também foi aprovado o tratamento tarifário excepcional, limitando o repasse dos custos da energia de reposição ao Valor de Referência (VR) anual para distribuidoras com mercado inferior a 700 GWh.",
+            details: "<strong>Sustentação Oral:</strong> Houve pedido de sustentação, mas foi apresentado fora do prazo regulamentar e recusado pela presidência.<br><br><strong>Discussão:</strong> A Superintendência de Concessões, Permissões e Autorizações de Transmissão e Distribuição (SGM) apresentou o caso de 19 contratos bilaterais envolvendo 17 distribuidoras de pequeno porte. A comercializadora Electra deixou de entregar energia a partir de abril/mês de maio de 2026, culminando em um processo de recuperação judicial. A Electra alegou descolamento de preços do PLD e crise financeira. As distribuidoras e a área técnica divergiram, apontando falhas na gestão de balanço energético da própria comercializadora. Para evitar que as distribuidoras ficassem expostas ao mercado de curto prazo (PLD) sem cobertura tarifária, a área técnica propôs rescindir os contratos por inadimplemento e aplicar uma cobertura tarifária excepcional.",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-item02-48500.004063-2020-82.pdf"}],
+            isBloco: false
         },
         {
             originalItemNumber: 3,
             process: "48500.027624/2025-26",
             subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a revisão da metodologia do Fator X – Componente de Produtividade (Pd).",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            summaryLabel: "CP para revisão da metodologia do Fator X (Pd)"
+            status: "approved",
+            decision: "A Diretoria aprovou por unanimidade a abertura da Consulta Pública no período de 16 de julho a 31 de agosto de 2026 e determinou que a STR disponibilize todas as bases de dados e memórias de cálculo utilizadas para o escrutínio dos agentes.",
+            details: "<strong>Sustentação Oral:</strong><br>Ricardo Brandão (ABRADEE): Salientou a importância de reconhecer os investimentos intraciclo realizados pelas distribuidoras. Apontou que a metodologia atual do componente de produtividade (PD) olha apenas para o passado e está defasada, não capturando o aumento estrutural de custos decorrentes da digitalização, transição energética e modernização das redes. Solicitou a disponibilização ágil das planilhas e memórias de cálculo junto com a abertura do processo.<br><br><strong>Discussão:</strong> A área técnica (STR) apresentou a proposta mostrando que o setor elétrico brasileiro vive uma tendência de queda de produtividade (medida em 0,48% ao ano no período de 2018-2024). Esse fenômeno de perda de produtividade por conta de pesados investimentos em transição energética também foi verificado em países como Holanda, Austrália e Canadá. Foram estruturadas cinco alternativas regulatórias. A STR recomendou a Alternativa 3, que consiste em calcular anualmente o PD de cada distribuidora fazendo uma média simples com a produtividade do setor (0,48%), equilibrando de forma mais justa os riscos e bônus entre concessionárias e consumidores.",
+            links: [{title: "Minuta de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-item03-48500.027624-2025-26.pdf"}],
+            isBloco: false
         },
         {
             originalItemNumber: 4,
             process: "48500.006650/2023-59",
             subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a avaliação de redes subterrâneas e demais padrões de rede para o aumento da resiliência dos sistemas de distribuição de energia frente ao aumento de eventos climáticos extremos ou severos.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
             relator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            summaryLabel: "CP para Avaliação de Resiliência de Redes"
+            status: "withdrawn",
+            decision: "Os itens 4 e 8 foram retirados de pauta a pedido, razão pela qual não foram discutidos nem deliberados nesta sessão.",
+            links: [],
+            isBloco: false
         },
         {
             originalItemNumber: 8,
             process: "48500.037386/2025-67",
-            subject: "Pedido de Reconsideração interposto pela Centrais Elétricas de Pernambuco S.A. – Epesa contra a Resolução Normativa nº 1.157/2026, que estabeleceu requisitos e procedimentos referentes ao mecanismo excepcional para tratamento de outorgas de geração e dos Contratos de Uso do Sistema de Transmissão – CUSTs celebrados por centrais geradoras.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL",
+            subject: "Pedido de Reconsideração interposto pela Centrais Elétricas de Pernambuco S.A. – Epesa contra a Resolução Normativa nº 1.157/2026, que estabeleceu requisitos e procedimentos referentes ao mechanism excepcional para tratamento de outorgas de geração e dos Contratos de Uso do Sistema de Transmissão – CUSTs celebrados por centrais geradoras.",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Willamy Moreira Frota",
-            status: "scheduled",
-            summaryLabel: "Recurso Epesa - Mecanismo de outorgas de geração e CUSTs"
+            status: "withdrawn",
+            decision: "Os itens 4 e 8 foram retirados de pauta a pedido, razão pela qual não foram discutidos nem deliberados nesta sessão.",
+            links: [],
+            isBloco: false
         },
         {
             originalItemNumber: 11,
             process: "48500.000407/2024-16",
             subject: "Requerimento Administrativo protocolado pela Energia Sustentável do Brasil S.A. – ESBR com vistas ao cálculo de extensão da outorga da Usina Hidrelétrica – UHE Jirau, nos termos do artigo 3º-C da Lei nº 10.848/2004, incluído pela Lei nº 14.146/2021.",
-            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM",
+            areaResponsible: "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
             relator: "Willamy Moreira Frota",
-            votoVistaRelator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            summaryLabel: "Cálculo de extensão da outorga da UHE Jirau",
-            votoSummary: "A discussão centraliza-se na metodologia de cálculo para a extensão da outorga da UHE Jirau conforme os critérios do art. 3º-C da Lei nº 10.848/2004. O Diretor-Relator avaliou o impacto hidrológico e os pleitos do requerente, enquanto o Diretor Fernando Mosna apresentou voto-vista focando na análise estrita dos critérios de recomposição econômica previstos no marco legal.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.900407-2024-16_voto-original.pdf"},
-                {title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.900407-2024-16_voto-vista.pdf"}
-            ]
+            status: "approved",
+            decision: "A Diretoria Colegiada aprovou por unanimidade todos os itens do bloco em uma única votação.",
+            votoSummary: "A discussão centraliza-se na metodologia de cálculo para a extensão da outorga da UHE Jirau conforme os critérios legais.",
+            details: "Discussão e Sustentação Oral: Não houve. Por se tratarem de itens de bloco (compreendidos entre os itens 11 e 31), os votos e atos foram disponibilizados previamente na internet.",
+            links: [{title: "Minutas de voto e ato (Original)", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.900407-2024-16_voto-original.pdf"}, {title: "Minutas de voto-vista e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.900407-2024-16_voto-vista.pdf"}],
+            isBloco: true
         },
         {
             originalItemNumber: 16,
             process: "48500.005573/2026-62",
             subject: "Pedido de Reconsideração interposto pela Axia Energia S.A. (Centrais Elétricas Brasileiras S.A. – Eletrobras) contra a Resolução Autorizativa nº 16.648/2026, que autorizou a Recorrente a implantar as Melhorias de Grande Porte em instalação de transmissão de energia elétrica sob sua responsabilidade, estabeleceu os valores das correspondentes parcelas da Receita Anual Permitida – RAP.",
-            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL",
+            areaResponsible: "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            status: "scheduled",
-            summaryLabel: "Recurso Axia Energia - Valores da RAP para Melhorias",
-            votoSummary: "A Axia Energia contesta os valores da Parcela de Receita Anual Permitida (RAP) autorizados para a implantação de Melhorias de Grande Porte, alegando defasagem nos custos reconhecidos. O Diretor-Relator avalia os índices aplicados, ponderando a necessidade de manter a aderência aos bancos de preços de referência da ANEEL em prol da modicidade tarifária.",
-            links: [
-                {title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.005573-2026-62.pdf"}
-            ]
+            status: "approved",
+            decision: "A Diretoria Colegiada aprovou por unanimidade todos os itens do bloco em uma única votação.",
+            votoSummary: "A Axia Energia contesta os valores da RAP autorizados para a implantação de Melhorias de Grande Porte, alegando defasagem nos custos e solicitando recomposição.",
+            details: "Discussão e Sustentação Oral: Não houve. Por se tratarem de itens de bloco (compreendidos entre os itens 11 e 31), os votos e atos foram disponibilizados previamente na internet.",
+            links: [{title: "Minutas de voto e ato", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.005573-2026-62.pdf"}],
+            isBloco: true
         },
         {
             originalItemNumber: 29,
             process: "48500.006391/2022-85",
             subject: "Prorrogação do prazo de pedido de vista referente ao Resultado da Consulta Pública nº 37/2024, que trata dos pedidos de Revisão Tarifária Extraordinária das concessionárias de distribuição Light, Neoenergia Coelba, Neoenergia Pernambuco, Neoenergia Cosern, Neoenergia Brasília e Copel devido à pandemia de Covid-19.",
-            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
+            areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
             relator: "Fernando Luiz Mosna Ferreira da Silva",
-            votoVistaRelator: "Gentil Nogueira de Sá Júnior",
-            status: "scheduled",
-            summaryLabel: "Prorrogação de Vista - RTE Covid-19 (Distribuidoras)",
-            votoSummary: "O processo trata da prorrogação do pedido de vista do Diretor Gentil Nogueira sobre a Revisão Tarifária Extraordinária de diversas distribuidoras impactadas pela queda de mercado na pandemia de Covid-19. O relator original manifesta-se favorável à prorrogação para permitir uma análise aprofundada dos cálculos de mercado e do reequilíbrio financeiro.",
-            links: [
-                {title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.906391-2022-85_prorroga_vista.pdf"}
-            ]
+            status: "approved",
+            decision: "A Diretoria Colegiada aprovou por unanimidade todos os itens do bloco em uma única votação.",
+            votoSummary: "O processo trata da necessidade de mais prazo para avaliação técnica do voto-vista sobre o impacto financeiro da RTE para compensar os efeitos da pandemia.",
+            details: "Discussão e Sustentação Oral: Não houve. Por se tratarem de itens de bloco (compreendidos entre os itens 11 e 31), os votos e atos foram disponibilizados previamente na internet.",
+            links: [{title: "Minutas de voto", url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14rpo2026-48500.906391-2022-85_prorroga_vista.pdf"}],
+            isBloco: true
         }
     ];
 
@@ -285,9 +293,9 @@
          { numero: "CP 016/2026", tema: "Obter subsídios para aprimoramento do Relatório de Análise de Impacto Regulatório Conjunto nº 1/2026- STR/STD/ANEEL.", inicio: "08/06/2026", fim: "08/09/2026", area: "STR/STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 015/2026", tema: "Obter subsídios para o aprimoramento do Relatório de Análise de Impacto Regulatório e da minuta de Resolução Normativa que altera o Anexo VIII da Resolução Normativa nº 948, de 16 de novembro de 2021.", inicio: "28/05/2026", fim: "13/07/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 014/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "28/05/2026", fim: "13/07/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
-         { numero: "TS 018/2026", tema: "Obter Subsídios para aprimoramento do Banco de Preços de Referência ANEEL descrito na Resolução Homologatória nº 758/2009.", inicio: "01/07/2026", fim: "31/07/2026", area: "ANEEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios" },
+         { numero: "TS 018/2026", tema: "Obter Subsídios para aprimoramento do Banco de Preços de Referência ANEEL descrito na Resolução Homologatória nº 758/2009.", inicio: "01/07/2026", fim: "31/07/2026", area: "ANEEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=Isnk8xJr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4027&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 012/2026", tema: "Obter subsídios para o aprimoramento das minutas do Edital e do Termo de Referência do Desenvolvimento e da Implantação da Plataforma de Inovação do Setor Elétrico – PINSE.", inicio: "06/05/2026", fim: "22/06/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
-         { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "26/06/2026", area: "DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
+         { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "26/06/2026", area: "Coordenação Geral de Estudos Integrados - DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 220/2026", tema: "Proposta de aprimoramento das diretrizes para a exportação de energia elétrica interruptível de excedente de geração de usinas hidrelétricas", inicio: "27/04/2026", fim: "11/06/2026", area: "SNEE/DPME", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 011/2026", tema: "Obter subsídios para tratamento regulatório e contábil dos créditos de Microgeração e Minigeração Distribuída – MMGD em prol da modicidade tarifária.", inicio: "30/04/2026", fim: "15/06/2026", area: "SFF/STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 009/2026", tema: "Obter subsídios para aprimoramentos regulatórios para tratamento de excedentes de energia e maior flexibilidade operativa na Rede de Distribuição.", inicio: "23/04/2026", fim: "08/06/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
@@ -295,7 +303,7 @@
          { numero: "CP 001/2026", tema: "Obter subsídios e informações para o aprimoramento da Análise de Impacto Regulatório, no âmbito da atividade \"Avaliação dos sistemas de medição para transição energética e modernização no segmento de distribuição\".", inicio: "29/01/2026", fim: "16/03/2026", area: "STD-SFF-STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 43/2025", tema: "Obter subsídios e informações adicionais com vistas à avaliação da Análise de Impacto Regulatório acerca da regulamentação do Decreto nº 11.314/2022.", inicio: "11/12/2025", fim: "10/03/2026", area: "STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 39/2025", tema: "Obter subsídios e informações adicionais para a revisão do Manual de Controle Patrimonial do Setor Elétrico - MCPSE.", inicio: "04/12/2025", fim: "03/04/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
-         { numero: "CP 224/2026", tema: "Estratégia Nacional de Dados Energéticos...", inicio: "01/07/2026", fim: "30/07/2026", area: "DIEEE", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" }
+         { numero: "CP 224/2026", tema: "Estratégia Nacional de Dados Energéticos. Instrumento orientativo e estratégico para o fortalecimento do ecossistema nacional de dados energéticos, com foco na governança, padronização, integração, interoperabilidade, qualidade, segurança, transparência, acesso e uso estratégico das informações energéticas.", inicio: "01/07/2026", fim: "30/07/2026", area: "Departamento de Informações, Estudos e Eficiência Energética", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" }
     ];
 
     const agendaRegulatoriaThemes = [
@@ -341,25 +349,29 @@
         renderFunction(container);
     }
 
-    function renderPauta14RPOPage(container) {
+    function renderGenericPautaPage(container, agendaData, title, date, youtubeLink, pautaLink) {
         container.innerHTML = '';
 
-        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', `Pauta da 14ª Reunião Pública Ordinária da Diretoria`);
-        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: 14 de julho de 2026`);
+        const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-1', title);
+        const pageDate = createElement('p', 'text-gray-600 text-base mb-6', `Data da Reunião: ${date}`);
         container.appendChild(pageTitle);
         container.appendChild(pageDate);
 
-        // Aviso / Link da Pauta e YouTube
+        // Aviso / Link da Reunião
         const reuniaoSection = createElement('div', 'bg-i4-dark-gray text-white p-5 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 mb-6');
         const avisoText = createElement('div', '');
-        avisoText.innerHTML = `<p class="font-bold text-lg mb-1">Acompanhe a Reunião</p><p class="text-sm text-gray-300">Acesse a pauta completa em PDF ou assista à transmissão ao vivo.</p>`;
+        avisoText.innerHTML = `<p class="font-bold text-lg mb-1">Acompanhe a Reunião</p><p class="text-sm text-gray-300">Transmissão ao vivo no canal oficial da ANEEL e detalhes completos da Pauta.</p>`;
         
-        const buttonsDiv = createElement('div', 'flex flex-wrap gap-3');
-        const pdfLinkAnchor = createElement('a', 'bg-white text-i4-dark-gray hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.file} Ver Pauta em PDF`, { href: rpo14PautaPdfLink, target: '_blank', rel: 'noopener noreferrer' });
-        const youtubeLinkAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.video} Assistir no YouTube`, { href: rpo14YoutubeLink, target: '_blank', rel: 'noopener noreferrer' });
+        const buttonsDiv = createElement('div', 'flex gap-3');
+        if(pautaLink){
+            const linkAnchor = createElement('a', 'bg-white text-i4-dark-gray hover:bg-gray-100 font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.file} Ver Pauta em PDF`, { href: pautaLink, target: '_blank', rel: 'noopener noreferrer' });
+            buttonsDiv.appendChild(linkAnchor);
+        }
+        if(youtubeLink){
+            const videoAnchor = createElement('a', 'bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap', `${icons.video} Assistir no YouTube`, { href: youtubeLink, target: '_blank', rel: 'noopener noreferrer' });
+            buttonsDiv.appendChild(videoAnchor);
+        }
         
-        buttonsDiv.appendChild(pdfLinkAnchor);
-        buttonsDiv.appendChild(youtubeLinkAnchor);
         reuniaoSection.appendChild(avisoText);
         reuniaoSection.appendChild(buttonsDiv);
         container.appendChild(reuniaoSection);
@@ -371,13 +383,30 @@
         summaryDiv.appendChild(summaryHeader);
 
         const summaryList = createElement('ul', 'space-y-1 p-3');
+        
+        const getSummarySubject = (item) => {
+            if (!item || !item.subject) return "";
+            
+            // Lógica unificada para resumos baseados no número do item
+            switch (item.originalItemNumber) {
+                case 1: return "RTP Energisa Sul-Sudeste (ESS)";
+                case 2: return "Resolução de Contratos - Distribuidoras e Electra";
+                case 3: return "Consulta Pública - Metodologia Fator X (Pd)";
+                case 4: return "Consulta Pública - Resiliência e Redes Subterrâneas";
+                case 8: return "Recurso Epesa - REN 1.157/2026";
+                case 11: return "Extensão de Outorga - UHE Jirau";
+                case 16: return "Recurso Axia Energia - Melhorias de Grande Porte";
+                case 29: return "Prorrogação de Vista - RTE Covid-19";
+                default: return item.subject.length > 70 ? item.subject.substring(0, 70) + '...' : item.subject;
+            }
+        };
 
-        const sortedAgenda = [...aneelAgenda14RPO].sort((a, b) => a.originalItemNumber - b.originalItemNumber);
+        const sortedAgenda = [...agendaData].sort((a, b) => a.originalItemNumber - b.originalItemNumber);
 
         sortedAgenda.forEach(item => {
             const listItem = createElement('li', 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-i4-light-gray');
             const itemLink = createElement('a', 'text-i4-text-gray hover:text-i4-blue flex-grow min-w-0', null, { href: `#item-${item.originalItemNumber}` });
-            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${item.summaryLabel}</span>`;
+            itemLink.innerHTML = `<span class="font-bold mr-2 text-i4-dark-gray">Item ${item.originalItemNumber}:</span><span>${getSummarySubject(item)}</span>`;
             
             const statusBadge = createStatusBadge(item.status, pautaStatusMap);
             statusBadge.classList.add('mt-2', 'sm:mt-0', 'flex-shrink-0');
@@ -396,7 +425,8 @@
             const cardHeader = createElement('div', 'card-header p-5 flex justify-between items-center flex-wrap gap-2');
             const h3Subject = createElement('h3', 'text-lg font-semibold text-i4-dark-gray');
             
-            h3Subject.innerHTML = `Item ${item.originalItemNumber} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
+            const blockText = item.isBloco ? ' <span class="font-bold text-red-600">(Bloco)</span>' : '';
+            h3Subject.innerHTML = `Item ${item.originalItemNumber}${blockText} <span class="font-normal text-i4-text-gray">| Processo: ${item.process}</span>`;
             
             cardHeader.appendChild(h3Subject);
             cardHeader.appendChild(createStatusBadge(item.status, pautaStatusMap));
@@ -417,15 +447,18 @@
                  return row;
              };
 
-            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto Completo', item.subject));
+            infoContainer.appendChild(createInfoRow(icons.clipboard, 'Assunto', item.subject));
             infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a)', item.relator));
-            if(item.votoVistaRelator) {
-                infoContainer.appendChild(createInfoRow(icons.user, 'Relator(a) Voto-Vista', item.votoVistaRelator));
-            }
             infoContainer.appendChild(createInfoRow(icons.building, 'Área Responsável', item.areaResponsible));
 
+            if (item.decision) {
+                infoContainer.appendChild(createInfoRow(icons.gavel, 'Decisão', `<span class="font-semibold text-i4-dark-gray">${item.decision}</span>`));
+            }
             if (item.votoSummary) {
                 infoContainer.appendChild(createInfoRow(icons.info, 'Resumo da Minuta', item.votoSummary));
+            }
+             if (item.details) {
+                infoContainer.appendChild(createInfoRow(icons.info, 'Detalhes / Discussão', item.details));
             }
 
             cardBody.appendChild(infoContainer);
@@ -448,6 +481,10 @@
         container.appendChild(agendaGrid);
     }
 
+    function renderPauta14RPOPage(container) {
+        renderGenericPautaPage(container, aneelAgenda14RPO, 'Resultados da 14ª Reunião Pública Ordinária', '14/07/2026', youtubeLink14RPO, aneel14RPOPautaLink);
+    }
+
     function renderConsultasPage(container) {
         container.innerHTML = '';
         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Acompanhamento de Consultas Públicas e Tomadas de Subsídios');
@@ -455,20 +492,16 @@
 
         const tableContainer = createElement('div', 'info-card overflow-x-auto');
 
+        consultasPublicasData.forEach(cp => {
+            cp.status = isConsultaAberta(cp.fim) ? 'aberta' : 'encerrada';
+        });
+
         const parseDate = (dateStr) => {
-            if (!dateStr) return new Date(0);
             const parts = dateStr.split('/');
-            if (parts.length !== 3) return new Date(0);
             return new Date(parseInt(parts[2], 10), parseInt(parts[1], 10) - 1, parseInt(parts[0], 10), 23, 59, 59, 999);
         };
 
-        // Filtra para manter APENAS as consultas abertas
-        const openConsultas = [...consultasPublicasData].filter(cp => isConsultaAberta(cp.fim)).map(cp => {
-            cp.status = 'aberta';
-            return cp;
-        }).sort((a, b) => {
-            return parseDate(a.fim) - parseDate(b.fim); 
-        });
+        const openConsultas = consultasPublicasData.filter(cp => cp.status === 'aberta').sort((a, b) => parseDate(a.fim) - parseDate(b.fim));
 
         // Mobile
         const mobileContainer = createElement('div', 'md:hidden divide-y divide-i4-border-gray');
@@ -594,6 +627,7 @@
          const ntLink = "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideDocumento=56339&_participacaopublica_WAR_participacaopublicaportlet_tipoFaseReuniao=fase&_participacaopublica_WAR_participacaopublicaportlet_jspPage=%2Fhtml%2Fpp%2Fvisualizar.jsp";
          const portariaLink = "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?yPDszXhdoNcWQHJaQlHJmJIqCNXRK_Sh2SMdn1U-tzMYZ-4kHTcnJm7TenO30WvNGL2-iPp2xoGK10fSsjJjjVY0fS1cPl5Cjxg50nLLq82ei5QiCC0qpBz3Wz2tpgbA";
 
+         // Seção: Agenda Aprovada (Tabelas)
          const consolidatedDiv = createElement('div', 'mb-10 bg-green-50 p-6 rounded-xl border border-green-200');
          consolidatedDiv.innerHTML = `
             <h2 class="card-title text-xl font-bold mb-3 text-green-800">Decisão da 40ª RPO: Aprovação da Agenda</h2>
@@ -618,6 +652,7 @@
         renderRegulatoryTable(container, demaisAtividadesRegulatorias, 'ANEXO II: Demais Atividades Regulatórias para o Biênio 2026-2027');
         renderRegulatoryTable(container, arrAtividades, 'ANEXO III: Avaliações de Resultado Regulatório (ARR) para o Quadriênio 2026-2027');
 
+         // Seção: 10 Temas Prioritários (Background/Histórico)
          const introDiv = createElement('div', 'mb-6 bg-blue-50 p-6 rounded-xl border border-blue-200 mt-12');
          introDiv.innerHTML = `
              <h2 class="text-xl font-bold text-blue-800 mb-2">Histórico: 10 Temas Prioritários (Tomada de Subsídios nº 11/2025)</h2>
@@ -697,7 +732,7 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pauta14RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '14ª Reunião Pública Ordinária');
+      const pauta14RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '14ª Reunião Pública');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
@@ -727,11 +762,12 @@
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na aba da 14ª RPO
+      // Inicia na aba da 14ª Reunião Pública
       setActiveButton(pauta14RPOButton);
       renderPageWithAnimation(renderPauta14RPOPage, contentContainer);
     }
 
+    // Inicialização final do app
     document.addEventListener('DOMContentLoaded', renderApp);
   </script>
 </body>
