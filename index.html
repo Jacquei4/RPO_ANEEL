@@ -161,6 +161,8 @@
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800 border border-yellow-200" },
       highlight: { text: "Destaque / Retirado", classes: "bg-purple-100 text-purple-800 border border-purple-200" },
+      highlighted_for_rpo: { text: "Destacado para RPO", classes: "bg-purple-100 text-purple-800 border border-purple-200" },
+      pending_ratification: { text: "Aguardando ratificação", classes: "bg-orange-100 text-orange-800 border border-orange-200" },
       suspended: { text: "Deliberação Suspensa", classes: "bg-orange-100 text-orange-800 border border-orange-200" },
     };
 
@@ -170,8 +172,6 @@
     };
     
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
-    const aneel12CDPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0414289_pauta_de_reuniao_publica.pdf";
-    const youtubeLink12CDPO = "https://www.youtube.com/watch?v=GCKeMAdQAbI";
     const aneel13CDPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0418431_pauta_de_circuito_deliberativo_publico.pdf";
     
     const icons = {
@@ -187,159 +187,6 @@
         order: `<svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-6 4h6m-6 4h4m5.586-11.414a2 2 0 00-2.828 0L7 10.172V17h6.828l4.586-4.586a2 2 0 000-2.828z"></path></svg>`
     };
 
-    const aneelAgenda12CDPO = [
-    {
-        "originalItemNumber": 3,
-        "process": "48500.030189/2025-17",
-        "subject": "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a Revisão Tarifária Periódica de 2026 da Neoenergia Distribuição Brasília S.A. – NDB.",
-        "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-        "relator": "Willamy Moreira Frota",
-        "status": "approved",
-        "decision": "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública para o aprimoramento da Revisão Tarifária Periódica da Neoenergia Distribuição Brasília S.A., pelo período de 45 dias, entre 30 de julho e 12 de setembro de 2026, com Audiência Pública em 27 de agosto de 2026, na sede da ANEEL.",
-        "details": "<strong>Apresentação técnica:</strong> Luiz Eduardo Nogueira, da Superintendência de Gestão Tarifária e Regulação Econômica – STR.<br><br><strong>Ordem de julgamento:</strong> 3.",
-        "links": [
-            {
-                "title": "Minuta de voto",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/15rpo2026-item03-48500.0301892025-17.pdf"
-            },
-            {
-                "title": "Cobertura da reunião — RTP Neoenergia Brasília",
-                "url": "https://megawhat.uol.com.br/regulacao/revisao-tarifaria-da-neoenergia-brasilia-preve-aumento-de-186/"
-            }
-        ],
-        "isBloco": false,
-        "discussionSummary": "A STR apresentou as premissas e os cálculos da Revisão Tarifária Periódica. A proposta levada à participação social prevê efeito médio preliminar de <strong>1,86%</strong>, com <strong>3,95%</strong> para consumidores em alta tensão e <strong>1,10%</strong> para baixa tensão. A Diretoria aprovou, sem divergência, a abertura da Consulta Pública por 45 dias e a realização de Audiência Pública em 27/08/2026.",
-        "oralSummary": "Não houve sustentação oral registrada para este item. Houve apresentação técnica de Luiz Eduardo Nogueira, da STR."
-    },
-    {
-        "originalItemNumber": 4,
-        "process": "48500.000375/2019-83",
-        "subject": "Resultado da Terceira Fase da Consulta Pública nº 45/2019, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento da norma que estabelecerá os critérios operativos para redução ou limitação de geração no Sistema Interligado Nacional – SIN.",
-        "areaResponsible": "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM.",
-        "relator": "Agnes Maria de Aragão da Costa | Voto-vista: Fernando Luiz Mosna Ferreira da Silva",
-        "status": "view_request",
-        "decision": "O Diretor Gentil Nogueira de Sá Júnior pediu vista do processo, considerada coletiva nos termos da Norma de Organização nº 1.",
-        "details": "O voto-vista do Diretor Fernando Luiz Mosna Ferreira da Silva propôs encerrar a terceira fase da CP nº 45/2019 e instaurar uma quarta fase para colher subsídios sobre os resultados do período sombra. Permanecem válidos os votos anteriormente proferidos, facultada sua reforma até a proclamação do resultado final.<br><br><strong>Ordem de julgamento:</strong> 4.",
-        "links": [
-            {
-                "title": "Minutas de voto e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900375-2019-83_voto_original.pdf"
-            },
-            {
-                "title": "Minutas de voto-vista e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/48500.900375-2019-83_voto_vista.pdf"
-            },
-            {
-                "title": "Cobertura da discussão — curtailment",
-                "url": "https://megawhat.uol.com.br/politica-energetica/pedido-de-vista-adia-decisao-sobre-curtailment-mesmo-com-apoio-do-mercado/"
-            }
-        ],
-        "isBloco": false,
-        "discussionSummary": "O voto-vista de Fernando Mosna propôs manter, inicialmente, o rateio dos cortes por fonte, realizar uma operação sombra com cinco cenários e abrir uma quarta fase da CP nº 45/2019 antes de eventual decisão sobre rateio conjunto entre hidrelétricas, eólicas e solares. Gentil Nogueira pediu vista coletiva para aprofundar o desenho da operação sombra, o tratamento dos cortes elétricos, a inclusão das hidrelétricas nas simulações e os critérios para contestação das classificações feitas pelo ONS.",
-        "oralSummary": "<strong>Apine:</strong> Rui Altieri apoiou a nova rodada de consulta após a operação sombra, para que a decisão definitiva seja baseada nos resultados das simulações.<br><br><strong>Abiape:</strong> Paulo Sehn destacou a situação da autoprodução <em>in situ</em> e apoiou o adiamento de temas ainda não amadurecidos, como tratamento das hidrelétricas, elegibilidade dos cortes elétricos e rateio regionalizado.<br><br><strong>Abeeólica:</strong> Natalia Caldeira defendeu prudência regulatória e uso de dados auditáveis e transparentes antes da regulamentação definitiva.<br><br><strong>Absolar:</strong> apoiou a realização de simulações mais abrangentes antes de decidir sobre elegibilidade, rateio financeiro, regionalização e compartilhamento dos cortes entre fontes."
-    },
-    {
-        "originalItemNumber": 6,
-        "process": "48500.000846/2026-82",
-        "subject": "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para aprimoramentos regulatórios relacionados ao Decreto nº 12.772/2025.",
-        "areaResponsible": "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD.",
-        "relator": "Fernando Luiz Mosna Ferreira da Silva",
-        "status": "view_request",
-        "decision": "O Diretor-Geral, Sandoval de Araújo Feitosa Neto, pediu vista do processo.",
-        "details": "O Diretor-Relator, acompanhado pelos Diretores Gentil Nogueira de Sá Júnior e Willamy Moreira Frota, votou por instaurar Consulta Pública por 47 dias, de 30 de julho a 14 de setembro de 2026, sobre minutas de Resolução Normativa e revisão dos Módulos 1 e 5 das Regras dos Serviços de Transmissão, e por determinar ao ONS o envio de propostas de alteração dos Procedimentos de Rede no prazo de até 45 dias. Os votos permanecem válidos até a proclamação do resultado.<br><br><strong>Apresentação técnica:</strong> Rafael Cambraia Trajano, da STD.<br><br><strong>Ordem de julgamento:</strong> 6.",
-        "links": [
-            {
-                "title": "Cobertura da discussão — PNAST",
-                "url": "https://megawhat.uol.com.br/regulacao/pedido-de-vista-adia-consulta-publica-da-pnast-na-aneel/"
-            }
-        ],
-        "isBloco": false,
-        "discussionSummary": "O debate concentrou-se na regra de transição da Política Nacional de Acesso ao Sistema de Transmissão. Gentil Nogueira questionou se a redação poderia alcançar novos acessos, além dos casos de aumento de carga e faseamento que motivaram decisões anteriores. Fernando Mosna explicou que a proposta busca fechar lacunas e preservar a prioridade de empreendimentos que já possuíam Parecer de Acesso, portaria e CUST. Após os esclarecimentos, Sandoval Feitosa pediu vista para aprofundar a análise.",
-        "oralSummary": "Não houve sustentação oral registrada para este item. Houve apresentação técnica de Rafael Cambraia Trajano, da STD."
-    },
-    {
-        "originalItemNumber": 11,
-        "process": "48500.030940/2025-85",
-        "subject": "Reajuste Tarifário Anual da EDP Espírito Santo Distribuição de Energia S.A. – EDP ES, a vigorar a partir de 7 de agosto de 2026.",
-        "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
-        "relator": "Willamy Moreira Frota",
-        "status": "approved",
-        "decision": "A Diretoria, por unanimidade, homologou as novas tarifas da EDP ES com vigência a partir de 7 de agosto de 2026, com efeito médio de 7,52% para os consumidores: 8,65% em média na Alta Tensão e 7,11% em média na Baixa Tensão. Também fixou TE e TUSD, estabeleceu a receita anual das DIT de uso exclusivo e homologou o repasse mensal da CCEE para custeio dos subsídios retirados da estrutura tarifária.",
-        "details": "<strong>Ordem de julgamento:</strong> 15.",
-        "links": [
-            {
-                "title": "Minutas de voto e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/15rpo2026-48500.030940-2025-85.pdf"
-            },
-            {
-                "title": "Cobertura da reunião — reajuste EDP ES",
-                "url": "https://megawhat.uol.com.br/distribuicao/reajuste-tarifario-da-edp-espirito-santo-fica-em-752/"
-            }
-        ],
-        "isBloco": true,
-        "discussionSummary": "O item foi deliberado em bloco, sem debate individualizado. O efeito médio aprovado de <strong>7,52%</strong> resulta de 1,57% de componentes econômicos, 6,92% de componentes financeiros e efeito redutor de 0,96% pela retirada de componentes financeiros do processo anterior. O reajuste médio ficou em 8,65% na alta tensão, 7,11% na baixa tensão e 7,27% para a classe residencial.",
-        "oralSummary": "Não houve sustentação oral registrada; o item permaneceu no bloco da pauta."
-    },
-    {
-        "originalItemNumber": 17,
-        "process": "48500.006886/2026-38",
-        "subject": "Pedido de Reconsideração interposto pela Axia Energia Sul S.A. (Companhia de Geração e Transmissão de Energia Elétrica do Sul do Brasil – Eletrobras CGT Eletrosul) contra a Resolução Autorizativa nº 16.663/2026, referente a Melhorias de Grande Porte e valores adicionais de Receita Anual Permitida – RAP do Contrato de Concessão nº 57/2001.",
-        "areaResponsible": "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-        "relator": "Willamy Moreira Frota",
-        "status": "approved",
-        "decision": "A Diretoria, por unanimidade, conheceu e deu provimento ao Pedido de Reconsideração para alterar a Resolução Autorizativa nº 16.663/2026 e deferir a inclusão do adicional de periculosidade e a revisão das alíquotas de IPI.",
-        "details": "<strong>Ordem de julgamento:</strong> 19.",
-        "links": [
-            {
-                "title": "Minutas de voto e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/15rpo2026-48500.006886-2026-38.pdf"
-            }
-        ],
-        "isBloco": true,
-        "discussionSummary": "O item foi deliberado em bloco, sem debate individualizado. A Diretoria acolheu o pedido da Axia Energia Sul para ajustar a autorização de Melhorias de Grande Porte, incluindo o adicional de periculosidade e a revisão das alíquotas de IPI na composição dos valores reconhecidos.",
-        "oralSummary": "Não houve sustentação oral registrada; o item permaneceu no bloco da pauta."
-    },
-    {
-        "originalItemNumber": 38,
-        "process": "48500.003000/2022-71",
-        "subject": "Reanálise de reforços em instalações de transmissão sob responsabilidade da Axia Energia Nordeste S.A. (Companhia Hidrelétrica do São Francisco – Chesf), autorizados pela Resolução Autorizativa nº 12.983/2022.",
-        "areaResponsible": "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
-        "relator": "Willamy Moreira Frota",
-        "status": "approved",
-        "decision": "A Diretoria, por unanimidade, decidiu alterar os Anexos I e II da Resolução Autorizativa nº 14.983/2023 para adequar o escopo e o prazo de entrada em operação comercial ao POTEE – Ciclo 2025 – 5ª Emissão.",
-        "details": "<strong>Ordem de julgamento:</strong> 40.",
-        "links": [
-            {
-                "title": "Minutas de voto e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/15rpo2026-48500.903000-2022-71.pdf"
-            }
-        ],
-        "isBloco": true,
-        "discussionSummary": "O item foi deliberado em bloco, sem debate individualizado. A decisão adequou o escopo e o prazo de entrada em operação comercial dos reforços da Axia Energia Nordeste/Chesf ao POTEE – Ciclo 2025 – 5ª Emissão.",
-        "oralSummary": "Não houve sustentação oral registrada; o item permaneceu no bloco da pauta."
-    },
-    {
-        "originalItemNumber": 42,
-        "process": "48500.007946/2026-30",
-        "subject": "Ratificação da decisão proferida no 12º Circuito Deliberativo Público Ordinário de 2026 referente aos Pedidos de Medida Cautelar das empresas IE Madeira, IE Garanhuns, Tropicália e Taesa para manutenção da cobertura tarifária integral da Receita Anual Permitida – RAP no ciclo 2026-2027 e inclusão de créditos em ações judiciais.",
-        "areaResponsible": "Diretoria Colegiada da Aneel - DIRC-ANEEL.",
-        "relator": "Willamy Moreira Frota",
-        "status": "approved",
-        "decision": "A Diretoria, por unanimidade, ratificou a decisão do item 10 do 12º Circuito Deliberativo Público Ordinário de 2026, conhecendo e negando provimento aos pedidos cautelares apresentados pela IE Madeira, IE Garanhuns, Tropicália e Taesa relativos à manutenção da cobertura tarifária integral da RAP e à inclusão de créditos em ações judiciais.",
-        "details": "O processo foi destacado do bloco em razão da sustentação oral. Houve sustentação conjunta para os itens 42 e 43 por Ana Beatriz Dias Sousa, representante das empresas interessadas.<br><br><strong>Ordem de julgamento:</strong> 12.",
-        "links": [
-            {
-                "title": "Minutas de voto e ato",
-                "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/15rpo2026-48500.007946-2026-30_ratifica.pdf"
-            }
-        ],
-        "isBloco": false,
-        "discussionSummary": "O processo foi destacado do bloco por causa da sustentação oral. Após a manifestação, a Diretoria ratificou, por unanimidade, a decisão do 12º Circuito Deliberativo e manteve o indeferimento das cautelares relacionadas à preservação integral da RAP no ciclo 2026-2027 e à inclusão de créditos nas ações judiciais antes do julgamento definitivo do mérito.",
-        "oralSummary": "Ana Beatriz Dias Sousa realizou sustentação conjunta para os itens 42 e 43, representando IE Madeira, IE Garanhuns, Tropicália e Taesa. A manifestação foi voltada à defesa dos pedidos cautelares, com ênfase na manutenção da cobertura tarifária integral da RAP e no tratamento dos créditos vinculados às ações judiciais. A Diretoria, contudo, manteve a decisão de negar os pedidos."
-    }
-];
-
-
     const aneelAgenda13CDPO = [
       {
         originalItemNumber: 1,
@@ -348,12 +195,24 @@
         subject: "Reajuste Tarifário Anual da Equatorial Pará Distribuidora de Energia S.A., a vigorar a partir de 7 de agosto de 2026.",
         areaResponsible: "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
         relator: "Agnes Maria de Aragão da Costa",
-        status: "scheduled",
-        details: "Item incluído na pauta do 13º Circuito Deliberativo Público Ordinário, previsto para 4 de agosto de 2026, das 8h às 18h.",
+        status: "highlighted_for_rpo",
+        decision: "O Diretor-Geral, Sandoval de Araújo Feitosa Neto, solicitou destaque do processo. O item será incluído na pauta da próxima Reunião Pública Ordinária da Diretoria.",
+        details: "O processo deixou o circuito deliberativo e seguirá para apreciação em reunião pública ordinária, nos termos do art. 63, § 9º, da Norma de Organização ANEEL nº 1.",
+        oralSummary: `<strong>Participantes:</strong> Cássio Bitar Vasconcelos e Carlindo Lins, representantes do Conselho de Consumidores de Energia Elétrica da Equatorial Pará – Concepa.`,
         links: [
           {
             title: "Minutas de voto e ato",
             url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13cdpo2026-48500.030939-2025-51.pdf"
+          },
+          {
+            title: "Sustentação oral – vídeo 1",
+            url: "https://www.youtube.com/watch?v=B9CKwXthaqw",
+            isVideo: true
+          },
+          {
+            title: "Sustentação oral – vídeo 2",
+            url: "https://www.youtube.com/watch?v=ms8QON6Qskk",
+            isVideo: true
           }
         ],
         isBloco: false
@@ -365,8 +224,8 @@
         subject: "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a prestação de contas do Quinto Plano de Aplicação de Recursos do Programa Nacional de Conservação de Energia Elétrica – 5º PAR PROCEL.",
         areaResponsible: "Superintendência de Inovação e Transição Energética - STE.",
         relator: "Gentil Nogueira de Sá Júnior",
-        status: "scheduled",
-        details: "Item incluído na pauta do 13º Circuito Deliberativo Público Ordinário, previsto para 4 de agosto de 2026, das 8h às 18h.",
+        status: "approved",
+        decision: "A Diretoria, por unanimidade, decidiu instaurar Consulta Pública, na modalidade intercâmbio documental, pelo prazo de 30 dias, de 6 de agosto a 4 de setembro de 2026, para colher subsídios e informações adicionais sobre a prestação de contas do 5º PAR PROCEL.",
         links: [
           {
             title: "Minutas de voto e ato",
@@ -379,11 +238,11 @@
         originalItemNumber: 12,
         summaryTitle: "Axia Energia Sul – Reforços de Pequeno Porte",
         process: "48500.017573/2026-13",
-        subject: "Recurso Administrativo interposto pela Axia Energia Sul S.A. (Companhia de Geração e Transmissão de Energia Elétrica do Sul do Brasil – CGT Eletrosul) contra o Despacho nº 2.280/2026, que autorizou a Recorrente a implantar Reforços de Pequeno Porte em instalações de transmissão sob sua responsabilidade, incluindo as Subestações Ivaiporã e Curitiba, referentes ao Contrato de Concessão nº 57/2001.",
+        subject: "Recurso Administrativo interposto pela Axia Energia Sul S.A. (Companhia de Geração e Transmissão de Energia Elétrica do Sul do Brasil – CGT Eletrosul) contra o Despacho nº 2.280/2026, referente a Reforços de Pequeno Porte nas Subestações Ivaiporã e Curitiba, vinculados ao Contrato de Concessão nº 57/2001.",
         areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE; Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
         relator: "Gentil Nogueira de Sá Júnior",
-        status: "scheduled",
-        details: "Item incluído na pauta do 13º Circuito Deliberativo Público Ordinário, previsto para 4 de agosto de 2026, das 8h às 18h.",
+        status: "approved",
+        decision: "A Diretoria, por unanimidade, conheceu e, no mérito, negou provimento ao Recurso Administrativo interposto pela Axia Energia Sul S.A. contra o Despacho nº 2.280/2026.",
         links: [
           {
             title: "Minutas de voto e ato",
@@ -394,17 +253,17 @@
       },
       {
         originalItemNumber: 14,
-        summaryTitle: "Energisa Rondônia – Rateio de recursos de UBP",
+        summaryTitle: "Energisa Rondônia – Rateio da repactuação de UBP",
         process: "48500.037166/2025-33",
-        subject: "Pedido de Reconsideração interposto pela Energisa Rondônia – Distribuidora de Energia S.A. – ERO contra o Despacho nº 1.832/2026, que definiu as diretrizes para o rateio de eventuais recursos arrecadados na repactuação de Uso do Bem Público – UBP, nos termos da Lei nº 15.235/2025.",
+        subject: "Pedido de Reconsideração interposto pela Energisa Rondônia – Distribuidora de Energia S.A. – ERO contra o Despacho nº 1.832/2026, que definiu as diretrizes para o rateio de eventuais recursos arrecadados na repactuação de Uso do Bem Público – UBP.",
         areaResponsible: "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
         relator: "Agnes Maria de Aragão da Costa",
-        status: "scheduled",
-        details: "Item incluído na pauta do 13º Circuito Deliberativo Público Ordinário, previsto para 4 de agosto de 2026, das 8h às 18h.",
+        status: "approved",
+        decision: "A Diretoria, por unanimidade, decidiu não conhecer do Pedido de Reconsideração da Energisa Rondônia contra o Despacho nº 1.832/2026, por se tratar de recurso contra norma de caráter geral e abstrato.",
         links: [
           {
             title: "Minutas de voto e ato",
-            url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13cdpo2026-48500.037166-2025-33.pdf"
+            url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13%C2%BAcdpo2026-item14-48500.037166-2025-33.pdf"
           }
         ],
         isBloco: false
@@ -416,12 +275,19 @@
         subject: "Requerimento Administrativo protocolado pela Interligação Elétrica Itaúnas S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 18/2017-ANEEL.",
         areaResponsible: "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
         relator: "Willamy Moreira Frota",
-        status: "scheduled",
-        details: "Item incluído na pauta do 13º Circuito Deliberativo Público Ordinário, previsto para 4 de agosto de 2026, das 8h às 18h.",
+        status: "pending_ratification",
+        decision: "A Diretoria, por unanimidade, decidiu indeferir o Requerimento Administrativo da Interligação Elétrica Itaúnas S.A. para recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 18/2017-ANEEL.",
+        details: "Em razão da solicitação de sustentação oral, o processo será incluído na pauta da reunião pública ordinária subsequente para ratificação da decisão, nos termos do art. 63, § 10, da Norma de Organização ANEEL nº 1.",
+        oralSummary: `<strong>Participante:</strong> Thaís Araújo, representante da Interligação Elétrica Itaúnas S.A.`,
         links: [
           {
             title: "Minutas de voto e ato",
             url: "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/13cdpo2026-48500.003789-2024-21.pdf"
+          },
+          {
+            title: "Sustentação oral – vídeo",
+            url: "https://www.youtube.com/watch?v=BR7PRs31M1c",
+            isVideo: true
           }
         ],
         isBloco: false
@@ -429,6 +295,7 @@
     ];
 
     const consultasPublicasData = [
+         { numero: "CP 024/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica da Neoenergia Distribuição Brasília S.A., a vigorar a partir de 22 de outubro de 2026.", inicio: "30/07/2026", fim: "14/09/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=id1qwXCV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4034&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 020/2026", tema: "Obter subsídios para revisar a Metodologia do Fator X – Componente de Produtividade (Pd).", inicio: "16/07/2026", fim: "31/08/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=AHj7OcAo&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4030&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 226/2026", tema: "Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2026 – Ampliações e Reforços – Rede Básica e Demais Instalações de Transmissão (1ª Emissão).", inicio: "14/07/2026", fim: "13/08/2026", area: "Departamento de Planejamento e Outorgas de Transmissão e Distribuição de Energia Elétrica e Interligações Internacionais", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 018/2026", tema: "Obter subsídios para aprimoramento da Análise de Impacto Regulatório da ANEEL no âmbito da atividade P&E 22-02- “Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética” da Agenda Regulatória.", inicio: "25/06/2026", fim: "10/08/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
@@ -437,7 +304,7 @@
          { numero: "CP 016/2026", tema: "Obter subsídios para aprimoramento do Relatório de Análise de Impacto Regulatório Conjunto nº 1/2026- STR/STD/ANEEL.", inicio: "08/06/2026", fim: "08/09/2026", area: "STR/STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 015/2026", tema: "Obter subsídios para o aprimoramento do Relatório de Análise de Impacto Regulatório e da minuta de Resolução Normativa que altera o Anexo VIII da Resolução Normativa nº 948, de 16 de novembro de 2021.", inicio: "28/05/2026", fim: "13/07/2026", area: "SFF", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 014/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "28/05/2026", fim: "13/07/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
-         { numero: "TS 018/2026", tema: "Obter Subsídios para aprimoramento do Banco de Preços de Referência ANEEL descrito na Resolução Homologatória nº 758/2009.", inicio: "01/07/2026", fim: "31/07/2026", area: "ANEEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=Isnk8xJr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4027&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
+         { numero: "TS 018/2026", tema: "Obter Subsídios para aprimoramento do Banco de Preços de Referência ANEEL descrito na Resolução Homologatória nº 758/2009.", inicio: "01/07/2026", fim: "31/08/2026", area: "ANEEL", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios?p_auth=Isnk8xJr&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4027&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 012/2026", tema: "Obter subsídios para o aprimoramento das minutas do Edital e do Termo de Referência do Desenvolvimento e da Implantação da Plataforma de Inovação do Setor Elétrico – PINSE.", inicio: "06/05/2026", fim: "22/06/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
          { numero: "CP 222/2026", tema: "Consulta Pública, minuta do Plano Nacional de Transição Energética - Plante", inicio: "29/04/2026", fim: "26/06/2026", area: "Coordenação Geral de Estudos Integrados - DIEE/SNTEP", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
          { numero: "CP 220/2026", tema: "Proposta de aprimoramento das diretrizes para a exportação de energia elétrica interruptível de excedente de geração de usinas hidrelétricas", inicio: "27/04/2026", fim: "11/06/2026", area: "SNEE/DPME", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
@@ -623,7 +490,8 @@
                  
                  const cardFooter = createElement('div', 'flex flex-wrap gap-x-6 gap-y-2 items-center');
                  item.links.forEach(link => {
-                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${icons.link} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+                     const linkIcon = link.isVideo ? icons.video : icons.link;
+                     const linkAnchor = createElement('a', 'group inline-flex items-center text-sm font-medium text-i4-blue hover:text-blue-700 transition-colors', `${linkIcon} ${link.title} ${icons.arrowRight}`, { href: link.url, target: '_blank', rel: 'noopener noreferrer' });
                      cardFooter.appendChild(linkAnchor);
                  });
                  cardBody.appendChild(cardFooter);
@@ -635,13 +503,9 @@
         container.appendChild(agendaGrid);
     }
 
-    function renderPauta12CDPOPage(container) {
-        renderGenericPautaPage(container, aneelAgenda12CDPO, 'Resultados da 15ª Reunião Pública Ordinária da Diretoria de 2026', '28/07/2026', youtubeLink12CDPO, aneel12CDPOPautaLink);
-    }
-
     function renderPauta13CDPOPage(container) {
-        const note = `<strong>Pauta futura:</strong> esta aba apresenta os itens selecionados da pauta oficial do 13º Circuito Deliberativo Público Ordinário, previsto para 04/08/2026. As decisões e eventuais destaques serão incluídos após a divulgação dos resultados pela ANEEL.`;
-        renderGenericPautaPage(container, aneelAgenda13CDPO, 'Pauta do 13º Circuito Deliberativo Público Ordinário da Diretoria de 2026', '04/08/2026', null, aneel13CDPOPautaLink, note);
+        const note = `<strong>Resultados preliminares:</strong> esta aba consolida os itens selecionados da pauta/ata prévia do 13º Circuito Deliberativo Público Ordinário, realizado em 04/08/2026. O documento da ANEEL informa que a versão pode ser ajustada até a aprovação e divulgação da ata definitiva.`;
+        renderGenericPautaPage(container, aneelAgenda13CDPO, 'Resultados do 13º Circuito Deliberativo Público Ordinário da Diretoria de 2026', '04/08/2026', null, aneel13CDPOPautaLink, note);
     }
 
     function renderConsultasPage(container) {
@@ -891,13 +755,12 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
-      const pauta12CDPOButton = createElement('button', 'nav-button-base nav-button-inactive', '15ª RPO');
       const pauta13CDPOButton = createElement('button', 'nav-button-base nav-button-inactive', '13º Circuito Deliberativo');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta13CDPOButton, pauta12CDPOButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta13CDPOButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -911,13 +774,12 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta13CDPOButton, pauta12CDPOButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta13CDPOButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
-      pauta12CDPOButton.addEventListener('click', () => { setActiveButton(pauta12CDPOButton); renderPageWithAnimation(renderPauta12CDPOPage, contentContainer); });
       pauta13CDPOButton.addEventListener('click', () => { setActiveButton(pauta13CDPOButton); renderPageWithAnimation(renderPauta13CDPOPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
