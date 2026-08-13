@@ -157,7 +157,7 @@
 
     const pautaStatusMap = {
       scheduled: { text: "Agendado", classes: "bg-blue-100 text-blue-800 border border-blue-200" },
-      approved: { text: "Aprovado", classes: "bg-green-100 text-green-800 border border-green-200" },
+      approved: { text: "Deliberado", classes: "bg-green-100 text-green-800 border border-green-200" },
       withdrawn: { text: "Retirado de Pauta", classes: "bg-gray-200 text-gray-800 border border-gray-300" },
       view_request: { text: "Pedido de Vista", classes: "bg-yellow-100 text-yellow-800 border border-yellow-200" },
       highlight: { text: "Destaque / Retirado", classes: "bg-purple-100 text-purple-800 border border-purple-200" },
@@ -174,6 +174,7 @@
     const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
     const aneel16RPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0423153_pauta_de_reuniao_publica.pdf";
     const youtube16RPOLink = "https://www.youtube.com/live/34M8aLZY57k?si=Tcad1el7SchQJoGD";
+    const aneel14CDPOPautaLink = "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0429069_pauta_de_circuito_deliberativo_publico_(1).pdf";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -191,13 +192,17 @@
     const aneelAgenda16RPO = [
   {
     "originalItemNumber": 1,
-    "summaryTitle": "Reajuste Tarifário Anual da Equatorial Pará",
+    "summaryTitle": "Equatorial Pará – Reajuste Tarifário Anual 2026",
     "process": "48500.030939/2025-51",
     "subject": "Reajuste Tarifário Anual da Equatorial Pará Distribuidora de Energia S.A., a vigorar a partir de 7 de agosto de 2026.",
     "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
     "relator": "Agnes Maria de Aragão da Costa",
-    "status": "scheduled",
-    "details": "Processo destacado do 13º Circuito Deliberativo Público Ordinário de 2026.",
+    "status": "view_request",
+    "decision": "A deliberação foi suspensa após pedido de vista do Diretor Willamy Moreira Frota. Antes da vista, a Diretora-Relatora votou pela homologação do reajuste com efeito médio de 6,94%, sendo 8,09% para consumidores em Alta Tensão e 6,66% para consumidores em Baixa Tensão.",
+    "votoSummary": "A relatora propôs homologar o RTA da Equatorial Pará, fixar TUSD e TE, estabelecer a receita anual das DIT de uso exclusivo e homologar os repasses mensais da CDE destinados aos descontos tarifários.",
+    "details": "Houve apresentação técnica de Leonardo de Araújo Silva, da STR. O Diretor Gentil Nogueira de Sá Júnior estava ausente no momento da deliberação.",
+    "discussionSummary": "Na discussão, foi destacado o peso crescente dos encargos e subsídios setoriais na tarifa. O pedido de vista foi formulado para aprofundar a análise da dinâmica e da aplicação dos recursos decorrentes da repactuação do Uso de Bem Público – UBP no reajuste.",
+    "oralSummary": "<strong>Carlindo Lins Pereira Filho (Concepa):</strong> destacou as dificuldades operacionais e socioeconômicas do Pará, a baixa densidade rural, o peso da tarifa sobre famílias de baixa renda e o nível das perdas não técnicas regulatórias.<br><br><strong>Cássio Bitar Vasconcelos (Defensoria Pública do Estado do Pará):</strong> relatou problemas de qualidade do serviço na Ilha do Marajó e questionou aspectos da metodologia de avaliação da qualidade, especialmente o uso de informações da plataforma consumidor.gov.",
     "links": [],
     "isBloco": false
   },
@@ -208,7 +213,10 @@
     "subject": "Recurso Administrativo interposto pelas Centrais Elétricas de Pernambuco Ltda. – Epesa contra o Despacho nº 2.095/2025, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD, que indeferiu o pedido de isenção de pagamento dos encargos rescisórios relacionados ao Contrato de Uso do Sistema de Transmissão – CUST nº 18/2008, após a antecipação do prazo final das outorgas das Usinas Termelétricas – UTEs Termomanaus e Pau Ferro I.",
     "areaResponsible": "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD; Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
+    "status": "view_request",
+    "decision": "A deliberação foi suspensa após pedido de vista da Diretora Agnes Maria de Aragão da Costa.",
+    "votoSummary": "O relator votou por dar provimento ao recurso da Epesa, reformar o Despacho nº 2.095/2025 e afastar a cobrança dos encargos rescisórios relacionados ao CUST nº 18/2008, determinando à STD e ao ONS a adoção das providências necessárias.",
+    "discussionSummary": "A Procuradoria-Geral apontou que a vigência do CUST está vinculada à outorga e ponderou que a Epesa operou regularmente por aproximadamente 15 anos, com antecipação do término das outorgas autorizada pela ANEEL. Também foi levantada a questão da aplicação de encargos que não constavam do contrato original. A Diretora Agnes pediu vista para analisar o caso em conjunto com processo correlato, enquanto o Diretor-Geral observou a necessidade de reavaliar a disciplina regulatória dos encargos rescisórios diante do atual cenário de elevada disputa por conexão.",
     "links": [
       {
         "title": "Minutas de voto e ato",
@@ -224,19 +232,36 @@
     "subject": "Pedido de Reconsideração interposto pela Energisa Rondônia – Distribuidora de Energia S.A. – ERO contra a Resolução Homologatória nº 3.560/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025, as Tarifas de Energia – TE e as Tarifas de Uso do Sistema de Distribuição – TUSD referentes à Recorrente e deu outras providências.",
     "areaResponsible": "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
-    "links": [],
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, não conheceu do pedido de reconsideração por intempestividade e aprovou o recálculo das tarifas da ERO considerando R$ 509.725.162,76 de recursos da repactuação de UBP e R$ 320.173.997,00 de ativo regulatório associado à RTE de 2019. A STR foi autorizada a publicar as tarifas com validade a partir do recebimento da primeira parcela dos recursos transferidos pela CCEE.",
+    "details": "Ato administrativo: Despacho nº 3.106/2026.",
+    "links": [
+      {
+        "title": "Minutas de voto e ato",
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-item13-48500.004004-2025-19.pdf"
+      }
+    ],
     "isBloco": false
   },
   {
     "originalItemNumber": 14,
-    "summaryTitle": "Enel SP – Procedimento administrativo de caducidade",
+    "summaryTitle": "Enel SP – Procedimento administrativo tendente à caducidade",
     "process": "48500.003331/2024-72",
     "subject": "Pedido de Reconsideração interposto pela Enel Distribuição São Paulo – Enel SP (Eletropaulo Metropolitana Eletricidade de São Paulo S.A.) contra o Despacho nº 1.214/2026, que instaurou o procedimento administrativo tendente à caducidade da Recorrente, e deu outras providências.",
     "areaResponsible": "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
-    "links": [],
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, conheceu e negou provimento ao pedido de reconsideração da Enel SP, mantendo integralmente o Despacho nº 1.214/2026 e o prosseguimento do procedimento administrativo tendente à caducidade, observados o contraditório e a ampla defesa.",
+    "votoSummary": "O relator votou pela manutenção da instauração do procedimento administrativo, entendendo que o recurso não afastava os fundamentos que justificaram a abertura da fase sancionatória.",
+    "discussionSummary": "A Procuradoria-Geral ressaltou que a deliberação tratava da instauração do processo sancionatório, e não do julgamento definitivo da caducidade, e defendeu a possibilidade de atuação regulatória com base no dever de prestação de serviço adequado. O relator Fernando Mosna votou por negar provimento ao recurso, sendo acompanhado pelos demais diretores. No debate, também foram discutidos o papel preventivo da fiscalização, a segurança regulatória e o histórico de acompanhamento da qualidade do serviço.",
+    "oralSummary": "<strong>Tiago de Barros Correia (Enel SP):</strong> sustentou a ausência de fundamentos para a instauração, destacou o aumento dos investimentos, equipes e PMSO, a melhora de indicadores e questionou a utilização retroativa de métricas de recomposição de consumidores.<br><br><strong>Gregório Rodrigues Pontes Maglio (Prefeito de Pirapora do Bom Jesus):</strong> relatou melhorias após investimentos na região e defendeu priorizar diálogo, cobrança e fiscalização antes de uma medida extrema como a caducidade.<br><br><strong>Conselpa:</strong> a manifestação registrada oficialmente contou com Jorge Badra, Gilmar Ogawa e Francisco Sgroglia Júnior. Na síntese apresentada à reunião, foram destacados investimentos, reforço de equipes e medidas operacionais, além da preocupação com a ausência de marco regulatório específico para eventos climáticos extremos.<br><br><strong>Ricardo Brandão (Abradee):</strong> defendeu a necessidade de métricas previamente definidas para fundamentar sanções e alertou para possíveis efeitos do processo sobre a percepção de risco e o custo de financiamento.",
+    "details": "Houve sustentação oral dos representantes acima. A manifestação do Conselpa foi realizada por vídeo. Ato administrativo: Despacho nº 3.107/2026.",
+    "links": [
+      {
+        "title": "Minutas de voto e ato",
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-item14-48500.003331-2024-72.pdf"
+      }
+    ],
     "isBloco": false
   },
   {
@@ -246,7 +271,9 @@
     "subject": "Homologação do resultado e adjudicação dos objetos dos Lotes 7 a 10 do Leilão de Transmissão nº 1/2026-ANEEL – Segunda Etapa, destinado a contratar concessões do serviço público de transmissão de energia elétrica.",
     "areaResponsible": "Secretaria de Leilões - SEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, homologou o resultado da Segunda Etapa do Leilão de Transmissão nº 1/2026-ANEEL e adjudicou os Lotes 7 a 10 às proponentes vencedoras. O Lote 7 foi adjudicado ao Consórcio Olympus XX e os Lotes 8, 9 e 10 à Axia Energia Sul S.A.",
+    "details": "Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
@@ -262,11 +289,13 @@
     "subject": "Alteração da data de Revisão e Reajuste Tarifário da Companhia de Eletricidade do Amapá – CEA, definida no Contrato de Concessão de Distribuição de Energia Elétrica nº 1/2021-ANEEL.",
     "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
     "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, aprovou a alteração para 25 de maio da data de aniversário contratual dos processos tarifários da CEA; determinou que a primeira RTP seja calculada com data-base de 13 de dezembro de 2026 e produza efeitos tarifários a partir de 25 de maio de 2027; e prorrogou as tarifas vigentes até 24 de maio de 2027, com recomposição econômico-financeira atualizada pela Selic.",
+    "details": "Ato(s): Despacho nº 3.086/2026; Resolução Homologatória nº 3.601/2026; Primeiro Termo Aditivo ao Contrato nº 1/2021. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-48500.016427-2026-62.pdf"
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-item21-48500.016427-2026-62.pdf"
       }
     ],
     "isBloco": true
@@ -278,7 +307,9 @@
     "subject": "Pedido de Reconsideração interposto pela EDP São Paulo Distribuição de Energia S.A. contra a Resolução Homologatória nº 3.541/2025, que homologou o resultado do Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
     "areaResponsible": "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, deu provimento parcial ao pedido: negou a adequação do cálculo da neutralidade do financeiro de quitação das Contas Covid e Escassez Hídrica e acolheu a adequação das compensações de créditos de PIS/Cofins, determinando o reprocessamento do acerto de contas no processo tarifário de 2026.",
+    "details": "Ato administrativo: Despacho nº 3.080/2026. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
@@ -294,7 +325,9 @@
     "subject": "Pedido de Reconsideração interposto pela Companhia Piratininga de Força e Luz – CPFL Piratininga contra a Resolução Homologatória nº 3.543/2025, que homologou o Reajuste Tarifário Anual de 2025 da Recorrente e deu outras providências.",
     "areaResponsible": "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Fernando Luiz Mosna Ferreira da Silva",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, conheceu e negou provimento ao pedido de reconsideração da CPFL Piratininga.",
+    "details": "Ato administrativo: Despacho nº 3.081/2026. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
@@ -310,10 +343,11 @@
     "subject": "Pedido de Medida Cautelar protocolado pela Mato Grosso Empreendimento Energético Ltda. com vistas à suspensão das cobranças dos Encargos de Uso do Sistema de Transmissão – EUSTs pelo Operador Nacional do Sistema Elétrico – ONS até a análise de mérito do Recurso interposto pela Requerente contra o Despacho nº 2.075/2026, emitido pela Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica – STD.",
     "areaResponsible": "Diretoria Colegiada da ANEEL - DIRC-ANEEL.",
     "relator": "Agnes Maria de Aragão da Costa",
-    "status": "scheduled",
+    "status": "withdrawn",
+    "decision": "O processo foi retirado da pauta a pedido da Diretora-Relatora.",
     "links": [
       {
-        "title": "Minutas de voto e ato",
+        "title": "Minutas de voto e ato (pauta)",
         "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-48500.019383-2026-22.pdf"
       }
     ],
@@ -326,11 +360,13 @@
     "subject": "Extensão do prazo de outorga das usinas que tiveram prorrogado o período de suprimento dos contratos de compra e venda de energia do Programa de Incentivo às Fontes Alternativas de Energia Elétrica – PROINFA, nos termos do art. 23 da Lei nº 14.182/2021, regulamentado pelo Decreto nº 10.798/2021.",
     "areaResponsible": "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
     "relator": "Willamy Moreira Frota",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, alterou o término da vigência das outorgas das usinas abrangidas e retirou, a partir de 1º de abril de 2026, o percentual de redução das tarifas de uso dos sistemas de transmissão e distribuição pelo transporte da energia gerada por essas usinas.",
+    "details": "Ato administrativo: Resolução Autorizativa nº 16.739/2026. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-48500.011449-2026-36.pdf"
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-item51-48500.011449-2026-36.pdf"
       }
     ],
     "isBloco": true
@@ -342,11 +378,13 @@
     "subject": "Autorização e estabelecimento da parcela da Receita Anual Permitida – RAP referente a reforços em instalações de transmissão sob responsabilidade da CPFL Transmissão S.A., em decorrência da 4ª emissão do Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2025, Contrato de Concessão nº 55/2001.",
     "areaResponsible": "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
     "relator": "Agnes Maria de Aragão da Costa",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, autorizou a CPFL Transmissão S.A. a realizar os reforços e estabeleceu as parcelas adicionais de Receita Anual Permitida – RAP, conforme os anexos da resolução autorizativa e os respectivos cronogramas.",
+    "details": "Ato administrativo: Resolução Autorizativa nº 16.745/2026. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-48500.016549-2026-59.pdf"
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/16rpo2026-item55-48500.016549-2026-59.pdf"
       }
     ],
     "isBloco": true
@@ -358,7 +396,9 @@
     "subject": "Ratificação da decisão proferida no 13º Circuito Deliberativo Público Ordinário de 2026, referente ao Requerimento Administrativo protocolado pela Interligação Elétrica Itaúnas S.A. com vistas à recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 18/2017-ANEEL.",
     "areaResponsible": "Superintendência de Concessões, Permissões e Autorizações dos Serviços de Energia Elétrica - SCE.",
     "relator": "Willamy Moreira Frota",
-    "status": "scheduled",
+    "status": "approved",
+    "decision": "A Diretoria, por unanimidade, ratificou a decisão do 13º Circuito Deliberativo e manteve o indeferimento do requerimento da Interligação Elétrica Itaúnas S.A. para recomposição do equilíbrio econômico-financeiro do Contrato de Concessão nº 18/2017-ANEEL.",
+    "details": "Ato administrativo: Despacho nº 2.963/2026. Item deliberado em bloco.",
     "links": [
       {
         "title": "Minutas de voto e ato",
@@ -369,11 +409,48 @@
   }
 ];
 
+    const aneelAgenda14CDPO = [
+  {
+    "originalItemNumber": 1,
+    "summaryTitle": "Celesc-DIS – Revisão Tarifária Periódica",
+    "process": "48500.030135/2025-51",
+    "subject": "Resultado da Revisão Tarifária Periódica da Celesc Distribuição S.A. – Celesc-DIS, após análise das contribuições recebidas na Consulta Pública nº 14/2026.",
+    "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR.",
+    "relator": "Gentil Nogueira de Sá Júnior",
+    "status": "scheduled",
+    "details": "Item incluído na pauta do 14º Circuito Deliberativo Público Ordinário, previsto para 18/08/2026, das 8h às 18h.",
+    "links": [
+      {
+        "title": "Minutas de voto e ato",
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14cdpo2026-48500.030135-2025-51.pdf"
+      }
+    ],
+    "isBloco": false
+  },
+  {
+    "originalItemNumber": 21,
+    "summaryTitle": "ISA Energia Brasil – Exploração de atividades atípicas",
+    "process": "48500.021385/2025-09",
+    "subject": "Requerimento Administrativo protocolado pela ISA Energia Brasil S.A. com vistas à anuência prévia para a exploração de atividades atípicas, além daquelas outorgadas pelos Contratos de Concessão de Transmissão de Energia Elétrica nº 59/2001, nº 12/2023, nº 8/2022 e nº 6/2023.",
+    "areaResponsible": "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF.",
+    "relator": "Willamy Moreira Frota",
+    "status": "scheduled",
+    "details": "Item incluído na pauta do 14º Circuito Deliberativo Público Ordinário, previsto para 18/08/2026, das 8h às 18h.",
+    "links": [
+      {
+        "title": "Minutas de voto e ato",
+        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/14cdpo2026-48500.021385-2025-09.pdf"
+      }
+    ],
+    "isBloco": false
+  }
+];
+
     const consultasPublicasData = [
          { numero: "CP 024/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica da Neoenergia Distribuição Brasília S.A., a vigorar a partir de 22 de outubro de 2026.", inicio: "30/07/2026", fim: "14/09/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=id1qwXCV&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4034&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 020/2026", tema: "Obter subsídios para revisar a Metodologia do Fator X – Componente de Produtividade (Pd).", inicio: "16/07/2026", fim: "31/08/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=AHj7OcAo&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4030&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "CP 226/2026", tema: "Plano de Outorgas de Transmissão de Energia Elétrica – POTEE 2026 – Ampliações e Reforços – Rede Básica e Demais Instalações de Transmissão (1ª Emissão).", inicio: "14/07/2026", fim: "13/08/2026", area: "Departamento de Planejamento e Outorgas de Transmissão e Distribuição de Energia Elétrica e Interligações Internacionais", origem: "MME", link: "https://consultas-publicas.mme.gov.br/home" },
-         { numero: "CP 018/2026", tema: "Obter subsídios para aprimoramento da Análise de Impacto Regulatório da ANEEL no âmbito da atividade P&E 22-02- “Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética” da Agenda Regulatória.", inicio: "25/06/2026", fim: "10/08/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
+         { numero: "CP 018/2026", tema: "Obter subsídios para aprimoramento da Análise de Impacto Regulatório da ANEEL no âmbito da atividade P&E 22-02- “Aperfeiçoamento do Programa de Eficiência Energética para a Transição Energética” da Agenda Regulatória.", inicio: "25/06/2026", fim: "09/09/2026", area: "STE", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas?p_auth=DqBvlxrw&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=4026&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica" },
          { numero: "AP 004/2026", tema: "Obter subsídios para aprimorar a proposta referente à Revisão Tarifária Periódica de 2026 da Celesc Distribuição S.A. – Celesc-DIS, a vigorar a partir de 22 de agosto de 2026.", inicio: "18/06/2026", fim: "18/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/audiencias-publicas" },
          { numero: "TS 012/2026", tema: "Obter subsídios para aprimoramento da Base de Dados relativa ao triênio 2022-24 a ser utilizada na atualização dos Anexos I a V e da eficiência de referência relativa ao Submódulo 2.2 dos Procedimentos de Regulação Tarifária – PRORET.", inicio: "01/06/2026", fim: "30/06/2026", area: "STR", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/tomadas-de-subsidios" },
          { numero: "CP 016/2026", tema: "Obter subsídios para aprimoramento do Relatório de Análise de Impacto Regulatório Conjunto nº 1/2026- STR/STD/ANEEL.", inicio: "08/06/2026", fim: "08/09/2026", area: "STR/STD", origem: "ANEEL", link: "https://antigo.aneel.gov.br/web/guest/consultas-publicas" },
@@ -578,9 +655,14 @@
         container.appendChild(agendaGrid);
     }
 
+    function renderPauta14CDPOPage(container) {
+        const note = `<strong>Pauta futura:</strong> esta aba apresenta os itens selecionados da pauta oficial do 14º Circuito Deliberativo Público Ordinário, previsto para 18/08/2026, das 8h às 18h.`;
+        renderGenericPautaPage(container, aneelAgenda14CDPO, 'Pauta do 14º Circuito Deliberativo Público Ordinário da Diretoria de 2026', '18/08/2026', null, aneel14CDPOPautaLink, note);
+    }
+
     function renderPauta16RPOPage(container) {
-        const note = `<strong>16ª Reunião Pública Ordinária:</strong> esta aba reúne os itens selecionados da pauta da reunião marcada para 11/08/2026, às 9h. Os itens 18 a 58 integram o bloco da pauta.`;
-        renderGenericPautaPage(container, aneelAgenda16RPO, 'Pauta da 16ª Reunião Pública Ordinária da Diretoria de 2026', '11/08/2026', youtube16RPOLink, aneel16RPOPautaLink, note);
+        const note = `<strong>Resultados da 16ª Reunião Pública Ordinária:</strong> esta aba consolida os resultados dos itens selecionados da reunião realizada em 11/08/2026. As informações oficiais têm como base a pauta/ata prévia da ANEEL, sujeita a ajustes até a aprovação da ata definitiva.`;
+        renderGenericPautaPage(container, aneelAgenda16RPO, 'Resultados da 16ª Reunião Pública Ordinária da Diretoria de 2026', '11/08/2026', youtube16RPOLink, aneel16RPOPautaLink, note);
     }
 
     function renderConsultasPage(container) {
@@ -830,12 +912,13 @@
 
       const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
       
+      const pauta14CDPOButton = createElement('button', 'nav-button-base nav-button-inactive', '14º Circuito Deliberativo');
       const pauta16RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '16ª RPO');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta16RPOButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta14CDPOButton, pauta16RPOButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -849,20 +932,21 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta16RPOButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta14CDPOButton, pauta16RPOButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
+      pauta14CDPOButton.addEventListener('click', () => { setActiveButton(pauta14CDPOButton); renderPageWithAnimation(renderPauta14CDPOPage, contentContainer); });
       pauta16RPOButton.addEventListener('click', () => { setActiveButton(pauta16RPOButton); renderPageWithAnimation(renderPauta16RPOPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
 
-      // Inicia na aba da 16ª RPO, por ser a pauta mais recente
-      setActiveButton(pauta16RPOButton);
-      renderPageWithAnimation(renderPauta16RPOPage, contentContainer);
+      // Inicia na aba do 14º Circuito Deliberativo, por ser a pauta mais recente
+      setActiveButton(pauta14CDPOButton);
+      renderPageWithAnimation(renderPauta14CDPOPage, contentContainer);
     }
 
     // Inicialização final do app
