@@ -108,6 +108,42 @@
         padding-bottom: 0.75rem;
         margin-bottom: 2rem;
     }
+
+    /* Cabeçalho com logo incorporada e navegação alinhada à direita. */
+    .dashboard-header-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+    }
+    .dashboard-logo {
+      display: block;
+      flex: 0 0 auto;
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .dashboard-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-left: auto;
+      min-width: 0;
+    }
+    @media (max-width: 767px) {
+      .dashboard-header-inner {
+        flex-direction: column;
+      }
+      .dashboard-nav {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -174,7 +210,7 @@
       aberta: { text: "Aberta", classes: "bg-green-100 text-green-800 border border-green-200" },
     };
     
-    const i4LogoUrl = "https://raw.githubusercontent.com/Jacquei4/RPO_ANEEL/main/i4.png";
+    const i4LogoUrl = "data:image/png;base64,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";
     
     const icons = {
         link: `<svg class="w-5 h-5 mr-1 inline-block align-text-bottom" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`,
@@ -197,8 +233,10 @@
     "subject": "Resultado da Consulta Pública nº 40/2025, instituída com vistas a colher subsídios e informações adicionais para aperfeiçoamento da regulamentação contábil tributária do Fundo de Descomissionamento de Angra 1 e 2, em atendimento à determinação do Acórdão nº 2.502/2024 do Tribunal de Contas da União – TCU.",
     "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
     "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "scheduled",
-    "links": []
+    "status": "withdrawn",
+    "links": [],
+    "details": "Ordem de julgamento: 1.",
+    "decision": "O processo foi retirado de pauta."
   },
   {
     "originalItemNumber": 8,
@@ -207,193 +245,15 @@
     "subject": "Pedido de Reconsideração interposto pela Companhia de Eletricidade do Estado da Bahia – Coelba contra a Resolução Homologatória nº 3.578/2026, que homologou o resultado do Reajuste Tarifário Anual de 2026, as Tarifas de Energia – TE e as Tarifas de Uso dos Sistemas de Distribuição – TUSD referentes à Recorrente e deu outras providências.",
     "areaResponsible": "Diretoria Colegiada da Aneel - DIRC-ANEEL",
     "relator": "Agnes Maria de Aragão da Costa",
-    "status": "scheduled",
+    "status": "approved",
     "links": [
       {
         "title": "Minutas de voto e ato",
         "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/22rpo2026-48500.030696-2025-51.pdf"
       }
-    ]
-  }
-];
-
-    const aneelAgenda19CDPO = [
-  {
-    "originalItemNumber": 1,
-    "summaryTitle": "CDE 2026 – Resultado da CP 044/2025 e orçamento anual",
-    "process": "48500.029180/2025-63",
-    "subject": "Resultado da Consulta Pública nº 44/2025, instituída com vistas a colher subsídios e informações adicionais para definir o orçamento anual da Conta de Desenvolvimentos Energético – CDE de 2026.",
-    "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
-    "relator": "Agnes Maria de Aragão da Costa",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/19cdpo2026-48500.029180-2025-63.pdf"
-      }
     ],
-    "decision": "Por unanimidade, aprovado o orçamento da CDE de 2026 em R$ 52,660 bilhões e ratificadas as quotas anuais da CDE-Uso em R$ 47,793 bilhões, além das quotas mensais provisórias das concessionárias e das quotas das permissionárias. Aprovada a TUST/CDE de 2026 para as competências remanescentes, com as diferenças das competências faturadas pela TUST/CDE de 2025 a incorporar em 2027. Reconhecida a extinção das quotas anuais da CDE-GD a partir dos processos tarifários de 2026, preservados os recolhimentos remanescentes de 2025.",
-    "details": "Ato: Resolução Homologatória nº 3.618/2026. Ratificadas as quotas mensais provisórias da REH nº 3.564/2026; as quotas das permissionárias consideram os custos unitários da Nota Técnica nº 237/2025-STR/ANEEL."
-  },
-  {
-    "originalItemNumber": 3,
-    "summaryTitle": "Descontos na TUSD/TUST – Abertura da CP 040/2026",
-    "process": "48500.004840/2026-84",
-    "subject": "Proposta de abertura de Consulta Pública com vistas a colher subsídios e informações adicionais para a regulamentação do fim do desconto nas Tarifas de Uso dos Sistemas de Distribuição e de Transmissão – TUSD/TUST aos consumidores, em razão do disposto no § 14 do art. 26 da Lei nº 9.427/1996, inserido pela Lei nº 15.269/2025.",
-    "areaResponsible": "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM",
-    "relator": "Willamy Moreira Frota",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/19cdpo2026-48500.004840-2026-84.pdf"
-      }
-    ],
-    "decision": "Por unanimidade, aberta a CP 040/2026, por intercâmbio documental, de 29/10 a 14/12/2026, pelo prazo de 47 dias. A consulta tratará da regulamentação do fim dos descontos na TUSD/TUST aos consumidores, nos termos do art. 26, § 14, da Lei nº 9.427/1996, incluído pela Lei nº 15.269/2025.",
-    "details": "Ato: Aviso de Consulta Pública nº 40/2026. A abertura da consulta foi deliberada; a regulamentação definitiva ainda depende da análise das contribuições."
-  },
-  {
-    "originalItemNumber": 11,
-    "summaryTitle": "Engie – Reconsideração do RTA 2025 da Enel Ceará",
-    "process": "48500.004876/2021-53",
-    "subject": "Pedido de Reconsideração interposto pela Engie Brasil Energia S.A. contra a Resolução Homologatória nº 3.445/2025, que homologou o Reajuste Tarifário Anual de 2025 da Enel Distribuição Ceará, com vistas a determinar a aplicação do art. 323 da Resolução Normativa nº 1.000/2021 no pagamento dos valores tratados no art. 13 da referida Resolução Homologatória.",
-    "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
-    "relator": "Willamy Moreira Frota",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/19cdpo2026-48500.004876-2021-53.pdf"
-      },
-      {
-        "title": "Sustentação oral – Engie",
-        "url": "https://www.youtube.com/watch?v=KJ8GwWVJj3c&list=PL83dxI5zonT4cg06i_OTJ6PO_9Hqj-N_y&index=2",
-        "isVideo": true
-      }
-    ],
-    "decision": "Por unanimidade, conhecido e negado o pedido de reconsideração da Engie Brasil Energia para aplicar o art. 323 da REN nº 1.000/2021 à cobrança prevista no art. 13 da REH nº 3.445/2025. Mantida a decisão relativa ao RTA 2025 da Enel Ceará.",
-    "details": "Ato: Despacho nº 4.136/2026. A sustentação foi apresentada por vídeo, conforme o art. 45, § 4º, da Norma de Organização ANEEL nº 1.",
-    "oralSummary": "Elaine Rosa, pela Engie Brasil Energia, defendeu limitar a cobrança retroativa às três últimas faturas, com aplicação do art. 323 da REN nº 1.000/2021 também às geradoras. Segundo a representante, a Enel manteve indevidamente o valor tarifário de 2021 das UFVs Solar do Futuro I, II e III, sem atualizar os ciclos seguintes. Contestou a cobrança de 2022 a 2024 e informou o pagamento dos três últimos ciclos como demonstração de boa-fé."
-  },
-  {
-    "originalItemNumber": 15,
-    "summaryTitle": "Perfilyne – Penalidade por insuficiência de lastro de energia",
-    "process": "48500.022951/2025-91",
-    "subject": "Pedido de Impugnação apresentado pela Perfilyne Indústria e Comércio de Perfis Plásticos Ltda. contra a decisão do Conselho de Administração da Câmara de Comercialização de Energia Elétrica – CCEE, em sua 1.467ª reunião, referente à penalidade por insuficiência de lastro de energia.",
-    "areaResponsible": "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM",
-    "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "withdrawn",
-    "links": [],
-    "decision": "O processo foi retirado de pauta."
-  },
-  {
-    "originalItemNumber": 16,
-    "summaryTitle": "Engie Solar Paracatu IV – Lastro de energia de reserva",
-    "process": "48500.037431/2025-83",
-    "subject": "Pedido de Impugnação apresentado pela Engie Solar Paracatu IV Geração Centralizada SPE S.A. contra a decisão do Conselho de Administração da Câmara de Comercialização de Energia Elétrica – CCEE, em sua 1.492ª reunião, referente à penalidade por insuficiência de lastro de energia de reserva.",
-    "areaResponsible": "Superintendência de Regulação dos Serviços de Geração e do Mercado de Energia Elétrica - SGM",
-    "relator": "Ludimila Lima da Silva",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/19cdpo2026-item16-48500.037431-2025-83.pdf"
-      }
-    ],
-    "decision": "Por unanimidade, não conhecido o pedido de impugnação da Engie Solar Paracatu IV contra a decisão da 1.492ª reunião do Conselho de Administração da CCEE, relativa à penalidade por insuficiência de lastro de energia de reserva. A unidade responsável pela instrução deverá verificar preliminarmente o atendimento aos requisitos de admissibilidade do art. 79 da Norma de Organização ANEEL nº 1.",
-    "details": "Ato: Despacho nº 4.126/2026. A decisão foi de não conhecimento do pedido, sem julgamento do mérito da impugnação."
-  },
-  {
-    "originalItemNumber": 17,
-    "summaryTitle": "Âmbar Amazonas – CP 041/2026 sobre o Plano de Ação",
-    "process": "48500.020860/2026-01",
-    "subject": "Plano de Ação apresentado pela Âmbar Energia Amazonas em atendimento à Subcláusula Segunda da Cláusula Quarta do Terceiro Termo Aditivo ao Contrato de Concessão nº 1/2019-ANEEL.",
-    "areaResponsible": "Superintendência de Fiscalização Econômica, Financeira e de Mercado - SFF",
-    "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/19cdpo2026-item17-48500.020860-2026-01.pdf"
-      }
-    ],
-    "decision": "Por unanimidade, aberta a CP 041/2026, de 29/10 a 27/11/2026, por 30 dias, para avaliar o Plano de Ação da Âmbar Energia Amazonas referente aos itens I a III da Subcláusula Segunda da Cláusula Quarta do Terceiro Termo Aditivo ao Contrato nº 1/2019-ANEEL. Aprovada também a realização de Audiência Pública presencial, com data e local a definir.",
-    "details": "Atos: Aviso de Consulta Pública nº 41/2026 e Aviso de Audiência Pública nº 8/2026. A aprovação refere-se à abertura da participação social sobre o Plano de Ação."
-  }
-];
-
-    const aneelAgenda5RPE = [
-  {
-    "originalItemNumber": 1,
-    "summaryTitle": "LRCAP 2026 – Armazenamento Nacional com baterias",
-    "process": "48500.015992/2026-11",
-    "subject": "Leilão de Reserva da Capacidade na Forma de Potência de 2026 – LRCAP de 2026 – Armazenamento Nacional, por meio de novos sistemas de armazenamento de energia em baterias com conteúdo nacional.",
-    "areaResponsible": "Secretaria de Leilões - SEL",
-    "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Trecho do julgamento",
-        "url": "https://www.youtube.com/watch?v=RBzu5iQFNX4&t=560s",
-        "isVideo": true
-      },
-      {
-        "title": "Minuta de voto",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/5rpo2026-item01-48500.015992-2026-111.pdf"
-      },
-      {
-        "title": "Nota Técnica",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item01-48500.015992-2026-11_nota-tecnica.pdf"
-      }
-    ],
-    "decision": "Por unanimidade, aprovados o edital, os anexos e a minuta do CRCAP do Leilão nº 5/2026-ANEEL, para contratar disponibilidade de potência de novos sistemas de armazenamento em baterias com conteúdo nacional. Início do suprimento em 01/08/2028, por 15 anos, e sessão pública em 02/12/2026. Fixadas as TUSDg de referência dos projetos com acesso à distribuição em 88 kV ou 138 kV, conforme o Anexo IA da Nota Técnica nº 194/2026-STR/ANEEL.",
-    "details": "Ordem de julgamento: 1. Atos: Aviso de Licitação do Leilão nº 5/2026 e Resolução Homologatória nº 3.616/2026. Apresentação técnica conjunta dos itens 1 e 2 por Igor Barra Caminha (SEL). A decisão será comunicada ao MME, CCEE, ONS, EPE e BNDES. Documento atualizado em 28/10/2026, às 8h45.",
-    "oralSummary": "A ata registra sustentações de Isabella Sene Santos Carneiro, pela Absolar, e Fabio Monteiro Lima, pela Absae."
-  },
-  {
-    "originalItemNumber": 2,
-    "summaryTitle": "LRCAP 2026 – Armazenamento com baterias",
-    "process": "48500.019603/2026-18",
-    "subject": "Leilão de Reserva de Capacidade na Forma de Potência de 2026 – LRCAP de 2026 – Armazenamento, por meio de novos sistemas de armazenamento de energia em baterias.",
-    "areaResponsible": "Secretaria de Leilões - SEL",
-    "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Trecho do julgamento",
-        "url": "https://www.youtube.com/watch?v=RBzu5iQFNX4&t=560s",
-        "isVideo": true
-      },
-      {
-        "title": "Minuta de voto",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/5rpo2026-item02-48500.019603-2026-188.pdf"
-      },
-      {
-        "title": "Nota Técnica",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/item02-48500.019603-2026-18_nota_tecnica.pdf"
-      }
-    ],
-    "decision": "Por unanimidade, aprovados o edital, os anexos e a minuta do CRCAP do Leilão nº 6/2026-ANEEL, para contratar disponibilidade de potência de novos sistemas de armazenamento em baterias. Início do suprimento em 01/08/2028, por 15 anos, e sessão pública em 04/12/2026. Fixadas as TUSDg de referência dos projetos com acesso à distribuição em 88 kV ou 138 kV, conforme o Anexo IB da Nota Técnica nº 194/2026-STR/ANEEL.",
-    "details": "Ordem de julgamento: 2. Apresentação técnica conjunta dos itens 1 e 2 por Igor Barra Caminha (SEL). A decisão será comunicada ao MME, CCEE, ONS e EPE. Documento atualizado em 28/10/2026, às 8h45.",
-    "oralSummary": "A ata registra sustentação de Rafael Janiques, pela Taesa."
-  },
-  {
-    "originalItemNumber": 3,
-    "summaryTitle": "CP 007/2025 – Abertura do mercado do Grupo A e Open Energy",
-    "process": "48500.000503/2024-56",
-    "subject": "Resultado da Consulta Pública nº 7/2025, instituída com vistas a colher subsídios e informações adicionais para o aprimoramento regulatório dos serviços de distribuição em consequência da abertura de mercado para consumidores do Grupo A e instituição do Open Energy.",
-    "areaResponsible": "Superintendência de Regulação dos Serviços de Transmissão e Distribuição de Energia Elétrica - STD",
-    "relator": "Agnes Maria de Aragão da Costa",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Trecho do julgamento",
-        "url": "https://www.youtube.com/watch?v=RBzu5iQFNX4&t=6087s",
-        "isVideo": true
-      }
-    ],
-    "details": "Ordem de julgamento: 3. Prevaleceu o voto de Agnes Maria de Aragão da Costa. Ludimila Lima da Silva divergiu especificamente quanto à vedação de a distribuidora utilizar marca ou logotipo que reproduza ou gere confusão com comercializadora do mesmo grupo, mantendo seu voto da 18ª RPO. Relator do voto-vista: Willamy Moreira Frota. As normas aprovadas alteram as RENs nº 846/2019, 948/2021, 957/2021, 1.000/2021 e 1.011/2022 e a REH nº 2.992/2021. As entregas da CCEE em 30 dias abrangem suspensão, religação e titularidade; documentos de integração via API; e temas das contribuições aos PdCs considerados fora do escopo pela análise técnica.",
-    "decision": "Por maioria, aprovadas as normas para adequar a distribuição à abertura de mercado do Grupo A e instituir o Open Energy, com compartilhamento padronizado de dados e integração de sistemas. Aprovados também os Submódulos 1.6 e 1.8 dos Procedimentos de Comercialização e o Manual de Instruções do Open Energy. A CCEE deverá apresentar, em 15 dias, pré-projeto de plataforma de comparação de produtos e preços do varejo e, em 30 dias, as propostas regulatórias e os documentos operacionais determinados. A SGI deverá viabilizar o acesso à plataforma no site da ANEEL."
+    "details": "Ordem de julgamento: 8.",
+    "decision": "Por unanimidade, conhecido e provido o pedido de reconsideração da Coelba contra a Resolução Homologatória nº 3.578/2026. A diferença de R$ 304.246,51, a preços de abril de 2026, referente ao subsídio irrigante/aquicultor, será considerada como ajuste de subsídio no processo tarifário de 2027 da distribuidora, com correção pelo IGP-M."
   }
 ];
 
@@ -1226,18 +1086,8 @@
     }
 
     function renderPauta22RPOPage(container) {
-        const note = `<strong>22ª Reunião Pública Ordinária (03/11/2026):</strong> pauta dos itens selecionados <strong>1 e 8</strong>, conforme o anexo da ANEEL. Início às <strong>9h</strong>, na Sala de Reunião da Diretoria, sede da ANEEL, Brasília-DF. Os itens estão agendados. <a href="https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14829&idAreaNoticia=425" target="_blank" rel="noopener noreferrer" class="font-semibold underline">Pauta publicada em PDF</a>. <strong>Atualização: 29/10/2026.</strong>`;
-        renderGenericPautaPage(container, aneelAgenda22RPO, 'Pauta da 22ª Reunião Pública Ordinária da Diretoria de 2026', '03/11/2026', 'https://www.youtube.com/live/51O1oJMuyDI?si=eueu6lqVWZyHqRwy', 'https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0495556_pauta_de_reuniao_publica.pdf', note, 'Pauta assinada em PDF');
-    }
-
-    function renderPauta19CDPOPage(container) {
-        const note = `<strong>19º Circuito Deliberativo Público Ordinário (27/10/2026):</strong> resultados dos itens selecionados <strong>1, 3, 11, 15, 16 e 17</strong>, conforme a pauta/ata prévia da ANEEL anexa, sujeita a ajustes até a aprovação definitiva. O item 15 foi retirado de pauta; os demais foram deliberados por unanimidade. A sustentação do item 11 foi resumida a partir da transcrição automática da gravação. <a href="https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0491206_pauta_de_circuito_deliberativo_publico.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold underline">Pauta assinada</a>. <strong>Atualização: 29/10/2026.</strong>`;
-        renderGenericPautaPage(container, aneelAgenda19CDPO, 'Resultados do 19º Circuito Deliberativo Público Ordinário da Diretoria de 2026', '27/10/2026', null, 'https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14827&idAreaNoticia=425', note, 'Pauta/ata prévia em PDF');
-    }
-
-    function renderPauta5RPEPage(container) {
-        const note = `<strong>5ª Reunião Pública Extraordinária (27/10/2026):</strong> resultados dos <strong>3 itens</strong>, conforme a pauta/ata prévia da ANEEL anexa, sujeita a ajustes até a aprovação definitiva. Os itens 1 e 2 foram deliberados por unanimidade; o item 3, por maioria, com divergência de Ludimila Lima da Silva. A gravação vinculada é a indicada pela ANEEL na ata. <strong>Atualização: 29/10/2026.</strong>`;
-        renderGenericPautaPage(container, aneelAgenda5RPE, 'Resultados da 5ª Reunião Pública Extraordinária da Diretoria de 2026', '27/10/2026', 'https://www.youtube.com/watch?v=RBzu5iQFNX4', 'https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14826&idAreaNoticia=425', note, 'Pauta/ata prévia em PDF');
+        const note = `<strong>22ª Reunião Pública Ordinária (03/11/2026):</strong> resultados dos itens selecionados <strong>1 e 8</strong>, conforme a pauta/ata prévia da ANEEL anexa, sujeita a ajustes até a aprovação definitiva. O item 1 foi retirado de pauta; o item 8 foi deliberado por unanimidade. A reunião foi realizada às <strong>10h30</strong>, sob a presidência de Agnes Maria de Aragão da Costa, Diretora-Geral Substituta. <a href="https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0495556_pauta_de_reuniao_publica.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold underline">Pauta assinada</a>. <strong>Atualização: 04/11/2026.</strong>`;
+        renderGenericPautaPage(container, aneelAgenda22RPO, 'Resultados da 22ª Reunião Pública Ordinária da Diretoria de 2026', '03/11/2026', 'https://www.youtube.com/live/51O1oJMuyDI?si=eueu6lqVWZyHqRwy', 'https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14829&idAreaNoticia=425', note, 'Pauta/ata prévia em PDF');
     }
 
     function renderConsultasPage(container) {
@@ -1246,7 +1096,7 @@
         container.appendChild(pageTitle);
 
         const updateNote = createElement('div', 'bg-blue-50 border border-blue-200 text-blue-900 p-4 rounded-xl mb-6 text-sm leading-relaxed');
-        updateNote.innerHTML = `<strong>Atualização: 29/10/2026.</strong> Incluídas as CPs 040 e 041/2026 da ANEEL e as CPs 236, 239 e 240/2026 do MME. Identificada a CP 235/2026 do MME sobre o PDE 2036. Fontes: canais oficiais da ANEEL, do MME e Brasil Participativo.<p class="mt-2"><strong>AP 008/2026 – Âmbar Energia Amazonas:</strong> aprovada a audiência presencial para discutir o Plano de Ação, com data e local a definir, conforme o item 17 da <a href="https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14827&idAreaNoticia=425" target="_blank" rel="noopener noreferrer" class="font-semibold underline">pauta/ata prévia do 19º Circuito</a>.</p>`;
+        updateNote.innerHTML = `<strong>Conferência dos canais oficiais: 04/11/2026.</strong> Fontes: canais oficiais da ANEEL, do MME e Brasil Participativo.<p class="mt-2"><strong>AP 008/2026 – Âmbar Energia Amazonas:</strong> aprovada a audiência presencial para discutir o Plano de Ação, com data e local a definir, conforme o item 17 da <a href="https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14827&idAreaNoticia=425" target="_blank" rel="noopener noreferrer" class="font-semibold underline">pauta/ata prévia do 19º Circuito</a>.</p>`;
         container.appendChild(updateNote);
 
         const tableContainer = createElement('div', 'info-card overflow-x-auto');
@@ -1491,20 +1341,18 @@
       const appContainer = document.getElementById('app-container');
       
       const header = createElement('header', 'bg-white shadow-md p-5 sticky top-0 z-20');
-      const headerContent = createElement('div', 'container mx-auto flex flex-col md:flex-row items-center justify-between gap-4');
-      const logoImg = createElement('img', 'h-12 w-auto', null, { src: i4LogoUrl, alt: 'i4 Logo', onerror: "this.style.display='none';" });
+      const headerContent = createElement('div', 'container mx-auto dashboard-header-inner');
+      const logoImg = createElement('img', 'dashboard-logo', null, { src: i4LogoUrl, alt: 'i4 Economic Regulation', width: '187', height: '76' });
       headerContent.appendChild(logoImg);
 
-      const navContainer = createElement('div', 'flex flex-wrap gap-2 justify-center md:justify-start');
+      const navContainer = createElement('div', 'dashboard-nav');
       
       const pauta22RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '22ª RPO');
-      const pauta19CDPOButton = createElement('button', 'nav-button-base nav-button-inactive', '19º Circuito');
-      const pauta5RPEButton = createElement('button', 'nav-button-base nav-button-inactive', '5ª RPE');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta22RPOButton, pauta19CDPOButton, pauta5RPEButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta22RPOButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -1518,15 +1366,13 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta22RPOButton, pauta19CDPOButton, pauta5RPEButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta22RPOButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
       }
 
       pauta22RPOButton.addEventListener('click', () => { setActiveButton(pauta22RPOButton); renderPageWithAnimation(renderPauta22RPOPage, contentContainer); });
-      pauta19CDPOButton.addEventListener('click', () => { setActiveButton(pauta19CDPOButton); renderPageWithAnimation(renderPauta19CDPOPage, contentContainer); });
-      pauta5RPEButton.addEventListener('click', () => { setActiveButton(pauta5RPEButton); renderPageWithAnimation(renderPauta5RPEPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
