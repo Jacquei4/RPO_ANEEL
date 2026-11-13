@@ -411,38 +411,6 @@
   }
 ];
 
-    const aneelAgenda22RPO = [
-  {
-    "originalItemNumber": 1,
-    "summaryTitle": "Angra 1 e 2 – Fundo de Descomissionamento e CP 040/2025",
-    "process": "48500.027333/2025-38",
-    "subject": "Resultado da Consulta Pública nº 40/2025, instituída com vistas a colher subsídios e informações adicionais para aperfeiçoamento da regulamentação contábil tributária do Fundo de Descomissionamento de Angra 1 e 2, em atendimento à determinação do Acórdão nº 2.502/2024 do Tribunal de Contas da União – TCU.",
-    "areaResponsible": "Superintendência de Gestão Tarifária e Regulação Econômica - STR",
-    "relator": "Gentil Nogueira de Sá Júnior",
-    "status": "withdrawn",
-    "links": [],
-    "details": "Ordem de julgamento: 1.",
-    "decision": "O processo foi retirado de pauta."
-  },
-  {
-    "originalItemNumber": 8,
-    "summaryTitle": "Coelba – Reconsideração do Reajuste Tarifário Anual de 2026",
-    "process": "48500.030696/2025-51",
-    "subject": "Pedido de Reconsideração interposto pela Companhia de Eletricidade do Estado da Bahia – Coelba contra a Resolução Homologatória nº 3.578/2026, que homologou o resultado do Reajuste Tarifário Anual de 2026, as Tarifas de Energia – TE e as Tarifas de Uso dos Sistemas de Distribuição – TUSD referentes à Recorrente e deu outras providências.",
-    "areaResponsible": "Diretoria Colegiada da Aneel - DIRC-ANEEL",
-    "relator": "Agnes Maria de Aragão da Costa",
-    "status": "approved",
-    "links": [
-      {
-        "title": "Minutas de voto e ato",
-        "url": "https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/22rpo2026-48500.030696-2025-51.pdf"
-      }
-    ],
-    "details": "Ordem de julgamento: 8.",
-    "decision": "Por unanimidade, conhecido e provido o pedido de reconsideração da Coelba contra a Resolução Homologatória nº 3.578/2026. A diferença de R$ 304.246,51, a preços de abril de 2026, referente ao subsídio irrigante/aquicultor, será considerada como ajuste de subsídio no processo tarifário de 2027 da distribuidora, com correção pelo IGP-M."
-  }
-];
-
     const consultasPublicasData = [
   {
     "numero": "CP 242/2026",
@@ -1299,11 +1267,6 @@
         renderGenericPautaPage(container, aneelAgenda20CDPO, 'Resultados do 20º Circuito Deliberativo Público Ordinário da Diretoria de 2026', '10/11/2026', null, 'https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14832&idAreaNoticia=425', note, 'Pauta/ata prévia em PDF');
     }
 
-    function renderPauta22RPOPage(container) {
-        const note = `<strong>22ª Reunião Pública Ordinária (03/11/2026):</strong> resultados dos itens selecionados <strong>1 e 8</strong>, conforme a pauta/ata prévia da ANEEL anexa, sujeita a ajustes até a aprovação definitiva. O item 1 foi retirado de pauta; o item 8 foi deliberado por unanimidade. A reunião foi realizada às <strong>10h30</strong>, sob a presidência de Agnes Maria de Aragão da Costa, Diretora-Geral Substituta. <a href="https://www2.aneel.gov.br/aplicacoes/noticias_area/arquivos/sei_0495556_pauta_de_reuniao_publica.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold underline">Pauta assinada</a>. <strong>Atualização: 04/11/2026.</strong>`;
-        renderGenericPautaPage(container, aneelAgenda22RPO, 'Resultados da 22ª Reunião Pública Ordinária da Diretoria de 2026', '03/11/2026', 'https://www.youtube.com/live/51O1oJMuyDI?si=eueu6lqVWZyHqRwy', 'https://www2.aneel.gov.br/aplicacoes_liferay/noticias_area/arquivo.cfm?tipo=PDF&idNoticia=14829&idAreaNoticia=425', note, 'Pauta/ata prévia em PDF');
-    }
-
     function renderConsultasPage(container) {
         container.innerHTML = '';
         const pageTitle = createElement('h1', 'page-title text-2xl sm:text-3xl font-bold mb-6', 'Acompanhamento de Consultas Públicas e Tomadas de Subsídios');
@@ -1563,12 +1526,11 @@
       
       const pauta23RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '23ª RPO');
       const pauta20CDPOButton = createElement('button', 'nav-button-base nav-button-inactive', '20º Circuito');
-      const pauta22RPOButton = createElement('button', 'nav-button-base nav-button-inactive', '22ª RPO');
       const consultasButton = createElement('button', 'nav-button-base nav-button-inactive', 'Consultas e Subsídios');
       const agendaButton = createElement('button', 'nav-button-base nav-button-inactive', 'Agenda Regulatória');
       const imersaoButton = createElement('button', 'nav-button-base nav-button-inactive', 'Imersões 2026');
 
-      navContainer.append(pauta23RPOButton, pauta20CDPOButton, pauta22RPOButton, consultasButton, agendaButton, imersaoButton);
+      navContainer.append(pauta23RPOButton, pauta20CDPOButton, consultasButton, agendaButton, imersaoButton);
       headerContent.appendChild(navContainer);
       header.appendChild(headerContent);
       appContainer.appendChild(header);
@@ -1582,7 +1544,7 @@
       footer.innerHTML = `© 2026 i4 Economic Regulation. Todos os direitos reservados.`;
       appContainer.appendChild(footer);
 
-      const buttons = [pauta23RPOButton, pauta20CDPOButton, pauta22RPOButton, consultasButton, agendaButton, imersaoButton];
+      const buttons = [pauta23RPOButton, pauta20CDPOButton, consultasButton, agendaButton, imersaoButton];
       function setActiveButton(activeBtn) {
           buttons.forEach(btn => { btn.classList.remove('nav-button-active'); btn.classList.add('nav-button-inactive'); });
           activeBtn.classList.add('nav-button-active'); activeBtn.classList.remove('nav-button-inactive');
@@ -1590,7 +1552,6 @@
 
       pauta23RPOButton.addEventListener('click', () => { setActiveButton(pauta23RPOButton); renderPageWithAnimation(renderPauta23RPOPage, contentContainer); });
       pauta20CDPOButton.addEventListener('click', () => { setActiveButton(pauta20CDPOButton); renderPageWithAnimation(renderPauta20CDPOPage, contentContainer); });
-      pauta22RPOButton.addEventListener('click', () => { setActiveButton(pauta22RPOButton); renderPageWithAnimation(renderPauta22RPOPage, contentContainer); });
       consultasButton.addEventListener('click', () => { setActiveButton(consultasButton); renderPageWithAnimation(renderConsultasPage, contentContainer); });
       agendaButton.addEventListener('click', () => { setActiveButton(agendaButton); renderPageWithAnimation(renderAgendaRegulatoriaPage, contentContainer); });
       imersaoButton.addEventListener('click', () => { setActiveButton(imersaoButton); renderPageWithAnimation(renderImersaoPage, contentContainer); });
